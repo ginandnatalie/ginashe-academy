@@ -1,0 +1,654 @@
+{
+  "SDS": [
+    {
+      "title": "Cloud Launchpad",
+      "nqf": "NQF L3-L4",
+      "meta": "\u23f1 12 weeks   \u00b7   \ud83d\udccd Hybrid   \u00b7   \ud83d\udc65 Cohort",
+      "modules": "Digital Foundations \u00b7 Linux Essentials \u00b7 Networking \u00b7 Cloud Infrastructure \u00b7 Cloud Security \u00b7 Capstone ",
+      "outcome": "Cloud Support Technician \u00b7 R180-280k/yr ",
+      "entry": "Matric or equivalent. Basic computer literacy. "
+    },
+    {
+      "title": "Web Development Fundamentals",
+      "nqf": "NQF L4",
+      "meta": "\u23f1 16 weeks   \u00b7   \ud83d\udccd Online   \u00b7   \ud83d\udc65 Self-paced",
+      "modules": "HTML & CSS \u00b7 JavaScript \u00b7 React Basics \u00b7 Node.js \u00b7 Databases \u00b7 Deployment ",
+      "outcome": "Junior Web Developer \u00b7 R150-240k/yr ",
+      "entry": "Basic computer literacy. No prior coding required. "
+    },
+    {
+      "title": "AI & Machine Learning Foundations",
+      "nqf": "NQF L5",
+      "meta": "\u23f1 20 weeks   \u00b7   \ud83d\udccd Hybrid   \u00b7   \ud83d\udc65 Cohort",
+      "modules": "Python for AI \u00b7 Data Wrangling \u00b7 ML Concepts \u00b7 TensorFlow Basics \u00b7 NLP Intro \u00b7 Ethics in AI ",
+      "outcome": "AI/ML Associate \u00b7 R350-550k/yr ",
+      "entry": "Cloud Launchpad or Web Dev. Python basics. "
+    },
+    {
+      "title": "Cybersecurity Essentials",
+      "nqf": "NQF L5",
+      "meta": "\u23f1 16 weeks   \u00b7   \ud83d\udccd Hybrid   \u00b7   \ud83d\udc65 Cohort",
+      "modules": "Security Fundamentals \u00b7 Network Security \u00b7 POPIA & Compliance \u00b7 Ethical Hacking Intro \u00b7 Incident Response \u00b7 SOC Operations ",
+      "outcome": "Security Analyst \u00b7 R280-480k/yr ",
+      "entry": "Cloud Launchpad or equivalent networking knowledge. "
+    },
+    {
+      "title": "Data Engineering",
+      "nqf": "NQF L5",
+      "meta": "\u23f1 18 weeks   \u00b7   \ud83d\udccd Online   \u00b7   \ud83d\udc65 Cohort",
+      "modules": "SQL Mastery \u00b7 Python for Data \u00b7 ETL Pipelines \u00b7 BigQuery & Redshift \u00b7 Data Visualisation \u00b7 Capstone ",
+      "outcome": "Data Engineer \u00b7 R320-520k/yr ",
+      "entry": "Web Dev Fundamentals or equivalent. "
+    },
+    {
+      "title": "DevOps & Cloud Automation",
+      "nqf": "NQF L6",
+      "meta": "\u23f1 20 weeks   \u00b7   \ud83d\udccd Hybrid   \u00b7   \ud83d\udc65 Cohort",
+      "modules": "Git & CI/CD \u00b7 Docker & Kubernetes \u00b7 Terraform IaC \u00b7 Monitoring & Alerting \u00b7 SRE Principles \u00b7 Capstone ",
+      "outcome": "DevOps Engineer \u00b7 R420-720k/yr ",
+      "entry": "Cloud Launchpad + basic scripting experience. "
+    },
+    {
+      "title": "Digital Literacy for the Workplace",
+      "nqf": "NQF L2",
+      "meta": "\u23f1 4 weeks   \u00b7   \ud83d\udccd In-person   \u00b7   \ud83d\udc65 Workshop",
+      "modules": "Computer Basics \u00b7 Email & Cloud Storage \u00b7 Online Safety \u00b7 Office Tools \u00b7 Video Calls \u00b7 Digital Job Hunting ",
+      "outcome": "Workplace digital competence certificate ",
+      "entry": "None. Designed for first-time computer users. "
+    }
+  ],
+  "SHS": [
+    {
+      "title": "Software Entrepreneurship",
+      "nqf": "NQF L5",
+      "meta": "\u23f1 12 weeks   \u00b7   \ud83d\udccd Hybrid   \u00b7   \ud83d\udc65 Cohort",
+      "modules": "Idea to MVP \u00b7 Business Model Canvas \u00b7 Tech Stack Selection \u00b7 Funding & Pitching \u00b7 GTM Strategy \u00b7 Demo Day ",
+      "outcome": "Technical Founder \u00b7 startup-ready ",
+      "entry": "Any technical SDS school course completion. Section 3 \u2014 School of Health Sciences 9 courses \u00b7 NQF L4\u2013L5 \u00b7 8\u201332 weeks "
+    },
+    {
+      "title": "Community Health Worker",
+      "nqf": "NQF L4",
+      "meta": "\u23f1 32 weeks   \u00b7   \ud83d\udccd In-person   \u00b7   \ud83d\udc65 Cohort",
+      "modules": "Anatomy Basics \u00b7 Disease Prevention \u00b7 HIV/AIDS & TB Care \u00b7 Maternal Health \u00b7 Child Nutrition \u00b7 Community Outreach \u00b7 Record Keeping \u00b7 Practicum ",
+      "outcome": "Registered CHW \u00b7 DoH deployment-ready \u00b7 R6-10k/mo stipend ",
+      "entry": "Grade 10 minimum. Community residency preferred. "
+    },
+    {
+      "title": "Mental Health First Aid",
+      "nqf": "NQF L4",
+      "meta": "\u23f1 8 weeks   \u00b7   \ud83d\udccd In-person   \u00b7   \ud83d\udc65 Workshop",
+      "modules": "Mental Health Basics \u00b7 Depression & Anxiety \u00b7 Substance Abuse \u00b7 Trauma & PTSD \u00b7 Suicide Prevention \u00b7 Crisis Intervention \u00b7 Self-Care ",
+      "outcome": "MHFA Certified First Responder ",
+      "entry": "None. Open to all adults. "
+    },
+    {
+      "title": "HIV/AIDS Counselling & Care",
+      "nqf": "NQF L4",
+      "meta": "\u23f1 12 weeks   \u00b7   \ud83d\udccd Hybrid   \u00b7   \ud83d\udc65 Cohort",
+      "modules": "HIV/AIDS Basics \u00b7 Counselling Skills \u00b7 ARV Adherence \u00b7 Stigma Reduction \u00b7 Legal & Rights \u00b7 Palliative Care \u00b7 Support Groups ",
+      "outcome": "HIV Counsellor \u00b7 NGO & Clinic placement ",
+      "entry": "Grade 10. Community or care background preferred. "
+    },
+    {
+      "title": "Maternal & Child Health",
+      "nqf": "NQF L4",
+      "meta": "\u23f1 16 weeks   \u00b7   \ud83d\udccd In-person   \u00b7   \ud83d\udc65 Cohort",
+      "modules": "Antenatal Care \u00b7 Safe Delivery Basics \u00b7 Postnatal Support \u00b7 Child Development \u00b7 Immunisation \u00b7 Malnutrition Detection \u00b7 Home Visits ",
+      "outcome": "Maternal Health Worker \u00b7 Clinic support role ",
+      "entry": "Grade 10. "
+    },
+    {
+      "title": "Nutrition Science & Food Security",
+      "nqf": "NQF L5",
+      "meta": "\u23f1 20 weeks   \u00b7   \ud83d\udccd Hybrid   \u00b7   \ud83d\udc65 Cohort",
+      "modules": "Macro & Micronutrients \u00b7 SA Dietary Patterns \u00b7 Malnutrition \u00b7 Therapeutic Nutrition \u00b7 Community Food Gardens \u00b7 RUTF & Supplementation \u00b7 Research Methods ",
+      "outcome": "Nutritional Advisor \u00b7 NGO Nutrition Officer ",
+      "entry": "Matric. Biology or Life Sciences preferred. "
+    },
+    {
+      "title": "Emergency Medical Response",
+      "nqf": "NQF L5",
+      "meta": "\u23f1 16 weeks   \u00b7   \ud83d\udccd In-person   \u00b7   \ud83d\udc65 Cohort",
+      "modules": "Basic Life Support \u00b7 BLS & AED \u00b7 Trauma First Aid \u00b7 Medical Emergencies \u00b7 Scene Management \u00b7 Patient Assessment \u00b7 Ambulance Ride-Alongs ",
+      "outcome": "Emergency First Responder \u00b7 EMS entry qualification ",
+      "entry": "Matric. Physical fitness. Clear criminal record. "
+    },
+    {
+      "title": "Health Administration & Records",
+      "nqf": "NQF L4",
+      "meta": "\u23f1 12 weeks   \u00b7   \ud83d\udccd Hybrid   \u00b7   \ud83d\udc65 Cohort",
+      "modules": "Medical Terminology \u00b7 POPIA in Healthcare \u00b7 Patient Record Systems \u00b7 Clinic Scheduling \u00b7 Billing Basics \u00b7 Digital Records \u00b7 Quality Assurance ",
+      "outcome": "Clinic Administrator \u00b7 Medical Receptionist \u00b7 R8-15k/mo ",
+      "entry": "Matric. Computer literacy. "
+    },
+    {
+      "title": "Occupational Health & Safety",
+      "nqf": "NQF L4",
+      "meta": "\u23f1 10 weeks   \u00b7   \ud83d\udccd In-person   \u00b7   \ud83d\udc65 Workshop",
+      "modules": "OHS Act Basics \u00b7 Hazard Identification \u00b7 Risk Assessment \u00b7 Accident Investigation \u00b7 Safety Systems \u00b7 COIDA \u00b7 Site Audits ",
+      "outcome": "OHS Representative \u00b7 Safety Officer assistant ",
+      "entry": "Matric. "
+    }
+  ],
+  "SEI": [
+    {
+      "title": "Palliative & End-of-Life Care",
+      "nqf": "NQF L4",
+      "meta": "\u23f1 12 weeks   \u00b7   \ud83d\udccd In-person   \u00b7   \ud83d\udc65 Cohort",
+      "modules": "Palliative Principles \u00b7 Pain Management \u00b7 Emotional Support \u00b7 Family Counselling \u00b7 Cultural & Spiritual Care \u00b7 Hospice Systems \u00b7 Ethics ",
+      "outcome": "Palliative Care Worker \u00b7 Hospice facility employment ",
+      "entry": "Grade 10. Maturity and emotional resilience required. Section 4 \u2014 School of Energy & Infrastructure 8 courses \u00b7 NQF L3\u2013L5 \u00b7 10\u201316 weeks "
+    },
+    {
+      "title": "Solar PV Installation & Commissioning",
+      "nqf": "NQF L4",
+      "meta": "\u23f1 16 weeks   \u00b7   \ud83d\udccd In-person   \u00b7   \ud83d\udc65 Cohort",
+      "modules": "PV Theory \u00b7 System Design \u00b7 Panel Mounting \u00b7 Inverter Config \u00b7 Wiring & Safety \u00b7 Grid Interaction \u00b7 Commissioning \u00b7 Maintenance ",
+      "outcome": "Solar PV Technician \u00b7 R15-35k/mo ",
+      "entry": "Grade 10. Basic electrical knowledge preferred. "
+    },
+    {
+      "title": "Battery Storage & Off-Grid Systems",
+      "nqf": "NQF L5",
+      "meta": "\u23f1 12 weeks   \u00b7   \ud83d\udccd Hybrid   \u00b7   \ud83d\udc65 Cohort",
+      "modules": "Battery Chemistry \u00b7 Lead Acid vs Li-ion \u00b7 BMS Systems \u00b7 Load Calculations \u00b7 Off-Grid Design \u00b7 Hybrid Systems \u00b7 Fault Diagnosis \u00b7 Safety ",
+      "outcome": "Battery Systems Specialist \u00b7 Critical for load-shedding SA market ",
+      "entry": "Solar PV Installation or equivalent. "
+    },
+    {
+      "title": "Electrical Wiring & Installations",
+      "nqf": "NQF L3",
+      "meta": "\u23f1 16 weeks   \u00b7   \ud83d\udccd In-person   \u00b7   \ud83d\udc65 Cohort",
+      "modules": "Electrical Theory \u00b7 SANS 10142 \u00b7 Domestic Wiring \u00b7 DB Board Installation \u00b7 Earthing & Bonding \u00b7 Testing \u00b7 CoC Process \u00b7 Safety ",
+      "outcome": "Electrical Installer \u00b7 ECSA registered path ",
+      "entry": "Grade 10. Mathematics and Physical Science preferred. "
+    },
+    {
+      "title": "Energy Auditing & Efficiency",
+      "nqf": "NQF L5",
+      "meta": "\u23f1 10 weeks   \u00b7   \ud83d\udccd Hybrid   \u00b7   \ud83d\udc65 Cohort",
+      "modules": "Energy Basics \u00b7 Audit Methodology \u00b7 Measuring Equipment \u00b7 Report Writing \u00b7 Lighting & HVAC \u00b7 Industrial Loads \u00b7 Carbon Footprint \u00b7 ROI Calculations ",
+      "outcome": "Junior Energy Auditor \u00b7 R200-400k/yr ",
+      "entry": "Matric. Mathematics. Basic electrical knowledge. "
+    },
+    {
+      "title": "Water & Sanitation Systems",
+      "nqf": "NQF L4",
+      "meta": "\u23f1 14 weeks   \u00b7   \ud83d\udccd In-person   \u00b7   \ud83d\udc65 Cohort",
+      "modules": "Water Quality \u00b7 Plumbing Basics \u00b7 Greywater Systems \u00b7 Borehole & Rainwater \u00b7 Sanitation Design \u00b7 Rural Systems \u00b7 Maintenance \u00b7 DWS compliance ",
+      "outcome": "Water Systems Technician ",
+      "entry": "Grade 10. Physical aptitude. "
+    },
+    {
+      "title": "Grid-Tied & Commercial Solar",
+      "nqf": "NQF L5",
+      "meta": "\u23f1 12 weeks   \u00b7   \ud83d\udccd Hybrid   \u00b7   \ud83d\udc65 Cohort",
+      "modules": "Commercial Scale Design \u00b7 NERSA Regulations \u00b7 3-Phase Systems \u00b7 Utility Applications \u00b7 Wheeling Basics \u00b7 Financing Models \u00b7 Project Management \u00b7 Case Studies ",
+      "outcome": "Commercial Solar Project Manager \u00b7 R300-500k/yr ",
+      "entry": "Solar PV Installation + Electrical Wiring. "
+    },
+    {
+      "title": "Wind Energy Technician",
+      "nqf": "NQF L4",
+      "meta": "\u23f1 16 weeks   \u00b7   \ud83d\udccd In-person   \u00b7   \ud83d\udc65 Cohort",
+      "modules": "Wind Resource Assessment \u00b7 Turbine Types \u00b7 Mechanical Systems \u00b7 Electrical Systems \u00b7 Tower Climbing Safety \u00b7 Maintenance \u00b7 Site Assessment \u00b7 REI4P Context ",
+      "outcome": "Wind Turbine Technician \u00b7 major RE IPP employers ",
+      "entry": "Grade 10. Physical fitness. Heights comfort. "
+    }
+  ],
+  "SAF": [
+    {
+      "title": "Green Building & Sustainability",
+      "nqf": "NQF L5",
+      "meta": "\u23f1 10 weeks   \u00b7   \ud83d\udccd Hybrid   \u00b7   \ud83d\udc65 Workshop",
+      "modules": "Green Building Ratings \u00b7 Passive Design \u00b7 Insulation & Fenestration \u00b7 Water Efficiency \u00b7 Waste Management \u00b7 Green Materials \u00b7 GBCSA \u00b7 Carbon Reporting ",
+      "outcome": "Green Building Assessor ",
+      "entry": "Matric. Section 5 \u2014 School of Agriculture & Food Security 8 courses \u00b7 NQF L3\u2013L5 \u00b7 10\u201316 weeks "
+    },
+    {
+      "title": "Smallholder & Subsistence Farming",
+      "nqf": "NQF L3",
+      "meta": "\u23f1 16 weeks   \u00b7   \ud83d\udccd In-person   \u00b7   \ud83d\udc65 Cohort",
+      "modules": "Soil Science Basics \u00b7 Crop Selection \u00b7 Water Management \u00b7 Pest & Disease \u00b7 Composting \u00b7 Harvest & Storage \u00b7 Record Keeping \u00b7 Market Access ",
+      "outcome": "Subsistence to commercial farmer transition ",
+      "entry": "None. Suitable for rural communities. "
+    },
+    {
+      "title": "Hydroponics & Urban Farming",
+      "nqf": "NQF L4",
+      "meta": "\u23f1 12 weeks   \u00b7   \ud83d\udccd Hybrid   \u00b7   \ud83d\udc65 Cohort",
+      "modules": "Hydroponics Science \u00b7 System Types \u00b7 Nutrient Management \u00b7 LED Grow Lights \u00b7 Urban Spaces \u00b7 Container Farming \u00b7 Business Model \u00b7 Distribution ",
+      "outcome": "Urban Farmer \u00b7 Township food enterprise owner ",
+      "entry": "Grade 10. Available land or rooftop access. "
+    },
+    {
+      "title": "Agritech & Precision Farming",
+      "nqf": "NQF L5",
+      "meta": "\u23f1 16 weeks   \u00b7   \ud83d\udccd Hybrid   \u00b7   \ud83d\udc65 Cohort",
+      "modules": "IoT in Agriculture \u00b7 Drone Mapping \u00b7 Soil Sensors \u00b7 Weather Data \u00b7 AI Crop Monitoring \u00b7 Digital Record Keeping \u00b7 Market Apps \u00b7 Case Studies ",
+      "outcome": "Agritech Specialist \u00b7 commercial farm digital manager ",
+      "entry": "Matric. Digital literacy. Farming background. "
+    },
+    {
+      "title": "Food Processing & Value Addition",
+      "nqf": "NQF L4",
+      "meta": "\u23f1 12 weeks   \u00b7   \ud83d\udccd In-person   \u00b7   \ud83d\udc65 Cohort",
+      "modules": "Food Safety & HACCP \u00b7 Preservation Methods \u00b7 Drying & Packaging \u00b7 Dairy Processing \u00b7 Fruit & Veg \u00b7 Quality Control \u00b7 Labelling \u00b7 Small Business ",
+      "outcome": "Food Processing Technician \u00b7 cottage industry entrepreneur ",
+      "entry": "Grade 10. Basic maths. "
+    },
+    {
+      "title": "Agricultural Finance & Cooperatives",
+      "nqf": "NQF L5",
+      "meta": "\u23f1 10 weeks   \u00b7   \ud83d\udccd Hybrid   \u00b7   \ud83d\udc65 Workshop",
+      "modules": "Farm Business Plan \u00b7 DAFF Grant Applications \u00b7 Land Bank Products \u00b7 Cooperative Law \u00b7 Cost & Revenue \u00b7 Record Keeping \u00b7 Market Prices \u00b7 Export Basics ",
+      "outcome": "Cooperative Manager \u00b7 Agri-finance practitioner ",
+      "entry": "Matric. Any farming background. "
+    },
+    {
+      "title": "Animal Husbandry & Livestock",
+      "nqf": "NQF L4",
+      "meta": "\u23f1 16 weeks   \u00b7   \ud83d\udccd In-person   \u00b7   \ud83d\udc65 Cohort",
+      "modules": "Cattle Basics \u00b7 Poultry Production \u00b7 Goat & Pig Farming \u00b7 Veterinary First Aid \u00b7 Feed & Nutrition \u00b7 Breeding \u00b7 Disease Management \u00b7 Marketing ",
+      "outcome": "Livestock Farmer \u00b7 Poultry enterprise owner ",
+      "entry": "Grade 10. Rural access to land. "
+    },
+    {
+      "title": "Supply Chain & Agricultural Markets",
+      "nqf": "NQF L5",
+      "meta": "\u23f1 10 weeks   \u00b7   \ud83d\udccd Online   \u00b7   \ud83d\udc65 Cohort",
+      "modules": "Fresh Produce Markets \u00b7 Cold Chain Basics \u00b7 Logistics & Transport \u00b7 Export Markets \u00b7 Commodity Exchanges \u00b7 NAMC Price Reporting \u00b7 Retail Linkages \u00b7 Contracts ",
+      "outcome": "Agricultural Marketing Officer \u00b7 Produce market agent ",
+      "entry": "Matric. "
+    }
+  ],
+  "SFL": [
+    {
+      "title": "Conservation Agriculture",
+      "nqf": "NQF L4",
+      "meta": "\u23f1 10 weeks   \u00b7   \ud83d\udccd In-person   \u00b7   \ud83d\udc65 Workshop",
+      "modules": "Soil Health \u00b7 No-Till Farming \u00b7 Cover Crops \u00b7 Water Conservation \u00b7 Agroforestry \u00b7 Climate Adaptation \u00b7 Carbon Farming \u00b7 Policy Context ",
+      "outcome": "Conservation agriculture practitioner \u00b7 climate-resilient farmer ",
+      "entry": "Grade 10. Farming background. Section 6 \u2014 School of Financial Literacy & FinTech 7 courses \u00b7 NQF L3\u2013L5 \u00b7 6\u201316 weeks "
+    },
+    {
+      "title": "Personal Finance & Money Management",
+      "nqf": "NQF L3",
+      "meta": "\u23f1 6 weeks   \u00b7   \ud83d\udccd Online   \u00b7   \ud83d\udc65 Self-paced",
+      "modules": "Budgeting Basics \u00b7 Debt Management \u00b7 Banking Products \u00b7 Saving & Goals \u00b7 Insurance Basics \u00b7 Credit Score \u00b7 Consumer Rights \u00b7 Retirement Intro ",
+      "outcome": "Personal financial independence \u00b7 household financial literacy ",
+      "entry": "None. Grade 9 reading level. "
+    },
+    {
+      "title": "FinTech Fundamentals",
+      "nqf": "NQF L5",
+      "meta": "\u23f1 14 weeks   \u00b7   \ud83d\udccd Hybrid   \u00b7   \ud83d\udc65 Cohort",
+      "modules": "SA Financial System \u00b7 Digital Banking \u00b7 Payment APIs \u00b7 Blockchain Basics \u00b7 Regulatory Sandbox \u00b7 Open Finance \u00b7 FSCA Compliance \u00b7 Case Studies ",
+      "outcome": "FinTech Associate \u00b7 digital banking product analyst ",
+      "entry": "Matric. Digital literacy. Basic maths. "
+    },
+    {
+      "title": "Business Accounting & Bookkeeping",
+      "nqf": "NQF L4",
+      "meta": "\u23f1 16 weeks   \u00b7   \ud83d\udccd Online   \u00b7   \ud83d\udc65 Cohort",
+      "modules": "Double-Entry Bookkeeping \u00b7 Sage & Xero \u00b7 VAT & PAYE \u00b7 Financial Statements \u00b7 Cash Flow Management \u00b7 Payroll Basics \u00b7 SARS e-Filing \u00b7 Annual Returns ",
+      "outcome": "Bookkeeper \u00b7 R12-20k/mo. Own practice opportunity. ",
+      "entry": "Matric with Maths or Accounting. "
+    },
+    {
+      "title": "SARS Tax Compliance for Individuals",
+      "nqf": "NQF L4",
+      "meta": "\u23f1 8 weeks   \u00b7   \ud83d\udccd Online   \u00b7   \ud83d\udc65 Self-paced",
+      "modules": "SA Tax System \u00b7 Income Tax \u00b7 Capital Gains \u00b7 Provisional Tax \u00b7 eFiling Step by Step \u00b7 Common Mistakes \u00b7 Penalties & Appeals \u00b7 SMME Tax Relief ",
+      "outcome": "Personal tax compliance \u00b7 entry to tax practitioner path ",
+      "entry": "Matric. Basic numeracy. "
+    },
+    {
+      "title": "Investment & Wealth Building",
+      "nqf": "NQF L5",
+      "meta": "\u23f1 12 weeks   \u00b7   \ud83d\udccd Online   \u00b7   \ud83d\udc65 Cohort",
+      "modules": "Investment Basics \u00b7 JSE & Equities \u00b7 Unit Trusts & ETFs \u00b7 Property Investment \u00b7 Retirement Annuities \u00b7 Risk Profiling \u00b7 Tax-Efficient Investing \u00b7 Portfolio Building ",
+      "outcome": "Junior Investment Advisor \u00b7 personal wealth practitioner ",
+      "entry": "Personal Finance course or equivalent. Matric with Maths. "
+    },
+    {
+      "title": "Microfinance & Community Finance",
+      "nqf": "NQF L4",
+      "meta": "\u23f1 10 weeks   \u00b7   \ud83d\udccd Hybrid   \u00b7   \ud83d\udc65 Workshop",
+      "modules": "SACCO Principles \u00b7 Stokvel to Cooperative \u00b7 Loan Assessment \u00b7 Credit Risk \u00b7 Member Services \u00b7 Financial Records \u00b7 NCA Compliance \u00b7 Digital Tools ",
+      "outcome": "SACCO/Cooperative manager \u00b7 community finance facilitator ",
+      "entry": "Grade 10. "
+    }
+  ],
+  "SAT": [
+    {
+      "title": "Digital Payments & Mobile Money",
+      "nqf": "NQF L4",
+      "meta": "\u23f1 8 weeks   \u00b7   \ud83d\udccd Online   \u00b7   \ud83d\udc65 Self-paced",
+      "modules": "Mobile Money Ecosystem \u00b7 SnapScan & Ozow \u00b7 Yoco & Card Payments \u00b7 Crypto Basics \u00b7 Cross-Border Payments \u00b7 PASA Compliance \u00b7 Merchant Services \u00b7 Integration Basics ",
+      "outcome": "Digital payments practitioner \u00b7 township merchant tech adoption ",
+      "entry": "Grade 10. Smartphone ownership. Section 7 \u2014 School of Applied Trades & Engineering 9 courses \u00b7 NQF L3\u2013L5 \u00b7 12\u201324 weeks "
+    },
+    {
+      "title": "Electrical Installation & Wiring",
+      "nqf": "NQF L4",
+      "meta": "\u23f1 24 weeks   \u00b7   \ud83d\udccd In-person   \u00b7   \ud83d\udc65 Cohort",
+      "modules": "Electrical Theory \u00b7 SANS 10142 \u00b7 Domestic Wiring \u00b7 DB Boards \u00b7 3-Phase Basics \u00b7 Earthing \u00b7 CoC Testing \u00b7 OHS ",
+      "outcome": "Registered Electrical Installer \u00b7 own contracting \u00b7 R25-60k/mo ",
+      "entry": "Grade 10. Maths and Physical Science. "
+    },
+    {
+      "title": "Plumbing & Sanitation",
+      "nqf": "NQF L4",
+      "meta": "\u23f1 20 weeks   \u00b7   \ud83d\udccd In-person   \u00b7   \ud83d\udc65 Cohort",
+      "modules": "Water Systems \u00b7 Drain & Sewer \u00b7 SANS 10252 \u00b7 Pipe Fitting \u00b7 Hot Water Systems \u00b7 Leak Detection \u00b7 Gas Plumbing Intro \u00b7 OHS ",
+      "outcome": "Qualified Plumber \u00b7 R20-50k/mo. Chronic SA shortage. ",
+      "entry": "Grade 10. "
+    },
+    {
+      "title": "Welding & Metal Fabrication",
+      "nqf": "NQF L4",
+      "meta": "\u23f1 16 weeks   \u00b7   \ud83d\udccd In-person   \u00b7   \ud83d\udc65 Cohort",
+      "modules": "Arc Welding \u00b7 MIG & TIG \u00b7 Metal Cutting \u00b7 Blueprint Reading \u00b7 Structural Welding \u00b7 Quality Standards \u00b7 OHS \u00b7 Entrepreneurship ",
+      "outcome": "Welder/Fabricator \u00b7 manufacturing, construction, mining ",
+      "entry": "Grade 10. Physical aptitude. "
+    },
+    {
+      "title": "Automotive Mechanics & Servicing",
+      "nqf": "NQF L4",
+      "meta": "\u23f1 24 weeks   \u00b7   \ud83d\udccd In-person   \u00b7   \ud83d\udc65 Cohort",
+      "modules": "Engine Systems \u00b7 Electrical Diagnostics \u00b7 Brake & Suspension \u00b7 Transmission \u00b7 OBD Systems \u00b7 EV Introduction \u00b7 Workshop Management \u00b7 Customer Service ",
+      "outcome": "Motor Mechanic \u00b7 R18-40k/mo. EV transition opportunity. ",
+      "entry": "Grade 10. "
+    },
+    {
+      "title": "Hardware & Device Repair",
+      "nqf": "NQF L4",
+      "meta": "\u23f1 16 weeks   \u00b7   \ud83d\udccd In-person   \u00b7   \ud83d\udc65 Cohort",
+      "modules": "Electronics Basics \u00b7 PCB Repair \u00b7 Smartphone Repair \u00b7 Laptop Servicing \u00b7 Printer & Peripheral \u00b7 Data Recovery \u00b7 Business Setup \u00b7 Warranty & Ethics ",
+      "outcome": "Hardware Engineer \u00b7 repair shop owner \u00b7 township tech hub ",
+      "entry": "Grade 10. Good eyesight and dexterity. "
+    },
+    {
+      "title": "Tiling & Construction Finishing",
+      "nqf": "NQF L3",
+      "meta": "\u23f1 12 weeks   \u00b7   \ud83d\udccd In-person   \u00b7   \ud83d\udc65 Cohort",
+      "modules": "Surface Preparation \u00b7 Adhesives & Grout \u00b7 Floor Tiling \u00b7 Wall Tiling \u00b7 Waterproofing \u00b7 Plastering Basics \u00b7 Painting & Sealing \u00b7 Quoting & Billing ",
+      "outcome": "Tiler / Finisher \u00b7 R15-35k/mo. Constant demand. ",
+      "entry": "Grade 9. "
+    },
+    {
+      "title": "HVAC Basics & Refrigeration",
+      "nqf": "NQF L4",
+      "meta": "\u23f1 16 weeks   \u00b7   \ud83d\udccd In-person   \u00b7   \ud83d\udc65 Cohort",
+      "modules": "Refrigeration Cycle \u00b7 Split AC Installation \u00b7 Gas Handling \u00b7 Electrical Controls \u00b7 Fault Diagnosis \u00b7 Compliance \u00b7 Commercial Systems \u00b7 Service Business ",
+      "outcome": "HVAC Technician \u00b7 R20-45k/mo ",
+      "entry": "Grade 10. Electrical basics preferred. "
+    },
+    {
+      "title": "Construction Project Management",
+      "nqf": "NQF L5",
+      "meta": "\u23f1 12 weeks   \u00b7   \ud83d\udccd Hybrid   \u00b7   \ud83d\udc65 Cohort",
+      "modules": "CIDB Grades \u00b7 BOQ & Estimating \u00b7 Site Management \u00b7 OHS Act \u00b7 Subcontractor Management \u00b7 Contract Law \u00b7 Cash Flow \u00b7 NHBRC ",
+      "outcome": "Junior Construction PM \u00b7 SMME contractor ",
+      "entry": "Matric. Any artisan trade qualification. "
+    }
+  ],
+  "SCD": [
+    {
+      "title": "CNC Operation & Precision Engineering",
+      "nqf": "NQF L5",
+      "meta": "\u23f1 20 weeks   \u00b7   \ud83d\udccd In-person   \u00b7   \ud83d\udc65 Cohort",
+      "modules": "Engineering Drawing \u00b7 Manual Machining \u00b7 CNC Basics \u00b7 G-Code Programming \u00b7 CAD/CAM Intro \u00b7 Quality Control \u00b7 Metrology \u00b7 Production Context ",
+      "outcome": "CNC Operator \u00b7 manufacturing sector \u00b7 R20-40k/mo ",
+      "entry": "Matric with Maths. Section 8 \u2014 School of Creative & Digital Media 8 courses \u00b7 NQF L4\u2013L5 \u00b7 10\u201320 weeks "
+    },
+    {
+      "title": "Graphic Design Fundamentals",
+      "nqf": "NQF L4",
+      "meta": "\u23f1 16 weeks   \u00b7   \ud83d\udccd Online   \u00b7   \ud83d\udc65 Cohort",
+      "modules": "Design Principles \u00b7 Typography \u00b7 Colour Theory \u00b7 Adobe Illustrator \u00b7 Photoshop Basics \u00b7 Print Design \u00b7 Social Media Design \u00b7 Portfolio Building ",
+      "outcome": "Junior Graphic Designer \u00b7 R15-30k/mo. Freelance immediately. ",
+      "entry": "Grade 10. Creativity. Laptop access. "
+    },
+    {
+      "title": "UI/UX Design",
+      "nqf": "NQF L5",
+      "meta": "\u23f1 20 weeks   \u00b7   \ud83d\udccd Online   \u00b7   \ud83d\udc65 Cohort",
+      "modules": "User Research \u00b7 Wireframing \u00b7 Figma Mastery \u00b7 Prototyping \u00b7 Usability Testing \u00b7 Design Systems \u00b7 Accessibility \u00b7 Case Study Portfolio ",
+      "outcome": "UI/UX Designer \u00b7 R30-60k/mo. High demand. ",
+      "entry": "Graphic Design or equivalent. "
+    },
+    {
+      "title": "Video Production & Editing",
+      "nqf": "NQF L4",
+      "meta": "\u23f1 14 weeks   \u00b7   \ud83d\udccd Hybrid   \u00b7   \ud83d\udc65 Cohort",
+      "modules": "Camera Basics \u00b7 Lighting \u00b7 Sound Recording \u00b7 Premiere Pro \u00b7 Colour Grading \u00b7 Storytelling \u00b7 YouTube Optimisation \u00b7 Commercial Production ",
+      "outcome": "Video Producer/Editor \u00b7 R20-50k/mo ",
+      "entry": "Grade 10. Smartphone or camera access. "
+    },
+    {
+      "title": "Music Production & Audio Engineering",
+      "nqf": "NQF L4",
+      "meta": "\u23f1 16 weeks   \u00b7   \ud83d\udccd In-person   \u00b7   \ud83d\udc65 Cohort",
+      "modules": "DAW Basics \u00b7 Ableton/Logic Pro \u00b7 Beat Making \u00b7 Recording Vocals \u00b7 Mixing \u00b7 Mastering \u00b7 Music Business \u00b7 Distribution & Royalties ",
+      "outcome": "Music Producer \u00b7 Audio Engineer \u00b7 Afrobeats/Amapiano ecosystem ",
+      "entry": "Grade 10. Musical interest. Laptop access. "
+    },
+    {
+      "title": "Photography & Visual Storytelling",
+      "nqf": "NQF L4",
+      "meta": "\u23f1 12 weeks   \u00b7   \ud83d\udccd Hybrid   \u00b7   \ud83d\udc65 Cohort",
+      "modules": "Camera & Exposure \u00b7 Composition \u00b7 Lightroom Editing \u00b7 Portrait Photography \u00b7 Event Photography \u00b7 Commercial Photography \u00b7 Social Media \u00b7 Business Setup ",
+      "outcome": "Photographer \u00b7 R15-40k/mo event + commercial ",
+      "entry": "Grade 10. Any camera (smartphone OK). "
+    },
+    {
+      "title": "Social Media Management & Strategy",
+      "nqf": "NQF L4",
+      "meta": "\u23f1 10 weeks   \u00b7   \ud83d\udccd Online   \u00b7   \ud83d\udc65 Self-paced",
+      "modules": "Platform Algorithms \u00b7 Content Strategy \u00b7 Copywriting \u00b7 Scheduling Tools \u00b7 Analytics \u00b7 Paid Advertising \u00b7 Influencer Marketing \u00b7 Brand Voice ",
+      "outcome": "Social Media Manager \u00b7 R15-35k/mo. In-house or agency. ",
+      "entry": "Grade 10. Active social media user. "
+    },
+    {
+      "title": "Brand Identity & Strategy",
+      "nqf": "NQF L5",
+      "meta": "\u23f1 14 weeks   \u00b7   \ud83d\udccd Online   \u00b7   \ud83d\udc65 Cohort",
+      "modules": "Brand Theory \u00b7 Research & Positioning \u00b7 Visual Identity \u00b7 Brand Voice \u00b7 Brand Guidelines \u00b7 Rebranding \u00b7 Digital Brand \u00b7 SA Market Context ",
+      "outcome": "Brand Strategist \u00b7 R30-60k/mo. Agency or in-house. ",
+      "entry": "Graphic Design + Marketing experience. "
+    }
+  ],
+  "SLE": [
+    {
+      "title": "Animation & Motion Graphics",
+      "nqf": "NQF L5",
+      "meta": "\u23f1 18 weeks   \u00b7   \ud83d\udccd Online   \u00b7   \ud83d\udc65 Cohort",
+      "modules": "After Effects Basics \u00b7 Motion Design Principles \u00b7 2D Animation \u00b7 Typography Animation \u00b7 Explainer Videos \u00b7 3D Intro \u00b7 Sound Design Sync \u00b7 Commercial Showreel ",
+      "outcome": "Motion Graphics Artist \u00b7 broadcast, advertising, EdTech \u00b7 R25-55k/mo ",
+      "entry": "Graphic Design Fundamentals or equivalent. Section 9 \u2014 School of Leadership & Entrepreneurship 7 courses \u00b7 NQF L4\u2013L5 \u00b7 8\u201312 weeks "
+    },
+    {
+      "title": "Business Fundamentals & Entrepreneurship",
+      "nqf": "NQF L4",
+      "meta": "\u23f1 10 weeks   \u00b7   \ud83d\udccd Hybrid   \u00b7   \ud83d\udc65 Cohort",
+      "modules": "Business Model Canvas \u00b7 SA Business Environment \u00b7 Legal Structures \u00b7 CIPC Registration \u00b7 Basic Finance \u00b7 Marketing Basics \u00b7 Customer Discovery \u00b7 Pitch Deck ",
+      "outcome": "SMME founder-ready \u00b7 basic business operational competence ",
+      "entry": "Grade 10. "
+    },
+    {
+      "title": "Social Entrepreneurship",
+      "nqf": "NQF L5",
+      "meta": "\u23f1 12 weeks   \u00b7   \ud83d\udccd Hybrid   \u00b7   \ud83d\udc65 Cohort",
+      "modules": "Social Enterprise Models \u00b7 Impact Measurement \u00b7 NGO vs NPO vs NPC \u00b7 Funding Landscape \u00b7 Corporate Partnerships \u00b7 Storytelling for Impact \u00b7 Governance \u00b7 Case Studies ",
+      "outcome": "Social enterprise founder \u00b7 NGO programme manager \u00b7 R20-40k/mo ",
+      "entry": "Matric. Community involvement. "
+    },
+    {
+      "title": "Startup Finance & Fundraising",
+      "nqf": "NQF L5",
+      "meta": "\u23f1 10 weeks   \u00b7   \ud83d\udccd Online   \u00b7   \ud83d\udc65 Cohort",
+      "modules": "Financial Modelling \u00b7 Revenue Projections \u00b7 Cap Table Basics \u00b7 VC & Angel Funding \u00b7 NEF & IDC Applications \u00b7 Pitch to Investors \u00b7 Term Sheets \u00b7 Due Diligence ",
+      "outcome": "Startup CFO-ready \u00b7 investor-pitch competent founder ",
+      "entry": "Matric. Basic numeracy. Own business idea. "
+    },
+    {
+      "title": "Management & Team Leadership",
+      "nqf": "NQF L5",
+      "meta": "\u23f1 12 weeks   \u00b7   \ud83d\udccd Hybrid   \u00b7   \ud83d\udc65 Cohort",
+      "modules": "Leadership Styles \u00b7 Team Dynamics \u00b7 Performance Management \u00b7 Conflict Resolution \u00b7 Change Management \u00b7 Operations \u00b7 Meeting Facilitation \u00b7 360 Feedback ",
+      "outcome": "Team Lead \u00b7 Operations Manager \u00b7 R25-50k/mo ",
+      "entry": "Matric. 1yr work experience. "
+    },
+    {
+      "title": "Legal for Business & Contracts",
+      "nqf": "NQF L4",
+      "meta": "\u23f1 8 weeks   \u00b7   \ud83d\udccd Online   \u00b7   \ud83d\udc65 Self-paced",
+      "modules": "Company Law Basics \u00b7 Contract Essentials \u00b7 IP Protection \u00b7 Employment Law \u00b7 Consumer Protection Act \u00b7 POPIA for SMEs \u00b7 Dispute Resolution \u00b7 Compliance Calendar ",
+      "outcome": "Business legal literacy \u00b7 self-protective founder ",
+      "entry": "Matric. "
+    },
+    {
+      "title": "Franchise & Scale",
+      "nqf": "NQF L5",
+      "meta": "\u23f1 10 weeks   \u00b7   \ud83d\udccd Hybrid   \u00b7   \ud83d\udc65 Workshop",
+      "modules": "Franchise vs Own Business \u00b7 SA Franchise Landscape \u00b7 FLA \u00b7 Operations Manual \u00b7 Franchise Finance \u00b7 Site Selection \u00b7 Training Systems \u00b7 Scaling Your Own Model ",
+      "outcome": "Franchise owner or seller \u00b7 R30-100k/mo ",
+      "entry": "Matric. Business Fundamentals course. "
+    },
+    {
+      "title": "Total courses: 78 across all 10 schools.",
+      "nqf": "NQF range: L2 (digital literacy for first-time computer users) to L6 (advanced cloud architect, school leadership).",
+      "meta": "",
+      "modules": "",
+      "outcome": "",
+      "entry": ""
+    }
+  ],
+  "SEC": [
+    {
+      "title": "Public Sector & Government Tenders",
+      "nqf": "NQF L4",
+      "meta": "\u23f1 8 weeks   \u00b7   \ud83d\udccd Online   \u00b7   \ud83d\udc65 Self-paced",
+      "modules": "PFMA & MFMA Basics \u00b7 CSD Registration \u00b7 B-BBEE Levels \u00b7 Tender Documents \u00b7 Bid Preparation \u00b7 Ethics & Compliance \u00b7 Payment Processes \u00b7 Track Record ",
+      "outcome": "Government tender supplier \u00b7 SMME public procurement participant ",
+      "entry": "Grade 10. Own registered business. Section 10 \u2014 School of Early Childhood & Education 7 courses \u00b7 NQF L4\u2013L5 \u00b7 12\u201332 weeks "
+    },
+    {
+      "title": "ECD Practitioner (Birth to 4 years)",
+      "nqf": "NQF L4",
+      "meta": "\u23f1 32 weeks   \u00b7   \ud83d\udccd In-person   \u00b7   \ud83d\udc65 Cohort",
+      "modules": "Child Development \u00b7 Learning Through Play \u00b7 Nutrition & Health \u00b7 Stimulation Activities \u00b7 Parent Engagement \u00b7 Inclusion \u00b7 Record Keeping \u00b7 ECD Policy ",
+      "outcome": "Registered ECD Practitioner \u00b7 DSD subsidy employment \u00b7 R6-12k/mo ",
+      "entry": "Grade 10. Police clearance. "
+    },
+    {
+      "title": "Grade R & Foundation Phase Support",
+      "nqf": "NQF L4",
+      "meta": "\u23f1 20 weeks   \u00b7   \ud83d\udccd Hybrid   \u00b7   \ud83d\udc65 Cohort",
+      "modules": "Literacy Foundations \u00b7 Numeracy Basics \u00b7 Phonics & Reading \u00b7 Learning Materials \u00b7 Classroom Support \u00b7 IEP Basics \u00b7 DBE Curriculum \u00b7 Assessment ",
+      "outcome": "Teacher Assistant \u00b7 Foundation Phase Support \u00b7 school employment ",
+      "entry": "Matric. Clear criminal record. "
+    },
+    {
+      "title": "Remedial Literacy & Numeracy",
+      "nqf": "NQF L5",
+      "meta": "\u23f1 16 weeks   \u00b7   \ud83d\udccd Hybrid   \u00b7   \ud83d\udc65 Cohort",
+      "modules": "Reading Disorders \u00b7 Dyscalculia \u00b7 Assessment Tools \u00b7 Intervention Strategies \u00b7 Parent Workshops \u00b7 Small Group Teaching \u00b7 IEP Writing \u00b7 Progress Tracking ",
+      "outcome": "Remedial Teacher \u00b7 private practice \u00b7 R20-40k/mo ",
+      "entry": "Matric. Teaching background helpful. "
+    },
+    {
+      "title": "EdTech & Digital Classrooms",
+      "nqf": "NQF L4",
+      "meta": "\u23f1 12 weeks   \u00b7   \ud83d\udccd Hybrid   \u00b7   \ud83d\udc65 Cohort",
+      "modules": "Digital Devices in Schools \u00b7 LMS Platforms \u00b7 Google Classroom \u00b7 Video Lessons \u00b7 Assessment Tech \u00b7 BYOD Policy \u00b7 Safety Online \u00b7 SA Context & Access ",
+      "outcome": "EdTech Coordinator \u00b7 digital learning facilitator ",
+      "entry": "Matric. "
+    },
+    {
+      "title": "Inclusive Education & Special Needs",
+      "nqf": "NQF L5",
+      "meta": "\u23f1 16 weeks   \u00b7   \ud83d\udccd Hybrid   \u00b7   \ud83d\udc65 Cohort",
+      "modules": "Disability Types \u00b7 SIAS Policy \u00b7 Differentiated Instruction \u00b7 AAC Basics \u00b7 OT & Speech Integration \u00b7 Full-Service Schools \u00b7 Family Engagement \u00b7 Advocacy ",
+      "outcome": "Inclusion Support Specialist \u00b7 R20-35k/mo ",
+      "entry": "Matric. "
+    },
+    {
+      "title": "Adult Education & Training (AET)",
+      "nqf": "NQF L4",
+      "meta": "\u23f1 16 weeks   \u00b7   \ud83d\udccd Hybrid   \u00b7   \ud83d\udc65 Cohort",
+      "modules": "Adult Learning Theory \u00b7 ABET Curriculum \u00b7 Literacy Teaching \u00b7 Numeracy for Adults \u00b7 Life Skills \u00b7 Facilitator Skills \u00b7 ETDP Alignment \u00b7 Workplace AET ",
+      "outcome": "AET Facilitator \u00b7 workplace training \u00b7 NGO literacy programme ",
+      "entry": "Matric. "
+    }
+  ],
+  "SCA": [
+    {
+      "title": "School Leadership & Management",
+      "nqf": "NQF L5",
+      "meta": "\u23f1 14 weeks   \u00b7   \ud83d\udccd Hybrid   \u00b7   \ud83d\udc65 Cohort",
+      "modules": "Education Leadership \u00b7 SASA & Policy \u00b7 Financial Management \u00b7 HR & Performance \u00b7 SGB Governance \u00b7 Community Relations \u00b7 Strategic Planning \u00b7 Turnaround Schools ",
+      "outcome": "Deputy Principal \u00b7 HOD \u00b7 School Management Team \u00b7 R35-60k/mo ",
+      "entry": "Matric. 3yrs teaching/school experience. Section 11 \u2014 School of Environment & Climate Action 7 courses \u00b7 NQF L3\u2013L5 \u00b7 6\u201320 weeks "
+    },
+    {
+      "title": "Climate Literacy & Action",
+      "nqf": "NQF L3",
+      "meta": "\u23f1 6 weeks   \u00b7   \ud83d\udccd Online   \u00b7   \ud83d\udc65 Self-paced",
+      "modules": "Climate Science Basics \u00b7 SA Climate Impacts \u00b7 Carbon Footprint \u00b7 Climate Adaptation \u00b7 Community Action \u00b7 Youth Activism \u00b7 Policy Context \u00b7 Green Careers ",
+      "outcome": "Informed climate citizen \u00b7 community climate ambassador ",
+      "entry": "None. Grade 9 reading level. "
+    },
+    {
+      "title": "Conservation & Wildlife Management",
+      "nqf": "NQF L4",
+      "meta": "\u23f1 20 weeks   \u00b7   \ud83d\udccd In-person   \u00b7   \ud83d\udc65 Cohort",
+      "modules": "Biodiversity Basics \u00b7 SA Biomes \u00b7 Game Ranging \u00b7 Anti-Poaching \u00b7 Veld & Fire Management \u00b7 Community Conservation \u00b7 Ecotourism \u00b7 Field Skills ",
+      "outcome": "Game Ranger \u00b7 Conservation Officer \u00b7 R10-25k/mo ",
+      "entry": "Grade 10. Driver's licence. "
+    },
+    {
+      "title": "Waste Management & Circular Economy",
+      "nqf": "NQF L4",
+      "meta": "\u23f1 12 weeks   \u00b7   \ud83d\udccd Hybrid   \u00b7   \ud83d\udc65 Cohort",
+      "modules": "Waste Types \u00b7 Recycling Value Chain \u00b7 Upcycling Business \u00b7 Hazardous Waste \u00b7 E-Waste \u00b7 Policy & NEM:WA \u00b7 Buy-Back Centres \u00b7 Waste Entrepreneur ",
+      "outcome": "Waste Entrepreneur \u00b7 recycling business owner \u00b7 R15-50k/mo ",
+      "entry": "Grade 10. "
+    },
+    {
+      "title": "Environmental Law & Compliance",
+      "nqf": "NQF L5",
+      "meta": "\u23f1 12 weeks   \u00b7   \ud83d\udccd Online   \u00b7   \ud83d\udc65 Cohort",
+      "modules": "SA Environmental Law \u00b7 NEMA \u00b7 EIA Process \u00b7 Water Law \u00b7 Air Quality \u00b7 Mining Impacts \u00b7 Corporate Compliance \u00b7 Enforcement ",
+      "outcome": "Environmental Compliance Officer \u00b7 R25-50k/mo ",
+      "entry": "Matric. "
+    },
+    {
+      "title": "Carbon Markets & Climate Finance",
+      "nqf": "NQF L5",
+      "meta": "\u23f1 10 weeks   \u00b7   \ud83d\udccd Online   \u00b7   \ud83d\udc65 Cohort",
+      "modules": "Carbon Trading Basics \u00b7 SA Carbon Tax \u00b7 Voluntary Carbon Markets \u00b7 Verification Process \u00b7 Project Development \u00b7 Financing Green Projects \u00b7 CDM & JCM \u00b7 African Context ",
+      "outcome": "Carbon Broker \u00b7 Climate Finance Analyst \u00b7 R30-60k/yr ",
+      "entry": "Matric. "
+    },
+    {
+      "title": "Ecotourism & Nature-Based Business",
+      "nqf": "NQF L4",
+      "meta": "\u23f1 14 weeks   \u00b7   \ud83d\udccd Hybrid   \u00b7   \ud83d\udc65 Cohort",
+      "modules": "Ecotourism Principles \u00b7 SA Tourism Context \u00b7 Game Lodge Operations \u00b7 Community Tourism \u00b7 Guiding Skills \u00b7 Marketing \u00b7 Conservation Finance \u00b7 SMMEs in Tourism ",
+      "outcome": "Eco-tourism operator \u00b7 lodge manager \u00b7 community tourism enterprise ",
+      "entry": "Grade 10. English. Driver's licence. "
+    },
+    {
+      "title": "Water Resource Management",
+      "nqf": "NQF L5",
+      "meta": "\u23f1 14 weeks   \u00b7   \ud83d\udccd Hybrid   \u00b7   \ud83d\udc65 Cohort",
+      "modules": "Water Cycle & Scarcity \u00b7 DWS Act \u00b7 Catchment Management \u00b7 Water Quality Testing \u00b7 Irrigation Efficiency \u00b7 Groundwater \u00b7 Water Security Planning \u00b7 Grey & Rainwater ",
+      "outcome": "Water Resources Officer \u00b7 municipal water management ",
+      "entry": "Matric. Science background. Section 12 \u2014 Phase 2 Summary Curriculum at a glance "
+    }
+  ]
+}

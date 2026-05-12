@@ -1,0 +1,228 @@
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { CheckCircle2, Info, Landmark, CreditCard, Clock } from 'lucide-react';
+
+export function Requirements({ onOpenModal }: { onOpenModal: (id: string, metadata?: any) => void }) {
+  const navigate = useNavigate();
+  const criteria = [
+    { title: 'Academic Qualification', desc: 'Grade 12 (Matric) certificate or equivalent industry-standard prerequisite.', mandatory: true },
+    { title: 'English Proficiency', desc: 'Ability to read, write and communicate effectively in English for technical documentation.', mandatory: true },
+    { title: 'Digital Literacy', desc: 'Basic computer skills (email, web browsing, file management). Coding experience is NOT required for Launchpad.', mandatory: false },
+    { title: 'Hardware Requirements', desc: 'A modern laptop (i5 processor, 8GB RAM minimum) and stable internet connection.', mandatory: true }
+  ];
+
+  const handleLinkClick = (title: string) => {
+    switch (title) {
+      case 'Application Portal':
+        onOpenModal('apply_direct');
+        break;
+      case 'Required Documents':
+        onOpenModal('required_docs');
+        break;
+      case 'Interview Tips':
+        onOpenModal('interview_tips');
+        break;
+      default:
+        break;
+    }
+  };
+
+  return (
+    <section id="entry" className="bg-bg py-24 border-t border-border-custom px-6 sm:px-14">
+      <div className="max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-10 lg:gap-16 mb-16 items-start">
+          <div>
+            <div className="text-brand font-dm-mono text-[10px] uppercase tracking-widest mb-4">Prerequisites</div>
+            <h2 className="font-syne font-extrabold text-4xl mb-6 text-white">Who can apply to<br />the Academy?</h2>
+            <p className="text-text-muted leading-relaxed max-w-lg">
+              We look for passion over pedigree. Our admissions process is designed to find individuals with high potential and a drive to solve African problems using global tech.
+            </p>
+          </div>
+          <div className="bg-white/3 border border-border-custom rounded-2xl p-6 animate-fadeUp delay-200">
+            <div className="font-syne font-bold text-[11px] uppercase tracking-widest text-brand mb-4 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand"></span>
+              Admission Links
+            </div>
+            <ul className="space-y-4">
+              {[
+                { t: 'Application Portal', d: 'Submit online' },
+                { t: 'Required Documents', d: 'Checklist PDF' },
+                { t: 'Interview Tips', d: 'GDA Prep Guide' }
+              ].map((res, i) => (
+                <li key={i} className="group cursor-pointer" onClick={() => handleLinkClick(res.t)}>
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <div className="font-syne font-bold text-[13px] group-hover:text-brand transition-colors">{res.t}</div>
+                      <div className="text-[10px] text-text-muted">{res.d}</div>
+                    </div>
+                    <span className="text-text-dim text-xs group-hover:translate-x-1 transition-transform">→</span>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          <div className="space-y-6">
+              {criteria.map((c, i) => (
+                <div key={i} className="flex gap-4 p-4 rounded-2xl bg-white/3 border border-border-custom">
+                  <div className={`mt-0.5 ${c.mandatory ? 'text-emerald' : 'text-brand'}`}>
+                    <CheckCircle2 className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-sm text-white">{c.title}</h3>
+                    <p className="text-[12px] text-text-muted mt-1">{c.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          <div className="relative">
+            <div className="aspect-square rounded-3xl overflow-hidden border border-border-custom bg-navy relative">
+              <img 
+                src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=2070" 
+                className="w-full h-full object-cover opacity-60 grayscale hover:grayscale-0 transition-all duration-700"
+                alt="Student collaborating"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy via-transparent to-transparent" />
+              <div className="absolute bottom-10 left-10 right-10 p-8 bg-black/40 backdrop-blur-md rounded-2xl border border-white/10">
+                <div className="text-brand text-2xl font-black mb-1">98%</div>
+                <div className="text-[10px] uppercase tracking-widest text-white/60">Employment Rate Post-Placement</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function TuitionFees({ onOpenModal }: { onOpenModal: (id: string, metadata?: any) => void }) {
+  const navigate = useNavigate();
+  const [activeLevel, setActiveLevel] = useState('Associate');
+  const [activeTrack, setActiveTrack] = useState('Cloud Practitioner Pro');
+
+  const levelData: Record<string, { price: string, install: string, desc: string, tracks: string[] }> = {
+    'Foundational': {
+      price: 'R 12,500',
+      install: 'R 2,250 /mo',
+      desc: '6 Month Term',
+      tracks: ['Cloud Launchpad', 'AI Fundamentals', 'Cyber Essentials', 'Data Literacy', 'Digital Literacy for Work', 'Code Launchpad', 'Digital Entrepreneurship 101']
+    },
+    'Associate': {
+      price: 'R 36,000',
+      install: 'R 6,500 /mo',
+      desc: '6 Month Term',
+      tracks: ['Cloud Practitioner Pro', 'ML Essentials', 'Ethical Hacking', 'Data Analysis & BI', 'Process Digitisation', 'Full-Stack Development', 'E-Commerce & Marketing']
+    },
+    'Professional': {
+      price: 'R 58,000',
+      install: 'R 10,500 /mo',
+      desc: '6 Month Term',
+      tracks: ['Cloud Architect', 'Applied AI Engineering', 'Security Operations', 'Data Engineering', 'Digital Transformation Lead', 'DevOps & Cloud-Native', 'Digital Business Strategy']
+    },
+    'Enterprise': {
+      price: 'R 85,000',
+      install: 'R 15,500 /mo',
+      desc: '6 Month Term',
+      tracks: ['Multi-Cloud Enterprise', 'AI Strategy & Enterprise', 'CISO Programme', 'AI-Driven Analytics', 'CDO Programme', 'Platform Engineering', 'Innovation & Ventures', 'Dual Specialisation']
+    }
+  };
+
+  const currentLevel = levelData[activeLevel];
+
+  useEffect(() => {
+    // Reset track when level changes
+    if (!currentLevel.tracks.includes(activeTrack)) {
+      setActiveTrack(currentLevel.tracks[0]);
+    }
+  }, [activeLevel]);
+
+  const plans = [
+    { title: 'Upfront Investment', price: currentLevel.price, benefit: '15% Discount included', popular: false, mode: 'Upfront Investment' },
+    { title: 'Standard Installment', price: currentLevel.install, benefit: currentLevel.desc, popular: true, mode: 'Standard Installment' },
+    { title: 'Income Share (ISA)', price: '0 Upfront', benefit: 'Pay only once employed', popular: false, mode: 'Income Share (ISA)' }
+  ];
+
+  const handleEnroll = (planMode: string) => {
+    onOpenModal('apply_direct', {
+      program: activeTrack,
+      paymentMode: planMode
+    });
+  };
+
+  return (
+    <section id="tuition" className="bg-navy py-24 border-t border-border-custom px-6 sm:px-14 relative overflow-hidden">
+      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-brand/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="max-w-6xl mx-auto text-center relative z-10">
+        <h2 className="font-syne font-extrabold text-4xl mb-4 text-white">Tuition & Investment</h2>
+        <p className="text-text-muted mb-12 max-w-2xl mx-auto">Explore our high-fidelity investment models tailored to your career trajectory.</p>
+        
+        <div className="max-w-4xl mx-auto bg-card border border-border-custom rounded-3xl p-6 md:p-10 mb-16 shadow-2xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+            <div className="text-left">
+              <label className="block font-dm-mono text-[9px] uppercase tracking-[0.2em] text-brand mb-4">01. Select proficiency Level</label>
+              <div className="grid grid-cols-2 gap-3">
+                {Object.keys(levelData).map((level) => (
+                  <button
+                    key={level}
+                    onClick={() => setActiveLevel(level)}
+                    className={`px-4 py-3 rounded-xl font-syne font-bold text-[11px] transition-all border ${activeLevel === level ? 'bg-brand border-brand text-navy' : 'bg-white/5 border-border-custom text-text-muted hover:border-brand/30'}`}
+                  >
+                    {level}
+                  </button>
+                ))}
+              </div>
+            </div>
+            <div className="text-left h-full flex flex-col justify-end">
+              <label className="block font-dm-mono text-[9px] uppercase tracking-[0.2em] text-brand mb-4">02. Choose specific track</label>
+              <div className="relative">
+                <select 
+                  value={activeTrack}
+                  onChange={(e) => setActiveTrack(e.target.value)}
+                  className="w-full bg-surface border border-border-custom rounded-xl p-4 px-6 font-syne font-bold text-[13px] text-white outline-none focus:border-brand/40 transition-all appearance-none cursor-pointer"
+                >
+                  {currentLevel.tracks.map((track) => (
+                    <option key={track} value={track}>{track}</option>
+                  ))}
+                </select>
+                <div className="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none text-text-dim text-[10px]">▼</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {plans.map((plan, i) => (
+            <div key={i} className={`p-8 rounded-3xl border transition-all flex flex-col ${plan.popular ? 'bg-brand border-brand scale-105 z-20 shadow-2xl' : 'bg-white/3 border-border-custom hover:border-brand/30'}`}>
+              <h3 className={`font-syne font-bold text-lg mb-4 ${plan.popular ? 'text-navy' : 'text-white'}`}>{plan.title}</h3>
+              <div className={`text-3xl font-black mb-2 ${plan.popular ? 'text-navy' : 'text-brand'}`}>{plan.price}</div>
+              <p className={`text-[11px] mb-8 uppercase tracking-widest ${plan.popular ? 'text-navy/70' : 'text-text-dim'}`}>{plan.benefit}</p>
+              <div className="flex-1" />
+              <button 
+                onClick={() => handleEnroll(plan.mode)}
+                className={`w-full py-3 rounded-xl font-bold text-sm transition-all ${plan.popular ? 'bg-navy text-white hover:bg-navy/80' : 'bg-brand text-navy hover:bg-brand-dim'}`}
+              >
+                Enroll in {activeTrack}
+              </button>
+            </div>
+          ))}
+        </div>
+        
+        <div className="mt-16 flex flex-col md:flex-row items-center justify-center gap-10">
+          <div className="flex items-center gap-3">
+            <Landmark className="text-brand w-5 h-5" />
+            <span className="text-[12px] text-text-soft">Institutional Mastery Provider</span>
+          </div>
+          <div className="flex items-center gap-3">
+            <CreditCard className="text-brand w-5 h-5" />
+            <span className="text-[12px] text-text-soft">Paystack Secure Payments</span>
+          </div>
+          <div className="flex items-center gap-3">
+            <Clock className="text-brand w-5 h-5" />
+            <span className="text-[12px] text-text-soft">Flexible Net Monthly Terms</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

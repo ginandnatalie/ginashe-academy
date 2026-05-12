@@ -1,0 +1,16 @@
+--- GA_Phase1_StreamMapping.docx ---
+Error reading GA_Phase1_StreamMapping.docx: "no content type for partname '/word/media/59e052b0ba7785e74b24516788a5bb7b8b6e4bc8.undefined' in [Content_Types].xml"
+
+
+--- GA_Phase2_CurriculumBlueprint.docx ---
+Error reading GA_Phase2_CurriculumBlueprint.docx: "no content type for partname '/word/media/59e052b0ba7785e74b24516788a5bb7b8b6e4bc8.undefined' in [Content_Types].xml"
+
+
+--- GA_Phase3_DeliveryLMSRevenue.docx ---
+Error reading GA_Phase3_DeliveryLMSRevenue.docx: "no content type for partname '/word/media/59e052b0ba7785e74b24516788a5bb7b8b6e4bc8.undefined' in [Content_Types].xml"
+
+
+--- GA_Phase4_GovernanceBrandWeb.docx ---
+Error reading GA_Phase4_GovernanceBrandWeb.docx: "no content type for partname '/word/media/59e052b0ba7785e74b24516788a5bb7b8b6e4bc8.undefined' in [Content_Types].xml"
+
+

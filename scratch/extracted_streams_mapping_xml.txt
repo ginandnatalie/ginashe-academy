@@ -1,0 +1,1742 @@
+--- GA_Phase1_StreamMapping.docx ---
+Strategic Blueprint
+PHASE 1
+Stream Mapping
+10 streams · 80+ courses · purpose-built for Africa
+Mission
+Making transformation a reality — one learner at a time.
+Vision
+Africa's most trusted and accessible skills academy.
+Master tagline
+"Build Something Real" — applicable across every stream.
+Document 1 of 4 in the Ginashe Academy Strategic Blueprint
+Issued: 3 May 2026
+Prepared by Ginashe Group  ·  Ginashe Academy (Pty) Ltd
+Section 1 — Strategic Context
+Ginashe Academy is a pan-African skills academy operating from ginashe.academy, incorporated as Ginashe Academy (Pty) Ltd. The Academy began as the Digital Systems Stream (DSS), focused on cloud computing through the Cloud Launchpad programme. With the acquisition of the ginashe.academy domain and the strategic decision to expand beyond the digital niche, DSS becomes one of ten streams within a broader institution serving the most urgent skill demands of South Africa and the African continent.
+This document — Phase 1 of 4 — presents the stream mapping. It sets out which streams will be established, why each is strategically important for the South African and continental context, and the order of priority for launch.
+Subsequent documents in the Strategic Blueprint cover:
+Phase 2 — Curriculum Blueprint: detailed course structures, NQF levels, and delivery models for all 80+ courses.
+Phase 3 — Delivery, LMS & Revenue: delivery channels, accreditation roadmap, LMS architecture, facilitator training, and the revenue model.
+Phase 4 — Governance, Brand & Web: board structure, brand identity system, website architecture, partnership framework, and legal structure.
+Selection criteria
+The 10 streams were selected and ranked using four criteria:
+Skills gap urgency — how acute is the SA shortage in this skill area?
+Employment yield — does graduating from this stream produce immediate employment or entrepreneurial pathways?
+Continental relevance — does the skill transfer beyond SA into the broader African market?
+Delivery feasibility — can Ginashe Academy realistically deliver this stream at scale within 24 months?
+Tier classification
+Each stream is classified into one of three tiers:
+Flagship (5 streams) — immediate SA need, launching in Year 1.
+Strategic (4 streams) — 2 to 5 year growth horizon, launching in Year 1 to 2.
+Emerging (1 stream) — continental scale opportunity, launching in Year 2.
+Section 2 — The Ten Streams
+The streams are presented in priority order. Stream #1 — Digital Systems (DSS) — is already operational. Streams #2 to #5 are flagship streams to be launched in Year 1. Streams #6 to #9 are strategic streams for Year 1 to 2 launch. Stream #10 is the emerging stream for Year 2.
+#1
+DSS
+Digital Systems Stream
+Software, cloud & artificial intelligence
+•  Flagship — already operating
+Why this matters
+Largest skills gap in SA — over 20,000 unfilled cloud jobs by 2027. Direct POPIA compliance demand from every SA company. AWS af-south-1 in Cape Town gives SA learners a uniquely accessible entry point into the global cloud economy.
+Sample courses
+Cloud Launchpad  ·  AI Foundations  ·  Web Development  ·  Data Engineering  ·  Cybersecurity  ·  DevOps & IaC  ·  Digital Literacy  ·  Software Entrepreneurship
+Graduate outcomes
+Cloud Engineer  ·  AI/ML Specialist  ·  Full-Stack Developer  ·  Security Analyst
+At a glance
+10+ courses   ·   6–24 weeks   ·   NQF L3–L6
+#2
+HSS
+Health Sciences Stream
+Community health, nursing & mental wellbeing
+•  Flagship — highest SA urgency
+Why this matters
+SA has 1 doctor per 1,700 people. Community Health Workers are the most scalable health intervention available. Post-COVID mental health crisis is the country's most underserved public health concern. SAQA-aligned qualifications produce immediately employable graduates.
+Sample courses
+Community Health Worker  ·  Mental Health First Aid  ·  HIV/AIDS Care  ·  Maternal & Child Health  ·  Nutrition Science  ·  Emergency Response  ·  Health Administration  ·  OHS  ·  Palliative Care
+Graduate outcomes
+Community Health Worker  ·  Mental Health Counsellor  ·  Clinic Administrator  ·  Health Educator
+At a glance
+12+ courses   ·   8–52 weeks   ·   NQF L3–L5
+#3
+EIS
+Energy & Infrastructure Stream
+Renewable energy, power & water systems
+•  Flagship — load-shedding crisis
+Why this matters
+The Eskom crisis and Just Energy Transition will create 50,000+ jobs in renewable energy by 2030. Solar PV technicians are in chronic shortage. Every household, business, and farm in SA needs energy resilience expertise — making this the most economically urgent stream.
+Sample courses
+Solar PV Installation  ·  Battery Storage Systems  ·  Wind Energy Technician  ·  Grid & Off-Grid Design  ·  Water & Sanitation  ·  Energy Auditing  ·  Electrical Wiring  ·  Green Building
+Graduate outcomes
+Solar PV Technician  ·  Energy Auditor  ·  Renewable Systems Designer  ·  Utility Manager
+At a glance
+10+ courses   ·   8–24 weeks   ·   NQF L3–L5
+#4
+AFS
+Agriculture & Food Security Stream
+Modern farming, agritech & food systems
+•  Flagship — food sovereignty
+Why this matters
+SA has 6 million smallholder farmers. Food insecurity affects 1 in 5 households. Urban farming is a youth-accessible, low-capital entry point into agriculture. Agritech is creating new categories of well-paid rural employment that did not exist 5 years ago.
+Sample courses
+Smallholder Farming  ·  Hydroponics & Urban Farming  ·  Agritech & Precision Farming  ·  Food Processing  ·  Agricultural Finance  ·  Animal Husbandry  ·  Supply Chain & Markets  ·  Conservation Agriculture
+Graduate outcomes
+Agripreneur  ·  Precision Farmer  ·  Food Processing Technician  ·  Agritech Specialist
+At a glance
+10+ courses   ·   8–26 weeks   ·   NQF L3–L5
+#5
+FLS
+Financial Literacy & FinTech Stream
+Personal finance, banking & digital payments
+•  Flagship — 72% unbanked Africa
+Why this matters
+SAICA reports 70% of SA youth cannot manage a basic budget. FSCA compliance demand is growing every year. The township economy is digitising rapidly, creating immediate demand for FinTech-literate professionals at every level.
+Sample courses
+Personal Finance & Budgeting  ·  FinTech Fundamentals  ·  Business Accounting  ·  Digital Payments  ·  Microfinance & SACCOs  ·  Investment Basics  ·  Tax & SARS Compliance
+Graduate outcomes
+Financial Advisor  ·  FinTech Specialist  ·  SACCO Manager  ·  Tax Practitioner
+At a glance
+9+ courses   ·   4–16 weeks   ·   NQF L2–L5
+#6
+ATS
+Applied Trades & Engineering Stream
+Electrical, plumbing, construction & repair
+•  Strategic — artisan shortage
+Why this matters
+SA needs 30,000 more artisans every year. TVET colleges are under-enrolled and over-stretched. Trades produce immediate employment AND entrepreneurship pathways. The country cannot build, rewire, or maintain itself without skilled artisans.
+Sample courses
+Electrical Wiring & Installation  ·  Plumbing & Sanitation  ·  Welding & Metal Fabrication  ·  Automotive Mechanics  ·  Hardware Repair  ·  Tiling & Construction Finishing  ·  HVAC & Refrigeration  ·  CNC Operation  ·  Construction PM
+Graduate outcomes
+Master Electrician  ·  Plumber  ·  Automotive Technician  ·  Hardware Engineer
+At a glance
+11+ courses   ·   12–52 weeks   ·   NQF L3–L5
+#7
+CDS
+Creative & Digital Media Stream
+Design, film, music & content creation
+•  Strategic — creator economy
+Why this matters
+Africa's creative economy is projected at $4.2B by 2025. Nollywood, Afrobeats, Amapiano, and SA fashion are global cultural exports. Digital tools democratise entry — a learner with a laptop and skill can earn from a township bedroom.
+Sample courses
+Graphic Design  ·  UI/UX Design  ·  Video Production & Editing  ·  Music Production  ·  Photography  ·  Social Media Management  ·  Brand Strategy  ·  Animation & Motion Graphics
+Graduate outcomes
+Creative Director  ·  Content Creator  ·  UI/UX Designer  ·  Brand Strategist
+At a glance
+11+ courses   ·   8–24 weeks   ·   NQF L3–L6
+#8
+LES
+Leadership & Entrepreneurship Stream
+Business strategy, venture building & governance
+•  Strategic — job creators needed
+Why this matters
+SA's 32% youth unemployment cannot be solved by job-seeker programmes alone. We need to produce job CREATORS. This stream becomes a multiplier when paired with any technical qualification — turning skilled employees into skilled employers.
+Sample courses
+Business Fundamentals  ·  Social Entrepreneurship  ·  Startup Finance  ·  Management & Team Leadership  ·  Legal for Business  ·  Franchise & Scale  ·  Public Sector & Tenders
+Graduate outcomes
+Entrepreneur  ·  Technical Founder  ·  NGO Manager  ·  Corporate Leader
+At a glance
+10+ courses   ·   8–20 weeks   ·   NQF L4–L6
+#9
+ECS
+Early Childhood & Education Stream
+Teaching, ECD & education technology
+•  Strategic — foundation of all growth
+Why this matters
+PIRLS 2021: 81% of SA Grade 4 learners cannot read for meaning. Early Childhood Development is the single highest-leverage education intervention available — every Rand spent on ECD returns multiples downstream.
+Sample courses
+ECD Practitioner  ·  Grade R & Foundation Phase Support  ·  Remedial Literacy & Numeracy  ·  EdTech & Digital Classrooms  ·  Inclusive Education  ·  Adult Education & Training  ·  Stream Leadership
+Graduate outcomes
+ECD Practitioner  ·  Primary Teacher  ·  Educational Therapist  ·  EdTech Coordinator
+At a glance
+9+ courses   ·   12–52 weeks   ·   NQF L4–L6
+#10
+CAS
+Environment & Climate Action Stream
+Conservation, climate resilience & green economy
+•  Emerging — Just Transition
+Why this matters
+SA is among the top 20 global emitters and signed up to the Just Energy Transition. Conservation is a continent-wide economic asset. Carbon markets, climate finance, and circular economy roles will be among the fastest-growing job categories of the next decade.
+Sample courses
+Climate Literacy & Action  ·  Conservation & Wildlife Management  ·  Waste Management & Circular Economy  ·  Environmental Law & Compliance  ·  Carbon Markets & Climate Finance  ·  Ecotourism  ·  Water Resource Management
+Graduate outcomes
+Conservation Officer  ·  Climate Advisor  ·  Waste Entrepreneur  ·  Green Building Assessor
+At a glance
+9+ courses   ·   8–24 weeks   ·   NQF L3–L6
+Section 3 — Phase 1 Summary & Next Steps
+Phase 1 outcomes confirmed
+Ten streams identified and ranked by strategic priority for South Africa and the continent.
+Each stream has a defined mission, sample courses, and graduate outcomes.
+Streams classified into three launch tiers — Flagship, Strategic, and Emerging.
+DSS (Digital Systems Stream) confirmed as the founding stream, already operational and providing the operational template for new streams.
+What comes next
+With the stream map approved, the Strategic Blueprint proceeds to:
+Phase 2 — Curriculum Blueprint: 80+ courses across 10 streams, each with NQF level, duration, delivery mode, modules, graduate outcomes, and entry requirements.
+Phase 3 — Delivery, LMS & Revenue: how the Academy delivers, accredits, staffs, and funds itself across all 9 SETAs.
+Phase 4 — Governance, Brand & Web: governance structure, brand identity, ginashe.academy website architecture, partnerships, and the legal entity structure.
+Build Something Real
+ginashe.academy  ·  3 May 2026
+
+--- GA_Phase2_CurriculumBlueprint.docx ---
+Strategic Blueprint
+PHASE 2
+Curriculum Blueprint
+80+ courses · 10 streams · NQF L2–L6 · all 9 SETAs aligned
+What this document delivers
+Detailed course architecture for all 80+ courses across the 10 streams.
+NQF level, duration, delivery mode, and entry requirement for every course.
+Module list, graduate outcome, and salary expectation for every course.
+Learning pathway diagrams showing how courses progress within each stream.
+Cross-stream synergy mapping — which streams combine well and why.
+Document 2 of 4 in the Ginashe Academy Strategic Blueprint
+Issued: 3 May 2026
+Prepared by Ginashe Group  ·  Ginashe Academy (Pty) Ltd
+Section 1 — How to Read This Document
+This is the curriculum blueprint for Ginashe Academy (Pty) Ltd. It is the working detail behind Phase 1's stream mapping — what learners will actually study, for how long, in what mode, and toward which job outcomes.
+Document structure
+The document is organised by stream. Each stream occupies its own section and follows the same structure:
+Stream banner — name, abbreviation, mission, and rank.
+Summary block — learning pathways, cross-stream synergies, and the stream's overall course profile.
+Course cards — one per course, showing name, NQF level, duration, delivery mode, modules, graduate outcome, and entry requirement.
+Course delivery modes
+Three delivery modes are used across the curriculum:
+In-person — physical campus or workshop attendance, used for hands-on practical courses (trades, hardware, clinical practice).
+Online — fully digital delivery via the Ginashe Academy LMS, used for theory-heavy and individually-paced courses.
+Hybrid — mixed delivery, usually online theory plus in-person practical sessions or workshops.
+Course modes — cohort versus self-paced
+Courses operate in one of two scheduling modes:
+Cohort — fixed start and end dates, group of learners moves through the course together with the same facilitator. Higher completion rates, stronger peer support.
+Self-paced — learner enrols any time and progresses at their own pace. Useful for working professionals, supported by asynchronous facilitator office hours.
+Workshop — short, intensive courses (4–10 weeks) usually delivered as a single block. Used for skill-specific upskilling.
+NQF levels used in this curriculum
+All courses are aligned to the South African NQF (National Qualifications Framework). Levels in this curriculum range from L2 to L6:
+NQF Level 2–3 — foundational. Suitable for learners with Grade 9–10. Equivalent to lower secondary school competence.
+NQF Level 4 — basic occupational. Equivalent to matric or N3. Most stream courses sit here.
+NQF Level 5 — intermediate occupational. Equivalent to first-year tertiary or N4–N5. Many specialist courses sit here.
+NQF Level 6 — advanced occupational. Equivalent to advanced certificate or diploma. Reserved for high-level technical and leadership courses.
+Section 2 — Digital Systems Stream
+#1
+DSS
+Digital Systems Stream
+Software, cloud & artificial intelligence
+Learning pathways
+• Foundation: Digital Literacy L2 → Cloud Launchpad L4 → Web Dev Fundamentals L4
+• Specialist: Cloud Architect L6 → AI Engineer L6 → DevOps Engineer L6
+• Certifications: AWS Cloud Practitioner → AWS Solutions Architect → CompTIA Security+
+Cross-stream synergies
+FinTech (payment systems) · Health Sciences (digital records) · Agriculture (agritech) · Creative (UI/UX)
+Courses in this stream
+8 courses · NQF L2–L6 · 4–20 weeks
+Courses in this stream
+Cloud Launchpad
+NQF L3-L4
+⏱ 12 weeks   ·   📍 Hybrid   ·   👥 Cohort
+Modules
+Digital Foundations · Linux Essentials · Networking · Cloud Infrastructure · Cloud Security · Capstone
+Graduate outcome
+Cloud Support Technician · R180-280k/yr
+Entry requirement
+Matric or equivalent. Basic computer literacy.
+Web Development Fundamentals
+NQF L4
+⏱ 16 weeks   ·   📍 Online   ·   👥 Self-paced
+Modules
+HTML & CSS · JavaScript · React Basics · Node.js · Databases · Deployment
+Graduate outcome
+Junior Web Developer · R150-240k/yr
+Entry requirement
+Basic computer literacy. No prior coding required.
+AI & Machine Learning Foundations
+NQF L5
+⏱ 20 weeks   ·   📍 Hybrid   ·   👥 Cohort
+Modules
+Python for AI · Data Wrangling · ML Concepts · TensorFlow Basics · NLP Intro · Ethics in AI
+Graduate outcome
+AI/ML Associate · R350-550k/yr
+Entry requirement
+Cloud Launchpad or Web Dev. Python basics.
+Cybersecurity Essentials
+NQF L5
+⏱ 16 weeks   ·   📍 Hybrid   ·   👥 Cohort
+Modules
+Security Fundamentals · Network Security · POPIA & Compliance · Ethical Hacking Intro · Incident Response · SOC Operations
+Graduate outcome
+Security Analyst · R280-480k/yr
+Entry requirement
+Cloud Launchpad or equivalent networking knowledge.
+Data Engineering
+NQF L5
+⏱ 18 weeks   ·   📍 Online   ·   👥 Cohort
+Modules
+SQL Mastery · Python for Data · ETL Pipelines · BigQuery & Redshift · Data Visualisation · Capstone
+Graduate outcome
+Data Engineer · R320-520k/yr
+Entry requirement
+Web Dev Fundamentals or equivalent.
+DevOps & Cloud Automation
+NQF L6
+⏱ 20 weeks   ·   📍 Hybrid   ·   👥 Cohort
+Modules
+Git & CI/CD · Docker & Kubernetes · Terraform IaC · Monitoring & Alerting · SRE Principles · Capstone
+Graduate outcome
+DevOps Engineer · R420-720k/yr
+Entry requirement
+Cloud Launchpad + basic scripting experience.
+Digital Literacy for the Workplace
+NQF L2
+⏱ 4 weeks   ·   📍 In-person   ·   👥 Workshop
+Modules
+Computer Basics · Email & Cloud Storage · Online Safety · Office Tools · Video Calls · Digital Job Hunting
+Graduate outcome
+Workplace digital competence certificate
+Entry requirement
+None. Designed for first-time computer users.
+Software Entrepreneurship
+NQF L5
+⏱ 12 weeks   ·   📍 Hybrid   ·   👥 Cohort
+Modules
+Idea to MVP · Business Model Canvas · Tech Stack Selection · Funding & Pitching · GTM Strategy · Demo Day
+Graduate outcome
+Technical Founder · startup-ready
+Entry requirement
+Any technical Digital Systems Stream course completion.
+Section 3 — Health Sciences Stream
+#2
+HSS
+Health Sciences Stream
+Community health, nursing & mental wellbeing
+Learning pathways
+• Foundation: Health Awareness L2 → Community Health Worker L4 → Home-Based Care L4
+• Specialist: Mental Health First Aid L4 → Nutrition Science L5 → Emergency Response L5
+• Progression: Nursing College entrance → HWSETA registered CHW → NGO health management
+Cross-stream synergies
+Digital Systems (patient records, telemedicine) · Leadership (NGO management) · Education (school health)
+Courses in this stream
+9 courses · NQF L4–L5 · 8–32 weeks
+Courses in this stream
+Community Health Worker
+NQF L4
+⏱ 32 weeks   ·   📍 In-person   ·   👥 Cohort
+Modules
+Anatomy Basics · Disease Prevention · HIV/AIDS & TB Care · Maternal Health · Child Nutrition · Community Outreach · Record Keeping · Practicum
+Graduate outcome
+Registered CHW · DoH deployment-ready · R6-10k/mo stipend
+Entry requirement
+Grade 10 minimum. Community residency preferred.
+Mental Health First Aid
+NQF L4
+⏱ 8 weeks   ·   📍 In-person   ·   👥 Workshop
+Modules
+Mental Health Basics · Depression & Anxiety · Substance Abuse · Trauma & PTSD · Suicide Prevention · Crisis Intervention · Self-Care
+Graduate outcome
+MHFA Certified First Responder
+Entry requirement
+None. Open to all adults.
+HIV/AIDS Counselling & Care
+NQF L4
+⏱ 12 weeks   ·   📍 Hybrid   ·   👥 Cohort
+Modules
+HIV/AIDS Basics · Counselling Skills · ARV Adherence · Stigma Reduction · Legal & Rights · Palliative Care · Support Groups
+Graduate outcome
+HIV Counsellor · NGO & Clinic placement
+Entry requirement
+Grade 10. Community or care background preferred.
+Maternal & Child Health
+NQF L4
+⏱ 16 weeks   ·   📍 In-person   ·   👥 Cohort
+Modules
+Antenatal Care · Safe Delivery Basics · Postnatal Support · Child Development · Immunisation · Malnutrition Detection · Home Visits
+Graduate outcome
+Maternal Health Worker · Clinic support role
+Entry requirement
+Grade 10.
+Nutrition Science & Food Security
+NQF L5
+⏱ 20 weeks   ·   📍 Hybrid   ·   👥 Cohort
+Modules
+Macro & Micronutrients · SA Dietary Patterns · Malnutrition · Therapeutic Nutrition · Community Food Gardens · RUTF & Supplementation · Research Methods
+Graduate outcome
+Nutritional Advisor · NGO Nutrition Officer
+Entry requirement
+Matric. Biology or Life Sciences preferred.
+Emergency Medical Response
+NQF L5
+⏱ 16 weeks   ·   📍 In-person   ·   👥 Cohort
+Modules
+Basic Life Support · BLS & AED · Trauma First Aid · Medical Emergencies · Scene Management · Patient Assessment · Ambulance Ride-Alongs
+Graduate outcome
+Emergency First Responder · EMS entry qualification
+Entry requirement
+Matric. Physical fitness. Clear criminal record.
+Health Administration & Records
+NQF L4
+⏱ 12 weeks   ·   📍 Hybrid   ·   👥 Cohort
+Modules
+Medical Terminology · POPIA in Healthcare · Patient Record Systems · Clinic Scheduling · Billing Basics · Digital Records · Quality Assurance
+Graduate outcome
+Clinic Administrator · Medical Receptionist · R8-15k/mo
+Entry requirement
+Matric. Computer literacy.
+Occupational Health & Safety
+NQF L4
+⏱ 10 weeks   ·   📍 In-person   ·   👥 Workshop
+Modules
+OHS Act Basics · Hazard Identification · Risk Assessment · Accident Investigation · Safety Systems · COIDA · Site Audits
+Graduate outcome
+OHS Representative · Safety Officer assistant
+Entry requirement
+Matric.
+Palliative & End-of-Life Care
+NQF L4
+⏱ 12 weeks   ·   📍 In-person   ·   👥 Cohort
+Modules
+Palliative Principles · Pain Management · Emotional Support · Family Counselling · Cultural & Spiritual Care · Hospice Systems · Ethics
+Graduate outcome
+Palliative Care Worker · Hospice facility employment
+Entry requirement
+Grade 10. Maturity and emotional resilience required.
+Section 4 — Energy & Infrastructure Stream
+#3
+EIS
+Energy & Infrastructure Stream
+Renewable energy, power & water systems
+Learning pathways
+• Foundation: Electrical Basics L3 → Solar PV Fundamentals L4 → Off-Grid Design L4
+• Specialist: Solar PV Installation L5 → Battery Systems L5 → Grid-Tied Systems L5
+• Industry: EWSETA accreditation → SAPVIA membership → Eskom supplier registration
+Cross-stream synergies
+Applied Trades (electrical) · Agriculture (farm solar) · Digital Systems (smart grid, IoT) · Leadership (energy business)
+Courses in this stream
+8 courses · NQF L3–L5 · 10–16 weeks
+Courses in this stream
+Solar PV Installation & Commissioning
+NQF L4
+⏱ 16 weeks   ·   📍 In-person   ·   👥 Cohort
+Modules
+PV Theory · System Design · Panel Mounting · Inverter Config · Wiring & Safety · Grid Interaction · Commissioning · Maintenance
+Graduate outcome
+Solar PV Technician · R15-35k/mo
+Entry requirement
+Grade 10. Basic electrical knowledge preferred.
+Battery Storage & Off-Grid Systems
+NQF L5
+⏱ 12 weeks   ·   📍 Hybrid   ·   👥 Cohort
+Modules
+Battery Chemistry · Lead Acid vs Li-ion · BMS Systems · Load Calculations · Off-Grid Design · Hybrid Systems · Fault Diagnosis · Safety
+Graduate outcome
+Battery Systems Specialist · Critical for load-shedding SA market
+Entry requirement
+Solar PV Installation or equivalent.
+Electrical Wiring & Installations
+NQF L3
+⏱ 16 weeks   ·   📍 In-person   ·   👥 Cohort
+Modules
+Electrical Theory · SANS 10142 · Domestic Wiring · DB Board Installation · Earthing & Bonding · Testing · CoC Process · Safety
+Graduate outcome
+Electrical Installer · ECSA registered path
+Entry requirement
+Grade 10. Mathematics and Physical Science preferred.
+Energy Auditing & Efficiency
+NQF L5
+⏱ 10 weeks   ·   📍 Hybrid   ·   👥 Cohort
+Modules
+Energy Basics · Audit Methodology · Measuring Equipment · Report Writing · Lighting & HVAC · Industrial Loads · Carbon Footprint · ROI Calculations
+Graduate outcome
+Junior Energy Auditor · R200-400k/yr
+Entry requirement
+Matric. Mathematics. Basic electrical knowledge.
+Water & Sanitation Systems
+NQF L4
+⏱ 14 weeks   ·   📍 In-person   ·   👥 Cohort
+Modules
+Water Quality · Plumbing Basics · Greywater Systems · Borehole & Rainwater · Sanitation Design · Rural Systems · Maintenance · DWS compliance
+Graduate outcome
+Water Systems Technician
+Entry requirement
+Grade 10. Physical aptitude.
+Grid-Tied & Commercial Solar
+NQF L5
+⏱ 12 weeks   ·   📍 Hybrid   ·   👥 Cohort
+Modules
+Commercial Scale Design · NERSA Regulations · 3-Phase Systems · Utility Applications · Wheeling Basics · Financing Models · Project Management · Case Studies
+Graduate outcome
+Commercial Solar Project Manager · R300-500k/yr
+Entry requirement
+Solar PV Installation + Electrical Wiring.
+Wind Energy Technician
+NQF L4
+⏱ 16 weeks   ·   📍 In-person   ·   👥 Cohort
+Modules
+Wind Resource Assessment · Turbine Types · Mechanical Systems · Electrical Systems · Tower Climbing Safety · Maintenance · Site Assessment · REI4P Context
+Graduate outcome
+Wind Turbine Technician · major RE IPP employers
+Entry requirement
+Grade 10. Physical fitness. Heights comfort.
+Green Building & Sustainability
+NQF L5
+⏱ 10 weeks   ·   📍 Hybrid   ·   👥 Workshop
+Modules
+Green Building Ratings · Passive Design · Insulation & Fenestration · Water Efficiency · Waste Management · Green Materials · GBCSA · Carbon Reporting
+Graduate outcome
+Green Building Assessor
+Entry requirement
+Matric.
+Section 5 — Agriculture & Food Security Stream
+#4
+AFS
+Agriculture & Food Security Stream
+Modern farming, agritech & food systems
+Learning pathways
+• Foundation: Farming Basics L2 → Smallholder Farming L3 → Vegetable Production L4
+• Specialist: Hydroponics L4 → Precision Farming L5 → Agri-Business L5
+• Progression: AgriSETA qualification → DAFF extension officer → Own farm enterprise
+Cross-stream synergies
+Energy (solar pumps, cold chain) · Digital Systems (agritech, IoT) · FinTech (agri-finance) · Leadership (cooperative management)
+Courses in this stream
+8 courses · NQF L3–L5 · 10–16 weeks
+Courses in this stream
+Smallholder & Subsistence Farming
+NQF L3
+⏱ 16 weeks   ·   📍 In-person   ·   👥 Cohort
+Modules
+Soil Science Basics · Crop Selection · Water Management · Pest & Disease · Composting · Harvest & Storage · Record Keeping · Market Access
+Graduate outcome
+Subsistence to commercial farmer transition
+Entry requirement
+None. Suitable for rural communities.
+Hydroponics & Urban Farming
+NQF L4
+⏱ 12 weeks   ·   📍 Hybrid   ·   👥 Cohort
+Modules
+Hydroponics Science · System Types · Nutrient Management · LED Grow Lights · Urban Spaces · Container Farming · Business Model · Distribution
+Graduate outcome
+Urban Farmer · Township food enterprise owner
+Entry requirement
+Grade 10. Available land or rooftop access.
+Agritech & Precision Farming
+NQF L5
+⏱ 16 weeks   ·   📍 Hybrid   ·   👥 Cohort
+Modules
+IoT in Agriculture · Drone Mapping · Soil Sensors · Weather Data · AI Crop Monitoring · Digital Record Keeping · Market Apps · Case Studies
+Graduate outcome
+Agritech Specialist · commercial farm digital manager
+Entry requirement
+Matric. Digital literacy. Farming background.
+Food Processing & Value Addition
+NQF L4
+⏱ 12 weeks   ·   📍 In-person   ·   👥 Cohort
+Modules
+Food Safety & HACCP · Preservation Methods · Drying & Packaging · Dairy Processing · Fruit & Veg · Quality Control · Labelling · Small Business
+Graduate outcome
+Food Processing Technician · cottage industry entrepreneur
+Entry requirement
+Grade 10. Basic maths.
+Agricultural Finance & Cooperatives
+NQF L5
+⏱ 10 weeks   ·   📍 Hybrid   ·   👥 Workshop
+Modules
+Farm Business Plan · DAFF Grant Applications · Land Bank Products · Cooperative Law · Cost & Revenue · Record Keeping · Market Prices · Export Basics
+Graduate outcome
+Cooperative Manager · Agri-finance practitioner
+Entry requirement
+Matric. Any farming background.
+Animal Husbandry & Livestock
+NQF L4
+⏱ 16 weeks   ·   📍 In-person   ·   👥 Cohort
+Modules
+Cattle Basics · Poultry Production · Goat & Pig Farming · Veterinary First Aid · Feed & Nutrition · Breeding · Disease Management · Marketing
+Graduate outcome
+Livestock Farmer · Poultry enterprise owner
+Entry requirement
+Grade 10. Rural access to land.
+Supply Chain & Agricultural Markets
+NQF L5
+⏱ 10 weeks   ·   📍 Online   ·   👥 Cohort
+Modules
+Fresh Produce Markets · Cold Chain Basics · Logistics & Transport · Export Markets · Commodity Exchanges · NAMC Price Reporting · Retail Linkages · Contracts
+Graduate outcome
+Agricultural Marketing Officer · Produce market agent
+Entry requirement
+Matric.
+Conservation Agriculture
+NQF L4
+⏱ 10 weeks   ·   📍 In-person   ·   👥 Workshop
+Modules
+Soil Health · No-Till Farming · Cover Crops · Water Conservation · Agroforestry · Climate Adaptation · Carbon Farming · Policy Context
+Graduate outcome
+Conservation agriculture practitioner · climate-resilient farmer
+Entry requirement
+Grade 10. Farming background.
+Section 6 — Financial Literacy & FinTech Stream
+#5
+FLS
+Financial Literacy & FinTech Stream
+Personal finance, banking & digital payments
+Learning pathways
+• Foundation: Money Smart L2 → Personal Finance L3 → Business Finance L4
+• Specialist: FinTech Fundamentals L5 → Investment Basics L5 → Tax Practitioner L5
+• Professional: FAIS-licensed advisor → SAICA membership path → FSCA registration
+Cross-stream synergies
+Leadership (startup finance) · Digital Systems (FinTech apps, payments API) · Agriculture (agri-finance) · Applied Trades (business finance for artisans)
+Courses in this stream
+7 courses · NQF L3–L5 · 6–16 weeks
+Courses in this stream
+Personal Finance & Money Management
+NQF L3
+⏱ 6 weeks   ·   📍 Online   ·   👥 Self-paced
+Modules
+Budgeting Basics · Debt Management · Banking Products · Saving & Goals · Insurance Basics · Credit Score · Consumer Rights · Retirement Intro
+Graduate outcome
+Personal financial independence · household financial literacy
+Entry requirement
+None. Grade 9 reading level.
+FinTech Fundamentals
+NQF L5
+⏱ 14 weeks   ·   📍 Hybrid   ·   👥 Cohort
+Modules
+SA Financial System · Digital Banking · Payment APIs · Blockchain Basics · Regulatory Sandbox · Open Finance · FSCA Compliance · Case Studies
+Graduate outcome
+FinTech Associate · digital banking product analyst
+Entry requirement
+Matric. Digital literacy. Basic maths.
+Business Accounting & Bookkeeping
+NQF L4
+⏱ 16 weeks   ·   📍 Online   ·   👥 Cohort
+Modules
+Double-Entry Bookkeeping · Sage & Xero · VAT & PAYE · Financial Statements · Cash Flow Management · Payroll Basics · SARS e-Filing · Annual Returns
+Graduate outcome
+Bookkeeper · R12-20k/mo. Own practice opportunity.
+Entry requirement
+Matric with Maths or Accounting.
+SARS Tax Compliance for Individuals
+NQF L4
+⏱ 8 weeks   ·   📍 Online   ·   👥 Self-paced
+Modules
+SA Tax System · Income Tax · Capital Gains · Provisional Tax · eFiling Step by Step · Common Mistakes · Penalties & Appeals · SMME Tax Relief
+Graduate outcome
+Personal tax compliance · entry to tax practitioner path
+Entry requirement
+Matric. Basic numeracy.
+Investment & Wealth Building
+NQF L5
+⏱ 12 weeks   ·   📍 Online   ·   👥 Cohort
+Modules
+Investment Basics · JSE & Equities · Unit Trusts & ETFs · Property Investment · Retirement Annuities · Risk Profiling · Tax-Efficient Investing · Portfolio Building
+Graduate outcome
+Junior Investment Advisor · personal wealth practitioner
+Entry requirement
+Personal Finance course or equivalent. Matric with Maths.
+Microfinance & Community Finance
+NQF L4
+⏱ 10 weeks   ·   📍 Hybrid   ·   👥 Workshop
+Modules
+SACCO Principles · Stokvel to Cooperative · Loan Assessment · Credit Risk · Member Services · Financial Records · NCA Compliance · Digital Tools
+Graduate outcome
+SACCO/Cooperative manager · community finance facilitator
+Entry requirement
+Grade 10.
+Digital Payments & Mobile Money
+NQF L4
+⏱ 8 weeks   ·   📍 Online   ·   👥 Self-paced
+Modules
+Mobile Money Ecosystem · SnapScan & Ozow · Yoco & Card Payments · Crypto Basics · Cross-Border Payments · PASA Compliance · Merchant Services · Integration Basics
+Graduate outcome
+Digital payments practitioner · township merchant tech adoption
+Entry requirement
+Grade 10. Smartphone ownership.
+Section 7 — Applied Trades & Engineering Stream
+#6
+ATS
+Applied Trades & Engineering Stream
+Electrical, plumbing, construction & repair
+Learning pathways
+• Foundation: Trade Fundamentals L3 → Electrical L4 → Plumbing L4
+• Qualified: Trade Test L5 → N3 Certificate → Artisan Registration
+• Enterprise: CIDB registration → Own contracting business → SMME supplier development
+Cross-stream synergies
+Energy (solar installation) · Construction (building trades bundle) · Leadership (artisan business) · Digital Systems (smart home, IoT)
+Courses in this stream
+9 courses · NQF L3–L5 · 12–24 weeks
+Courses in this stream
+Electrical Installation & Wiring
+NQF L4
+⏱ 24 weeks   ·   📍 In-person   ·   👥 Cohort
+Modules
+Electrical Theory · SANS 10142 · Domestic Wiring · DB Boards · 3-Phase Basics · Earthing · CoC Testing · OHS
+Graduate outcome
+Registered Electrical Installer · own contracting · R25-60k/mo
+Entry requirement
+Grade 10. Maths and Physical Science.
+Plumbing & Sanitation
+NQF L4
+⏱ 20 weeks   ·   📍 In-person   ·   👥 Cohort
+Modules
+Water Systems · Drain & Sewer · SANS 10252 · Pipe Fitting · Hot Water Systems · Leak Detection · Gas Plumbing Intro · OHS
+Graduate outcome
+Qualified Plumber · R20-50k/mo. Chronic SA shortage.
+Entry requirement
+Grade 10.
+Welding & Metal Fabrication
+NQF L4
+⏱ 16 weeks   ·   📍 In-person   ·   👥 Cohort
+Modules
+Arc Welding · MIG & TIG · Metal Cutting · Blueprint Reading · Structural Welding · Quality Standards · OHS · Entrepreneurship
+Graduate outcome
+Welder/Fabricator · manufacturing, construction, mining
+Entry requirement
+Grade 10. Physical aptitude.
+Automotive Mechanics & Servicing
+NQF L4
+⏱ 24 weeks   ·   📍 In-person   ·   👥 Cohort
+Modules
+Engine Systems · Electrical Diagnostics · Brake & Suspension · Transmission · OBD Systems · EV Introduction · Workshop Management · Customer Service
+Graduate outcome
+Motor Mechanic · R18-40k/mo. EV transition opportunity.
+Entry requirement
+Grade 10.
+Hardware & Device Repair
+NQF L4
+⏱ 16 weeks   ·   📍 In-person   ·   👥 Cohort
+Modules
+Electronics Basics · PCB Repair · Smartphone Repair · Laptop Servicing · Printer & Peripheral · Data Recovery · Business Setup · Warranty & Ethics
+Graduate outcome
+Hardware Engineer · repair shop owner · township tech hub
+Entry requirement
+Grade 10. Good eyesight and dexterity.
+Tiling & Construction Finishing
+NQF L3
+⏱ 12 weeks   ·   📍 In-person   ·   👥 Cohort
+Modules
+Surface Preparation · Adhesives & Grout · Floor Tiling · Wall Tiling · Waterproofing · Plastering Basics · Painting & Sealing · Quoting & Billing
+Graduate outcome
+Tiler / Finisher · R15-35k/mo. Constant demand.
+Entry requirement
+Grade 9.
+HVAC Basics & Refrigeration
+NQF L4
+⏱ 16 weeks   ·   📍 In-person   ·   👥 Cohort
+Modules
+Refrigeration Cycle · Split AC Installation · Gas Handling · Electrical Controls · Fault Diagnosis · Compliance · Commercial Systems · Service Business
+Graduate outcome
+HVAC Technician · R20-45k/mo
+Entry requirement
+Grade 10. Electrical basics preferred.
+Construction Project Management
+NQF L5
+⏱ 12 weeks   ·   📍 Hybrid   ·   👥 Cohort
+Modules
+CIDB Grades · BOQ & Estimating · Site Management · OHS Act · Subcontractor Management · Contract Law · Cash Flow · NHBRC
+Graduate outcome
+Junior Construction PM · SMME contractor
+Entry requirement
+Matric. Any artisan trade qualification.
+CNC Operation & Precision Engineering
+NQF L5
+⏱ 20 weeks   ·   📍 In-person   ·   👥 Cohort
+Modules
+Engineering Drawing · Manual Machining · CNC Basics · G-Code Programming · CAD/CAM Intro · Quality Control · Metrology · Production Context
+Graduate outcome
+CNC Operator · manufacturing sector · R20-40k/mo
+Entry requirement
+Matric with Maths.
+Section 8 — Creative & Digital Media Stream
+#7
+CDS
+Creative & Digital Media Stream
+Design, film, music & content creation
+Learning pathways
+• Foundation: Visual Basics L3 → Graphic Design L4 → Photography L4
+• Specialist: UI/UX Design L5 → Video Production L5 → Brand Strategy L5
+• Industry: Adobe Certified Professional → Portfolio review → Agency placement
+Cross-stream synergies
+Digital Systems (UI/UX + web dev) · Leadership (brand building) · Education (EdTech content) · FinTech (financial communications)
+Courses in this stream
+8 courses · NQF L4–L5 · 10–20 weeks
+Courses in this stream
+Graphic Design Fundamentals
+NQF L4
+⏱ 16 weeks   ·   📍 Online   ·   👥 Cohort
+Modules
+Design Principles · Typography · Colour Theory · Adobe Illustrator · Photoshop Basics · Print Design · Social Media Design · Portfolio Building
+Graduate outcome
+Junior Graphic Designer · R15-30k/mo. Freelance immediately.
+Entry requirement
+Grade 10. Creativity. Laptop access.
+UI/UX Design
+NQF L5
+⏱ 20 weeks   ·   📍 Online   ·   👥 Cohort
+Modules
+User Research · Wireframing · Figma Mastery · Prototyping · Usability Testing · Design Systems · Accessibility · Case Study Portfolio
+Graduate outcome
+UI/UX Designer · R30-60k/mo. High demand.
+Entry requirement
+Graphic Design or equivalent.
+Video Production & Editing
+NQF L4
+⏱ 14 weeks   ·   📍 Hybrid   ·   👥 Cohort
+Modules
+Camera Basics · Lighting · Sound Recording · Premiere Pro · Colour Grading · Storytelling · YouTube Optimisation · Commercial Production
+Graduate outcome
+Video Producer/Editor · R20-50k/mo
+Entry requirement
+Grade 10. Smartphone or camera access.
+Music Production & Audio Engineering
+NQF L4
+⏱ 16 weeks   ·   📍 In-person   ·   👥 Cohort
+Modules
+DAW Basics · Ableton/Logic Pro · Beat Making · Recording Vocals · Mixing · Mastering · Music Business · Distribution & Royalties
+Graduate outcome
+Music Producer · Audio Engineer · Afrobeats/Amapiano ecosystem
+Entry requirement
+Grade 10. Musical interest. Laptop access.
+Photography & Visual Storytelling
+NQF L4
+⏱ 12 weeks   ·   📍 Hybrid   ·   👥 Cohort
+Modules
+Camera & Exposure · Composition · Lightroom Editing · Portrait Photography · Event Photography · Commercial Photography · Social Media · Business Setup
+Graduate outcome
+Photographer · R15-40k/mo event + commercial
+Entry requirement
+Grade 10. Any camera (smartphone OK).
+Social Media Management & Strategy
+NQF L4
+⏱ 10 weeks   ·   📍 Online   ·   👥 Self-paced
+Modules
+Platform Algorithms · Content Strategy · Copywriting · Scheduling Tools · Analytics · Paid Advertising · Influencer Marketing · Brand Voice
+Graduate outcome
+Social Media Manager · R15-35k/mo. In-house or agency.
+Entry requirement
+Grade 10. Active social media user.
+Brand Identity & Strategy
+NQF L5
+⏱ 14 weeks   ·   📍 Online   ·   👥 Cohort
+Modules
+Brand Theory · Research & Positioning · Visual Identity · Brand Voice · Brand Guidelines · Rebranding · Digital Brand · SA Market Context
+Graduate outcome
+Brand Strategist · R30-60k/mo. Agency or in-house.
+Entry requirement
+Graphic Design + Marketing experience.
+Animation & Motion Graphics
+NQF L5
+⏱ 18 weeks   ·   📍 Online   ·   👥 Cohort
+Modules
+After Effects Basics · Motion Design Principles · 2D Animation · Typography Animation · Explainer Videos · 3D Intro · Sound Design Sync · Commercial Showreel
+Graduate outcome
+Motion Graphics Artist · broadcast, advertising, EdTech · R25-55k/mo
+Entry requirement
+Graphic Design Fundamentals or equivalent.
+Section 9 — Leadership & Entrepreneurship Stream
+#8
+LES
+Leadership & Entrepreneurship Stream
+Business strategy, venture building & governance
+Learning pathways
+• Foundation: Entrepreneurship Basics L3 → Business Management L4 → SME Finance L4
+• Growth: Startup Studio L5 → Social Enterprise L5 → Corporate Leadership L6
+• Ecosystem: CIPC registration → NEF/IDC funding access → Mentorship network
+Cross-stream synergies
+EVERY stream. This is the multiplier stream. Combined with any technical qualification, produces an entrepreneur rather than just an employee.
+Courses in this stream
+7 courses · NQF L4–L5 · 8–12 weeks
+Courses in this stream
+Business Fundamentals & Entrepreneurship
+NQF L4
+⏱ 10 weeks   ·   📍 Hybrid   ·   👥 Cohort
+Modules
+Business Model Canvas · SA Business Environment · Legal Structures · CIPC Registration · Basic Finance · Marketing Basics · Customer Discovery · Pitch Deck
+Graduate outcome
+SMME founder-ready · basic business operational competence
+Entry requirement
+Grade 10.
+Social Entrepreneurship
+NQF L5
+⏱ 12 weeks   ·   📍 Hybrid   ·   👥 Cohort
+Modules
+Social Enterprise Models · Impact Measurement · NGO vs NPO vs NPC · Funding Landscape · Corporate Partnerships · Storytelling for Impact · Governance · Case Studies
+Graduate outcome
+Social enterprise founder · NGO programme manager · R20-40k/mo
+Entry requirement
+Matric. Community involvement.
+Startup Finance & Fundraising
+NQF L5
+⏱ 10 weeks   ·   📍 Online   ·   👥 Cohort
+Modules
+Financial Modelling · Revenue Projections · Cap Table Basics · VC & Angel Funding · NEF & IDC Applications · Pitch to Investors · Term Sheets · Due Diligence
+Graduate outcome
+Startup CFO-ready · investor-pitch competent founder
+Entry requirement
+Matric. Basic numeracy. Own business idea.
+Management & Team Leadership
+NQF L5
+⏱ 12 weeks   ·   📍 Hybrid   ·   👥 Cohort
+Modules
+Leadership Styles · Team Dynamics · Performance Management · Conflict Resolution · Change Management · Operations · Meeting Facilitation · 360 Feedback
+Graduate outcome
+Team Lead · Operations Manager · R25-50k/mo
+Entry requirement
+Matric. 1yr work experience.
+Legal for Business & Contracts
+NQF L4
+⏱ 8 weeks   ·   📍 Online   ·   👥 Self-paced
+Modules
+Company Law Basics · Contract Essentials · IP Protection · Employment Law · Consumer Protection Act · POPIA for SMEs · Dispute Resolution · Compliance Calendar
+Graduate outcome
+Business legal literacy · self-protective founder
+Entry requirement
+Matric.
+Franchise & Scale
+NQF L5
+⏱ 10 weeks   ·   📍 Hybrid   ·   👥 Workshop
+Modules
+Franchise vs Own Business · SA Franchise Landscape · FLA · Operations Manual · Franchise Finance · Site Selection · Training Systems · Scaling Your Own Model
+Graduate outcome
+Franchise owner or seller · R30-100k/mo
+Entry requirement
+Matric. Business Fundamentals course.
+Public Sector & Government Tenders
+NQF L4
+⏱ 8 weeks   ·   📍 Online   ·   👥 Self-paced
+Modules
+PFMA & MFMA Basics · CSD Registration · B-BBEE Levels · Tender Documents · Bid Preparation · Ethics & Compliance · Payment Processes · Track Record
+Graduate outcome
+Government tender supplier · SMME public procurement participant
+Entry requirement
+Grade 10. Own registered business.
+Section 10 — Early Childhood & Education Stream
+#9
+ECS
+Early Childhood & Education Stream
+Teaching, ECD & education technology
+Learning pathways
+• Foundation: ECD Basics L3 → ECD Practitioner L4 → Primary Teaching Support L4
+• Qualified: SACE registration → ETDP SETA qualification → University bridging
+• Impact: Open own ECD centre → Primary school deployment → EdTech facilitator
+Cross-stream synergies
+Digital Systems (EdTech, digital classrooms) · Health Sciences (school health) · Leadership (school management) · Creative (educational content)
+Courses in this stream
+7 courses · NQF L4–L5 · 12–32 weeks
+Courses in this stream
+ECD Practitioner (Birth to 4 years)
+NQF L4
+⏱ 32 weeks   ·   📍 In-person   ·   👥 Cohort
+Modules
+Child Development · Learning Through Play · Nutrition & Health · Stimulation Activities · Parent Engagement · Inclusion · Record Keeping · ECD Policy
+Graduate outcome
+Registered ECD Practitioner · DSD subsidy employment · R6-12k/mo
+Entry requirement
+Grade 10. Police clearance.
+Grade R & Foundation Phase Support
+NQF L4
+⏱ 20 weeks   ·   📍 Hybrid   ·   👥 Cohort
+Modules
+Literacy Foundations · Numeracy Basics · Phonics & Reading · Learning Materials · Classroom Support · IEP Basics · DBE Curriculum · Assessment
+Graduate outcome
+Teacher Assistant · Foundation Phase Support · school employment
+Entry requirement
+Matric. Clear criminal record.
+Remedial Literacy & Numeracy
+NQF L5
+⏱ 16 weeks   ·   📍 Hybrid   ·   👥 Cohort
+Modules
+Reading Disorders · Dyscalculia · Assessment Tools · Intervention Strategies · Parent Workshops · Small Group Teaching · IEP Writing · Progress Tracking
+Graduate outcome
+Remedial Teacher · private practice · R20-40k/mo
+Entry requirement
+Matric. Teaching background helpful.
+EdTech & Digital Classrooms
+NQF L4
+⏱ 12 weeks   ·   📍 Hybrid   ·   👥 Cohort
+Modules
+Digital Devices in Streams · LMS Platforms · Google Classroom · Video Lessons · Assessment Tech · BYOD Policy · Safety Online · SA Context & Access
+Graduate outcome
+EdTech Coordinator · digital learning facilitator
+Entry requirement
+Matric.
+Inclusive Education & Special Needs
+NQF L5
+⏱ 16 weeks   ·   📍 Hybrid   ·   👥 Cohort
+Modules
+Disability Types · SIAS Policy · Differentiated Instruction · AAC Basics · OT & Speech Integration · Full-Service Streams · Family Engagement · Advocacy
+Graduate outcome
+Inclusion Support Specialist · R20-35k/mo
+Entry requirement
+Matric.
+Adult Education & Training (AET)
+NQF L4
+⏱ 16 weeks   ·   📍 Hybrid   ·   👥 Cohort
+Modules
+Adult Learning Theory · ABET Curriculum · Literacy Teaching · Numeracy for Adults · Life Skills · Facilitator Skills · ETDP Alignment · Workplace AET
+Graduate outcome
+AET Facilitator · workplace training · NGO literacy programme
+Entry requirement
+Matric.
+Stream Leadership & Management
+NQF L5
+⏱ 14 weeks   ·   📍 Hybrid   ·   👥 Cohort
+Modules
+Education Leadership · SASA & Policy · Financial Management · HR & Performance · SGB Governance · Community Relations · Strategic Planning · Turnaround Streams
+Graduate outcome
+Deputy Principal · HOD · School Management Team · R35-60k/mo
+Entry requirement
+Matric. 3yrs teaching/school experience.
+Section 11 — Environment & Climate Action Stream
+#10
+CAS
+Environment & Climate Action Stream
+Conservation, climate resilience & green economy
+Learning pathways
+• Foundation: Climate Literacy L3 → Conservation Basics L4 → Waste Entrepreneur L4
+• Specialist: Environmental Law L5 → Carbon Markets L5 → Green Building L5
+• Progression: DFFE/DEA employment → Conservation NGO → Carbon broker
+Cross-stream synergies
+Energy (renewable energy, green grid) · Agriculture (conservation farming) · Leadership (green business, SMME) · Digital Systems (environmental monitoring)
+Courses in this stream
+7 courses · NQF L3–L5 · 6–20 weeks
+Courses in this stream
+Climate Literacy & Action
+NQF L3
+⏱ 6 weeks   ·   📍 Online   ·   👥 Self-paced
+Modules
+Climate Science Basics · SA Climate Impacts · Carbon Footprint · Climate Adaptation · Community Action · Youth Activism · Policy Context · Green Careers
+Graduate outcome
+Informed climate citizen · community climate ambassador
+Entry requirement
+None. Grade 9 reading level.
+Conservation & Wildlife Management
+NQF L4
+⏱ 20 weeks   ·   📍 In-person   ·   👥 Cohort
+Modules
+Biodiversity Basics · SA Biomes · Game Ranging · Anti-Poaching · Veld & Fire Management · Community Conservation · Ecotourism · Field Skills
+Graduate outcome
+Game Ranger · Conservation Officer · R10-25k/mo
+Entry requirement
+Grade 10. Driver's licence.
+Waste Management & Circular Economy
+NQF L4
+⏱ 12 weeks   ·   📍 Hybrid   ·   👥 Cohort
+Modules
+Waste Types · Recycling Value Chain · Upcycling Business · Hazardous Waste · E-Waste · Policy & NEM:WA · Buy-Back Centres · Waste Entrepreneur
+Graduate outcome
+Waste Entrepreneur · recycling business owner · R15-50k/mo
+Entry requirement
+Grade 10.
+Environmental Law & Compliance
+NQF L5
+⏱ 12 weeks   ·   📍 Online   ·   👥 Cohort
+Modules
+SA Environmental Law · NEMA · EIA Process · Water Law · Air Quality · Mining Impacts · Corporate Compliance · Enforcement
+Graduate outcome
+Environmental Compliance Officer · R25-50k/mo
+Entry requirement
+Matric.
+Carbon Markets & Climate Finance
+NQF L5
+⏱ 10 weeks   ·   📍 Online   ·   👥 Cohort
+Modules
+Carbon Trading Basics · SA Carbon Tax · Voluntary Carbon Markets · Verification Process · Project Development · Financing Green Projects · CDM & JCM · African Context
+Graduate outcome
+Carbon Broker · Climate Finance Analyst · R30-60k/yr
+Entry requirement
+Matric.
+Ecotourism & Nature-Based Business
+NQF L4
+⏱ 14 weeks   ·   📍 Hybrid   ·   👥 Cohort
+Modules
+Ecotourism Principles · SA Tourism Context · Game Lodge Operations · Community Tourism · Guiding Skills · Marketing · Conservation Finance · SMMEs in Tourism
+Graduate outcome
+Eco-tourism operator · lodge manager · community tourism enterprise
+Entry requirement
+Grade 10. English. Driver's licence.
+Water Resource Management
+NQF L5
+⏱ 14 weeks   ·   📍 Hybrid   ·   👥 Cohort
+Modules
+Water Cycle & Scarcity · DWS Act · Catchment Management · Water Quality Testing · Irrigation Efficiency · Groundwater · Water Security Planning · Grey & Rainwater
+Graduate outcome
+Water Resources Officer · municipal water management
+Entry requirement
+Matric. Science background.
+Section 12 — Phase 2 Summary
+Curriculum at a glance
+Total courses: 78 across all 10 streams.
+NQF range: L2 (digital literacy for first-time computer users) to L6 (advanced cloud architect, stream leadership).
+Duration range: 4 weeks (short workshops) to 52 weeks (full ECD practitioner qualification).
+What comes next
+With the curriculum architecture fixed, the Strategic Blueprint proceeds to:
+Phase 3 — Delivery, LMS & Revenue: how all of this is actually delivered, accredited, staffed, and funded across all 9 SETAs.
+Phase 4 — Governance, Brand & Web: how Ginashe Academy presents itself to learners, employers, funders, and regulators.
+Build Something Real
+ginashe.academy  ·  3 May 2026
+
+--- GA_Phase3_DeliveryLMSRevenue.docx ---
+Strategic Blueprint
+PHASE 3
+Delivery, LMS & Revenue
+How the Academy is delivered, accredited, staffed, and funded
+What this document delivers
+Four delivery channels — community campuses, online-first LMS, employer partnerships, mobile learning units.
+Learner support infrastructure — stipend model, device programme, data bundles.
+SETA and SAQA accreditation pathway — 4-year roadmap from provisional to continental recognition.
+LMS architecture — five-layer ginashe.academy platform on AWS af-south-1.
+Facilitator pipeline — four-level competency framework and 4-week Foundations programme.
+Revenue model — six income streams, sliding-scale fee model, growth trajectory to R120M by Year 5.
+Stream launch sequence — quarter-by-quarter rollout across 10 streams.
+Document 3 of 4 in the Ginashe Academy Strategic Blueprint
+Issued: 3 May 2026
+Prepared by Ginashe Group  ·  Ginashe Academy (Pty) Ltd
+Section 1 — Operational Overview
+Phase 3 translates the curriculum architecture established in Phase 2 into operational reality. It answers six questions:
+How will learners actually attend the Academy?
+How will the Academy be accredited and recognised by SETAs, SAQA, DHET, and continental bodies?
+How will learning be delivered through technology — the LMS architecture?
+Who will teach, and how will facilitators be developed?
+How will the Academy fund itself sustainably?
+In what order will the 10 streams be launched?
+At a glance
+10
+Streams
+80+
+Courses
+9
+SETAs aligned
+4
+Delivery channels
+R45M
+Year 3 revenue target
+5,000
+Year 3 learners
+18 mo
+Break-even target
+R120M
+Year 5 revenue (pan-African)
+Section 2 — Delivery Model
+Ginashe Academy delivers learning through four complementary channels. Different learner contexts require different channels — a rural smallholder farmer cannot attend a Johannesburg campus weekly, and a working professional in Sandton does not need a mobile learning unit. The four channels work together to reach every learner segment in South Africa and the broader continent.
+The four delivery channels
+Community campuses
+Physical hubs in townships, peri-urban, and rural areas
+Shared equipment, fibre connectivity, facilitator-led cohort model. Prioritised for hands-on streams — Applied Trades, Health Sciences, Agriculture. Each campus operates as a learning community, not a building.
+Online-first LMS
+Mobile-first platform reaching every SA province
+Self-paced and cohort courses delivered via the Ginashe Academy LMS. Designed for low-bandwidth South African networks. Facilitator office hours twice weekly. Used heavily by Digital Systems, FinTech, and Creative Media.
+Employer partnerships
+B-BBEE skills spend cohorts
+Corporates fund cohorts for their staff or community pipeline. Customised curriculum, on-site or hybrid delivery, bursary and stipend models. Aligns with B-BBEE skills development scorecard.
+Mobile learning units
+Solar-powered campus-on-wheels
+Converted vans with solar power, StarLink internet, and laptop sets. Rotates through rural municipalities on a weekly schedule. Brings the campus to the learner. Critical for Agriculture, Energy, and Digital Literacy.
+Learner support infrastructure
+Delivery channels alone are not enough. South African learners face structural barriers — cost of data, lack of devices, transport costs, family responsibilities, and economic precarity. Ginashe Academy addresses these directly:
+Stipend model
+Removing the financial penalty of learning
+Unemployed learners receive a stipend of R1,500 to R3,000 per month during contact learning. Funded through SETA discretionary grants, the National Skills Fund, and employer B-BBEE levy contributions. Without stipends, the most vulnerable learners cannot afford to attend even free courses — they need to eat and travel during the learning period.
+Device programme
+Refurbished laptops on loan
+Learners who do not own a personal computer receive a refurbished laptop on loan for the duration of their course. 75% of the device cost is subsidised by corporate partners as part of B-BBEE enterprise development spend. At course completion, the learner can purchase the device for R500 or return it for the next cohort.
+Data bundles
+Removing the bandwidth barrier
+Online learners receive a 5 GB monthly data bundle for the duration of their course. Ginashe Academy negotiates zero-rated access to ginashe.academy with MTN, Vodacom, and Telkom — meaning learners can use the LMS without consuming their personal data allowance. WhatsApp integration for assignment submission ensures even data-poor learners can participate.
+Section 3 — Accreditation Pathway
+Accreditation is the foundation of credibility, funding access, and qualification recognition. Ginashe Academy follows a four-year accreditation roadmap that scales from provisional SETA accreditation in Year 1 to continental qualification recognition by Year 4.
+SETA alignment by stream
+Each stream is aligned to one or more SETAs. The SETA relationship is what unlocks discretionary grants, learner stipends, and qualification registration on the NQF.
+SETA
+Stream
+Stream Code
+MICT SETA
+Media, Information & Communication Technologies — covers Digital Systems and Creative Media
+DSS, CDS
+HWSETA
+Health & Welfare — covers all clinical and community health courses
+HSS
+EWSETA
+Energy & Water — covers solar, wind, energy auditing, water systems
+EIS
+AgriSETA
+Agriculture — covers smallholder, hydroponics, agritech, food processing
+AFS
+INSETA
+Insurance — covers FinTech, financial literacy, microfinance
+FLS
+MERSETA
+Manufacturing, Engineering & Related Services — covers all artisan trades
+ATS
+SERVICES SETA
+Services Sector — covers Leadership, Entrepreneurship, business courses
+LES
+ETDP SETA
+Education, Training & Development — covers Early Childhood and education
+ECS
+WRSETA
+Wholesale & Retail (climate work routed via wider sector relationships including DFFE)
+CAS
+Four-year accreditation roadmap
+Months 0–12
+Year 1 — Provisional SETA accreditation
+Submit Quality Management System, facilitator CVs, and material evidence packs to 2–3 priority SETAs (MICT, HWSETA, EWSETA). Begin learner enrolment under provisional status. Cloud Launchpad already on this track.
+Months 12–24
+Year 2 — Full SAQA NQF registration
+Register qualifications on the NQF through SAQA. Submit unit standards per stream. Begin QCTO skills programme registration for trade-based streams. Move from provisional to full SETA accreditation.
+Months 24–36
+Year 3 — University articulation & DHET
+Articulation agreements with UNISA, CTU, and Rosebank College. Ginashe credits recognised for Recognition of Prior Learning into degree programmes. DHET community college partnership formalised.
+Months 36–48
+Year 4 — Continental recognition
+SADC mutual recognition through cross-border qualification frameworks. Partnerships with ECSA, HPCSA, and FSCA for professional body endorsement. Pan-African expansion begins (Kenya, Nigeria, Ghana priority markets).
+Industry certification partnerships
+Beyond formal SAQA qualifications, Ginashe Academy partners with global industry bodies to deliver vendor certifications that carry international weight. These certifications complement — not replace — the SETA-aligned NQF qualifications.
+AWS Authorized Training Partner — Cloud Practitioner, Solutions Architect Associate.
+Microsoft Learn Partner — Azure Fundamentals and Administrator paths.
+Google Cloud Partner — Associate Cloud Engineer.
+CompTIA Authorised Partner — Security+, Network+, A+.
+SAPVIA solar industry certifications and SARETEC wind technician partnerships.
+Adobe Certified Education — graphic design, video, motion graphics.
+PMI Educational Foundation — project management foundations.
+SAICA Student Programme alignment for FinTech and accounting paths.
+FSCA Consumer Education accreditation for the FinTech stream.
+Section 4 — LMS Architecture
+The Ginashe Academy LMS is hosted at learn.ginashe.academy. It is the primary channel for the online-first delivery model and the secondary channel for hybrid courses. The architecture is designed for South African network conditions — mobile-first, offline-capable, low-bandwidth, with WhatsApp integration for the most data-poor learners.
+Five-layer platform architecture
+Learner layer
+Mobile-first LMS (Moodle + custom PWA)
+Course catalogue · Video lessons · Interactive labs · Quizzes · Assignment submission · Progress dashboard · Peer forums · Certificate download · Offline content sync
+Facilitator layer
+Facilitator portal
+Cohort management · Attendance register · Assessment marking · Learner progress alerts · Resource library · Facilitator community · CPD tracker · 1-on-1 office hours scheduler
+Admin layer
+Academy management system
+Enrolment & intake · SETA reporting automation · Employer billing · Grant claim processing · Analytics & outcomes · Certificate registry · SAQA submission · Compliance dashboard
+AI layer
+Ginashe AI tutor (Claude API)
+24/7 question answering scoped to course context · Auto-grading of short-answer questions · Personalised learning path recommendations · Facilitator feedback drafts · Content gap detection
+Infrastructure
+AWS af-south-1 Cape Town — all data in SA
+EC2 autoscaling · RDS PostgreSQL Multi-AZ · S3 video CDN · CloudFront · KMS encryption (POPIA) · CloudTrail audit · Disaster recovery · 99.9% SLA · POPIA-compliant by design
+Low-bandwidth design principles
+The LMS is built for South African network conditions — patchy coverage, expensive data, intermittent connectivity. Three design principles dominate every technical decision:
+Offline-first
+PWA with service worker
+The LMS is built as a Progressive Web App with a service worker that caches lessons locally. Learners download content when they have connectivity, then study offline. The LMS syncs assignments and progress automatically when the learner reconnects. Designed to function on 2G connections at minimum.
+Video compression
+Adaptive bitrate schooling
+All video content uses adaptive bitrate schooling. Mobile users default to 360p; the player only requests higher quality on stable Wi-Fi. Every video has a transcript for text-based study. Audio-only mode lets learners study during commutes when video data costs are prohibitive.
+WhatsApp integration
+Reaching the data-poor learner
+A custom WhatsApp bot lets learners submit assignments, take quizzes, ask the AI tutor questions, and receive facilitator notifications via WhatsApp. For learners whose data plans only cover WhatsApp (the majority of low-income SA users), this is the difference between participation and exclusion.
+Section 5 — Facilitator Pipeline
+The quality of an academy is the quality of its facilitators. Ginashe Academy operates a four-level facilitator competency framework — sourcing, training, and progressing facilitators systematically.
+Four-level competency framework
+Entry
+Level 1 — Subject Matter Expert
+Industry professional with 3+ years of practical experience. Assessed through portfolio review. Recognised Prior Learning pathway. Paid per session — typically R600 to R1,200 per session for senior practitioners.
+After 4 weeks
+Level 2 — Registered Facilitator
+Completes the Ginashe Facilitator Foundations programme (4 weeks). Achieves ETDP SETA unit standard 117871 (Facilitate Learning). Assigned to cohorts as primary facilitator. Available part-time or full-time.
+After 12 months
+Level 3 — Master Facilitator
+Mentors Level 1 and Level 2 facilitators. Designs new course modules. Contributes to SETA evidence packs. Higher session rate plus benefits package. Eligible for stream-level decision-making roles.
+After 2+ years
+Level 4 — Stream Lead
+Owns curriculum quality for an entire stream. Manages academic partnerships. Carries P&L responsibility for stream revenue. Reports to the Academic Director. Typically a small number of these roles per stream (1–2).
+Facilitator Foundations programme — 4 weeks
+Every Ginashe Academy facilitator completes the Foundations programme. It is not optional. Industry expertise alone does not equal teaching capability — adults learn differently, classrooms have dynamics, assessments have rigour, and SETA paperwork has deadlines.
+Week 1 — Adult Learning Theory
+How adults learn differently from children
+Andragogy versus pedagogy. Active learning principles. The South African adult literacy context. How to assess incoming learners' actual level (which often differs from their formal qualifications). Why "learning by doing" beats "learning by listening" for working-age adults.
+Week 2 — Lesson Design
+From course brief to deliverable lesson
+Backwards design — start with the assessment, work backwards to the lesson plan. Lesson plan templates aligned to Ginashe LMS structure. SA-specific examples in every lesson. Assessment design — formative versus summative. LMS content creation hands-on workshop.
+Week 3 — Facilitation Skills
+Running a real classroom or video session
+Managing diverse cohorts (different ages, backgrounds, prior knowledge). Asking questions versus telling answers. Microphone presence and screen discipline for video. Handling conflict, disruption, and emotional moments in the classroom. Learner support and wellbeing.
+Week 4 — Assessment & SETA
+The paperwork that protects the qualification
+Formative versus summative assessment in detail. Portfolio of Evidence (PoE) requirements per SETA. Marking guides and moderation. SETA forms and reporting deadlines. Academic integrity. Learner appeals process. The non-negotiable compliance basics.
+Where facilitators come from — sourcing strategy
+Alumni-to-facilitator — top graduates from each cohort are invited into the facilitator track 12 months after graduation, once they have employment experience. This creates a self-reinforcing pipeline of practitioners who already know the Ginashe method.
+Industry practitioners — part-time facilitation by working professionals. Cloud engineers, nurses, electricians, farmers. Authentic industry experience in every classroom. The biggest advantage Ginashe has over traditional academic institutions.
+University partnership — final-year and postgraduate students from Wits, UCT, UJ, and Tshwane do supervised facilitation as part of their community engagement credits. Lower cost to the Academy and meaningful experience for the students.
+Section 6 — Revenue Model
+Ginashe Academy operates as Ginashe Academy (Pty) Ltd. The revenue model below targets approximately R45 million per year by Year 3, scaling to R120 million by Year 5 with continental expansion. While the current Pty Ltd structure provides commercial flexibility, future conversion to or sister-company creation as a Non-Profit Company (NPC) may be considered when SETA grant and donor revenue justifies it — see Phase 4 for full detail.
+Six revenue streams — target split at Year 3 maturity
+SETA grants
+32%
+~R14.4M
+Corporate B-BBEE
+26%
+~R11.7M
+Learner fees
+18%
+~R8.1M
+Government contracts
+14%
+~R6.3M
+Donor & foundation
+7%
+~R3.1M
+Content licensing
+3%
+~R1.4M
+Stream 1 — SETA grants (32%)
+SETA discretionary grants are the largest single revenue stream and the most stable. Every accredited training provider that meets SETA quality standards is eligible to apply. Ginashe Academy aligns 9 of its 10 streams to a primary SETA, ensuring no over-dependency on any one funding body.
+Priority SETAs in Year 1: MICT (Digital Systems, Creative Media), HWSETA (Health Sciences), EWSETA (Energy & Infrastructure), AgriSETA (Agriculture & Food Security), and INSETA (Financial Literacy & FinTech).
+Stream 2 — Corporate B-BBEE skills spend (26%)
+South African corporates with annual leviable income above R10 million are required to spend a portion on skills development. Ginashe Academy positions itself as a high-value B-BBEE skills development partner — providing certified training at scale, with detailed B-BBEE scorecard reporting, and graduates that integrate directly into the corporate's talent pipeline.
+Typical corporate cohort: 30 to 100 learners, R5,000 to R15,000 per learner, fully customised to the corporate's context and B-BBEE needs.
+Stream 3 — Learner fees (18%) — sliding scale
+Ginashe Academy charges a sliding-scale fee aligned to learner means. Unemployed learners pay nothing. Working professionals pay according to their income bracket. Corporate-sponsored learners pay full rate. Online self-paced learners pay a monthly subscription. This structure ensures no learner is excluded by fees, while those who can pay do contribute.
+Learner segment
+Fee per course
+Unemployed (SETA-funded)
+R0 — fully subsidised
+Employed, income < R10k/month
+R500 to R1,500
+Employed, income R10k–R25k/month
+R1,500 to R4,000
+Corporate-sponsored
+R5,000 to R15,000
+Online self-paced subscription
+R299 to R999/month
+Certification prep add-on
+R1,000 to R3,000
+Stream 4 — Government contracts (14%)
+Direct contracts with DBE, DHET, NSF, NEF, and provincial education departments. Typical contract: a multi-cohort training delivery for a specific demographic (rural youth, women in trades, ECD practitioners). Government contracts are less stable than SETA grants but offer larger single deals — often R3 million to R10 million per contract.
+Stream 5 — Donor and foundation grants (7%)
+Major foundations support specific streams or themes. Mastercard Foundation (youth employment), GIZ (energy and agriculture), USAID (health and food security), Ford Foundation (social enterprise). Donor grants typically support 1–3 year programmes and require detailed impact reporting.
+Stream 6 — Content licensing (3%)
+Ginashe Academy licenses curriculum content to partner training providers across Africa. A small but growing revenue stream that scales without proportional cost increase. Partners pay annual licence fees plus a per-learner royalty.
+Growth trajectory
+Year 1
+Year 1 — Foundation year
+DSS continuing + 2 new streams launched. 500 learners. R4.5 million revenue. Provisional SETA accreditation. Two campuses operational.
+Year 2
+Year 2 — Scaling year
+5 streams active. 2,000 learners. R12 million revenue. Full SAQA registration achieved. Mobile learning units deployed.
+Year 3
+Year 3 — Maturity year
+All 10 streams active. 5,000 learners. R45 million revenue. University articulation agreements signed. National SA presence.
+Year 5
+Year 5 — Continental year
+Pan-African expansion. 20,000 learners. R120 million revenue. SADC qualification recognition. First 3 African countries operational beyond SA.
+Break-even target
+Month 18 (conservative)
+Operational break-even is targeted by Month 18. The conservative case assumes 20% under-achievement of growth targets; even on this basis, the Academy reaches break-even before Year 2 close. Beyond break-even, all surplus is reinvested into learner bursaries, stream launches, and infrastructure expansion.
+Section 7 — Stream Launch Sequence
+Streams are launched in a sequence determined by three factors: market urgency, infrastructure cost, and SETA alignment readiness. The order below ensures the lowest-cost, highest-yield streams launch first, generating early revenue and credibility to fund the higher-cost streams that follow.
+Months 0–3
+NOW — Digital Systems Stream (DSS)
+Already operational. Cloud Launchpad cohorts running. Materials complete. Begin formal MICT SETA provisional accreditation immediately. Zero new infrastructure required.
+Months 1–4
+Q1 — Financial Literacy & FinTech Stream (FLS)
+Lowest infrastructure requirement of any new stream. Online-first delivery. Highest reach potential. INSETA grant application immediately. Personal Finance course live within 60 days of launch decision.
+Months 2–6
+Q1 — Health Sciences Stream (HSS)
+Community Health Worker programme as the flagship. Partner with 2 clinics for practicum placements. HWSETA grant application. Stipend model from day 1 — non-negotiable for this learner cohort.
+Months 4–8
+Q2 — Energy & Infrastructure Stream (EIS)
+Solar PV Installation as the flagship course. EWSETA and SAPVIA partnership. First corporate funder: a solar EPC company. First campus location: Johannesburg south.
+Months 5–9
+Q2 — Creative & Digital Media Stream (CDS)
+Graphic Design and Social Media Management as the flagship courses. Online-first delivery. MICT SETA extension from existing accreditation. Partnership with an advertising agency for internship pipeline.
+Months 7–10
+Q3 — Leadership & Entrepreneurship Stream (LES)
+Embedded as an add-on to all other streams. Business Fundamentals module added to every technical course. NEF and DTI partnerships secured. The "multiplier stream" — every other stream benefits from its presence.
+Months 8–12
+Q3 — Agriculture & Food Security Stream (AFS)
+Partnership with AgriSETA and a commercial farm for practicum. Initial geographic focus: Limpopo and Eastern Cape (where smallholder farming need is greatest).
+Months 10–15
+Q4 — Applied Trades & Engineering Stream (ATS)
+Highest infrastructure cost of any stream. MERSETA funding is critical to make the unit economics work. Partnership with a TVET college for shared workshop space. Solar + electrical bundle as the launch flagship.
+Months 14–20
+Year 2 — Early Childhood & Education Stream (ECS)
+ETDP SETA leads the funding. DBE and DSD partnerships for ECD centre placements. Highest social impact per learner of any stream in the Academy.
+Months 16–22
+Year 2 — Environment & Climate Action Stream (CAS)
+WRSETA and DFFE partnerships. Timing aligned with Just Energy Transition investment cycle. Conservation NGO practicum agreements pre-secured.
+Section 8 — Phase 3 Summary
+What Phase 3 establishes
+A four-channel delivery model that reaches every learner segment in South Africa.
+A four-year accreditation roadmap from provisional SETA accreditation to continental qualification recognition.
+A five-layer LMS architecture optimised for South African network conditions.
+A four-level facilitator pipeline with a structured 4-week Foundations programme.
+A six-stream revenue model targeting R45 million per year by Year 3 and R120 million by Year 5.
+A stream launch sequence ordered by readiness, cost, and market urgency.
+What comes next
+Phase 4 — Governance, Brand & Web — covers the remaining strategic pillars:
+Governance structure — board, Academic Council, and the relationship between Ginashe Group (Pty) Ltd and Ginashe Academy (Pty) Ltd.
+Brand identity system — the master tagline, stream taglines, colour palette, typography, and photography direction.
+Website architecture — the full ginashe.academy site map and learn.ginashe.academy LMS.
+Partnership framework — partner tiers and the six standard partnership clauses.
+Legal structure — current Pty Ltd configuration, the recommended subsidiary arrangement, and future-state options.
+Build Something Real
+ginashe.academy  ·  3 May 2026
+
+--- GA_Phase4_GovernanceBrandWeb.docx ---
+Strategic Blueprint
+PHASE 4
+Governance, Brand & Web
+How the Academy is governed, presented, and made discoverable
+What this document delivers
+Governance structure — board composition, Academic Council, and the relationship between Ginashe Group and Ginashe Academy.
+Brand identity system — primary mark, dual-mode logo specifications, master tagline, stream taglines, full colour system, typography, photography direction.
+Website architecture — eight-section site map for ginashe.academy plus the learn.ginashe.academy LMS subdomain.
+Partnership framework — four partner tiers and six standard partnership clauses.
+Legal structure — Pty Ltd subsidiary configuration, current state, and future-state options for NPC conversion.
+Document 4 of 4 in the Ginashe Academy Strategic Blueprint
+Issued: 3 May 2026
+Prepared by Ginashe Group
+Section 1 — Governance Structure
+Ginashe Academy currently operates as Ginashe Academy (Pty) Ltd — a private company. The recommended structure is for Ginashe Academy (Pty) Ltd to operate as a wholly-owned subsidiary of Ginashe Group (Pty) Ltd, the holding company. This structure provides legal clarity, operational efficiency, and future flexibility — including the option to convert to or to spin out a sister NPC entity at the right time.
+Board of Directors
+Even as a Pty Ltd, Ginashe Academy operates with a properly constituted board. The board is the legal, fiduciary, and strategic governing body of the company. Five director roles, with a sixth subcommittee for finance:
+Chair
+Chairperson — Independent non-executive
+Provides governance, fiduciary oversight, and public credibility. External to Ginashe Group operations. Appointed for an initial three-year term, renewable once. Recommended for the first board even though not legally required for a small Pty Ltd.
+MD
+Managing Director — Ginashe Group nominee
+Holds the operational and strategic mandate. Day-to-day accountability for delivery of the Academy's mission. Maintains the relationship between Ginashe Group (parent) and Ginashe Academy (subsidiary).
+NED-1
+Non-executive Director — Industry nominee
+Brings industry credibility and employer relations. Curriculum quality input from a market perspective. Typically a senior practitioner from one of the Academy's priority sectors (cloud, energy, health, agriculture).
+NED-2
+Non-executive Director — Academic nominee
+Brings academic rigour and accreditation expertise. Provides external moderation guidance. Typically a senior academic from a SA university or an experienced SETA accreditation specialist.
+COMM
+Community Representative
+Elected by the learner alumni body each year. Provides the learner voice at board level. Ensures the Academy's mission stays grounded in learner reality, not boardroom abstraction. May join formally once the alumni body reaches sufficient size.
+FIN
+Finance Committee
+Subcommittee of the board. Oversees SETA reporting, grant expenditure, audit findings, and partner reporting. Meets quarterly. Reviews accounts before they go to the full board. Critical even at Pty Ltd stage — SETA expects this oversight to exist.
+Academic Council
+Where the board governs the institution, the Academic Council governs the curriculum. Curriculum decisions cannot be made by financial signatories alone — they require academic and industry input.
+Academic Council
+Quarterly governance of curriculum and assessment
+Chaired by the Academic Director. Comprises all 10 stream leads plus 2 external academics. Approves curriculum changes, new programmes, assessment standards, and external moderation reports. Meets quarterly. Empowered to escalate concerns directly to the board.
+External Moderation Panel
+Per SETA accreditation requirement
+Reviews 10% of all marked assessments per cohort. Conducts annual curriculum quality review per stream. Members are SETA-approved and entirely independent of the Academy. Critical for maintaining provisional and full SETA accreditation.
+Student Representative Council
+Monthly governance from the learner perspective
+Elected by each cohort. Provides the formal feedback channel from learner to leadership. Meets monthly with the Academic Director. Participates in programme reviews. Empowered to raise concerns to the Community Representative on the board.
+Ginashe Group relationship
+The recommended structure is for Ginashe Academy (Pty) Ltd to be a wholly-owned subsidiary of Ginashe Group (Pty) Ltd. This is the cleanest configuration for the early years and offers four advantages over running the Academy as a separate, independent entity:
+Brand and credibility transfer — the Group's existing relationships, vendor contracts, banking infrastructure, and credibility transfer to the subsidiary instantly. A separate independent entity must rebuild all of this from scratch.
+Tax efficiency on early-year losses — early-stage Academy losses can be group-relief'd against Ginashe Group profits in the same financial year. As a separate independent entity, those losses sit unused on the books for years before becoming valuable.
+Operational simplicity — shared services (IT infrastructure, finance, HR, legal counsel) flow naturally between parent and subsidiary without elaborate management-fee paperwork or transfer-pricing complexity. Auditors and SARS understand and accept this structure routinely.
+Future optionality — if the Academy later requires NPC conversion (when SETA grants and donor money become significant) or external investment, separating a subsidiary is far simpler than restructuring an independent entity. The subsidiary can also operate alongside a future sister NPC for the bursary or grant arm.
+Service-level agreement between parent and subsidiary
+Required even within the same group
+A formal SLA between Ginashe Group and Ginashe Academy documents the management services provided (IT, finance, HR), the fees charged (transparent, market-rate), and the delivery commitments. This is required by SARS for transfer-pricing compliance and by SETAs as evidence of operational independence at the curriculum level.
+Core policy framework
+Every training provider in the South African education sector must maintain a defined policy framework. Ginashe Academy's framework consists of nine documents that are reviewed annually by the Academic Council and approved by the board:
+Academic integrity policy — defines plagiarism, AI-assisted work boundaries, and assessment fraud.
+Learner rights and responsibilities charter — issued to every learner at intake.
+Facilitator code of conduct — defines professional standards for every facilitator.
+POPIA privacy policy — Information Officer appointed, data subject rights documented.
+Whistleblower protection policy — anonymous reporting channel for ethics concerns.
+Conflict of interest register — declared annually by every board member and employee.
+Grievance and appeals procedure — formal route for learner complaints and assessment appeals.
+Safeguarding policy for minor learners — applies to ECD school and any course with under-18s.
+Inclusion and accessibility policy — disability accommodation, language support, gender equity.
+Section 2 — Brand Identity System
+Ginashe Academy's brand identity is built around three principles: African-grounded, future-forward, and unmistakeably practical. The brand must work equally well on a township campus signboard, a corporate B-BBEE proposal, a smartphone LMS app, and a SETA accreditation document. The system below makes that possible.
+Brand foundations
+Mission
+What Ginashe Academy exists to do
+Making transformation a reality — one learner at a time.
+Vision
+What Ginashe Academy is becoming
+Africa's most trusted and accessible skills academy.
+Brand personality
+Five attributes that define every touchpoint
+Ambitious · Grounded · Practical · Warm · Proudly African
+Tone of voice
+How Ginashe Academy speaks
+Direct and encouraging. Never condescending. Specific examples over vague claims. South African context in every illustration. First-person plural — "we build". Avoids jargon, embraces clarity.
+Master tagline
+The four-word promise that travels everywhere
+Build Something Real — applicable across every stream, every learner, every audience.
+Stream-specific taglines
+Each stream carries the master tagline as its institutional anchor, and adds a stream-specific tagline that signals its unique mission. These taglines appear on stream landing pages, course brochures, and graduate communications.
+DSS — Digital Systems: "Deploy to Cape Town"
+HSS — Health Sciences: "Heal Your Community"
+EIS — Energy & Infrastructure: "Power the Future"
+AFS — Agriculture & Food Security: "Feed the Continent"
+FLS — Financial Literacy & FinTech: "Own Your Money"
+ATS — Applied Trades: "Build with Your Hands"
+CDS — Creative & Digital Media: "Tell Africa's Story"
+LES — Leadership & Entrepreneurship: "Make Things Happen"
+ECS — Early Childhood & Education: "Shape Every Child"
+CAS — Environment & Climate Action: "Protect What's Ours"
+Logo system
+The Ginashe Academy mark consists of three elements: a shield-form symbol containing a stylised "G", a strong wordmark in Montserrat 900, and a horizontal cyan signal line connecting the wordmark to a tracked-out "ACADEMY" lockup. The signal line carries the brand's digital character without confining the mark to a tech-only identity.
+Primary mark — light variant
+For use on white, light backgrounds, document headers, and printed collateral.
+Light-mode primary lockup — for use on White, light backgrounds, and document headers
+Primary mark — dark variant
+For use on Night background (#0B0C10), dark photography overlays, and tech-led contexts such as the LMS interface.
+Dark-mode primary lockup — for use on Night, dark photography overlays, and tech-led contexts
+Logo construction notes
+The shield-form symbol uses cyan (#00F2FF) as its fill, with a 7px outline that matches the active text colour (Night for light variant, White for dark variant).
+A bold "G" sits inside the shield, drawn at a 14px stroke-width, in Night colour for both variants.
+Circuit-pattern detail flanks both sides of the shield as decorative elements that animate in web/digital contexts (CSS pulse animation) and remain static in print.
+A small antenna-like glyph above the shield (the diamond + curved stroke + small square) signals connection, signal, broadcast — a subtle nod to digital identity without dominating the mark.
+The wordmark "GINASHE" uses Montserrat 900 with negative tracking to create density. "ACADEMY" uses Outfit 700 with widely tracked letters (0.5em) to create breathing space.
+A horizontal cyan signal line separates the two words. In digital contexts, this line carries an animated white pulse that travels left to right every 10 seconds.
+Logo variations and minimum sizes
+Primary lockup (horizontal): minimum width 120px digital / 30mm print. Used for headers, signage, presentations.
+Stacked lockup (symbol above wordmark): used where horizontal space is constrained — apps, square ads, social profiles.
+Symbol-only mark (shield with G): used as favicon, app icon, social avatar. Minimum 16px.
+Wordmark-only: used in monochrome contexts where the symbol cannot reproduce cleanly — embossed or single-colour print.
+Reversed/monochrome variants: White on any solid colour for legibility on photography overlays.
+Logo do-nots
+Do not stretch, skew, or recolour the symbol — cyan is the only acceptable fill.
+Do not place the logo on background colours that compromise the symbol's contrast — minimum WCAG AA contrast required.
+Do not separate the symbol from the wordmark in primary contexts — the lockup is the lockup.
+Do not animate the wordmark — only the cyan signal line is animated.
+Do not use the stream accent colours as the symbol fill — cyan is reserved for the master mark only.
+Colour system
+The Ginashe Academy colour system is layered. The master brand uses a five-colour palette anchored on Night, Cyan, Ink, Gold, and White. Each stream adds a single accent colour for differentiation. Stream colours never replace master brand colours — they sit alongside them.
+Master brand palette
+NIGHT
+CYAN
+INK
+GOLD
+WHITE
+#0B0C10
+Primary text & dark mode
+#00F2FF
+Logo signal accent
+#0F6E56
+Document & UI primary
+#D4AF37
+Distinction accent
+#FFFFFF
+Light surfaces
+How the master palette is used
+NIGHT (#0B0C10) — the brand's anchor dark. Used for headlines, body text on light surfaces, and as the primary background for the dark-mode logo and LMS interface.
+CYAN (#00F2FF) — reserved for the logo and digital signal accents only. NOT used as a UI button colour or page background. Its rarity is what gives the logo its impact.
+INK (#0F6E56) — the academic primary. Used for document headers, Digital Systems Stream (DSS) accent, and as the primary chrome colour on ginashe.academy. Carries the African-grounded warmth.
+GOLD (#D4AF37) — used sparingly for distinction markers — graduate certificates, founding partner badges, "premium" indicators. Never used as a body or chrome colour.
+WHITE (#FFFFFF) — light surfaces for documents, UI cards, and the light-mode logo background.
+Stream accent colours — visual reference
+Each of the 10 streams has a unique accent colour. Used for stream identification cards, course pages, stream landing pages, and certificates. Never replaces the master brand palette.
+Code
+Stream
+Hex
+Swatch
+DSS
+Digital Systems Stream
+#0F6E56
+HSS
+Health Sciences Stream
+#A32D2D
+EIS
+Energy & Infrastructure Stream
+#B85C00
+AFS
+Agriculture & Food Security Stream
+#3B6D11
+FLS
+Financial Literacy & FinTech Stream
+#185FA5
+ATS
+Applied Trades & Engineering Stream
+#534AB7
+CDS
+Creative & Digital Media Stream
+#993556
+LES
+Leadership & Entrepreneurship Stream
+#63380A
+ECS
+Early Childhood & Education Stream
+#1D9E75
+CAS
+Environment & Climate Action Stream
+#0C7B93
+Typography
+Two typeface families serve the entire Ginashe Academy system — Montserrat and Outfit. Both are open-source Google Fonts, ensuring consistent rendering across web, mobile, print, and document templates without licensing barriers.
+Montserrat — display and headlines
+Montserrat 900 (Black weight) for the wordmark, primary headlines, and high-impact display text. Negative tracking creates the density that makes "GINASHE" feel substantial. Montserrat 700 (Bold) for secondary headlines and section dividers.
+Outfit — body and UI
+Outfit 400 (Regular) for body copy across LMS, documents, and web. Outfit 500 (Medium) for emphasis. Outfit 700 (Bold) for sub-headings and the "ACADEMY" lockup. Outfit's geometric character pairs cleanly with Montserrat without competing for visual weight.
+Document fallback — Arial
+All Word document templates use Arial as the primary typeface for compatibility. Where Montserrat or Outfit is unavailable (printed by a third party, viewed on a system without Google Fonts), Arial Bold and Arial Regular provide a clean visual fallback that matches the geometric character of the brand fonts.
+Photography direction
+Photography is the most powerful brand asset because it carries the human reality of the Academy. Stock photography of American office workers actively damages the brand — it makes Ginashe Academy look like every other generic education business. The photography brief is strict.
+Real Ginashe Academy learners in real Ginashe Academy environments. Workshops, clinics, farms, township campuses, mobile learning units. Never rented sets, never staged.
+Natural light preferred over studio lighting. Photography that looks like it could be a documentary still — not a marketing brochure.
+Candid moments over posed portraits. A learner concentrating on a soldering joint. A facilitator pointing at a circuit diagram. A graduate hugging a parent at a ceremony.
+Every South African demographic represented across the body of work. No tokenism — the photography body should look like SA looks.
+Action over passivity. Action shots beat headshots. Hands working, eyes thinking, mouths explaining.
+Joy is permitted. Transformation looks like confidence and pride — not struggle. Avoid the saviour-narrative photography that other education brands lean on.
+Dignity-first framing. Never frame a learner as someone to be rescued. Always frame them as someone building their own future.
+Section 3 — Website Architecture
+ginashe.academy is the public face of the Academy. It serves three audiences simultaneously — prospective learners, employers, and funders — and connects to the LMS at learn.ginashe.academy for active learners. The architecture below describes the eight-page site structure, technical stack, and the LMS subdomain.
+Site map — eight primary pages
+1
+Home
+ginashe.academy/
+Hero with master tagline "Build Something Real". 10 stream cards in a responsive grid. Live impact stats (learners enrolled, graduates placed, partner logos). 3-step "How it works". Graduate stories carousel. SETA accreditation badge bar. Primary CTA: "Find your course".
+2
+Streams
+ginashe.academy/streams
+Overview of all 10 streams with filter by interest and career goal. Each stream has its own dedicated page at /streams/[slug] containing dean's welcome, full course catalogue, graduate outcomes, employer partners, and apply CTA.
+3
+Courses
+ginashe.academy/courses
+Searchable catalogue of 80+ courses. Filter by stream, NQF level, duration, delivery mode, province, and cost. Career quiz matches learners to recommended courses. Each course page details modules, schedule, outcomes, fees, entry requirements, and upcoming cohort dates.
+4
+LMS
+learn.ginashe.academy
+Subdomain hosts the full Moodle LMS. Learner dashboard, course content, assignments, quizzes, certificates, AI tutor. Mobile-first PWA with offline content download. WhatsApp submission bot for low-connectivity learners. Single sign-on from main site.
+5
+Employers
+ginashe.academy/employers
+B-BBEE skills spend calculator. Graduate talent pool search. Custom cohort builder for corporate training programmes. Partner case studies. Employer briefing pack download. RFP and partnership inquiry form. Authenticated corporate portal.
+6
+Stories
+ginashe.academy/stories
+Long-form graduate profiles with before/after career outcome data. Video testimonials. Graduate-authored blog posts. Filterable by stream, province, and career role. Graduates can submit their own updates via authenticated CMS.
+7
+Apply
+ginashe.academy/apply
+Career quiz leads to recommended courses. POPIA-compliant application form (with WhatsApp option). Document upload for ID and qualifications. Funding options page detailing SETA, bursary, and payment plans. Real-time cohort availability. Application status tracker.
+8
+About
+ginashe.academy/about
+Mission, vision, and values. Team and board. Governance and corporate registration documentation. SETA accreditation status per stream (live). Impact metrics dashboard. Annual report download. Press and media kit. Ginashe Group relationship explained.
+Technical stack
+Frontend
+ginashe.academy main site
+Next.js 14 with App Router, deployed on Vercel. Tailwind CSS for styling. Contentful as the CMS for course content and graduate stories. Algolia for instant course search. Mobile-first, offline-capable PWA. Sub-2-second time-to-interactive on 3G connections.
+LMS backend
+learn.ginashe.academy
+Moodle 4.x hosted on AWS af-south-1 Cape Town. RDS PostgreSQL Multi-AZ for primary data. S3 plus CloudFront for video content delivery. KMS encryption for POPIA compliance. CloudTrail audit logging. Claude API integration for the AI tutor. Twilio WhatsApp Business API for assignment submission.
+Integrations
+Connecting the Academy ecosystem
+PayFast and Stripe for payment processing (covers SA and international donors). HubSpot CRM for employer leads. Mailchimp for learner communications. Google Analytics 4. SETA reporting via custom API integration. WhatsApp Business API for learner notifications. Ginashe Academy Auth (single sign-on) connects main site to LMS.
+Section 4 — Partnership Framework
+Ginashe Academy operates as an ecosystem, not as an island. Strategic partnerships with industry, government, and donor bodies are essential — but they must be governed by clear terms that protect curriculum independence, learner data, and the Academy's brand integrity.
+Four-tier partnership model
+Tier 1 — Founding Partners (Year 1 priority)
+A small number of marquee partners that establish the Academy's credibility from launch. Founding partners receive permanent recognition on the website, in annual reports, and on graduate certificates.
+AWS Africa — training partner status for the Digital Systems Stream.
+SAPVIA — solar industry alignment for the Energy & Infrastructure Stream.
+SAICA — financial literacy curriculum endorsement.
+A major South African bank — FinTech cohort funder and graduate employer.
+A leading SA health NGO — Community Health Worker practicum partner.
+Tier 2 — Corporate B-BBEE Skills Partners
+Corporates that fund cohorts as part of their B-BBEE skills development spend. Annual or multi-year agreements. Co-branded with the corporate but always under the Ginashe Academy primary mark.
+MTN or Vodacom — data bundles plus Digital Systems cohorts.
+Solar EPC companies — Energy & Infrastructure cohort funders.
+SA agribusiness firms — Agriculture & Food Security cohorts.
+Advertising agencies — Creative & Digital Media internship pipeline.
+Construction companies — Applied Trades cohorts.
+Tier 3 — Government & Development Finance
+Government departments, statutory bodies, and development finance institutions. Larger contract values, longer lead times, more compliance overhead. Often funds specific demographic targets (rural youth, women in trades, ECD practitioners).
+DHET — community college partnership and articulation.
+NEF — entrepreneurship graduate funding pathway.
+IDC — agritech and energy graduate placements.
+NSF — vulnerable learner bursary funding.
+NYDA — youth employment pipeline.
+Tier 4 — International Development Partners
+Foundations and bilateral development agencies. Multi-year programmes typically focused on specific themes (energy transition, food security, youth employment). Detailed impact reporting and evaluation requirements.
+GIZ (German Corporation for International Cooperation) — energy and agriculture programmes.
+USAID — health and food security programmes.
+Mastercard Foundation — Young Africa Works youth employment funding.
+Ford Foundation — social enterprise programmes.
+Six standard partnership clauses
+Every partnership agreement — regardless of tier — includes these six clauses. They are non-negotiable. Their purpose is to protect what cannot be replaced if compromised: curriculum independence, learner data, and the Academy's reputation.
+Clause 1 — Curriculum independence
+No partner may dictate or approve curriculum content
+Ginashe Academy retains full editorial and curriculum control. No sponsor may require curriculum changes, mandatory product placement, brand endorsements, or modified assessment criteria. Violation of this clause terminates the agreement immediately, with no penalty payable by the Academy.
+Clause 2 — Learner data sovereignty
+Learner data belongs to the learner, not the partner
+Learner personal data is owned by the learner. Partners receive only aggregated, anonymised outcomes data. Individual learner data is never shared with funders, employers, or third parties without explicit, informed, written learner consent. Full POPIA Condition 2 and Condition 7 compliance is mandatory.
+Clause 3 — Employment commitment
+Funded cohorts come with an interview pipeline obligation
+Employer partners who fund cohorts commit to interviewing all qualifying graduates within 60 days of cohort completion. This is an interview commitment, not an employment guarantee. The commitment is publicly reported in the annual report — partners are listed by name and interview rate.
+Clause 4 — B-BBEE reporting
+SETA-compliant skills spend certificates within 30 days
+Ginashe Academy provides SETA-compliant skills spend certificates within 30 days of cohort completion. Certificates specify BEE ownership status, SETA alignment, NQF level, and learner demographics — sufficient detail for direct B-BBEE scorecard inclusion by the partner.
+Clause 5 — Quality assurance rights
+Observation, not interruption
+Partners may observe (not interrupt) any class or assessment session with five business days written notice. Partners receive quarterly outcome reports. Curriculum or assessment concerns are raised through the Academic Council — never directly to facilitators or learners.
+Clause 6 — Branding and attribution
+Partner recognition without brand confusion
+Partners are listed as sponsors on relevant course pages and graduate certificates. Partners may not brand themselves as co-deliverers of the qualification — only as funders, employers, or supporters. The Ginashe Academy mark is the primary identity on all learner-facing materials.
+Section 5 — Legal & Corporate Structure
+Ginashe Academy currently operates as Ginashe Academy (Pty) Ltd, a private company under the Companies Act 71 of 2008. This section sets out the current structure, the recommended near-term configuration as a wholly-owned subsidiary of Ginashe Group, and the future-state options that may make sense as the Academy scales — including potential conversion to or sister-NPC creation.
+Current structure
+Ginashe Academy (Pty) Ltd
+Private company under the Companies Act
+Currently incorporated as a Pty Ltd. This is the right structure for the early years — operationally simple, commercially flexible, and well-understood by SARS, banks, and partners. Maintains the founder's direct decision-making authority and avoids the governance complexity of an NPC at a stage where the institution is still finding its operating rhythm.
+Recommended near-term configuration
+The recommended structure for the next 18 to 36 months is for Ginashe Academy (Pty) Ltd to operate as a wholly-owned subsidiary of Ginashe Group (Pty) Ltd. This is a minor structural change from independent Pty Ltd to subsidiary Pty Ltd, but it unlocks meaningful advantages.
+Parent
+Ginashe Group (Pty) Ltd — holding company
+The existing holding company. Owns the Ginashe brand and intellectual property. Provides operational management services to the subsidiary on a transparent management fee basis. Maintains the broader Ginashe Group corporate identity and existing commercial relationships.
+Sub
+Ginashe Academy (Pty) Ltd — operating subsidiary
+Wholly-owned subsidiary of Ginashe Group. Operates all 10 streams. Generates revenue from learner fees, corporate B-BBEE cohorts, government contracts, and (where eligible as a Pty Ltd) selected SETA programmes. Maintains its own bank accounts, audit, and statutory returns.
+SLA
+Group Service Agreement
+A formal service-level agreement between Ginashe Group and Ginashe Academy documents the management services provided (IT, finance, HR, legal), the fees charged at market rate, and the delivery commitments. Required by SARS for transfer-pricing compliance and by SETAs as evidence of operational independence at curriculum level.
+Why subsidiary is better than independent for now
+Brand and credibility transfer — the Group's existing relationships, vendor contracts, banking infrastructure, and credibility transfer to the subsidiary instantly. A separate independent entity must rebuild all of this from scratch.
+Tax efficiency on early-year losses — early-stage Academy losses can be group-relief'd against Ginashe Group profits in the same financial year. As a separate independent entity, those losses sit unused on the books for years.
+Operational simplicity — shared services flow naturally between parent and subsidiary without elaborate paperwork. Auditors and SARS understand and accept this structure routinely.
+Future optionality — converting to NPC or creating a sister NPC is significantly easier from a subsidiary structure than from an independent Pty Ltd. The subsidiary can also accept outside investment in the future without restructuring the entire group.
+Future-state options — when and why to consider change
+The current Pty Ltd structure is right for now. Three future scenarios may make sense to consider at the appropriate moment, none of them urgent:
+Future option A — Convert Ginashe Academy to NPC
+Trigger: when SETA grants and donor money exceed 30% of revenue
+A full conversion of Ginashe Academy from Pty Ltd to NPC unlocks SETA discretionary grant eligibility, Section 18A donor receipts, PBO tax exemption, and B-BBEE CSI/ED contribution recognition. Worth considering when grant and donor revenue would exceed 30% of total revenue and the loss of commercial flexibility is justified by the funding gain.
+Future option B — Create a sister NPC alongside the Pty Ltd
+Trigger: when bursary endowment or donor funding reaches material scale
+A separate Ginashe Academy Foundation NPC operates alongside the Pty Ltd. The NPC handles bursaries, donor funding, and SETA grants. The Pty Ltd handles commercial training, corporate cohorts, and content licensing. Best of both worlds — preserves commercial flexibility while unlocking grant funding. More complex to manage but increasingly common for SA training providers operating at scale.
+Future option C — Create a Trust for the bursary endowment
+Trigger: when capital donor commitments justify a separate vehicle
+A Ginashe Academy Trust holds the bursary endowment fund. Receives large capital donor contributions. Distributes annual bursaries per the deed of trust. Tax-efficient vehicle for philanthropic giving — donors receive Section 18A certificates if the Trust is registered as a PBO. Typically established when capital donor commitments reach R5 to R10 million plus.
+Annual compliance — current Pty Ltd obligations
+As a Pty Ltd, Ginashe Academy maintains an annual compliance calendar with five recurring requirements. These are the same obligations that apply to every active South African Pty Ltd:
+CIPC annual return — submitted within 30 business days of the company's registration anniversary date.
+SARS annual income tax return (ITR14) — submitted within 12 months of financial year end.
+Annual financial statements — prepared and signed off by directors. Audit required only if the public interest score exceeds the threshold; otherwise an independent review is sufficient.
+POPIA Information Officer registered with the Information Regulator — already required regardless of company type.
+B-BBEE certificate or sworn affidavit — annual renewal. Affidavit acceptable for EME and QSE thresholds.
+When SETA accreditation is achieved, additional SETA-specific compliance obligations apply per the Phase 3 accreditation roadmap.
+Section 6 — Strategic Blueprint Complete
+Phase 4 closes the Ginashe Academy Strategic Blueprint. Across four documents, the Academy now has a defined institutional architecture from stream mapping through to legal structure.
+What the four phases together establish
+10
+Streams defined
+80+
+Courses mapped
+9
+SETAs aligned
+6
+Revenue streams
+4
+Delivery channels
+4
+Partnership tiers
+8
+Website pages
+1
+Legal entity (Pty Ltd)
+From blueprint to execution
+With the Strategic Blueprint complete, the next phase of work moves from design to execution. Five priority workstreams flow directly from the four-phase blueprint:
+Stream launch execution — beginning with the Q1 launches identified in Phase 3 (FLS FinTech and HSS Health Sciences).
+Group structure formalisation — confirming Ginashe Academy (Pty) Ltd as a wholly-owned subsidiary of Ginashe Group (Pty) Ltd, with the Group Service Agreement in place.
+Founding partnership outreach — securing the five Tier-1 founding partners identified in Phase 4.
+ginashe.academy build — the eight-page website and the learn.ginashe.academy LMS subdomain.
+SETA accreditation submissions — beginning with MICT, HWSETA, and EWSETA per the Phase 3 roadmap.
+The four documents
+Phase 1 — Stream Mapping: which streams exist and why.
+Phase 2 — Curriculum Blueprint: 80+ courses with NQF, modules, outcomes, entry requirements.
+Phase 3 — Delivery, LMS & Revenue: how the Academy delivers, accredits, staffs, and funds itself.
+Phase 4 — Governance, Brand & Web: governance, brand identity, website, partnerships, legal structure.
+Build Something Real
+ginashe.academy  ·  3 May 2026
+

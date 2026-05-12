@@ -1,0 +1,292 @@
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation, useNavigate, useParams, Link } from 'react-router-dom';
+import { AuthProvider, useAuth } from './lib/auth';
+import { ThemeProvider, useTheme } from './lib/theme';
+import { supabase } from './lib/supabase';
+import AcademyNavbar from './components/AcademyNavbar';
+import StreamNavbar from './components/StreamNavbar';
+import { Footer } from './components/Footer';
+import { Modals } from './components/Modals';
+import WhatsAppOrb from './components/WhatsAppOrb';
+import { ArrowRight } from 'lucide-react';
+import { Toaster, toast } from 'sonner';
+import ErrorBoundary from './components/ErrorBoundary';
+
+function ExternalRedirect({ url }: { url: string }) {
+  useEffect(() => {
+    window.location.replace(url);
+  }, [url]);
+  return (
+    <div className="min-h-screen bg-bg flex flex-col items-center justify-center">
+      <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-brand mb-4"></div>
+      <p className="text-brand font-dm-mono text-[10px] tracking-widest uppercase animate-pulse">Redirecting to Secure Portal...</p>
+    </div>
+  );
+}
+
+// Pages
+import AcademyHome from './pages/AcademyHome';
+import CurriculumPage from './pages/CurriculumPage';
+import LevelFoundationPage from './pages/LevelFoundationPage';
+import LevelAssociatePage from './pages/LevelAssociatePage';
+import LevelProfessionalPage from './pages/LevelProfessionalPage';
+import LevelEnterprisePage from './pages/LevelEnterprisePage';
+import FacultyPage from './pages/FacultyPage';
+import AboutPage from './pages/AboutPage';
+import AdmissionsPage from './pages/AdmissionsPage';
+import ContactPage from './pages/ContactPage';
+import NewsPage from './pages/NewsPage';
+import NewsDetailPage from './pages/NewsDetailPage';
+import EventsPage from './pages/EventsPage';
+import VerifyPage from './pages/VerifyPage';
+import PathwaysPage from './pages/PathwaysPage';
+import TermsPage from './pages/TermsPage';
+import RefundsPage from './pages/RefundsPage';
+import PopiaPage from './pages/PopiaPage';
+import ApplyPage from './pages/ApplyPage';
+import TrackDetailPage from './pages/TrackDetailPage';
+import EnterprisePage from './pages/EnterprisePage';
+import FoundershipPage from './pages/FoundershipPage';
+import StreamsPage from './pages/StreamsPage';
+import CoursesPage from './pages/CoursesPage';
+import EmployersPage from './pages/EmployersPage';
+import StoriesPage from './pages/StoriesPage';
+import PrivacyPage from './pages/PrivacyPage';
+import StreamDashboard from './pages/StreamDashboard';
+import StreamAbout from './pages/StreamAbout';
+import StreamRequirements from './pages/StreamRequirements';
+import StreamCurriculum from './pages/StreamCurriculum';
+
+function ScrollManager() {
+  const { pathname, hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      const timer = setTimeout(() => {
+        const id = hash.replace('#', '');
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+      return () => clearTimeout(timer);
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname, hash]);
+
+  return null;
+}
+
+function AppContent() {
+  const { user, profile, loading } = useAuth();
+  const [activeModal, setActiveModal] = useState<string | null>(null);
+  const [modalMetadata, setModalMetadata] = useState<any>(null);
+  const [editMode, setEditMode] = useState(false);
+  const [siteSettings, setSiteSettings] = useState<any>(null);
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    fetchSiteSettings();
+  }, []);
+
+  async function fetchSiteSettings() {
+    try {
+      const { data, error } = await supabase
+        .from('site_settings')
+        .select('*')
+        .eq('id', 1)
+        .single();
+      
+      if (error) {
+        if (error.code === 'PGRST116') return;
+        throw error;
+      }
+      if (data) setSiteSettings(data);
+    } catch (err: any) {
+      console.error('Error fetching site settings:', err.message);
+    }
+  }
+
+  const isAdmin = profile?.role === 'admin' || profile?.role === 'super_admin' || user?.email?.includes('ginashe.co.za');
+
+
+  useEffect(() => {
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
+      if (event === 'PASSWORD_RECOVERY') {
+        setActiveModal('reset-password');
+      }
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
+
+  const openModal = (id: string, metadata?: any) => {
+    setModalMetadata(metadata);
+    setActiveModal(id);
+  };
+  const closeModal = () => {
+    setActiveModal(null);
+    setModalMetadata(null);
+  };
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const paymentStatus = params.get('payment');
+    const courseId = params.get('courseId');
+
+    if (paymentStatus === 'success' && courseId) {
+      handleSuccessfulPayment(courseId);
+    }
+  }, []);
+
+  async function handleSuccessfulPayment(courseId: string) {
+    const { data: { user } } = await supabase.auth.getUser();
+    if (!user) return;
+    try {
+      const { error } = await supabase.from('enrollments').insert({ user_id: user.id, course_id: courseId });
+      if (error) throw error;
+      toast.success('Payment successful!', {
+        description: 'You are now enrolled in the course.'
+      });
+      window.history.replaceState({}, document.title, window.location.pathname);
+      navigate('/portal');
+    } catch (err: any) {
+      console.error('Enrollment error:', err.message);
+    }
+  }
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.animate-fadeUp').forEach(el => observer.observe(el));
+      return () => observer.disconnect();
+    }, 100);
+    return () => clearTimeout(timer);
+  }, [pathname]);
+
+  const isPortal = pathname.startsWith('/portal') || pathname.startsWith('/admin') || pathname.startsWith('/course') || pathname.startsWith('/verify');
+  
+  // Detect school context for StreamNavbar
+  const isStreamContext = /^\/streams\/[a-z0-9-]+/.test(pathname);
+
+  return (
+    <div className="min-h-screen bg-bg text-text-custom selection:bg-brand/30 selection:text-brand transition-colors duration-300 flex flex-col">
+      <Toaster position="top-right" theme="dark" richColors />
+      <Modals 
+        activeModal={activeModal} 
+        onClose={closeModal} 
+        metadata={modalMetadata}
+        onSwitchModal={(id) => setActiveModal(id)}
+        onLoginSuccess={(role) => {
+          navigate(role === 'admin' ? '/admin' : '/portal');
+        }} 
+      />
+
+      {loading ? (
+        <div className="min-h-screen bg-bg flex flex-col items-center justify-center transition-colors duration-300">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-brand mb-4"></div>
+          <p className="text-brand font-dm-mono text-[10px] tracking-widest uppercase animate-pulse">Initializing Academy...</p>
+          <div className="mt-8">
+             {/* Academy Initialization */}
+          </div>
+        </div>
+      ) : (
+        <>
+          <ErrorBoundary fallback={<div className="p-10 text-center text-red-500 bg-red-500/5 border border-red-500/20 rounded-2xl m-6">Navbar Crash: Contact support</div>}>
+            <AcademyNavbar onOpenModal={openModal} editMode={editMode} setEditMode={setEditMode} siteSettings={siteSettings} />
+          </ErrorBoundary>
+          
+          <ErrorBoundary>
+            {isStreamContext && <StreamNavbar />}
+            
+            <main className={`flex-1 ${isStreamContext ? 'pt-[108px]' : 'pt-[68px]'}`}>
+              <Routes>
+              <Route path="/" element={<AcademyHome />} />
+              <Route path="/streams" element={<StreamsPage />} />
+              <Route path="/courses" element={<CoursesPage />} />
+              <Route path="/streams/:streamSlug" element={<StreamDashboard onOpenModal={openModal} editMode={editMode} />} />
+              <Route path="/streams/:streamSlug/authority" element={<StreamAbout onOpenModal={openModal} editMode={editMode} />} />
+              <Route path="/streams/:streamSlug/requirements" element={<StreamRequirements onOpenModal={openModal} editMode={editMode} />} />
+              <Route path="/streams/:streamSlug/curriculum" element={<StreamCurriculum onOpenModal={openModal} editMode={editMode} />} />
+              <Route path="/tracks" element={<PathwaysPage onOpenModal={openModal} editMode={editMode} />} />
+              <Route path="/pathways" element={<Navigate to="/tracks" replace />} />
+              <Route path="/levels/*" element={<Navigate to="/tracks" replace />} />
+              {(!siteSettings || siteSettings.showCurriculum !== false) && (
+                <Route path="/curriculum" element={<CurriculumPage onOpenModal={openModal} editMode={editMode} />} />
+              )}
+              {(!siteSettings || siteSettings.showFaculty !== false) && (
+                <Route path="/faculty" element={<FacultyPage editMode={editMode} />} />
+              )}
+              {(!siteSettings || siteSettings.showAbout !== false) && (
+                <Route path="/about" element={<AboutPage onOpenModal={openModal} editMode={editMode} />} />
+              )}
+              {(!siteSettings || siteSettings.showAdmissions !== false) && (
+                <Route path="/admissions" element={<AdmissionsPage onOpenModal={openModal} editMode={editMode} />} />
+              )}
+              <Route path="/employers" element={<EmployersPage />} />
+              <Route path="/stories" element={<StoriesPage />} />
+              <Route path="/contact" element={<ContactPage onOpenModal={openModal} editMode={editMode} />} />
+              <Route path="/news" element={<NewsPage />} />
+              <Route path="/news/:slug" element={<NewsDetailPage />} />
+              <Route path="/events" element={<EventsPage />} />
+              <Route path="/verify" element={<VerifyPage />} />
+              <Route path="/terms" element={<TermsPage />} />
+              <Route path="/refunds" element={<RefundsPage />} />
+              <Route path="/popia" element={<PopiaPage />} />
+              <Route path="/privacy" element={<PrivacyPage />} />
+              <Route path="/apply" element={<ApplyPage />} />
+              <Route path="/tracks/:trackId" element={<TrackDetailPage onOpenModal={openModal} editMode={editMode} />} />
+              <Route path="/enterprise" element={<EnterprisePage onOpenModal={openModal} editMode={editMode} />} />
+              <Route path="/foundership" element={<FoundershipPage onOpenModal={openModal} />} />
+              
+               <Route 
+                path="/admin" 
+                element={<ExternalRedirect url="https://staff.ginashe.academy" />} 
+              />
+              <Route 
+                path="/portal" 
+                element={<ExternalRedirect url="https://gda-student-portal.pages.dev/" />} 
+              />
+              <Route 
+                path="/course/*" 
+                element={<ExternalRedirect url="https://gda-student-portal.pages.dev/" />} 
+              />
+              <Route path="/activate" element={<ExternalRedirect url="https://staff.ginashe.academy" />} />
+            </Routes>
+          </main>
+          </ErrorBoundary>
+          
+          {!isPortal && (
+            <>
+              <Footer onOpenModal={openModal} editMode={editMode} />
+              <WhatsAppOrb />
+            </>
+          )}
+        </>
+      )}
+    </div>
+  );
+}
+
+
+
+export default function App() {
+  return (
+    <ThemeProvider>
+      <AuthProvider>
+        <Router>
+          <ScrollManager />
+          <AppContent />
+        </Router>
+      </AuthProvider>
+    </ThemeProvider>
+  );
+}
