@@ -103,7 +103,7 @@ export default function Navbar({ onOpenModal, editMode, setEditMode, siteSetting
     <nav id="nav" className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-500 border-b ${
       isScrolled 
         ? 'bg-[#0b0e14]/95 backdrop-blur-3xl border-brand/30 shadow-[0_20px_60px_rgba(0,242,255,0.15)]' 
-        : 'bg-white/95 backdrop-blur-3xl border-black/5 shadow-[0_20px_60px_rgba(0,0,0,0.1)]'
+        : 'bg-navy/95 backdrop-blur-3xl border-white/5 shadow-[0_20px_60px_rgba(0,0,0,0.3)]'
     }`}>
       {/* Main Navbar Bar */}
       <div className="mx-auto max-w-7xl relative z-[2001] h-[72px] flex items-center px-6 transition-all duration-700">
@@ -125,14 +125,14 @@ export default function Navbar({ onOpenModal, editMode, setEditMode, siteSetting
               <Link 
                 to={item.path}
                 onClick={() => setActiveDropdown(null)}
-                className={`inline-flex items-center gap-1.5 font-outfit font-bold text-[14px] tracking-wide no-underline px-5 py-2.5 rounded-xl transition-all ${
+                className={`inline-flex items-center gap-1.5 font-outfit font-medium text-[14px] tracking-wide no-underline px-5 py-2.5 rounded-xl transition-all ${
                   pathname === item.path 
-                    ? (isScrolled ? 'text-brand bg-brand/10' : 'bg-navy text-white shadow-lg shadow-navy/20') 
-                    : (isScrolled ? 'text-text-soft hover:text-white hover:bg-white/5' : 'text-navy/60 hover:text-navy hover:bg-black/5')
+                    ? (isScrolled ? 'text-brand bg-brand/10' : 'text-brand bg-white/10 shadow-lg') 
+                    : (isScrolled ? 'text-text-soft hover:text-white hover:bg-white/5' : 'text-white hover:text-brand hover:bg-white/5')
                 }`}
               >
                 {item.label}
-                {item.hasMega && <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-500 ${activeDropdown === item.label ? 'rotate-180 text-brand' : (isScrolled ? 'text-text-muted' : 'text-navy/30')}`} />}
+                {item.hasMega && <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-500 ${activeDropdown === item.label ? 'rotate-180 text-brand' : (isScrolled ? 'text-text-muted' : 'text-white/50')}`} />}
               </Link>
 
               {/* RICH MEGA MENUS */}
@@ -448,14 +448,14 @@ export default function Navbar({ onOpenModal, editMode, setEditMode, siteSetting
 
         {/* --- NAVBAR ACTIONS --- */}
         <div className="flex items-center gap-4 ml-auto lg:ml-0">
-          <div className={`hidden sm:flex items-center gap-1.5 pr-4 border-r ${isScrolled ? 'border-white/10' : 'border-black/5'}`}>
-            <button onClick={toggleTheme} className={`p-2.5 rounded-xl transition-all ${isScrolled ? 'hover:bg-white/5 text-text-muted hover:text-brand' : 'hover:bg-navy/5 text-navy/40 hover:text-brand'}`}>
+          <div className={`hidden sm:flex items-center gap-1.5 pr-4 border-r border-white/10`}>
+            <button onClick={toggleTheme} className={`p-2.5 rounded-xl transition-all ${isScrolled ? 'hover:bg-white/5 text-text-muted hover:text-brand' : 'hover:bg-white/5 text-white/70 hover:text-white'}`}>
               {theme === 'light' ? <Moon size={19} /> : <Sun size={19} />}
             </button>
             {isSuperAdmin && (
               <button 
                 onClick={editMode ? handleSaveAll : () => setEditMode(true)}
-                className={`p-2.5 rounded-xl transition-all ${editMode ? 'text-emerald bg-emerald/10 border border-emerald/20' : (isScrolled ? 'text-text-muted hover:text-brand hover:bg-white/5' : 'text-navy/40 hover:text-brand hover:bg-navy/5')}`}
+                className={`p-2.5 rounded-xl transition-all ${editMode ? 'text-emerald bg-emerald/10 border border-emerald/20' : (isScrolled ? 'text-text-muted hover:text-brand hover:bg-white/5' : 'text-white/70 hover:text-brand hover:bg-white/5')}`}
               >
                 <Zap size={19} className={editMode ? 'animate-pulse' : ''} />
               </button>
@@ -470,29 +470,29 @@ export default function Navbar({ onOpenModal, editMode, setEditMode, siteSetting
               className={`hidden lg:flex items-center gap-2 px-4 py-2 rounded-xl transition-all group no-underline ${
                 isScrolled 
                   ? 'bg-white/5 hover:bg-brand/10 border border-white/10 hover:border-brand/30' 
-                  : 'bg-navy/5 hover:bg-navy border border-transparent hover:border-navy'
+                  : 'bg-white/5 hover:bg-brand/20 border border-white/10 hover:border-brand/50'
               }`}
             >
-              <div className={`p-1.5 rounded-lg transition-colors ${isScrolled ? 'bg-brand/10 text-brand' : 'bg-navy/10 text-navy group-hover:bg-white/10 group-hover:text-brand'}`}>
+              <div className={`p-1.5 rounded-lg transition-colors ${isScrolled ? 'bg-brand/10 text-brand' : 'bg-white/10 text-white group-hover:bg-brand/20 group-hover:text-brand'}`}>
                 <GraduationCap className="w-3.5 h-3.5" />
               </div>
               <div className="flex flex-col">
                 <span className={`font-outfit font-black text-[10px] uppercase tracking-tight leading-none transition-colors ${
-                  isScrolled ? 'text-white group-hover:text-brand' : 'text-navy group-hover:text-white'
+                  isScrolled ? 'text-white group-hover:text-brand' : 'text-white group-hover:text-brand'
                 }`}>
                   {user ? (isAdmin ? 'Admin Console' : 'Student Portal') : 'Student Portal'}
                 </span>
               </div>
             </a>
 
-            <Link to="/contact" className={`hidden xl:flex items-center gap-2 font-jetbrains text-[9px] tracking-[0.2em] transition-colors no-underline ${isScrolled ? 'text-[#22c55e] hover:text-brand' : 'text-navy/60 hover:text-brand'}`}>
+            <Link to="/contact" className={`hidden xl:flex items-center gap-2 font-jetbrains text-[9px] tracking-[0.2em] transition-colors no-underline ${isScrolled ? 'text-[#22c55e] hover:text-brand' : 'text-white hover:text-brand'}`}>
               <span className={`w-1.5 h-1.5 rounded-full animate-pulse ${isScrolled ? 'bg-[#22c55e]' : 'bg-brand'}`} />
               CONTACT US
             </Link>
             
             <button 
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={`p-2 rounded-xl transition-all relative z-[6000] lg:hidden ${isScrolled ? 'text-white hover:bg-white/10' : 'text-navy hover:bg-black/5'}`}
+            className={`p-2 rounded-xl transition-all relative z-[6000] lg:hidden ${isScrolled ? 'text-white hover:bg-white/10' : 'text-white hover:bg-white/10'}`}
           >
             {isMobileMenuOpen ? <X size={28} className="text-white" /> : <Menu size={28} />}
           </button>
