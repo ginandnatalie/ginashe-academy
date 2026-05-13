@@ -203,7 +203,8 @@ export function Footer({ onOpenModal, editMode }: { onOpenModal: (id: string) =>
               { label: 'Digital Services', href: 'https://digital.ginashe.academy' },
               { label: 'Financial Solutions', href: 'https://finance.ginashe.academy' },
               { label: 'Cloud Hosting', href: 'https://hosting.ginashe.academy' },
-              { label: 'Institutional Strategy', href: 'https://strategy.ginashe.academy' }
+              { label: 'Institutional Strategy', href: 'https://strategy.ginashe.academy' },
+              { label: 'Ginashe Holdings', href: 'https://www.ginashe.co.za' }
             ].map((link) => (
               <li key={link.label}>
                 <a 
