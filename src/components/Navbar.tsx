@@ -101,6 +101,8 @@ export default function Navbar({ onOpenModal, editMode, setEditMode, siteSetting
 
   return (
     <nav id="nav" className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-500 border-b ${
+      isMobileMenuOpen ? 'h-screen z-[6000]' : ''
+    } ${
       isScrolled 
         ? 'bg-bg/95 backdrop-blur-3xl border-brand/30 shadow-[0_20px_60px_rgba(0,242,255,0.15)]' 
         : 'bg-bg/95 backdrop-blur-3xl border-border-custom shadow-sm'
@@ -448,9 +450,9 @@ export default function Navbar({ onOpenModal, editMode, setEditMode, siteSetting
 
         {/* --- NAVBAR ACTIONS --- */}
         <div className="flex items-center gap-4 ml-auto lg:ml-0">
-          <div className={`hidden sm:flex items-center gap-1.5 pr-4 border-r border-border2`}>
-            <button onClick={toggleTheme} className={`p-2.5 rounded-xl transition-all ${isScrolled ? 'hover:bg-glass-bg text-text-muted hover:text-brand' : 'hover:bg-glass-bg text-text-soft hover:text-text-custom'}`}>
-              {theme === 'light' ? <Moon size={19} /> : <Sun size={19} />}
+          <div className="flex items-center gap-1.5 pr-3 sm:pr-4 border-r border-border2">
+            <button onClick={toggleTheme} className={`p-2 sm:p-2.5 rounded-xl transition-all ${isScrolled ? 'hover:bg-glass-bg text-text-muted hover:text-brand' : 'hover:bg-glass-bg text-text-soft hover:text-text-custom'}`}>
+              {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
             </button>
             {isSuperAdmin && (
               <button 
@@ -510,27 +512,35 @@ export default function Navbar({ onOpenModal, editMode, setEditMode, siteSetting
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
             transition={{ type: 'spring', damping: 40, stiffness: 450 }}
-            className="fixed inset-0 z-[5000] bg-bg lg:hidden overflow-y-auto flex flex-col w-full h-full"
+            className="fixed inset-0 z-[7000] bg-bg lg:hidden overflow-y-auto flex flex-col w-full h-screen transition-colors duration-300"
           >
             {/* Mobile Menu Header */}
-            <div className="sticky top-0 z-[5001] bg-bg/90 backdrop-blur-xl flex items-center justify-between p-6 border-b border-border-custom">
+            <div className="sticky top-0 z-[5001] bg-bg/95 backdrop-blur-xl flex items-center justify-between p-6 border-b border-border-custom transition-colors duration-300">
               <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="no-underline">
                 <Logo />
               </Link>
-              <button 
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="w-12 h-12 rounded-full bg-glass-bg border border-border2 flex items-center justify-center text-text-custom"
-              >
-                <X size={24} />
-              </button>
+              <div className="flex items-center gap-2">
+                <button 
+                  onClick={toggleTheme}
+                  className="w-12 h-12 rounded-full bg-glass-bg border border-border2 flex items-center justify-center text-text-custom"
+                >
+                  {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
+                </button>
+                <button 
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="w-12 h-12 rounded-full bg-glass-bg border border-border2 flex items-center justify-center text-text-custom"
+                >
+                  <X size={24} />
+                </button>
+              </div>
             </div>
 
             <div className="flex-1 p-6 pb-12 flex flex-col gap-10">
               <div className="flex flex-col gap-8">
-                <div className="text-brand font-jetbrains text-[10px] uppercase tracking-[0.4em] flex items-center gap-4">
-                  <div className="h-px flex-1 bg-brand/20" />
+                <div className="text-text-muted font-jetbrains text-[10px] uppercase tracking-[0.4em] flex items-center gap-4">
+                  <div className="h-px flex-1 bg-brand/10" />
                   NAVIGATION_MATRIX
-                  <div className="h-px flex-1 bg-brand/20" />
+                  <div className="h-px flex-1 bg-brand/10" />
                 </div>
                 
                 <ul className="flex flex-col list-none gap-2">
