@@ -154,9 +154,11 @@ export default function Navbar({ onOpenModal, editMode, setEditMode, siteSetting
                         <div className="p-6">
                           <div className="flex items-center justify-between mb-6">
                             <div className="flex items-center gap-3">
-                              <div className="w-1.5 h-6 bg-brand rounded-full" />
+                              <div className="w-1.5 h-6 bg-brand shadow-[0_0_10px_rgba(0,242,255,0.5)] rounded-full" />
                               <div>
-                                <h4 className="font-syne font-black text-sm text-text-custom uppercase tracking-wider">10 Purpose-Built Streams</h4>
+                                <h4 className="font-syne font-black text-sm uppercase tracking-wider">
+                                  <span className="text-black dark:text-white">10 Purpose-Built</span> <span className="text-brand">Streams</span>
+                                </h4>
                                 <p className="font-dm-mono text-[8px] text-text-dim uppercase tracking-[0.2em] mt-0.5">Africa's Multi-Disciplinary Academy</p>
                               </div>
                             </div>
@@ -166,9 +168,11 @@ export default function Navbar({ onOpenModal, editMode, setEditMode, siteSetting
                             {streamsData.map((s, i) => (
                               <Link key={i} to={s.path} onClick={() => setActiveDropdown(null)} className="group/gate p-4 rounded-xl bg-glass-bg border border-border-custom hover:border-border2 hover:bg-glass-bg transition-all no-underline">
                                 <div className="flex items-start gap-4">
-                                  <div className={`p-2 rounded-lg ${s.bg} border border-border-custom group-hover/gate:scale-110 transition-transform`}>{s.icon}</div>
+                                  <div className={`p-2 rounded-lg ${s.bg} border border-border-custom group-hover/gate:border-brand/40 group-hover/gate:scale-110 transition-transform`}>{s.icon}</div>
                                   <div className="flex-1">
-                                    <h5 className="font-syne font-black text-[12px] text-text-custom group-hover/gate:text-brand transition-colors">{s.title}</h5>
+                                    <h5 className="font-syne font-black text-[12px] text-text-custom group-hover/gate:text-text-custom transition-colors">
+                                      {s.title.replace(/\s*\([^)]+\)/, '')} <span className="text-brand">{s.title.match(/\([^)]+\)/)?.[0]}</span>
+                                    </h5>
                                     <p className="text-[10px] text-text-dim leading-snug mt-1">{s.desc}</p>
                                   </div>
                                 </div>
@@ -186,7 +190,9 @@ export default function Navbar({ onOpenModal, editMode, setEditMode, siteSetting
                               <div className="flex items-center gap-3">
                                 <div className="w-1.5 h-6 bg-brand rounded-full" />
                                 <div>
-                                  <h4 className="font-syne font-black text-sm text-text-custom uppercase tracking-wider">Academic Intelligence Matrix</h4>
+                                  <h4 className="font-syne font-black text-sm uppercase tracking-wider">
+                                    <span className="text-black dark:text-white">Academic Intelligence</span> <span className="text-brand">Matrix</span>
+                                  </h4>
                                   <p className="font-dm-mono text-[8px] text-text-dim uppercase tracking-[0.2em] mt-0.5">Syllabus Ver_2026.4 // Verified Registry</p>
                                 </div>
                               </div>
@@ -269,7 +275,9 @@ export default function Navbar({ onOpenModal, editMode, setEditMode, siteSetting
                               <div className="flex items-center gap-3">
                                 <div className="w-1.5 h-6 bg-brand rounded-full" />
                                 <div>
-                                  <h4 className="font-syne font-black text-sm text-text-custom uppercase tracking-wider">Admissions Operations Hub</h4>
+                                  <h4 className="font-syne font-black text-sm uppercase tracking-wider">
+                                    <span className="text-black dark:text-white">Admissions Operations</span> <span className="text-brand">Hub</span>
+                                  </h4>
                                   <p className="font-dm-mono text-[8px] text-text-dim uppercase tracking-[0.2em] mt-0.5">Secure Gateway // Enterprise Flow</p>
                                 </div>
                               </div>

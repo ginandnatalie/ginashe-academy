@@ -103,24 +103,29 @@ export default function Hero({ onOpenModal, editMode }: HeroProps) {
     <section id="hero" className="min-h-[100svh] flex flex-col pt-[72px] overflow-hidden relative bg-bg">
       {/* Background Visual — high-fidelity video and overlays */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-        <InstitutionalHeroVisual showBackground={false} className="opacity-90" />
+        <InstitutionalHeroVisual showBackground={false} className="opacity-100" />
+        
+        {/* LIGHT MODE VIGOUR: Adding a vibrant radial wash for light mode specifically */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(0,242,255,0.15),transparent_50%)] dark:hidden z-[1]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(0,242,255,0.1),transparent_50%)] dark:hidden z-[1]"></div>
+
         {/* Multi-layer fade: hard left edge → transparent right */}
-        <div className="absolute inset-0 bg-gradient-to-r from-bg/90 via-bg/60 via-40% to-transparent z-[5]"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-bg/95 via-bg/75 via-40% to-transparent z-[5]"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-bg via-transparent to-transparent z-[5]"></div>
         {/* Extra protection for text area on mobile */}
-        <div className="absolute inset-0 bg-gradient-to-r from-bg/80 to-transparent md:hidden z-[5]"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-bg/90 to-transparent md:hidden z-[5]"></div>
       </div>
 
-      <div className="max-w-[1280px] mx-auto px-5 sm:px-6 md:px-14 py-10 sm:py-12 md:py-16 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center relative z-[2] flex-1">
+      <div className="max-w-[1280px] mx-auto px-5 sm:px-6 md:px-14 py-10 sm:py-12 md:py-16 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center relative z-[10] flex-1">
         <div className="hero-left">
           <div className="inline-flex items-center gap-2.5 font-dm-mono text-[10px] tracking-[0.25em] uppercase text-brand mb-5 animate-fadeUp">
-            <div className={`flex items-center gap-1.5 border px-3 py-1.5 rounded-full font-bold ${heroContent.intakeStatus === 'OPEN' ? 'bg-[#0B0C10] border-brand/30 text-brand shadow-[0_0_15px_rgba(0,242,255,0.15)]' : 'bg-[#0B0C10] border-coral/30 text-coral shadow-[0_0_15px_rgba(248,113,113,0.15)]'}`}>
+            <div className={`flex items-center gap-1.5 border px-3 py-1.5 rounded-full font-bold transition-all ${heroContent.intakeStatus === 'OPEN' ? 'bg-navy dark:bg-navy border-brand/40 text-brand shadow-[0_0_20px_rgba(0,242,255,0.25)]' : 'bg-navy border-coral/30 text-coral shadow-[0_0_15px_rgba(248,113,113,0.15)]'}`}>
               <span className="pulse"></span>
               2026 Cohorts — {heroContent.intakeStatus === 'OPEN' ? 'Applications Open' : heroContent.intakeStatus === 'CLOSED' ? 'Applications Closed' : 'Waitlist Only'}
             </div>
           </div>
 
-          <h1 className="font-syne font-extrabold text-[32px] sm:text-[42px] md:text-[56px] lg:text-[76px] leading-[0.92] tracking-[-0.035em] mb-5 animate-fadeUp delay-100 relative group">
+          <h1 className="font-syne font-extrabold text-[32px] sm:text-[42px] md:text-[56px] lg:text-[76px] leading-[0.92] tracking-[-0.035em] mb-5 animate-fadeUp delay-100 relative group text-text-custom">
             {editMode ? (
               <textarea 
                 className="w-full bg-surface/50 border border-brand/30 rounded p-2 text-text-custom outline-none focus:border-brand"
@@ -130,10 +135,10 @@ export default function Hero({ onOpenModal, editMode }: HeroProps) {
             ) : (
               <>
                 Africa's
-                <span className="block italic font-light font-dm-sans text-brand tracking-[-0.02em]">Future</span>
+                <span className="block italic font-light font-dm-sans text-brand tracking-[-0.02em] drop-shadow-[0_0_15px_rgba(0,242,255,0.3)]">Future</span>
                 <span>Economy</span>
                 <br />
-                <span className="text-transparent" style={{ WebkitTextStroke: '1px var(--text-stroke)' }}>Built Here</span>
+                <span className="bg-gradient-to-r from-text-custom via-brand to-text-custom bg-clip-text text-transparent opacity-90 transition-all duration-700 group-hover:via-brand-light" style={{ WebkitTextStroke: '1.2px var(--text-stroke)' }}>Built Here</span>
               </>
             )}
             {editMode && <span className="absolute -top-6 left-0 text-[10px] text-brand font-dm-mono uppercase">Edit Hero Title</span>}
@@ -178,20 +183,20 @@ export default function Hero({ onOpenModal, editMode }: HeroProps) {
         </div>
 
         <div className="hidden lg:flex flex-col items-center justify-center relative animate-fadeUp delay-200 min-h-[320px]">
-          <div className="absolute top-0 right-0 bg-emerald-dim border border-emerald/20 rounded-lg px-5 py-4 animate-float1 shadow-lg shadow-emerald/5">
-            <div className="font-dm-mono text-[9px] tracking-[0.1em] uppercase text-emerald">Multidisciplinary</div>
+          <div className="absolute top-0 right-0 bg-emerald-dim/40 dark:bg-emerald-dim border border-emerald/30 rounded-lg px-5 py-4 animate-float1 shadow-xl shadow-emerald/10 backdrop-blur-md">
+            <div className="font-dm-mono text-[9px] tracking-[0.1em] uppercase text-emerald-dark dark:text-emerald">Multidisciplinary</div>
             <div className="font-syne font-extrabold text-[18px] text-text-custom leading-[1.1]">10 Streams</div>
             <div className="font-dm-mono text-[8px] text-text-muted mt-0.5">Targeting Africa's Skills Gaps</div>
           </div>
 
-          <div className="absolute bottom-8 left-0 bg-sky-dim border border-sky/20 rounded-lg px-5 py-4 animate-float2 shadow-lg shadow-sky/5">
-            <div className="font-dm-mono text-[9px] tracking-[0.1em] uppercase text-sky">Technical Rigour</div>
+          <div className="absolute bottom-8 left-0 bg-sky-dim/40 dark:bg-sky-dim border border-sky/30 rounded-lg px-5 py-4 animate-float2 shadow-xl shadow-sky/10 backdrop-blur-md">
+            <div className="font-dm-mono text-[9px] tracking-[0.1em] uppercase text-sky-dark dark:text-sky">Technical Rigour</div>
             <div className="font-syne font-extrabold text-[18px] text-text-custom leading-[1.1]">Practitioner Led</div>
             <div className="font-dm-mono text-[8px] text-text-muted mt-0.5">Taught by Active Experts</div>
           </div>
 
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-brand-dim border border-brand/20 rounded-lg px-5 py-4 animate-float1 shadow-lg shadow-brand/5" style={{ animationDelay: '0.5s' }}>
-            <div className="font-dm-mono text-[9px] tracking-[0.1em] uppercase text-brand">Curriculum Depth</div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-brand-dim/40 dark:bg-brand-dim border border-brand/30 rounded-lg px-5 py-4 animate-float1 shadow-xl shadow-brand/10 backdrop-blur-md" style={{ animationDelay: '0.5s' }}>
+            <div className="font-dm-mono text-[9px] tracking-[0.1em] uppercase text-brand-dark dark:text-brand">Curriculum Depth</div>
             <div className="font-syne font-extrabold text-[18px] text-text-custom leading-[1.1]">80+ Courses</div>
             <div className="font-dm-mono text-[8px] text-text-muted mt-0.5">From Foundation to Mastery</div>
           </div>

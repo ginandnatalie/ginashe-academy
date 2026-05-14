@@ -423,14 +423,14 @@ export function Programs({ onOpenModal, editMode, isHomePage, initialFilterLevel
                 <div 
                   key={track.id}
                   onClick={() => setSelectedTrackId(track.id)}
-                  className="group relative bg-[#0a0a0b] border border-border-custom rounded-[24px] p-6 cursor-pointer transition-all duration-500 hover:border-brand/40 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] hover:-translate-y-1 overflow-hidden"
+                  className="group relative bg-card border border-border-custom rounded-[24px] p-6 cursor-pointer transition-all duration-500 hover:border-brand/40 hover:shadow-xl hover:-translate-y-1 overflow-hidden"
                 >
                   {/* Subtle Glow Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-br from-brand/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                   
                   <div className="flex items-center gap-5 relative z-10">
                     {/* Icon Pill */}
-                    <div className="w-14 h-24 rounded-full bg-black/60 border border-border2 flex items-center justify-center text-3xl shadow-2xl transition-all group-hover:border-brand/30 group-hover:scale-105">
+                    <div className="w-14 h-24 rounded-full bg-surface border border-border-custom flex items-center justify-center text-3xl shadow-lg transition-all group-hover:border-brand/30 group-hover:scale-105">
                       <span className="filter grayscale group-hover:grayscale-0 transition-all">{track.icon}</span>
                     </div>
                       <div className="flex-1 space-y-3">
@@ -448,7 +448,7 @@ export function Programs({ onOpenModal, editMode, isHomePage, initialFilterLevel
               {/* Box 8: Strategic Custom Enterprise */}
               <Link 
                 to="/enterprise"
-                className="group relative overflow-hidden bg-[#0a0a0b] border border-brand/40 rounded-[24px] p-6 cursor-pointer transition-all duration-500 hover:border-brand hover:shadow-[0_0_30px_rgba(0,242,255,0.3)] flex items-center justify-center text-center"
+                className="group relative overflow-hidden bg-card border border-brand/40 rounded-[24px] p-6 cursor-pointer transition-all duration-500 hover:border-brand hover:shadow-xl flex items-center justify-center text-center"
               >
                 {/* Neon Glow Background */}
                 <div className="absolute inset-0 bg-brand/5 group-hover:bg-brand/10 transition-colors" />
