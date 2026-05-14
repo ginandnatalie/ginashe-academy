@@ -369,7 +369,7 @@ export default function SharedAdmissionForm({ onOpenModal, onSuccess, initialPro
           <div>
             <h3 className="font-syne font-black text-[24px] mb-2 text-brand">Check Your Email</h3>
             <p className="text-[14px] text-text-soft leading-relaxed max-w-sm mx-auto">
-              Institutional application submitted successfully. We have sent a <span className="text-brand font-bold">Confirmation & Activation Link</span> to <span className="text-white font-medium underline decoration-brand/30 underline-offset-4">{form.email}</span>.
+              Institutional application submitted successfully. We have sent a <span className="text-brand font-bold">Confirmation & Activation Link</span> to <span className="text-text-custom font-medium underline decoration-brand/30 underline-offset-4">{form.email}</span>.
             </p>
           </div>
           
@@ -655,7 +655,7 @@ export default function SharedAdmissionForm({ onOpenModal, onSuccess, initialPro
                         <input 
                           type="text" 
                           placeholder="ENTER ACCESS CODE..." 
-                          className={`${INPUT_CLASS} !bg-sky/10 border-sky/40 focus:border-sky text-center tracking-[0.25em] uppercase font-dm-mono text-[13px] font-bold !text-white placeholder:text-sky/40 placeholder:font-normal placeholder:tracking-normal`}
+                          className={`${INPUT_CLASS} !bg-sky/10 border-sky/40 focus:border-sky text-center tracking-[0.25em] uppercase font-dm-mono text-[13px] font-bold !text-text-custom placeholder:text-sky/40 placeholder:font-normal placeholder:tracking-normal`}
                           value={accessCode}
                           onChange={e => {
                             setAccessCode(e.target.value.toUpperCase());

@@ -34,25 +34,25 @@ export default function AcademyHome({ onOpenModal, editMode }: AcademyHomeProps)
       <Hero onOpenModal={onOpenModal || (() => {})} editMode={editMode} />
 
       {/* Stream Directory */}
-      <section id="programs" className="py-20 bg-black/20 border-t border-white/5 relative z-10">
+      <section id="programs" className="py-20 bg-bg2 border-t border-border-custom relative z-10">
         <div className="max-w-[1280px] mx-auto px-6">
           <div className="flex items-center gap-4 mb-12">
             <div className="w-12 h-px bg-brand" />
-            <h2 className="font-syne font-black text-2xl text-white uppercase tracking-wider">Stream Directory</h2>
-            <div className="flex-1 h-px bg-white/10" />
+            <h2 className="font-syne font-black text-2xl text-text-custom uppercase tracking-wider">Stream Directory</h2>
+            <div className="flex-1 h-px bg-glass-border" />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {streamsData.map((stream, idx) => (
               <motion.div key={stream.id} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 * idx }}>
-                <Link to={stream.path} className={`block p-8 rounded-2xl border ${stream.border} bg-white/[0.02] hover:bg-white/[0.04] transition-all group relative overflow-hidden h-full`}>
+                <Link to={stream.path} className={`block p-8 rounded-2xl border ${stream.border} bg-surface hover:bg-surface transition-all group relative overflow-hidden h-full`}>
                   <div className="absolute top-0 right-0 p-4">
-                    <span className={`text-[10px] font-jetbrains uppercase tracking-widest px-2 py-1 rounded border ${stream.status === 'Live' ? 'bg-brand/10 text-brand border-brand/20' : 'bg-white/5 text-text-muted border-white/10'}`}>{stream.status}</span>
+                    <span className={`text-[10px] font-jetbrains uppercase tracking-widest px-2 py-1 rounded border ${stream.status === 'Live' ? 'bg-brand/10 text-brand border-brand/20' : 'bg-bg2 text-text-muted border-border2'}`}>{stream.status}</span>
                   </div>
                   <div className={`w-16 h-16 rounded-xl ${stream.bg} ${stream.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>{stream.icon}</div>
-                  <h3 className="text-xl font-syne font-bold text-white mb-2 group-hover:text-brand transition-colors">{stream.title}</h3>
+                  <h3 className="text-xl font-syne font-bold text-text-custom mb-2 group-hover:text-brand transition-colors">{stream.title}</h3>
                   <p className="text-[11px] font-dm-mono text-brand/60 uppercase tracking-widest mb-3 italic">"{stream.tagline}"</p>
                   <p className="text-sm text-text-muted font-outfit leading-relaxed mb-8">{stream.desc}</p>
-                  <div className="mt-auto flex items-center gap-2 text-xs font-bold text-white group-hover:text-brand transition-colors uppercase tracking-wider">
+                  <div className="mt-auto flex items-center gap-2 text-xs font-bold text-text-custom group-hover:text-brand transition-colors uppercase tracking-wider">
                     {stream.status === 'Live' ? 'Enter Stream' : 'View Curriculum'} <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </Link>
@@ -66,18 +66,18 @@ export default function AcademyHome({ onOpenModal, editMode }: AcademyHomeProps)
       <TrustBar />
 
       {/* Why Ginashe Academy */}
-      <section className="py-20 border-t border-white/5 relative z-10">
+      <section className="py-20 border-t border-border-custom relative z-10">
         <div className="max-w-[1280px] mx-auto px-6">
           <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 text-brand font-jetbrains text-[10px] uppercase tracking-[0.3em] mb-4"><div className="w-8 h-px bg-brand/40" /> Why Ginashe Academy <div className="w-8 h-px bg-brand/40" /></div>
-            <h2 className="text-3xl md:text-4xl font-syne font-black text-white uppercase tracking-tighter">Not just another training provider.</h2>
+            <div className="section-label mb-4 mx-auto">Why Ginashe Academy</div>
+            <h2 className="text-3xl md:text-4xl font-syne font-black text-text-custom uppercase tracking-tighter">Not just another training provider.</h2>
             <p className="text-text-muted font-outfit mt-3 max-w-2xl mx-auto">We're a premier skills institution built on practitioner-led teaching and curricula co-developed with industry leaders for the African market.</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {whyReasons.map((r, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.08 * i }} className="bg-white/[0.02] border border-white/5 rounded-xl p-6 hover:border-brand/20 transition-all group">
+              <motion.div key={i} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.08 * i }} className="bg-surface border border-border-custom rounded-xl p-6 hover:border-brand/20 transition-all group">
                 <div className="text-2xl mb-3">{r.icon}</div>
-                <h3 className="font-syne font-bold text-[15px] text-white mb-2 group-hover:text-brand transition-colors">{r.title}</h3>
+                <h3 className="font-syne font-bold text-[15px] text-text-custom mb-2 group-hover:text-brand transition-colors">{r.title}</h3>
                 <p className="text-[13px] text-text-muted leading-relaxed">{r.desc}</p>
               </motion.div>
             ))}
@@ -86,22 +86,22 @@ export default function AcademyHome({ onOpenModal, editMode }: AcademyHomeProps)
       </section>
 
       {/* Institutional Voices */}
-      <section className="py-20 bg-black/20 border-t border-white/5 relative z-10">
+      <section className="py-20 bg-bg2 border-t border-border-custom relative z-10">
         <div className="max-w-[1280px] mx-auto px-6">
           <div className="flex items-center gap-4 mb-12">
             <div className="w-12 h-px bg-brand" />
-            <h2 className="font-syne font-black text-2xl text-white uppercase tracking-wider">Institutional Voices</h2>
-            <div className="flex-1 h-px bg-white/10" />
+            <h2 className="font-syne font-black text-2xl text-text-custom uppercase tracking-wider">Institutional Voices</h2>
+            <div className="flex-1 h-px bg-glass-border" />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {voices.map((v, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 * i }} className="bg-white/[0.02] border border-white/5 rounded-xl p-6 flex flex-col h-full hover:border-brand/20 transition-all">
+              <motion.div key={i} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 * i }} className="bg-surface border border-border-custom rounded-xl p-6 flex flex-col h-full hover:border-brand/20 transition-all">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-10 h-10 rounded-full bg-brand/10 border border-brand/20 flex items-center justify-center font-syne font-bold text-brand text-sm overflow-hidden">
                     {v.image ? <img src={v.image} alt={v.name} className="w-full h-full object-cover" /> : v.name.split(' ').map(n => n[0]).join('')}
                   </div>
                   <div>
-                    <div className="font-syne font-bold text-[13px] text-white">{v.name}</div>
+                    <div className="font-syne font-bold text-[13px] text-text-custom">{v.name}</div>
                     <div className="font-dm-mono text-[9px] text-text-muted uppercase tracking-wider">{v.role}</div>
                   </div>
                 </div>

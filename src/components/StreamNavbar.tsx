@@ -36,7 +36,7 @@ export default function StreamNavbar() {
       className={`fixed top-24 right-4 z-[2000] w-11 h-11 rounded-full ${stream.bg} ${stream.color} border border-white/20 shadow-[0_10px_30px_rgba(0,0,0,0.3)] flex items-center justify-center group overflow-hidden md:hidden`}
       title="Open Stream Menu"
     >
-      <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+      <div className="absolute inset-0 bg-glass-border opacity-0 group-hover:opacity-100 transition-opacity" />
       <Menu className="w-4 h-4 relative z-10" />
     </motion.button>
   );
@@ -50,15 +50,15 @@ export default function StreamNavbar() {
             initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -20, opacity: 0 }}
-            className="fixed top-[90px] left-0 right-0 z-[990] bg-[#0b0e14]/90 backdrop-blur-xl border-b border-brand/20 h-10 flex items-center px-4 sm:px-8 transition-all shadow-[0_4px_30px_rgba(0,0,0,0.5)] hidden md:flex"
+            className="fixed top-[90px] left-0 right-0 z-[990] bg-surface/90 backdrop-blur-xl border-b border-border-custom h-10 flex items-center px-4 sm:px-8 transition-all shadow-[0_4px_30px_rgba(0,0,0,0.05)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.5)] hidden md:flex"
           >
             <div className="flex items-center max-w-7xl mx-auto w-full gap-6">
               <Link to={`/streams/${stream.id}`} className="flex items-center gap-2 group no-underline shrink-0">
-                <span className="font-syne font-black text-[12px] text-white group-hover:text-brand transition-colors uppercase tracking-wide">{stream.title}</span>
+                <span className="font-syne font-black text-[12px] text-text-custom group-hover:text-brand transition-colors uppercase tracking-wide">{stream.title}</span>
                 <span className={`text-[8px] font-jetbrains uppercase tracking-widest ${stream.color} px-1.5 py-0.5 rounded border ${stream.border} ${stream.bg}`}>({stream.abbr})</span>
               </Link>
 
-              <div className="h-5 w-px bg-white/10 hidden sm:block"></div>
+              <div className="h-5 w-px bg-glass-border hidden sm:block"></div>
 
               <div className="flex items-center gap-1 flex-1" ref={dropdownRef}>
                 {menuItems.map((item) => (
@@ -68,7 +68,7 @@ export default function StreamNavbar() {
                     className={`px-3 py-1.5 rounded-lg text-[11px] font-outfit tracking-wide no-underline transition-all flex items-center gap-1 ${
                       pathname === item.path || (item.path !== `/streams/${stream.id}` && pathname.startsWith(item.path))
                         ? 'bg-brand/15 text-brand font-bold'
-                        : 'text-white/60 hover:text-white hover:bg-white/5'
+                        : 'text-text-muted hover:text-text-custom hover:bg-glass-bg'
                     }`}
                   >
                     {item.label}
@@ -78,7 +78,7 @@ export default function StreamNavbar() {
 
               <button
                 onClick={() => setIsVisible(false)}
-                className="flex items-center gap-1.5 text-white/30 hover:text-white/80 transition-colors px-2 py-1 rounded-lg hover:bg-white/5 group"
+                className="flex items-center gap-1.5 text-text-dim hover:text-text-soft transition-colors px-2 py-1 rounded-lg hover:bg-glass-bg group"
                 title="Minimise stream menu"
               >
                 <span className="text-[9px] font-dm-mono uppercase tracking-widest">Minimise</span>
@@ -126,23 +126,23 @@ export default function StreamNavbar() {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="fixed top-0 right-0 bottom-0 z-[2002] w-full max-w-[320px] bg-[#0b0e14] border-l border-white/10 shadow-2xl flex flex-col"
+              className="fixed top-0 right-0 bottom-0 z-[2002] w-full max-w-[320px] bg-surface border-l border-border-custom shadow-2xl flex flex-col"
             >
-              <div className="p-8 border-b border-white/5">
+              <div className="p-8 border-b border-border-custom">
                 <div className="flex items-center justify-between mb-8">
                   <div className={`w-12 h-12 rounded-xl ${stream.bg} ${stream.color} flex items-center justify-center text-xl`}>
                     {stream.icon}
                   </div>
                   <button 
                     onClick={() => setIsMenuOpen(false)}
-                    className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/40 hover:text-white transition-colors"
+                    className="w-10 h-10 rounded-full border border-border2 flex items-center justify-center text-text-dim hover:text-text-custom transition-colors"
                   >
                     <X className="w-5 h-5" />
                   </button>
                 </div>
                 <div>
                   <div className="font-dm-mono text-[9px] text-brand uppercase tracking-[0.4em] mb-1">{stream.abbr} Dimension</div>
-                  <h2 className="font-syne font-black text-2xl text-white uppercase tracking-tight leading-none">{stream.title}</h2>
+                  <h2 className="font-syne font-black text-2xl text-text-custom uppercase tracking-tight leading-none">{stream.title}</h2>
                 </div>
               </div>
 
@@ -160,7 +160,7 @@ export default function StreamNavbar() {
                         className={`flex items-center gap-4 px-6 py-4 rounded-2xl no-underline transition-all group ${
                           isActive 
                             ? `${stream.bg} ${stream.color} font-bold shadow-lg shadow-black/20` 
-                            : 'text-white/40 hover:text-white hover:bg-white/5'
+                            : 'text-text-dim hover:text-text-custom hover:bg-glass-bg'
                         }`}
                       >
                         <Icon className={`w-5 h-5 ${isActive ? 'opacity-100' : 'opacity-40 group-hover:opacity-100'}`} />
@@ -170,18 +170,18 @@ export default function StreamNavbar() {
                   })}
                 </div>
 
-                <div className="mt-12 p-6 rounded-3xl bg-white/[0.02] border border-white/5">
-                  <div className="font-dm-mono text-[8px] text-white/20 uppercase tracking-[0.3em] mb-3">Institutional Mandate</div>
+                <div className="mt-12 p-6 rounded-3xl bg-glass-bg border border-border-custom">
+                  <div className="font-dm-mono text-[8px] text-text-dim uppercase tracking-[0.3em] mb-3">Institutional Mandate</div>
                   <p className="text-[11px] text-text-muted leading-relaxed italic">
                     "{stream.tagline}"
                   </p>
                 </div>
               </div>
 
-              <div className="p-8 border-t border-white/5">
+              <div className="p-8 border-t border-border-custom">
                 <button
                   onClick={() => { setIsMenuOpen(false); setIsVisible(true); }}
-                  className="w-full py-4 rounded-xl border border-white/10 font-syne font-black text-[10px] uppercase tracking-widest text-white/40 hover:text-white hover:border-white/20 transition-all"
+                  className="w-full py-4 rounded-xl border border-border2 font-syne font-black text-[10px] uppercase tracking-widest text-text-dim hover:text-text-custom hover:border-white/20 transition-all"
                 >
                   Restore Header Bar
                 </button>

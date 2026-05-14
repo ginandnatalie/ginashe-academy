@@ -45,7 +45,7 @@ function AIMatchBadge({ score }: { score: number }) {
   if (score === undefined || score === null) return null;
   const percentage = Math.round(score * 100);
   const color = percentage >= 80 ? 'text-emerald' : percentage >= 60 ? 'text-brand' : 'text-text-muted';
-  const bg = percentage >= 80 ? 'bg-emerald/10' : percentage >= 60 ? 'bg-brand/10' : 'bg-white/5';
+  const bg = percentage >= 80 ? 'bg-emerald/10' : percentage >= 60 ? 'bg-brand/10' : 'bg-glass-bg';
 
   return (
     <div className={`px-2.5 py-1 rounded-lg ${bg} ${color} border border-current/10 flex items-center gap-2 group transition-all`}>
@@ -603,7 +603,7 @@ export function AdminDashboard() {
                         title={(isSidebarCollapsed && !isMobileMenuOpen) ? item.label : ''}
                         className={`w-full flex items-center rounded-xl font-dm-mono text-[11px] uppercase tracking-widest transition-all duration-200 group ${activeTab === item.id
                             ? 'bg-brand text-bg font-bold shadow-lg shadow-brand/20'
-                            : 'text-text-muted hover:text-text-custom hover:bg-white/5'
+                            : 'text-text-muted hover:text-text-custom hover:bg-glass-bg'
                           } ${(isSidebarCollapsed && !isMobileMenuOpen) ? 'lg:justify-center p-3' : 'px-4 py-3 gap-3'}`}
                       >
                         <item.icon className="w-4 h-4 shrink-0" />
@@ -681,7 +681,7 @@ export function AdminDashboard() {
                     >
                       <Zap className="w-4 h-4" />
                       {notifications.length > 0 && (
-                        <span className="absolute -top-1 -right-1 w-4 h-4 bg-coral text-white text-[8px] font-bold rounded-full flex items-center justify-center border-2 border-bg">
+                        <span className="absolute -top-1 -right-1 w-4 h-4 bg-coral text-text-custom text-[8px] font-bold rounded-full flex items-center justify-center border-2 border-bg">
                           {notifications.length}
                         </span>
                       )}
@@ -695,7 +695,7 @@ export function AdminDashboard() {
                         </div>
                         <div className="max-h-96 overflow-y-auto">
                           {notifications.map(n => (
-                            <div key={n.id} className="p-4 border-b border-border-custom/50 hover:bg-white/5 transition-colors cursor-pointer" onClick={async () => {
+                            <div key={n.id} className="p-4 border-b border-border-custom/50 hover:bg-glass-bg transition-colors cursor-pointer" onClick={async () => {
                               await supabase.from('system_notifications').update({ is_read: true }).eq('id', n.id);
                               fetchNotifications();
                               if (n.link) setActiveTab('courses'); // Redirect to courses for inquiries
@@ -1407,7 +1407,7 @@ function InstitutionalUserRegistry() {
             <button
               key={tab.id}
               onClick={() => setActiveSubTab(tab.id)}
-              className={`px-4 py-2 rounded-lg text-[9px] font-dm-mono uppercase whitespace-nowrap transition-all ${activeSubTab === tab.id ? 'bg-white/5 text-brand border border-brand/20' : 'text-text-dim hover:text-white'}`}
+              className={`px-4 py-2 rounded-lg text-[9px] font-dm-mono uppercase whitespace-nowrap transition-all ${activeSubTab === tab.id ? 'bg-glass-bg text-brand border border-brand/20' : 'text-text-dim hover:text-text-custom'}`}
             >
               {tab.label}
               {activeMainTab === 'students' && (
@@ -1486,7 +1486,7 @@ function InstitutionalUserRegistry() {
                           {u.role || 'student'}
                         </span>
                         {(u.departments || []).map((d: string) => (
-                          <span key={d} className="px-2 py-0.5 rounded-full text-[8px] font-bold uppercase bg-white/5 border border-white/10 text-white/50">{d}</span>
+                          <span key={d} className="px-2 py-0.5 rounded-full text-[8px] font-bold uppercase bg-glass-bg border border-border2 text-text-muted">{d}</span>
                         ))}
                       </div>
                     </td>
@@ -1511,7 +1511,7 @@ function InstitutionalUserRegistry() {
                             )}
                             <button
                               onClick={() => { setGovernanceUser(u); setGovernanceAction({ type: 'STATUS_CHANGE', newStatus: u.account_status === 'suspended' ? 'active' : 'suspended' }); }}
-                              className={`p-2 border rounded-lg transition-all ${u.account_status === 'suspended' ? 'bg-brand/10 text-brand border-brand/20' : 'bg-coral/10 text-coral border-coral/20 hover:bg-coral hover:text-white'}`}
+                              className={`p-2 border rounded-lg transition-all ${u.account_status === 'suspended' ? 'bg-brand/10 text-brand border-brand/20' : 'bg-coral/10 text-coral border-coral/20 hover:bg-coral hover:text-text-custom'}`}
                               title={u.account_status === 'suspended' ? 'Reactivate Hub' : 'Suspend Access'}
                             >
                               <History size={14} />
@@ -1562,7 +1562,7 @@ function InstitutionalUserRegistry() {
                     {u.role || 'student'}
                   </span>
                   {(u.departments || []).map((d: string) => (
-                    <span key={d} className="px-2 py-1 rounded-md text-[8px] font-bold uppercase bg-white/5 border border-white/10 text-white/50">{d}</span>
+                    <span key={d} className="px-2 py-1 rounded-md text-[8px] font-bold uppercase bg-glass-bg border border-border2 text-text-muted">{d}</span>
                   ))}
                 </div>
 
@@ -1590,7 +1590,7 @@ function InstitutionalUserRegistry() {
       {governanceUser && governanceAction && (
         <div className="fixed inset-0 z-[4000] bg-bg/95 backdrop-blur-md flex items-center justify-center p-6 animate-fade">
           <div className="bg-card border border-brand/20 rounded-[2.5rem] w-full max-w-lg overflow-hidden shadow-[0_0_100px_rgba(212,175,55,0.1)] flex flex-col items-center p-12 relative">
-            <button onClick={() => { setGovernanceUser(null); setAlumniAcademicRecord(null); }} className="absolute top-8 right-8 text-text-dim hover:text-white transition-colors">✕</button>
+            <button onClick={() => { setGovernanceUser(null); setAlumniAcademicRecord(null); }} className="absolute top-8 right-8 text-text-dim hover:text-text-custom transition-colors">✕</button>
 
             <div className="w-20 h-20 bg-brand/10 rounded-3xl flex items-center justify-center mb-8 shadow-inner border border-brand/20">
               <ShieldCheck className="w-10 h-10 text-brand" />
@@ -2045,7 +2045,7 @@ function TimetableManager({ courses }: { courses: any[] }) {
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat as any)}
-                className={`text-[9px] font-dm-mono uppercase tracking-widest px-3 py-1 rounded-full border transition-all ${activeCategory === cat ? 'bg-brand text-bg border-brand font-bold' : 'border-white/10 text-text-muted hover:border-brand/30'
+                className={`text-[9px] font-dm-mono uppercase tracking-widest px-3 py-1 rounded-full border transition-all ${activeCategory === cat ? 'bg-brand text-bg border-brand font-bold' : 'border-border2 text-text-muted hover:border-brand/30'
                   }`}
               >
                 {cat.replace('_', ' ')}s
@@ -2249,7 +2249,7 @@ function ComplianceDashboard() {
           <h4 className="font-syne font-black text-coral uppercase text-sm tracking-tight">Regulatory Silence Protocol Active</h4>
           <p className="text-[11px] text-text-soft leading-relaxed mt-1">
             Data within this hub is strictly for institutional governance and audit readiness.
-            <span className="font-black text-white ml-1">NEVER EXPOSE THESE DETAILS ON PUBLIC INTERFACES</span> until official SAQA/MICT validation is concluded.
+            <span className="font-black text-text-custom ml-1">NEVER EXPOSE THESE DETAILS ON PUBLIC INTERFACES</span> until official SAQA/MICT validation is concluded.
           </p>
         </div>
       </div>
@@ -2445,7 +2445,7 @@ function AcademicCalendarView({ schedule, enrollments }: { schedule: any[], enro
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id as any)}
-                className={`flex items-center gap-2 text-[9px] font-dm-mono uppercase tracking-[0.2em] px-4 py-2 border rounded-xl transition-all ${activeTab === tab.id ? 'bg-brand text-bg border-brand font-bold shadow-lg shadow-brand/20' : 'border-white/10 text-text-dim hover:border-brand/30'
+                className={`flex items-center gap-2 text-[9px] font-dm-mono uppercase tracking-[0.2em] px-4 py-2 border rounded-xl transition-all ${activeTab === tab.id ? 'bg-brand text-bg border-brand font-bold shadow-lg shadow-brand/20' : 'border-border2 text-text-dim hover:border-brand/30'
                   }`}
               >
                 <tab.icon className="w-3 h-3" />
@@ -2500,7 +2500,7 @@ function AcademicCalendarView({ schedule, enrollments }: { schedule: any[], enro
                 }`}>{ev.category === 'exam' ? 'IMMUTABLE EXAM' : ev.category.replace('_', ' ')}</div>
 
               <div className="mb-6 flex items-center justify-between">
-                <div className="w-12 h-12 rounded-2xl bg-surface border border-white/5 flex items-center justify-center text-2xl shadow-xl">
+                <div className="w-12 h-12 rounded-2xl bg-surface border border-border-custom flex items-center justify-center text-2xl shadow-xl">
                   {ev.category === 'exam' ? <ShieldCheck className="w-6 h-6 text-coral" /> : <Calendar className="w-6 h-6 text-brand" />}
                 </div>
                 <div className="text-right">
@@ -2512,14 +2512,14 @@ function AcademicCalendarView({ schedule, enrollments }: { schedule: any[], enro
               <h4 className="font-syne font-extrabold text-xl mb-3 group-hover:text-brand transition-colors">{ev.title}</h4>
               <p className="text-xs text-text-muted leading-relaxed mb-6 line-clamp-3">{ev.description || 'Institutional mandate details available upon request.'}</p>
 
-              <div className="pt-6 border-t border-white/5 flex items-center justify-between">
+              <div className="pt-6 border-t border-border-custom flex items-center justify-between">
                 <span className="text-[9px] font-dm-mono uppercase tracking-[0.2em] text-text-dim">{ev.location || 'GDA_GLOBAL_NODE'}</span>
                 <button className="text-brand hover:underline text-[9px] font-black uppercase tracking-widest">Details →</button>
               </div>
             </div>
           ))}
           {filteredEvents.length === 0 && (
-            <div className="col-span-full p-24 text-center bg-surface/10 rounded-[3rem] border border-dashed border-white/10">
+            <div className="col-span-full p-24 text-center bg-surface/10 rounded-[3rem] border border-dashed border-border2">
               <div className="text-5xl mb-6 opacity-30">📭</div>
               <h3 className="font-syne font-bold text-xl mb-2 text-text-soft">Query Response Null</h3>
               <p className="text-xs text-text-dim italic">No events matching the current category/enrolment criteria found in the academic ledger.</p>
@@ -2811,7 +2811,7 @@ function CourseContentEditor({ course, onBack }: { course: any, onBack: () => vo
                 <div className="p-1 px-2 pb-2 space-y-0.5">
                   {mod.lessons?.sort((a: any, b: any) => a.order_index - b.order_index).map((lesson: any) => (
                     <button key={lesson.id} onClick={() => { setEditingLesson(lesson); setEditingQuiz(null); }}
-                      className={`w-full text-left p-2 rounded-lg text-[11px] font-bold transition-all flex items-center gap-2 ${editingLesson?.id === lesson.id ? 'bg-brand/10 text-brand border border-brand/20' : 'hover:bg-white/5 text-text-soft border border-transparent'}`}>
+                      className={`w-full text-left p-2 rounded-lg text-[11px] font-bold transition-all flex items-center gap-2 ${editingLesson?.id === lesson.id ? 'bg-brand/10 text-brand border border-brand/20' : 'hover:bg-glass-bg text-text-soft border border-transparent'}`}>
                       <FileText size={12} className={editingLesson?.id === lesson.id ? 'text-brand' : 'text-text-dim'} />
                       <span className="truncate">{lesson.title}</span>
                     </button>
@@ -2821,7 +2821,7 @@ function CourseContentEditor({ course, onBack }: { course: any, onBack: () => vo
                       const { data: questions } = await supabase.from('quiz_questions').select('*').eq('quiz_id', quiz.id).order('order_index', { ascending: true });
                       setEditingQuiz({ ...quiz, questions: questions || [] }); setEditingLesson(null);
                     }}
-                      className={`w-full text-left p-2 rounded-lg text-[11px] font-bold transition-all flex items-center gap-2 ${editingQuiz?.id === quiz.id ? 'bg-brand/10 text-brand border border-brand/20' : 'hover:bg-white/5 text-text-soft border border-transparent'}`}>
+                      className={`w-full text-left p-2 rounded-lg text-[11px] font-bold transition-all flex items-center gap-2 ${editingQuiz?.id === quiz.id ? 'bg-brand/10 text-brand border border-brand/20' : 'hover:bg-glass-bg text-text-soft border border-transparent'}`}>
                       <ShieldCheck size={12} className={editingQuiz?.id === quiz.id ? 'text-brand' : 'text-text-dim'} />
                       <span className="truncate">{quiz.title}</span>
                     </button>
@@ -3192,7 +3192,7 @@ function FinanceManager() {
                     <div className="text-[9px] text-text-dim font-dm-mono uppercase">{inv.student_number}</div>
                   </td>
                   <td className="p-4">
-                    <div className="font-syne font-black text-sm text-white">R {inv.amount?.toLocaleString()}</div>
+                    <div className="font-syne font-black text-sm text-text-custom">R {inv.amount?.toLocaleString()}</div>
                   </td>
                   <td className="p-4">
                     <span className={`px-2.5 py-1 rounded-lg text-[9px] font-black uppercase tracking-widest border ${inv.status === 'paid' ? 'bg-emerald/10 text-emerald border-emerald/20' : 'bg-brand/10 text-brand border-brand/20'
@@ -3262,12 +3262,12 @@ function MyFinance() {
         <div className="bg-[#0a0d14] border border-brand/10 p-6 rounded-2xl relative overflow-hidden group hover:border-brand/30 transition-all duration-300">
           <div className="absolute top-0 right-0 w-32 h-32 bg-brand/5 rounded-full -mr-16 -mt-16 blur-3xl group-hover:bg-brand/10 transition-all" />
           <div className="text-[9px] uppercase tracking-[0.2em] text-text-muted font-dm-mono mb-2 font-bold">Account Balance Due</div>
-          <div className="text-4xl font-syne font-black text-white tracking-tighter">
+          <div className="text-4xl font-syne font-black text-text-custom tracking-tighter">
             R {invoices.filter(i => i.status !== 'paid').reduce((acc, i) => acc + Number(i.amount), 0).toLocaleString()}
           </div>
           <div className="mt-6 flex gap-3 relative z-10">
             <button className="btn btn-brand px-6 py-2.5 rounded-xl text-[10px] font-black uppercase tracking-widest shadow-[0_0_20px_rgba(212,175,55,0.15)] hover:shadow-[0_0_30px_rgba(212,175,55,0.25)] transition-all">Settle Balance</button>
-            <button onClick={() => exportToCSV(invoices, 'my-statement')} className="btn btn-outline px-6 py-2.5 rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-white/5 transition-all">Download Audit</button>
+            <button onClick={() => exportToCSV(invoices, 'my-statement')} className="btn btn-outline px-6 py-2.5 rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-glass-bg transition-all">Download Audit</button>
           </div>
         </div>
 
@@ -3630,7 +3630,7 @@ export function StudentPortal({ onStartCourse }: { onStartCourse: (courseId: str
                   title={isSidebarCollapsed ? item.label : ''}
                   className={`w-full flex items-center rounded-xl font-dm-mono text-[11px] uppercase tracking-widest transition-all duration-200 group ${activeSection === item.id
                       ? 'bg-brand text-bg font-bold shadow-lg shadow-brand/20'
-                      : 'text-text-muted hover:text-text-custom hover:bg-white/5 border border-transparent'
+                      : 'text-text-muted hover:text-text-custom hover:bg-glass-bg border border-transparent'
                     } ${(isSidebarCollapsed && !isMobileMenuOpen) ? 'lg:justify-center p-3' : 'px-4 py-3 gap-3'}`}
                 >
                   <item.icon className={`w-4 h-4 shrink-0 ${activeSection === item.id ? 'text-brand' : 'group-hover:text-brand'} transition-colors`} />
@@ -3797,7 +3797,7 @@ export function StudentPortal({ onStartCourse }: { onStartCourse: (courseId: str
                         {step.completed ? <CheckCircle2 className="w-3.5 h-3.5" /> : <div className="w-1.5 h-1.5 rounded-full bg-text-dim/30" />}
                       </div>
                       <div>
-                        <h4 className={`text-sm font-bold ${step.completed ? 'text-white' : 'text-text-muted'}`}>{step.title}</h4>
+                        <h4 className={`text-sm font-bold ${step.completed ? 'text-text-custom' : 'text-text-muted'}`}>{step.title}</h4>
                         <p className="text-[10px] text-text-dim uppercase tracking-tighter mt-1">{step.date}</p>
                       </div>
                     </div>
@@ -3851,7 +3851,7 @@ export function StudentPortal({ onStartCourse }: { onStartCourse: (courseId: str
                   onClick={() => setAcademicTab(tab.id as any)}
                   className={`flex items-center gap-2 px-6 py-3 rounded-xl font-dm-mono text-[10px] uppercase tracking-widest transition-all ${academicTab === tab.id
                       ? 'bg-brand/10 text-brand border border-brand/20'
-                      : 'text-text-muted hover:text-text-custom hover:bg-white/5 border border-transparent'
+                      : 'text-text-muted hover:text-text-custom hover:bg-glass-bg border border-transparent'
                     }`}
                 >
                   <tab.icon className="w-3.5 h-3.5" />
@@ -3957,7 +3957,7 @@ export function StudentPortal({ onStartCourse }: { onStartCourse: (courseId: str
                     }
                   </div>
                 ) : (
-                  <div className="p-20 text-center bg-surface/10 rounded-3xl border border-white/5">
+                  <div className="p-20 text-center bg-surface/10 rounded-3xl border border-border-custom">
                     <div className="text-4xl mb-4">📂</div>
                     <p className="text-text-dim italic text-sm">No {academicTab} items published for your current enrolment yet.</p>
                   </div>
@@ -4141,14 +4141,14 @@ export function StudentPortal({ onStartCourse }: { onStartCourse: (courseId: str
                   <h3 className="font-syne font-extrabold text-2xl mb-1">{profile?.first_name} {profile?.last_name}</h3>
                   <p className="text-[10px] text-text-dim font-dm-mono uppercase tracking-[0.3em] mb-8">Cloud Resident</p>
 
-                  <div className="space-y-6 pt-6 border-t border-white/5">
+                  <div className="space-y-6 pt-6 border-t border-border-custom">
                     <div className="flex justify-between items-end mb-2">
                       <span className="text-[10px] font-dm-mono uppercase text-text-soft">Profile Strength</span>
                       <span className="text-sm font-bold text-brand">
                         {Math.round((Object.values(profileForm || {}).filter(v => !!v).length / Object.keys(profileForm || {}).length) * 100)}%
                       </span>
                     </div>
-                    <div className="h-1.5 bg-surface rounded-full overflow-hidden border border-white/5">
+                    <div className="h-1.5 bg-surface rounded-full overflow-hidden border border-border-custom">
                       <div className="h-full bg-brand transition-all duration-1000" style={{ width: `${(Object.values(profileForm || {}).filter(v => !!v).length / Object.keys(profileForm || {}).length) * 100}%` }} />
                     </div>
                     <p className="text-[11px] text-text-muted leading-relaxed">Complete your profile details to unlock all academy features.</p>
@@ -4325,7 +4325,7 @@ export function StudentPortal({ onStartCourse }: { onStartCourse: (courseId: str
                 </div>
               </div>
 
-              <div className="bg-navy border border-white/5 rounded-3xl p-8 flex flex-col justify-between">
+              <div className="bg-navy border border-border-custom rounded-3xl p-8 flex flex-col justify-between">
                 <div>
                   <h3 className="font-syne font-bold font-xl mb-4">GDA Data Privacy</h3>
                   <p className="text-sm text-text-soft leading-relaxed mb-6">
@@ -4333,7 +4333,7 @@ export function StudentPortal({ onStartCourse }: { onStartCourse: (courseId: str
                   </p>
                 </div>
                 <div className="space-y-4">
-                  <button onClick={() => exportToJSON([profile || {}], 'gda-archive')} className="w-full btn btn-outline border-white/10 hover:border-brand/50 py-4 flex items-center gap-3 justify-center">
+                  <button onClick={() => exportToJSON([profile || {}], 'gda-archive')} className="w-full btn btn-outline border-border2 hover:border-brand/50 py-4 flex items-center gap-3 justify-center">
                     <Globe className="w-4 h-4" /> Download Records Archive
                   </button>
                 </div>
@@ -4407,7 +4407,7 @@ export function StudentPortal({ onStartCourse }: { onStartCourse: (courseId: str
           <div className="bg-bg border border-brand/20 rounded-[2.5rem] shadow-2xl max-w-2xl w-full p-8 md:p-12 relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-brand/5 rounded-full -mr-32 -mt-32 blur-[100px]" />
 
-            <button onClick={() => setApplyingCourse(null)} className="absolute top-8 right-8 text-text-muted hover:text-white transition-colors">✕</button>
+            <button onClick={() => setApplyingCourse(null)} className="absolute top-8 right-8 text-text-muted hover:text-text-custom transition-colors">✕</button>
 
             <div className="relative z-10 text-left">
               <div className="inline-flex items-center gap-2 px-3 py-1 bg-brand/10 border border-brand/30 rounded-full text-brand text-[9px] uppercase font-dm-mono tracking-widest mb-6">
@@ -4545,7 +4545,7 @@ function StudentProgressTracker() {
           </thead>
           <tbody>
             {students.map(item => (
-              <tr key={item.id} className="border-b border-border-custom hover:bg-white/5 transition-colors">
+              <tr key={item.id} className="border-b border-border-custom hover:bg-glass-bg transition-colors">
                 <td className="p-4">
                   <div className="font-bold">{item.student?.first_name} {item.student?.last_name}</div>
                   <div className="text-[10px] text-text-muted">{item.student?.email}</div>
@@ -4679,7 +4679,7 @@ function GraduationPipeline({ pendingApprovals, onApprove }: { pendingApprovals:
           </thead>
           <tbody className="divide-y divide-border-custom">
             {eligible.map(s => (
-              <tr key={s.id} className="hover:bg-white/[0.02] transition-colors">
+              <tr key={s.id} className="hover:bg-glass-bg transition-colors">
                 <td className="p-5">
                   <div className="font-bold text-sm">{s.profiles?.first_name} {s.profiles?.last_name}</div>
                   <div className="text-[10px] text-text-muted font-dm-mono">{s.profiles?.student_number || 'N/A'}</div>
@@ -4799,7 +4799,7 @@ function InstitutionalAuditHub({ pendingApprovals, onApprove }: { pendingApprova
       <div className="flex items-center justify-between px-2">
         <div className="flex items-center gap-3">
           <ShieldCheck className="w-6 h-6 text-brand" />
-          <h2 className="font-syne font-black text-2xl tracking-tighter uppercase text-white">System Audit Log</h2>
+          <h2 className="font-syne font-black text-2xl tracking-tighter uppercase text-text-custom">System Audit Log</h2>
         </div>
         <span className="text-[9px] font-dm-mono bg-brand/5 text-brand/80 px-4 py-1.5 rounded-full border border-brand/10 tracking-[0.2em] uppercase">{logs.length} Immutable Records</span>
       </div>
@@ -4881,7 +4881,7 @@ function AlumniHub({ profile }: { profile: any }) {
 
             <div className="space-y-4">
               <span className="text-[9px] font-dm-mono uppercase tracking-[0.5em] text-brand bg-brand/5 px-6 py-2 rounded-full border border-brand/20">Institutional Alumni Governance</span>
-              <h1 className="font-syne font-black text-5xl md:text-6xl tracking-tighter leading-none text-white">
+              <h1 className="font-syne font-black text-5xl md:text-6xl tracking-tighter leading-none text-text-custom">
                 Honourably Sealed, <br /><span className="text-brand">{profile?.first_name}.</span>
               </h1>
             </div>
@@ -4889,7 +4889,7 @@ function AlumniHub({ profile }: { profile: any }) {
             {record ? (
               <div className="w-full mt-12 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
                 <div className="space-y-6 text-left relative z-10">
-                  <div className="p-6 bg-white/[0.02] border border-brand/10 rounded-3xl space-y-5">
+                  <div className="p-6 bg-glass-bg border border-brand/10 rounded-3xl space-y-5">
                     <div className="space-y-1">
                       <p className="text-[9px] font-dm-mono uppercase text-text-dim tracking-widest">Master Credential Lock</p>
                       <p className="text-base font-bold text-brand/90 font-dm-mono">{record.credential_id}</p>
@@ -4954,7 +4954,7 @@ function AlumniHub({ profile }: { profile: any }) {
 
         {/* Footer Brand */}
         <div className="mt-12 flex flex-col items-center space-y-4 opacity-50">
-          <div className="h-px w-20 bg-white/10" />
+          <div className="h-px w-20 bg-glass-border" />
           <p className="text-[10px] font-dm-mono uppercase text-text-dim tracking-[0.2em]">GINASHE DIGITAL ACADEMY | ALUMNI GOVERNANCE</p>
         </div>
       </div>
@@ -5063,11 +5063,11 @@ export function StaffActivationView() {
         <div className="relative z-10">
           <div className="flex items-center gap-4 mb-16">
             <div className="w-10 h-10 bg-brand text-bg rounded-xl flex items-center justify-center text-lg font-black shadow-[0_0_20px_rgba(0,242,255,0.2)]">G</div>
-            <h1 className="font-syne font-black text-xl uppercase tracking-widest text-white">Institutional_Access</h1>
+            <h1 className="font-syne font-black text-xl uppercase tracking-widest text-text-custom">Institutional_Access</h1>
           </div>
           <div className="space-y-6">
             <span className="text-[9px] font-dm-mono uppercase text-brand tracking-widest bg-brand/5 px-4 py-1.5 rounded-full border border-brand/20">Legacy Validation Active</span>
-            <h2 className="font-syne font-black text-5xl md:text-6xl leading-[0.9] tracking-tighter text-white">Activate <br /><span className="text-brand">Staff Hub.</span></h2>
+            <h2 className="font-syne font-black text-5xl md:text-6xl leading-[0.9] tracking-tighter text-text-custom">Activate <br /><span className="text-brand">Staff Hub.</span></h2>
             <p className="text-text-dim max-w-sm text-[13px] leading-relaxed">
               Complete your cryptographic onboarding by setting your institutional credentials. This will grant you governance access allocated to your professional role.
             </p>
@@ -5078,7 +5078,7 @@ export function StaffActivationView() {
             <div className="w-12 h-12 rounded-2xl bg-surface border border-brand/20 flex items-center justify-center text-xs text-brand font-bold shadow-inner">SF</div>
             <div>
               <p className="text-[9px] text-text-muted uppercase font-dm-mono tracking-widest mb-0.5">Assigned Professional ID</p>
-              <p className="text-sm font-black text-white">{profileData?.staff_number}</p>
+              <p className="text-sm font-black text-text-custom">{profileData?.staff_number}</p>
             </div>
           </div>
         </div>
@@ -5088,7 +5088,7 @@ export function StaffActivationView() {
         <div className="absolute top-0 right-0 w-64 h-64 bg-brand/2 rounded-full blur-[100px]" />
         <div className="max-w-md w-full mx-auto space-y-12 relative z-10">
           <div className="space-y-4">
-            <h3 className="font-syne font-black text-2xl uppercase tracking-tighter text-white">Set Command Password</h3>
+            <h3 className="font-syne font-black text-2xl uppercase tracking-tighter text-text-custom">Set Command Password</h3>
             <p className="text-text-soft text-sm italic">Institutional primary domain verified: <span className="text-brand font-dm-mono">{profileData?.email}</span></p>
           </div>
           <div className="space-y-8">
@@ -5098,7 +5098,7 @@ export function StaffActivationView() {
               </label>
               <input
                 type="password"
-                className="w-full bg-[#0a0d14] border border-brand/10 focus:border-brand/30 rounded-2xl p-5 outline-none transition-all placeholder:text-text-dim text-sm text-white selection:bg-brand selection:text-navy"
+                className="w-full bg-[#0a0d14] border border-brand/10 focus:border-brand/30 rounded-2xl p-5 outline-none transition-all placeholder:text-text-dim text-sm text-text-custom selection:bg-brand selection:text-navy"
                 placeholder="Minimum 8 characters"
                 value={password}
                 onChange={e => setPassword(e.target.value)}

@@ -45,13 +45,13 @@ export default function TrackDetailPage({ onOpenModal, editMode }: TrackDetailPa
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8 animate-fadeUp">
-              <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/3 border border-white/10">
+              <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/3 border border-border2">
                 <div className="w-2 h-2 rounded-full animate-pulse" style={{ background: data.color }} />
                 <span className="font-dm-mono text-[10px] text-text-muted uppercase tracking-[0.2em]">Institutional Mission</span>
               </div>
-              <h2 className="font-syne font-black text-4xl md:text-5xl leading-tight text-white">
+              <h2 className="font-syne font-black text-4xl md:text-5xl leading-tight text-text-custom">
                 Engineering <br />
-                <span className="text-white/30">Institutional Sovereignty.</span>
+                <span className="text-text-dim">Institutional Sovereignty.</span>
               </h2>
               <p className="text-text-soft text-lg leading-relaxed max-w-xl">
                 {data.mission}
@@ -74,10 +74,10 @@ export default function TrackDetailPage({ onOpenModal, editMode }: TrackDetailPa
                 <div className="grid grid-cols-1 gap-4">
                   {data.outcomes.map((outcome, i) => (
                     <div key={i} className="flex items-center gap-4 group/item">
-                      <div className="w-10 h-10 rounded-xl bg-white/3 border border-white/10 flex items-center justify-center shrink-0 group-hover/item:border-brand/40 transition-colors">
+                      <div className="w-10 h-10 rounded-xl bg-white/3 border border-border2 flex items-center justify-center shrink-0 group-hover/item:border-brand/40 transition-colors">
                         <CheckCircle2 size={18} className="text-brand" />
                       </div>
-                      <span className="font-syne font-bold text-white text-sm group-hover/item:text-brand transition-colors">{outcome}</span>
+                      <span className="font-syne font-bold text-text-custom text-sm group-hover/item:text-brand transition-colors">{outcome}</span>
                     </div>
                   ))}
                 </div>
@@ -92,12 +92,12 @@ export default function TrackDetailPage({ onOpenModal, editMode }: TrackDetailPa
         <div className="max-w-7xl mx-auto px-6 sm:px-14">
           <div className="text-center mb-20">
             <span className="font-dm-mono text-[11px] uppercase tracking-[0.4em] text-text-dim">The Career Climb</span>
-            <h2 className="font-syne font-black text-5xl md:text-6xl text-white mt-4">Module progression.</h2>
+            <h2 className="font-syne font-black text-5xl md:text-6xl text-text-custom mt-4">Module progression.</h2>
           </div>
 
           <div className="relative max-w-4xl mx-auto">
             {/* Vertical Line */}
-            <div className="absolute left-[22px] md:left-1/2 md:-translate-x-1/2 top-10 bottom-10 w-px bg-white/10" />
+            <div className="absolute left-[22px] md:left-1/2 md:-translate-x-1/2 top-10 bottom-10 w-px bg-glass-border" />
 
             <div className="space-y-20">
               {data.roadmap.map((step, i) => (
@@ -111,20 +111,20 @@ export default function TrackDetailPage({ onOpenModal, editMode }: TrackDetailPa
                       className={`bg-card border border-border-custom p-8 rounded-2xl hover:border-white/20 transition-all ${i % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}
                     >
                       <div className="font-dm-mono text-[10px] text-text-dim uppercase tracking-[0.2em] mb-2">{step.level}</div>
-                      <h3 className="font-syne font-extrabold text-2xl text-white mb-4">{step.title}</h3>
+                      <h3 className="font-syne font-extrabold text-2xl text-text-custom mb-4">{step.title}</h3>
                       <p className="text-text-soft text-[13px] leading-relaxed mb-6">{step.description}</p>
                       
                       <div className={`flex flex-wrap gap-2 ${i % 2 === 0 ? 'md:justify-end' : 'md:justify-start'}`}>
                         {step.modules.map((mod, j) => (
-                          <span key={j} className="px-3 py-1 bg-white/3 border border-white/10 rounded-md text-[10px] font-dm-mono text-white/50 uppercase tracking-widest">{mod}</span>
+                          <span key={j} className="px-3 py-1 bg-white/3 border border-border2 rounded-md text-[10px] font-dm-mono text-text-muted uppercase tracking-widest">{mod}</span>
                         ))}
                       </div>
 
-                      <div className={`mt-6 pt-6 border-t border-white/5 flex flex-wrap gap-3 ${i % 2 === 0 ? 'md:justify-end' : 'md:justify-start'}`}>
+                      <div className={`mt-6 pt-6 border-t border-border-custom flex flex-wrap gap-3 ${i % 2 === 0 ? 'md:justify-end' : 'md:justify-start'}`}>
                          {step.vendor_alignment.map((va, k) => (
                            <div key={k} className="flex items-center gap-1.5 opacity-60">
                              <div className="w-1.5 h-1.5 rounded-full bg-brand" />
-                             <span className="text-[9px] font-bold text-white uppercase tracking-widest">{va}</span>
+                             <span className="text-[9px] font-bold text-text-custom uppercase tracking-widest">{va}</span>
                            </div>
                          ))}
                       </div>
@@ -132,7 +132,7 @@ export default function TrackDetailPage({ onOpenModal, editMode }: TrackDetailPa
                   </div>
 
                   {/* Icon/Diamond indicator */}
-                  <div className="relative z-10 w-11 h-11 bg-navy border-2 border-white/10 rounded-full flex items-center justify-center shrink-0">
+                  <div className="relative z-10 w-11 h-11 bg-navy border-2 border-border2 rounded-full flex items-center justify-center shrink-0">
                     <div className="w-4 h-4 rounded-sm rotate-45" style={{ background: data.color }} />
                   </div>
 
@@ -152,7 +152,7 @@ export default function TrackDetailPage({ onOpenModal, editMode }: TrackDetailPa
           <div className="font-syne font-black text-6xl md:text-7xl opacity-5 absolute -top-8 left-1/2 -translate-x-1/2 w-full uppercase select-none pointer-events-none">
             Guidance
           </div>
-          <h3 className="font-syne font-bold text-4xl text-white">Not sure if {data.shortTitle} is right for you?</h3>
+          <h3 className="font-syne font-bold text-4xl text-text-custom">Not sure if {data.shortTitle} is right for you?</h3>
           <p className="text-text-soft text-lg leading-relaxed">
             Our practitioner review board can help align your aptitude with the right institutional pathway. Speak to a lead faculty member today.
           </p>
@@ -165,7 +165,7 @@ export default function TrackDetailPage({ onOpenModal, editMode }: TrackDetailPa
             </button>
             <Link 
               to="/curriculum"
-              className="px-10 py-5 bg-transparent border border-white/20 text-white font-syne font-black uppercase text-xs tracking-[0.3em] rounded-xl hover:bg-white/5 transition-all no-underline"
+              className="px-10 py-5 bg-transparent border border-white/20 text-text-custom font-syne font-black uppercase text-xs tracking-[0.3em] rounded-xl hover:bg-glass-bg transition-all no-underline"
             >
               View Full Matrix
             </Link>

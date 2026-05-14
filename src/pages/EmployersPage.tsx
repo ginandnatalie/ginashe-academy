@@ -10,7 +10,7 @@ export default function EmployersPage() {
           <div className="w-20 h-20 rounded-2xl bg-emerald/10 text-emerald flex items-center justify-center">
             <Briefcase className="w-10 h-10" />
           </div>
-          <h1 className="text-4xl md:text-5xl font-syne font-black text-white uppercase tracking-tighter">Employer Partners</h1>
+          <h1 className="text-4xl md:text-5xl font-syne font-black text-text-custom uppercase tracking-tighter">Employer Partners</h1>
           <p className="text-text-muted font-outfit max-w-2xl mx-auto text-lg">Access our graduate talent pool, B-BBEE skills spend solutions, and corporate training programs.</p>
         </motion.div>
       </div>

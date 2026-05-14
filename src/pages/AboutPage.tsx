@@ -37,18 +37,18 @@ export default function AboutPage({ onOpenModal, editMode }: AboutPageProps) {
         subtitle="Making transformation a reality — one learner at a time. Africa's most trusted and accessible skills academy."
       />
 
-      <section className="py-20 relative z-10 border-t border-white/5 bg-bg2">
+      <section className="py-20 relative z-10 border-t border-border-custom bg-bg2">
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-12">
-            <h2 className="text-3xl font-syne font-black text-white uppercase tracking-tighter mb-4">Our Architecture</h2>
+            <h2 className="text-3xl font-syne font-black text-text-custom uppercase tracking-tighter mb-4">Our Architecture</h2>
             <p className="text-text-muted font-outfit max-w-2xl">We operate 10 purpose-built schools designed to close Africa's most urgent skills gaps, supported by a robust infrastructure that removes the barriers to learning.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
             {deliveryChannels.map((channel, i) => (
-              <div key={i} className="bg-card border border-white/5 p-6 rounded-xl hover:border-brand/30 transition-colors">
+              <div key={i} className="bg-card border border-border-custom p-6 rounded-xl hover:border-brand/30 transition-colors">
                 <div className="text-brand mb-4 bg-brand/10 w-12 h-12 flex items-center justify-center rounded-lg">{channel.icon}</div>
-                <h3 className="font-syne font-bold text-white text-lg mb-2">{channel.title}</h3>
+                <h3 className="font-syne font-bold text-text-custom text-lg mb-2">{channel.title}</h3>
                 <p className="text-sm text-text-muted font-outfit leading-relaxed">{channel.desc}</p>
               </div>
             ))}
@@ -58,12 +58,12 @@ export default function AboutPage({ onOpenModal, editMode }: AboutPageProps) {
             <div>
               <div className="flex items-center gap-3 mb-8">
                 <Shield className="w-8 h-8 text-sky" />
-                <h3 className="text-2xl font-syne font-black text-white uppercase">Governance</h3>
+                <h3 className="text-2xl font-syne font-black text-text-custom uppercase">Governance</h3>
               </div>
               <div className="space-y-6">
                 {governance.map((gov, i) => (
-                  <div key={i} className="bg-white/[0.02] border border-white/5 p-5 rounded-lg border-l-2 border-l-sky">
-                    <h4 className="font-bold text-white font-syne mb-1">{gov.title}</h4>
+                  <div key={i} className="bg-glass-bg border border-border-custom p-5 rounded-lg border-l-2 border-l-sky">
+                    <h4 className="font-bold text-text-custom font-syne mb-1">{gov.title}</h4>
                     <p className="text-sm text-text-muted font-outfit">{gov.desc}</p>
                   </div>
                 ))}
@@ -73,13 +73,13 @@ export default function AboutPage({ onOpenModal, editMode }: AboutPageProps) {
             <div>
               <div className="flex items-center gap-3 mb-8">
                 <BookOpen className="w-8 h-8 text-emerald" />
-                <h3 className="text-2xl font-syne font-black text-white uppercase">Partnership Framework</h3>
+                <h3 className="text-2xl font-syne font-black text-text-custom uppercase">Partnership Framework</h3>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {partners.map((partner, i) => (
-                  <div key={i} className="bg-white/[0.02] border border-white/5 p-5 rounded-lg border-t-2 border-t-emerald">
+                  <div key={i} className="bg-glass-bg border border-border-custom p-5 rounded-lg border-t-2 border-t-emerald">
                     <span className="text-[10px] font-dm-mono uppercase tracking-widest text-emerald mb-2 block">{partner.tier}</span>
-                    <h4 className="font-bold text-white font-syne mb-2 text-sm">{partner.name}</h4>
+                    <h4 className="font-bold text-text-custom font-syne mb-2 text-sm">{partner.name}</h4>
                     <p className="text-[12px] text-text-muted font-outfit">{partner.desc}</p>
                   </div>
                 ))}

@@ -57,12 +57,12 @@ export default function TermsPage() {
 
           <div className="grid grid-cols-1 gap-8">
             {sections.map((section, index) => (
-              <div key={index} className="group p-8 rounded-2xl bg-surface/30 border border-white/5 hover:border-brand/20 transition-all duration-300">
+              <div key={index} className="group p-8 rounded-2xl bg-surface/30 border border-border-custom hover:border-brand/20 transition-all duration-300">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="p-3 rounded-xl bg-bg border border-white/5 group-hover:scale-110 transition-transform">
+                  <div className="p-3 rounded-xl bg-bg border border-border-custom group-hover:scale-110 transition-transform">
                     {section.icon}
                   </div>
-                  <h3 className="font-syne font-bold text-xl text-white group-hover:text-brand transition-colors">
+                  <h3 className="font-syne font-bold text-xl text-text-custom group-hover:text-brand transition-colors">
                     {section.title}
                   </h3>
                 </div>

@@ -148,11 +148,11 @@ export function CourseViewer({ courseId, onBack }: { courseId: string; onBack: (
                     key={lesson.id}
                     onClick={() => setActiveItem({ type: 'lesson', data: lesson })}
                     className={`w-full text-left p-3 rounded-md transition-all flex items-start gap-3 ${
-                      activeItem?.type === 'lesson' && activeItem.data.id === lesson.id ? 'bg-brand/10 text-brand' : 'hover:bg-white/5 text-text-soft'
+                      activeItem?.type === 'lesson' && activeItem.data.id === lesson.id ? 'bg-brand/10 text-brand' : 'hover:bg-glass-bg text-text-soft'
                     }`}
                   >
                     <div className={`mt-1 w-4 h-4 rounded-full border flex items-center justify-center shrink-0 ${
-                      completedLessons.includes(lesson.id) ? 'bg-emerald border-emerald text-white' : 'border-border-custom'
+                      completedLessons.includes(lesson.id) ? 'bg-emerald border-emerald text-text-custom' : 'border-border-custom'
                     }`}>
                       {completedLessons.includes(lesson.id) && <span className="text-[10px]">✓</span>}
                     </div>
@@ -167,11 +167,11 @@ export function CourseViewer({ courseId, onBack }: { courseId: string; onBack: (
                     key={quiz.id}
                     onClick={() => setActiveItem({ type: 'quiz', data: quiz })}
                     className={`w-full text-left p-3 rounded-md transition-all flex items-start gap-3 ${
-                      activeItem?.type === 'quiz' && activeItem.data.id === quiz.id ? 'bg-brand/10 text-brand' : 'hover:bg-white/5 text-text-soft'
+                      activeItem?.type === 'quiz' && activeItem.data.id === quiz.id ? 'bg-brand/10 text-brand' : 'hover:bg-glass-bg text-text-soft'
                     }`}
                   >
                     <div className={`mt-1 w-4 h-4 rounded-full border flex items-center justify-center shrink-0 ${
-                      completedQuizzes.includes(quiz.id) ? 'bg-brand border-brand text-white' : 'border-border-custom'
+                      completedQuizzes.includes(quiz.id) ? 'bg-brand border-brand text-text-custom' : 'border-border-custom'
                     }`}>
                       {completedQuizzes.includes(quiz.id) ? <span className="text-[10px]">✓</span> : <span className="text-[10px]">?</span>}
                     </div>
@@ -301,7 +301,7 @@ function LessonDiscussions({ lessonId, mode, onClose }: { lessonId: string, mode
     <aside className="w-96 border-l border-border-custom bg-surface flex flex-col animate-fadeLeft">
       <div className="p-6 border-b border-border-custom flex items-center justify-between">
          <h3 className="font-syne font-bold">{mode === 'public-community' ? 'Course Discussion' : 'Instructor Inquiries'}</h3>
-         <button onClick={onClose} className="text-text-dim hover:text-white">✕</button>
+         <button onClick={onClose} className="text-text-dim hover:text-text-custom">✕</button>
       </div>
       
       <div className="flex-1 overflow-y-auto p-6 space-y-6">

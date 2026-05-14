@@ -103,18 +103,18 @@ export default function Hero({ onOpenModal, editMode }: HeroProps) {
     <section id="hero" className="min-h-[100svh] flex flex-col pt-[72px] overflow-hidden relative bg-bg">
       {/* Background Visual — high-fidelity video and overlays */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-        <InstitutionalHeroVisual showBackground={false} className="opacity-60" />
+        <InstitutionalHeroVisual showBackground={false} className="opacity-90" />
         {/* Multi-layer fade: hard left edge → transparent right */}
-        <div className="absolute inset-0 bg-gradient-to-r from-bg from-15% via-bg/90 via-35% to-transparent z-[5]"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-bg via-transparent to-bg/50 z-[5]"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-bg/90 via-bg/60 via-40% to-transparent z-[5]"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-bg via-transparent to-transparent z-[5]"></div>
         {/* Extra protection for text area on mobile */}
-        <div className="absolute inset-0 bg-gradient-to-r from-bg/40 to-transparent md:hidden z-[5]"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-bg/80 to-transparent md:hidden z-[5]"></div>
       </div>
 
       <div className="max-w-[1280px] mx-auto px-5 sm:px-6 md:px-14 py-10 sm:py-12 md:py-16 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center relative z-[2] flex-1">
         <div className="hero-left">
           <div className="inline-flex items-center gap-2.5 font-dm-mono text-[10px] tracking-[0.25em] uppercase text-brand mb-5 animate-fadeUp">
-            <div className={`flex items-center gap-1.5 border px-3 py-1.25 rounded-full ${heroContent.intakeStatus === 'OPEN' ? 'bg-brand-dim border-brand/25' : 'bg-coral-dim border-coral/25 text-coral'}`}>
+            <div className={`flex items-center gap-1.5 border px-3 py-1.5 rounded-full font-bold ${heroContent.intakeStatus === 'OPEN' ? 'bg-[#0B0C10] border-brand/30 text-brand shadow-[0_0_15px_rgba(0,242,255,0.15)]' : 'bg-[#0B0C10] border-coral/30 text-coral shadow-[0_0_15px_rgba(248,113,113,0.15)]'}`}>
               <span className="pulse"></span>
               2026 Cohorts — {heroContent.intakeStatus === 'OPEN' ? 'Applications Open' : heroContent.intakeStatus === 'CLOSED' ? 'Applications Closed' : 'Waitlist Only'}
             </div>

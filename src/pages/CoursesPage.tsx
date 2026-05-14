@@ -82,15 +82,15 @@ export default function CoursesPage() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-navy via-bg to-bg" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-            <div className="inline-flex items-center gap-2 text-brand font-jetbrains text-[10px] uppercase tracking-[0.3em] mb-4"><div className="w-8 h-px bg-brand/40" /> Course Catalogue <div className="w-8 h-px bg-brand/40" /></div>
-            <h1 className="text-4xl md:text-6xl font-syne font-black text-white uppercase tracking-tighter mb-4">Find Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand to-sky">Course</span></h1>
+            <div className="section-label mb-4">Course Catalogue</div>
+            <h1 className="text-4xl md:text-6xl font-syne font-black text-text-custom uppercase tracking-tighter mb-4">Find Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand to-sky">Course</span></h1>
             <p className="text-lg text-text-muted font-outfit max-w-2xl mb-8">Search 78+ practitioner-led courses across 10 schools. NQF L2–L6. Online, Hybrid, or In-person.</p>
           </motion.div>
 
           {/* Search */}
           <div className="relative max-w-xl mb-6">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-text-muted" />
-            <input type="text" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} placeholder="Search by course name or outcome..." className="w-full pl-12 pr-4 py-4 bg-white/5 border border-white/10 rounded-xl text-white font-outfit text-[14px] placeholder:text-text-muted focus:border-brand/40 focus:outline-none transition-all" />
+            <input type="text" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} placeholder="Search by course name or outcome..." className="w-full pl-12 pr-4 py-4 bg-glass-bg border border-border2 rounded-xl text-text-custom font-outfit text-[14px] placeholder:text-text-muted focus:border-brand/40 focus:outline-none transition-all" />
           </div>
 
           {/* Filters */}
@@ -98,13 +98,13 @@ export default function CoursesPage() {
             <div className="flex items-center gap-2 flex-wrap">
               <span className="text-[10px] font-dm-mono text-text-muted uppercase tracking-widest">School:</span>
               {schoolAbbrs.map(s => (
-                <button key={s} onClick={() => setSelectedSchool(s)} className={`px-3 py-1.5 rounded-lg font-outfit font-bold text-[11px] transition-all border ${selectedSchool === s ? 'bg-brand text-navy border-brand' : 'bg-white/5 text-white/50 border-white/10 hover:text-white hover:bg-white/10'}`}>{s}</button>
+                <button key={s} onClick={() => setSelectedSchool(s)} className={`px-3 py-1.5 rounded-lg font-outfit font-bold text-[11px] transition-all border ${selectedSchool === s ? 'bg-brand text-navy border-brand' : 'bg-glass-bg text-text-muted border-border2 hover:text-text-custom hover:bg-glass-border'}`}>{s}</button>
               ))}
             </div>
             <div className="flex items-center gap-2 flex-wrap">
               <span className="text-[10px] font-dm-mono text-text-muted uppercase tracking-widest">Mode:</span>
               {modes.map(m => (
-                <button key={m} onClick={() => setSelectedMode(m)} className={`px-3 py-1.5 rounded-lg font-outfit font-bold text-[11px] transition-all border ${selectedMode === m ? 'bg-brand text-navy border-brand' : 'bg-white/5 text-white/50 border-white/10 hover:text-white hover:bg-white/10'}`}>{m}</button>
+                <button key={m} onClick={() => setSelectedMode(m)} className={`px-3 py-1.5 rounded-lg font-outfit font-bold text-[11px] transition-all border ${selectedMode === m ? 'bg-brand text-navy border-brand' : 'bg-glass-bg text-text-muted border-border2 hover:text-text-custom hover:bg-glass-border'}`}>{m}</button>
               ))}
             </div>
           </div>
@@ -117,12 +117,12 @@ export default function CoursesPage() {
           <div className="text-[11px] font-dm-mono text-text-muted uppercase tracking-widest mb-6">{filtered.length} course{filtered.length !== 1 ? 's' : ''} found</div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {filtered.map((course, idx) => (
-              <motion.div key={idx} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.03 * idx }} className="bg-white/[0.02] border border-white/5 rounded-xl p-6 hover:border-brand/20 transition-all group flex flex-col">
+              <motion.div key={idx} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.03 * idx }} className="bg-glass-bg border border-border-custom rounded-xl p-6 hover:border-brand/20 transition-all group flex flex-col">
                 <div className="flex items-center justify-between mb-3">
                   <span className={`font-syne font-black text-[13px] ${course.color}`}>{course.school}</span>
-                  <span className="text-[9px] font-jetbrains text-text-dim uppercase tracking-widest bg-white/5 px-2 py-0.5 rounded">NQF {course.nqf}</span>
+                  <span className="text-[9px] font-jetbrains text-text-dim uppercase tracking-widest bg-glass-bg px-2 py-0.5 rounded">NQF {course.nqf}</span>
                 </div>
-                <h3 className="font-syne font-bold text-[15px] text-white mb-2 group-hover:text-brand transition-colors leading-tight">{course.name}</h3>
+                <h3 className="font-syne font-bold text-[15px] text-text-custom mb-2 group-hover:text-brand transition-colors leading-tight">{course.name}</h3>
                 <div className="flex flex-wrap gap-3 mb-4 text-[10px] text-text-muted font-outfit">
                   <span className="flex items-center gap-1"><Clock className="w-3 h-3" />{course.weeks} weeks</span>
                   <span className="flex items-center gap-1"><MapPin className="w-3 h-3" />{course.mode}</span>
@@ -130,10 +130,10 @@ export default function CoursesPage() {
                 </div>
                 <div className="flex-1">
                   <div className="text-[9px] font-dm-mono text-text-dim uppercase tracking-widest mb-1">Outcome</div>
-                  <p className="text-[12px] text-white/70 font-outfit mb-1">{course.outcome}</p>
+                  <p className="text-[12px] text-text-soft font-outfit mb-1">{course.outcome}</p>
                   {course.salary && <p className="text-[11px] text-brand font-bold">{course.salary}</p>}
                 </div>
-                <div className="mt-4 pt-3 border-t border-white/5">
+                <div className="mt-4 pt-3 border-t border-border-custom">
                   <div className="text-[9px] font-dm-mono text-text-dim uppercase tracking-widest mb-1">Entry</div>
                   <p className="text-[11px] text-text-muted">{course.entry}</p>
                 </div>
@@ -142,7 +142,7 @@ export default function CoursesPage() {
           </div>
           {filtered.length === 0 && (
             <div className="text-center py-20">
-              <p className="text-xl font-syne font-bold text-white/30 mb-2">No courses found</p>
+              <p className="text-xl font-syne font-bold text-text-dim mb-2">No courses found</p>
               <p className="text-sm text-text-muted">Try adjusting your search or filters.</p>
             </div>
           )}

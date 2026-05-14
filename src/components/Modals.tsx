@@ -380,7 +380,7 @@ export function Modals({ activeModal, onClose, onSwitchModal, onLoginSuccess, me
                   <div className="w-16 h-16 rounded-full bg-brand/10 border border-brand/20 flex items-center justify-center text-brand mx-auto mb-4 animate-float1">
                     <CheckCircle2 size={32} />
                   </div>
-                  <h3 className="font-syne font-bold text-[18px] text-white mb-2">Institutional Session Detected</h3>
+                  <h3 className="font-syne font-bold text-[18px] text-text-custom mb-2">Institutional Session Detected</h3>
                   <p className="text-[13px] text-text-soft leading-relaxed mb-8">
                     You are currently authenticated as <span className="text-brand font-bold">{user.email}</span>. Access to curriculum modules, assessments, and certifications is managed exclusively within the Student Portal.
                   </p>
@@ -487,7 +487,7 @@ export function Modals({ activeModal, onClose, onSwitchModal, onLoginSuccess, me
                   <div className="w-16 h-16 rounded-full bg-brand/10 border border-brand/20 flex items-center justify-center text-brand mx-auto mb-4 animate-float1">
                     <Shield size={32} />
                   </div>
-                  <h3 className="font-syne font-bold text-[18px] text-white mb-2">Administrative Session Active</h3>
+                  <h3 className="font-syne font-bold text-[18px] text-text-custom mb-2">Administrative Session Active</h3>
                   <p className="text-[13px] text-text-soft leading-relaxed mb-8">
                     Authenticated session confirmed for <span className="text-brand font-bold">{user.email}</span>. Governance tools and faculty resources are restricted to the Staff Academy domain.
                   </p>
@@ -761,7 +761,7 @@ export function Modals({ activeModal, onClose, onSwitchModal, onLoginSuccess, me
               <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-brand/10 to-transparent pointer-events-none" />
               <div className="relative z-10">
                 <div className="w-12 h-12 rounded-md bg-brand-dim border border-brand/20 flex items-center justify-center text-[22px] mb-3.5">🧭</div>
-                <h2 className="font-syne font-black text-2xl text-white mb-1.5 tracking-tight">Career Guidance</h2>
+                <h2 className="font-syne font-black text-2xl text-text-custom mb-1.5 tracking-tight">Career Guidance</h2>
                 <p className="text-text-muted text-[13px] leading-relaxed max-w-sm">Schedule a discovery call with an Academy Practitioner.</p>
               </div>
               <button 
@@ -835,7 +835,7 @@ export function Modals({ activeModal, onClose, onSwitchModal, onLoginSuccess, me
               <div className="absolute top-0 right-0 w-32 h-32 bg-brand/10 blur-3xl rounded-full" />
               <div className="relative z-10">
                 <div className="w-12 h-12 rounded-md bg-brand-dim border border-brand/20 flex items-center justify-center text-[22px] mb-3.5"><Rocket className="w-6 h-6 text-brand" /></div>
-                <h2 className="font-syne font-black text-2xl text-white mb-1.5 tracking-tighter uppercase">Founder Advisory Matrix</h2>
+                <h2 className="font-syne font-black text-2xl text-text-custom mb-1.5 tracking-tighter uppercase">Founder Advisory Matrix</h2>
                 <p className="text-text-muted text-[12px] leading-relaxed max-w-sm">Strategic Technical Consultation for High-Growth Disruptors.</p>
               </div>
               <button className="w-8 h-8 rounded-full border border-border-custom flex items-center justify-center text-text-muted hover:text-text-custom transition-all absolute top-8 right-8 z-20" onClick={onClose}>✕</button>
@@ -846,7 +846,7 @@ export function Modals({ activeModal, onClose, onSwitchModal, onLoginSuccess, me
                   <div className="form-group">
                     <label className="block font-dm-mono text-[9px] tracking-[0.15em] uppercase text-text-muted mb-2">Lead Disruptor</label>
                     <input 
-                      className="w-full bg-surface border border-border-custom rounded-sm p-3 px-4 font-dm-sans text-[13px] text-white outline-none focus:border-brand/40 transition-all" 
+                      className="w-full bg-surface border border-border-custom rounded-sm p-3 px-4 font-dm-sans text-[13px] text-text-custom outline-none focus:border-brand/40 transition-all" 
                       placeholder="Full Name" 
                       value={foundershipForm.name}
                       onChange={e => setFoundershipForm({...foundershipForm, name: e.target.value})}
@@ -857,7 +857,7 @@ export function Modals({ activeModal, onClose, onSwitchModal, onLoginSuccess, me
                     <label className="block font-dm-mono text-[9px] tracking-[0.15em] uppercase text-text-muted mb-2">Secure Email</label>
                     <input 
                       type="email"
-                      className="w-full bg-surface border border-border-custom rounded-sm p-3 px-4 font-dm-sans text-[13px] text-white outline-none focus:border-brand/40 transition-all" 
+                      className="w-full bg-surface border border-border-custom rounded-sm p-3 px-4 font-dm-sans text-[13px] text-text-custom outline-none focus:border-brand/40 transition-all" 
                       placeholder="name@founder.com" 
                       value={foundershipForm.email}
                       onChange={e => setFoundershipForm({...foundershipForm, email: e.target.value})}
@@ -868,7 +868,7 @@ export function Modals({ activeModal, onClose, onSwitchModal, onLoginSuccess, me
                 <div className="form-group">
                   <label className="block font-dm-mono text-[9px] tracking-[0.15em] uppercase text-text-muted mb-2">Venture / Project Name (Optional)</label>
                   <input 
-                    className="w-full bg-surface border border-border-custom rounded-sm p-3 px-4 font-dm-sans text-[13px] text-white outline-none focus:border-brand/40 transition-all" 
+                    className="w-full bg-surface border border-border-custom rounded-sm p-3 px-4 font-dm-sans text-[13px] text-text-custom outline-none focus:border-brand/40 transition-all" 
                     placeholder="Stealth Project X" 
                     value={foundershipForm.venture}
                     onChange={e => setFoundershipForm({...foundershipForm, venture: e.target.value})}
@@ -877,7 +877,7 @@ export function Modals({ activeModal, onClose, onSwitchModal, onLoginSuccess, me
                 <div className="form-group">
                   <label className="block font-dm-mono text-[9px] tracking-[0.15em] uppercase text-text-muted mb-2">Primary Technical Objective</label>
                   <textarea 
-                    className="w-full bg-surface border border-border-custom rounded-sm p-3 px-4 font-dm-sans text-[13px] text-white outline-none focus:border-brand/40 transition-all min-h-[100px]" 
+                    className="w-full bg-surface border border-border-custom rounded-sm p-3 px-4 font-dm-sans text-[13px] text-text-custom outline-none focus:border-brand/40 transition-all min-h-[100px]" 
                     placeholder="Describe your roadmap or the technical barrier you need to overcome..." 
                     value={foundershipForm.objective}
                     onChange={e => setFoundershipForm({...foundershipForm, objective: e.target.value})}
@@ -1134,7 +1134,7 @@ export function Modals({ activeModal, onClose, onSwitchModal, onLoginSuccess, me
                     <div key={i} className="flex gap-4 p-4 rounded-xl bg-white/3 border border-border-custom">
                       <div className="mt-1 text-brand"><CheckCircle2 className="w-4 h-4" /></div>
                       <div>
-                        <div className="font-syne font-bold text-[13px] text-white">{doc.t}</div>
+                        <div className="font-syne font-bold text-[13px] text-text-custom">{doc.t}</div>
                         <div className="text-[11px] text-text-muted">{doc.d}</div>
                       </div>
                     </div>
@@ -1226,19 +1226,19 @@ export function Modals({ activeModal, onClose, onSwitchModal, onLoginSuccess, me
                   <div className="grid grid-cols-2 gap-4">
                     <div className="p-4 rounded-xl bg-white/3 border border-border-custom">
                       <div className="text-[10px] text-text-muted uppercase mb-1">Cloud Launchpad</div>
-                      <div className="font-bold text-white">R 12,500</div>
+                      <div className="font-bold text-text-custom">R 12,500</div>
                     </div>
                     <div className="p-4 rounded-xl bg-white/3 border border-border-custom">
                       <div className="text-[10px] text-text-muted uppercase mb-1">Associate Track</div>
-                      <div className="font-bold text-white">R 36,000</div>
+                      <div className="font-bold text-text-custom">R 36,000</div>
                     </div>
                     <div className="p-4 rounded-xl bg-white/3 border border-border-custom">
                       <div className="text-[10px] text-text-muted uppercase mb-1">Professional Track</div>
-                      <div className="font-bold text-white">R 58,000</div>
+                      <div className="font-bold text-text-custom">R 58,000</div>
                     </div>
                     <div className="p-4 rounded-xl bg-white/3 border border-border-custom">
                       <div className="text-[10px] text-text-muted uppercase mb-1">Dual Specialisation</div>
-                      <div className="font-bold text-white">R 85,000</div>
+                      <div className="font-bold text-text-custom">R 85,000</div>
                     </div>
                   </div>
                 </div>
@@ -1284,10 +1284,10 @@ export function Modals({ activeModal, onClose, onSwitchModal, onLoginSuccess, me
                     { s: '03', t: 'Technical Assessment', d: 'Achieve a "High Distinction" (85%+) in the GDA baseline assessment.' },
                     { s: '04', t: 'Motivation Video', d: 'Submit a 90-second video explaining how you will disrupt your industry.' }
                   ].map((step, i) => (
-                    <div key={i} className="flex gap-4 p-4 rounded-xl bg-white/3 border border-border-custom hover:bg-white/5 transition-colors">
+                    <div key={i} className="flex gap-4 p-4 rounded-xl bg-white/3 border border-border-custom hover:bg-glass-bg transition-colors">
                       <div className="font-dm-mono text-emerald font-bold">{step.s}</div>
                       <div>
-                        <div className="font-syne font-bold text-[13px] text-white">{step.t}</div>
+                        <div className="font-syne font-bold text-[13px] text-text-custom">{step.t}</div>
                         <div className="text-[11px] text-text-muted">{step.d}</div>
                       </div>
                     </div>
@@ -1314,11 +1314,11 @@ export function Modals({ activeModal, onClose, onSwitchModal, onLoginSuccess, me
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="p-5 rounded-2xl bg-brand/5 border border-brand/20">
                     <h4 className="font-syne font-bold text-[14px] text-brand mb-2">Upfront Commitment</h4>
-                    <p className="font-black text-2xl text-white">R 0.00</p>
+                    <p className="font-black text-2xl text-text-custom">R 0.00</p>
                     <p className="text-[10px] text-text-muted mt-1 uppercase tracking-widest">Start learning for zero cost</p>
                   </div>
                   <div className="p-5 rounded-2xl bg-white/3 border border-border-custom">
-                    <h4 className="font-syne font-bold text-[14px] text-white mb-2">Income Share %</h4>
+                    <h4 className="font-syne font-bold text-[14px] text-text-custom mb-2">Income Share %</h4>
                     <p className="font-black text-2xl text-brand">15%</p>
                     <p className="text-[10px] text-text-muted mt-1 uppercase tracking-widest">Only once earning &gt;R15k/mo</p>
                   </div>
@@ -1335,7 +1335,7 @@ export function Modals({ activeModal, onClose, onSwitchModal, onLoginSuccess, me
                       <li key={i} className="flex items-start gap-3">
                         <span className="text-brand mt-1 text-[8px]">▹</span>
                         <div>
-                          <span className="text-[12px] font-bold text-white block">{item.t}</span>
+                          <span className="text-[12px] font-bold text-text-custom block">{item.t}</span>
                           <span className="text-[11px] text-text-muted">{item.d}</span>
                         </div>
                       </li>
@@ -1375,7 +1375,7 @@ export function Modals({ activeModal, onClose, onSwitchModal, onLoginSuccess, me
                       <li key={i} className="flex items-start gap-3">
                         <span className="text-brand mt-1 text-[8px]">▹</span>
                         <div>
-                          <span className="text-[12px] font-bold text-white block">{item.t}</span>
+                          <span className="text-[12px] font-bold text-text-custom block">{item.t}</span>
                           <span className="text-[11px] text-text-muted">{item.d}</span>
                         </div>
                       </li>
@@ -1470,10 +1470,10 @@ export function Modals({ activeModal, onClose, onSwitchModal, onLoginSuccess, me
             <div className="p-7 md:p-8 pb-5 border-b border-border-custom flex items-start justify-between bg-surface/50">
               <div>
                 <div className="w-12 h-12 rounded-md bg-brand-dim border border-brand/20 flex items-center justify-center text-[22px] mb-3.5">📋</div>
-                <h2 className="font-syne font-black text-2xl tracking-tighter text-white uppercase">Required Documents</h2>
+                <h2 className="font-syne font-black text-2xl tracking-tighter text-text-custom uppercase">Required Documents</h2>
                 <p className="text-[11px] text-text-dim font-dm-mono uppercase tracking-widest mt-1">Institutional Admission Checklist</p>
               </div>
-              <button onClick={onClose} className="text-text-dim hover:text-white transition-colors p-2 -mr-2">✕</button>
+              <button onClick={onClose} className="text-text-dim hover:text-text-custom transition-colors p-2 -mr-2">✕</button>
             </div>
             <div className="p-7 md:p-8 space-y-6">
               <div className="space-y-4">
@@ -1488,7 +1488,7 @@ export function Modals({ activeModal, onClose, onSwitchModal, onLoginSuccess, me
                       <FileText size={18} />
                     </div>
                     <div>
-                      <h3 className="font-syne font-bold text-sm text-white">{item.t}</h3>
+                      <h3 className="font-syne font-bold text-sm text-text-custom">{item.t}</h3>
                       <p className="text-[11px] text-text-muted mt-1">{item.d}</p>
                     </div>
                   </div>
@@ -1508,10 +1508,10 @@ export function Modals({ activeModal, onClose, onSwitchModal, onLoginSuccess, me
             <div className="p-7 md:p-8 pb-5 border-b border-border-custom flex items-start justify-between bg-surface/50">
               <div>
                 <div className="w-12 h-12 rounded-md bg-brand-dim border border-brand/20 flex items-center justify-center text-[22px] mb-3.5">💡</div>
-                <h2 className="font-syne font-black text-2xl tracking-tighter text-white uppercase">Interview Tips</h2>
+                <h2 className="font-syne font-black text-2xl tracking-tighter text-text-custom uppercase">Interview Tips</h2>
                 <p className="text-[11px] text-text-dim font-dm-mono uppercase tracking-widest mt-1">GDA Technical Preparation Guide</p>
               </div>
-              <button onClick={onClose} className="text-text-dim hover:text-white transition-colors p-2 -mr-2">✕</button>
+              <button onClick={onClose} className="text-text-dim hover:text-text-custom transition-colors p-2 -mr-2">✕</button>
             </div>
             <div className="p-7 md:p-8 space-y-6">
               <div className="space-y-4">
@@ -1526,7 +1526,7 @@ export function Modals({ activeModal, onClose, onSwitchModal, onLoginSuccess, me
                       <Target size={18} />
                     </div>
                     <div>
-                      <h3 className="font-syne font-bold text-sm text-white">{item.t}</h3>
+                      <h3 className="font-syne font-bold text-sm text-text-custom">{item.t}</h3>
                       <p className="text-[11px] text-text-muted mt-1">{item.d}</p>
                     </div>
                   </div>
@@ -1606,11 +1606,11 @@ function CourseDetailsModal({ courseId, onClose }: { courseId: string, onClose: 
                 <span className="ml-3 px-2 py-0.5 rounded bg-brand/10 border border-brand/20 text-brand font-bold">COMING SOON</span>
               )}
             </div>
-            <h2 className={`font-syne font-extrabold text-white mb-1.5 ${window.location.pathname.includes('/levels/') ? 'text-4xl' : 'text-2xl'}`}>{course.title}</h2>
+            <h2 className={`font-syne font-extrabold text-text-custom mb-1.5 ${window.location.pathname.includes('/levels/') ? 'text-4xl' : 'text-2xl'}`}>{course.title}</h2>
             <p className="text-text-soft text-[11px] max-w-2xl leading-relaxed">{course.short_description || course.description}</p>
           </div>
           {window.location.pathname.includes('/levels/') && (
-            <div className="hidden lg:flex flex-col gap-2 p-5 rounded-2xl bg-white/[0.03] border border-white/5 min-w-[280px]">
+            <div className="hidden lg:flex flex-col gap-2 p-5 rounded-2xl bg-white/[0.03] border border-border-custom min-w-[280px]">
               <span className="font-dm-mono text-[9px] text-brand uppercase tracking-[0.3em] font-bold">Institutional Logic</span>
               <p className="text-[10px] text-text-soft leading-tight">Completing the full <strong>{course.level} Pathway</strong> provides integrated credit mapping and architectural mastery across the entire track dimensions.</p>
               <div className="flex items-center gap-2 mt-1">
@@ -1627,7 +1627,7 @@ function CourseDetailsModal({ courseId, onClose }: { courseId: string, onClose: 
         {course.status === 'coming_soon' ? (
           <div className="flex flex-col items-center justify-center h-full py-16 text-center">
             <div className="w-20 h-20 rounded-full bg-brand/5 border border-brand/20 flex items-center justify-center text-3xl mb-6 animate-pulse">⏳</div>
-            <h3 className="font-syne font-black text-2xl text-white mb-3 uppercase tracking-tighter">Registration Pending</h3>
+            <h3 className="font-syne font-black text-2xl text-text-custom mb-3 uppercase tracking-tighter">Registration Pending</h3>
             <p className="text-text-soft text-sm max-w-md leading-relaxed">
               This course is currently in the final stages of institutional digitisation. <br/>
               <span className="text-brand font-bold">Enrolments opening soon.</span>
@@ -1635,7 +1635,7 @@ function CourseDetailsModal({ courseId, onClose }: { courseId: string, onClose: 
             <div className="mt-8 flex gap-4">
               <button 
                 onClick={onClose}
-                className="px-8 py-3 rounded-lg bg-white/5 border border-white/10 text-white font-syne font-bold uppercase text-[10px] tracking-widest hover:bg-white/10 transition-all"
+                className="px-8 py-3 rounded-lg bg-glass-bg border border-border2 text-text-custom font-syne font-bold uppercase text-[10px] tracking-widest hover:bg-glass-border transition-all"
               >
                 Return to Matrix
               </button>
@@ -1698,7 +1698,7 @@ function CourseDetailsModal({ courseId, onClose }: { courseId: string, onClose: 
                 <div className="w-px h-8 bg-border-custom" />
                 <div className="flex flex-col">
                   <span className="text-[8px] text-emerald uppercase tracking-widest font-dm-mono">Specialisation Status</span>
-                  <span className="text-[13px] font-bold text-white py-0.5">Dual Path Enabled</span>
+                  <span className="text-[13px] font-bold text-text-custom py-0.5">Dual Path Enabled</span>
                 </div>
               </>
             )}

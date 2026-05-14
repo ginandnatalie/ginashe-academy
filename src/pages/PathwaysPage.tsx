@@ -32,7 +32,7 @@ export default function PathwaysPage({ onOpenModal, editMode }: PathwaysPageProp
               <div className="w-2 h-2 rounded-full bg-brand animate-pulse" />
               <span className="font-dm-mono text-[10px] text-brand uppercase tracking-[0.2em]">Institutional Catalogue</span>
             </div>
-            <h2 className="font-syne font-black text-4xl md:text-6xl text-white tracking-tighter">Career Tracks</h2>
+            <h2 className="font-syne font-black text-4xl md:text-6xl text-text-custom tracking-tighter">Career Tracks</h2>
             <p className="text-text-soft text-lg max-w-2xl mx-auto">
               Select a specialized track to view its full educational roadmap, practitioner-led modules, and vendor certification mappings.
             </p>
@@ -50,22 +50,22 @@ export default function PathwaysPage({ onOpenModal, editMode }: PathwaysPageProp
               >
                 <Link 
                   to={`/tracks/${track.id}`}
-                  className="flex-1 bg-navy/80 border border-white/10 rounded-2xl p-7 flex flex-col hover:border-brand/40 shadow-[0_20px_50px_rgba(0,0,0,0.3)] transition-all duration-500 overflow-hidden relative group no-underline"
+                  className="flex-1 bg-navy/80 border border-border2 rounded-2xl p-7 flex flex-col hover:border-brand/40 shadow-[0_20px_50px_rgba(0,0,0,0.3)] transition-all duration-500 overflow-hidden relative group no-underline"
                 >
                   {/* Hover Glow */}
                   <div className="absolute inset-0 bg-gradient-to-br from-brand/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                   
                   <div className="flex items-center justify-between mb-8 relative z-10 transition-transform group-hover:scale-105 duration-500">
-                    <div className="w-14 h-14 rounded-xl bg-black/60 border border-white/10 flex items-center justify-center text-3xl shadow-xl group-hover:border-brand/30">
+                    <div className="w-14 h-14 rounded-xl bg-black/60 border border-border2 flex items-center justify-center text-3xl shadow-xl group-hover:border-brand/30">
                        <span style={{ filter: 'drop-shadow(0 0 10px rgba(0,242,255,0.4))' }}>{track.icon}</span>
                     </div>
                     <div className="font-dm-mono text-[9px] text-brand uppercase tracking-[0.3em] font-bold">Track {String(i + 1).padStart(2, '0')}</div>
                   </div>
 
-                  <h3 className="font-syne font-extrabold text-2xl text-white mb-3 group-hover:text-brand transition-colors tracking-tight leading-tight">{track.title}</h3>
+                  <h3 className="font-syne font-extrabold text-2xl text-text-custom mb-3 group-hover:text-brand transition-colors tracking-tight leading-tight">{track.title}</h3>
                   <p className="text-text-muted text-[13px] leading-relaxed mb-8 flex-1 group-hover:text-text-soft transition-colors">{track.mission}</p>
                   
-                  <div className="space-y-2.5 mb-10 border-t border-white/5 pt-6 relative z-10">
+                  <div className="space-y-2.5 mb-10 border-t border-border-custom pt-6 relative z-10">
                     {track.outcomes.slice(0, 3).map((outcome, j) => (
                       <div key={j} className="flex items-center gap-2.5 opacity-60 group-hover:opacity-100 transition-opacity">
                          <div className="w-1 h-1 rounded-full bg-brand shrink-0" />
@@ -106,7 +106,7 @@ export default function PathwaysPage({ onOpenModal, editMode }: PathwaysPageProp
                     </div>
                   </div>
 
-                  <h3 className="font-syne font-black text-2xl text-white mb-3 tracking-tight leading-tight">Institutional Matrix</h3>
+                  <h3 className="font-syne font-black text-2xl text-text-custom mb-3 tracking-tight leading-tight">Institutional Matrix</h3>
                   <p className="text-text-soft text-[13px] leading-relaxed mb-10 flex-1">View the high-density grid of all 28 curriculum modules across the entire academy.</p>
                   
                   <div className="mt-auto">
@@ -121,7 +121,7 @@ export default function PathwaysPage({ onOpenModal, editMode }: PathwaysPageProp
       </section>
 
       {/* Discovery Tool Section */}
-      <section className="py-24 bg-surface/30 border-t border-b border-white/5 relative overflow-hidden">
+      <section className="py-24 bg-surface/30 border-t border-b border-border-custom relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand/5 blur-[120px] rounded-full pointer-events-none" />
         <div className="max-w-4xl mx-auto px-6 text-center space-y-8 relative z-10">
            <div className="w-16 h-16 rounded-2xl bg-brand/10 border border-brand/20 flex items-center justify-center mx-auto mb-6">
@@ -140,7 +140,7 @@ export default function PathwaysPage({ onOpenModal, editMode }: PathwaysPageProp
              </button>
              <button
                onClick={() => window.location.href = '/contact'}
-               className="px-10 py-5 bg-white/5 border border-white/10 text-white font-syne font-black uppercase text-[11px] tracking-[0.25em] rounded-xl hover:bg-white/10 transition-all w-full sm:w-auto"
+               className="px-10 py-5 bg-glass-bg border border-border2 text-text-custom font-syne font-black uppercase text-[11px] tracking-[0.25em] rounded-xl hover:bg-glass-border transition-all w-full sm:w-auto"
              >
                Speak to an Advisor
              </button>

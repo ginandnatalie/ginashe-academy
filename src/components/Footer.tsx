@@ -46,7 +46,7 @@ export function CTA({ onOpenModal, editMode }: { onOpenModal: (id: string) => vo
     <section id="cta" className="bg-bg2 border-t border-border-custom">
       <div className="max-w-[1280px] mx-auto px-5 sm:px-6 md:px-14 py-12 sm:py-16 md:py-20 text-center relative">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_50%,rgba(0,242,255,0.06)_0%,transparent_70%)] pointer-events-none"></div>
-        <div className="mb-5 t-label">Ready to begin?</div>
+        <div className="mb-5 t-label text-center">Ready to begin?</div>
         {editMode ? (
           <div className="max-w-2xl mx-auto space-y-4 mb-8">
             <textarea 
@@ -78,11 +78,11 @@ export function CTA({ onOpenModal, editMode }: { onOpenModal: (id: string) => vo
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 pt-8 border-t border-border-custom animate-fadeUp delay-300">
           <div className="text-center sm:text-left">
             <div className="font-dm-mono text-[8px] sm:text-[9px] tracking-[0.15em] uppercase text-text-dim mb-1">Admissions</div>
-            <a href="mailto:skills@ginashe.academy" className="font-syne font-bold text-[13px] sm:text-[14px] text-brand no-underline hover:underline">skills@ginashe.academy</a>
+            <a href="mailto:skills@ginashe.academy" className="inline-block bg-navy px-3 py-1 rounded-md font-syne font-bold text-[13px] sm:text-[14px] text-brand no-underline hover:text-white transition-colors mt-1">skills@ginashe.academy</a>
           </div>
           <div className="text-center sm:text-left">
             <div className="font-dm-mono text-[8px] sm:text-[9px] tracking-[0.15em] uppercase text-text-dim mb-1">WhatsApp</div>
-            <a href="https://wa.me/27688526155" className="font-syne font-bold text-[13px] sm:text-[14px] text-brand no-underline hover:underline">+27 68 852 6155</a>
+            <a href="https://wa.me/27688526155" className="inline-block bg-navy px-3 py-1 rounded-md font-syne font-bold text-[13px] sm:text-[14px] text-brand no-underline hover:text-white transition-colors mt-1">+27 68 852 6155</a>
           </div>
           <div className="text-center sm:text-left">
             <div className="font-dm-mono text-[8px] sm:text-[9px] tracking-[0.15em] uppercase text-text-dim mb-1">Headquarters</div>
@@ -90,7 +90,7 @@ export function CTA({ onOpenModal, editMode }: { onOpenModal: (id: string) => vo
           </div>
           <div className="text-center sm:text-left">
             <div className="font-dm-mono text-[8px] sm:text-[9px] tracking-[0.15em] uppercase text-text-dim mb-1">Tagline</div>
-            <div className="font-syne font-bold text-[13px] sm:text-[14px] text-brand italic">Build Something Real.</div>
+            <div className="inline-block bg-navy px-3 py-1 rounded-md font-syne font-bold text-[13px] sm:text-[14px] text-brand italic mt-1">Build Something Real.</div>
           </div>
         </div>
       </div>
@@ -219,7 +219,7 @@ export function Footer({ onOpenModal, editMode }: { onOpenModal: (id: string) =>
               </li>
             ))}
           </ul>
-          <div className="mt-6 pt-4 border-t border-white/5">
+          <div className="mt-6 pt-4 border-t border-border-custom">
             <div className="font-dm-mono text-[9px] tracking-[0.2em] uppercase text-text-dim mb-3">Quick Links</div>
             <ul className="list-none flex flex-col gap-2">
               <li><Link to="/apply" className="text-[11px] text-brand no-underline hover:underline font-bold">Apply Now →</Link></li>

@@ -184,7 +184,7 @@ export function GovernanceMotivationModal({
                 <button 
                   type="button" 
                   onClick={onClose}
-                  className="flex-1 px-6 py-3 rounded-xl border border-border-custom text-[11px] font-dm-mono uppercase tracking-widest text-text-soft hover:bg-white/5 transition-all"
+                  className="flex-1 px-6 py-3 rounded-xl border border-border-custom text-[11px] font-dm-mono uppercase tracking-widest text-text-soft hover:bg-glass-bg transition-all"
                 >
                   Cancel
                 </button>

@@ -352,7 +352,7 @@ export default function VerifyPage() {
         {/* Footer Support */}
         <div className="mt-10 flex flex-col items-center gap-4 text-center">
           <p className="text-text-dim text-[10px] font-dm-mono uppercase tracking-[0.2em]">Student Admissions Hub</p>
-          <a href="mailto:admissions@ginashe.co.za" className="text-brand text-[11px] font-dm-mono uppercase tracking-[0.1em] hover:text-white transition-colors border-b border-brand/20 pb-0.5">admissions@ginashe.co.za</a>
+          <a href="mailto:admissions@ginashe.co.za" className="text-brand text-[11px] font-dm-mono uppercase tracking-[0.1em] hover:text-text-custom transition-colors border-b border-brand/20 pb-0.5">admissions@ginashe.co.za</a>
         </div>
       </div>
     </div>

@@ -33,7 +33,7 @@ function WhySection() {
           {reasons.map((r, i) => (
             <div key={i} className="bg-card border border-border-custom rounded-xl p-5 md:p-6 hover:border-brand/20 transition-all group">
               <div className="text-2xl mb-3">{r.icon}</div>
-              <h3 className="font-syne font-bold text-[15px] mb-2 group-hover:text-brand transition-colors text-white">{r.title}</h3>
+              <h3 className="font-syne font-bold text-[15px] mb-2 group-hover:text-brand transition-colors text-text-custom">{r.title}</h3>
               <p className="text-[13px] text-text-soft leading-relaxed">{r.desc}</p>
             </div>
           ))}
@@ -56,12 +56,12 @@ function Testimonials() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-8 md:mb-10 text-center">
           <div className="font-dm-mono text-[10px] text-brand uppercase tracking-[0.4em] mb-4">Institutional Voices</div>
-          <h2 className="text-3xl md:text-4xl font-syne font-bold text-white">Leading the Digital Frontier.</h2>
+          <h2 className="text-3xl md:text-4xl font-syne font-bold text-text-custom">Leading the Digital Frontier.</h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
           {testimonials.map((t, i) => {
             const CardContent = (
-              <div key={i} className={`bg-card border border-border-custom rounded-xl p-5 md:p-6 flex flex-col h-full transition-all duration-300 ${t.link ? 'hover:border-brand/40 hover:bg-white/[0.04]' : ''}`}>
+              <div key={i} className={`bg-card border border-border-custom rounded-xl p-5 md:p-6 flex flex-col h-full transition-all duration-300 ${t.link ? 'hover:border-brand/40 hover:bg-glass-bg' : ''}`}>
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-10 h-10 rounded-full bg-brand/10 border border-brand/20 flex items-center justify-center font-syne font-bold text-brand text-sm overflow-hidden">
                     {t.image ? (
@@ -71,7 +71,7 @@ function Testimonials() {
                     )}
                   </div>
                   <div>
-                    <div className="font-syne font-bold text-[13px] text-white">{t.name}</div>
+                    <div className="font-syne font-bold text-[13px] text-text-custom">{t.name}</div>
                     <div className="font-dm-mono text-[9px] text-text-muted uppercase tracking-wider">{t.role}</div>
                   </div>
                 </div>
@@ -110,7 +110,7 @@ export default function DssDashboard({ stream, onOpenModal, editMode }: DssDashb
             </div>
             <div>
               <div className="font-dm-mono text-[10px] text-brand tracking-[0.2em] uppercase mb-1">{stream.abbr}</div>
-              <h1 className="text-3xl md:text-5xl font-syne font-black text-white">{stream.title}</h1>
+              <h1 className="text-3xl md:text-5xl font-syne font-black text-text-custom">{stream.title}</h1>
             </div>
           </div>
           <p className="text-xl text-text-muted font-outfit max-w-3xl leading-relaxed">

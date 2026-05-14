@@ -102,15 +102,15 @@ export default function Navbar({ onOpenModal, editMode, setEditMode, siteSetting
   return (
     <nav id="nav" className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-500 border-b ${
       isScrolled 
-        ? 'bg-[#0b0e14]/95 backdrop-blur-3xl border-brand/30 shadow-[0_20px_60px_rgba(0,242,255,0.15)]' 
-        : 'bg-navy/95 backdrop-blur-3xl border-white/5 shadow-[0_20px_60px_rgba(0,0,0,0.3)]'
+        ? 'bg-bg/95 backdrop-blur-3xl border-brand/30 shadow-[0_20px_60px_rgba(0,242,255,0.15)]' 
+        : 'bg-bg/95 backdrop-blur-3xl border-border-custom shadow-sm'
     }`}>
       {/* Main Navbar Bar */}
       <div className="mx-auto max-w-7xl relative z-[2001] h-[72px] flex items-center px-6 transition-all duration-700">
         
         {/* --- LOGO --- */}
         <Link to="/" className="no-underline shrink-0 group" onClick={() => setActiveDropdown(null)}>
-          <Logo variant={isScrolled ? 'dark' : 'light'} />
+          <Logo />
         </Link>
 
         {/* --- MAIN NAVIGATION --- */}
@@ -127,12 +127,12 @@ export default function Navbar({ onOpenModal, editMode, setEditMode, siteSetting
                 onClick={() => setActiveDropdown(null)}
                 className={`inline-flex items-center gap-1.5 font-outfit font-medium text-[14px] tracking-wide no-underline px-5 py-2.5 rounded-xl transition-all ${
                   pathname === item.path 
-                    ? (isScrolled ? 'text-brand bg-brand/10' : 'text-brand bg-white/10 shadow-lg') 
-                    : (isScrolled ? 'text-text-soft hover:text-white hover:bg-white/5' : 'text-white hover:text-brand hover:bg-white/5')
+                    ? (isScrolled ? 'text-brand bg-brand/10' : 'text-brand bg-glass-border shadow-lg') 
+                    : (isScrolled ? 'text-text-soft hover:text-text-custom hover:bg-glass-bg' : 'text-text-custom hover:text-brand hover:bg-glass-bg')
                 }`}
               >
                 {item.label}
-                {item.hasMega && <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-500 ${activeDropdown === item.label ? 'rotate-180 text-brand' : (isScrolled ? 'text-text-muted' : 'text-white/50')}`} />}
+                {item.hasMega && <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-500 ${activeDropdown === item.label ? 'rotate-180 text-brand' : (isScrolled ? 'text-text-muted' : 'text-text-muted')}`} />}
               </Link>
 
               {/* RICH MEGA MENUS */}
@@ -145,7 +145,7 @@ export default function Navbar({ onOpenModal, editMode, setEditMode, siteSetting
                     transition={{ type: 'spring', damping: 25, stiffness: 300 }}
                     className="absolute top-full left-1/2 -translate-x-1/2 pt-4 w-[860px] z-[2100]"
                   >
-                    <div className="bg-[#0b0e14] border border-white/10 rounded-2xl shadow-[0_40px_80px_rgba(0,0,0,0.6)] overflow-hidden">
+                    <div className="bg-surface border border-border2 rounded-2xl shadow-xl overflow-hidden">
                       
                       {/* Streams Mega Menu */}
                       {item.label === 'Streams' && (
@@ -154,7 +154,7 @@ export default function Navbar({ onOpenModal, editMode, setEditMode, siteSetting
                             <div className="flex items-center gap-3">
                               <div className="w-1.5 h-6 bg-brand rounded-full" />
                               <div>
-                                <h4 className="font-syne font-black text-sm text-white uppercase tracking-wider">10 Purpose-Built Streams</h4>
+                                <h4 className="font-syne font-black text-sm text-text-custom uppercase tracking-wider">10 Purpose-Built Streams</h4>
                                 <p className="font-dm-mono text-[8px] text-text-dim uppercase tracking-[0.2em] mt-0.5">Africa's Multi-Disciplinary Academy</p>
                               </div>
                             </div>
@@ -162,11 +162,11 @@ export default function Navbar({ onOpenModal, editMode, setEditMode, siteSetting
                           </div>
                           <div className="grid grid-cols-2 gap-3">
                             {streamsData.map((s, i) => (
-                              <Link key={i} to={s.path} onClick={() => setActiveDropdown(null)} className="group/gate p-4 rounded-xl bg-white/[0.02] border border-white/5 hover:border-white/10 hover:bg-white/[0.04] transition-all no-underline">
+                              <Link key={i} to={s.path} onClick={() => setActiveDropdown(null)} className="group/gate p-4 rounded-xl bg-glass-bg border border-border-custom hover:border-border2 hover:bg-glass-bg transition-all no-underline">
                                 <div className="flex items-start gap-4">
-                                  <div className={`p-2 rounded-lg ${s.bg} border border-white/5 group-hover/gate:scale-110 transition-transform`}>{s.icon}</div>
+                                  <div className={`p-2 rounded-lg ${s.bg} border border-border-custom group-hover/gate:scale-110 transition-transform`}>{s.icon}</div>
                                   <div className="flex-1">
-                                    <h5 className="font-syne font-black text-[12px] text-white group-hover/gate:text-brand transition-colors">{s.title}</h5>
+                                    <h5 className="font-syne font-black text-[12px] text-text-custom group-hover/gate:text-brand transition-colors">{s.title}</h5>
                                     <p className="text-[10px] text-text-dim leading-snug mt-1">{s.desc}</p>
                                   </div>
                                 </div>
@@ -184,7 +184,7 @@ export default function Navbar({ onOpenModal, editMode, setEditMode, siteSetting
                               <div className="flex items-center gap-3">
                                 <div className="w-1.5 h-6 bg-brand rounded-full" />
                                 <div>
-                                  <h4 className="font-syne font-black text-sm text-white uppercase tracking-wider">Academic Intelligence Matrix</h4>
+                                  <h4 className="font-syne font-black text-sm text-text-custom uppercase tracking-wider">Academic Intelligence Matrix</h4>
                                   <p className="font-dm-mono text-[8px] text-text-dim uppercase tracking-[0.2em] mt-0.5">Syllabus Ver_2026.4 // Verified Registry</p>
                                 </div>
                               </div>
@@ -202,16 +202,16 @@ export default function Navbar({ onOpenModal, editMode, setEditMode, siteSetting
                                   key={i} 
                                   to="/curriculum" 
                                   onClick={() => setActiveDropdown(null)}
-                                  className="group/gate p-4 rounded-xl bg-white/[0.02] border border-white/5 hover:border-brand/30 hover:bg-white/[0.04] transition-all relative overflow-hidden"
+                                  className="group/gate p-4 rounded-xl bg-glass-bg border border-border-custom hover:border-brand/30 hover:bg-glass-bg transition-all relative overflow-hidden"
                                 >
                                   <div className="flex items-start gap-4">
-                                    <div className={`p-2 rounded-lg ${c.bg} border border-white/5 group-hover/gate:scale-110 transition-transform`}>{c.icon}</div>
+                                    <div className={`p-2 rounded-lg ${c.bg} border border-border-custom group-hover/gate:scale-110 transition-transform`}>{c.icon}</div>
                                     <div className="flex-1">
                                       <div className="flex items-center justify-between mb-1">
                                         <span className="font-dm-mono text-[9px] text-text-dim group-hover/gate:text-brand transition-colors">{c.tier}</span>
-                                        <span className="font-dm-mono text-[8px] text-white/20 uppercase tracking-widest">{c.count}</span>
+                                        <span className="font-dm-mono text-[8px] text-text-dim uppercase tracking-widest">{c.count}</span>
                                       </div>
-                                      <h5 className="font-syne font-black text-[13px] text-white group-hover/gate:text-white transition-colors">{c.title}</h5>
+                                      <h5 className="font-syne font-black text-[13px] text-text-custom group-hover/gate:text-text-custom transition-colors">{c.title}</h5>
                                       <p className="text-[10px] text-text-dim leading-snug mt-1 line-clamp-1">{c.desc}</p>
                                     </div>
                                   </div>
@@ -221,7 +221,7 @@ export default function Navbar({ onOpenModal, editMode, setEditMode, siteSetting
                           </div>
 
                           {/* Panel B: Institutional Mastery Visual (Right 40%) */}
-                          <div className="flex-1 bg-black/40 relative overflow-hidden group/featured">
+                          <div className="flex-1 bg-card relative overflow-hidden group/featured">
                             {/* Matrix Image Anchor */}
                             <img 
                               src="/institutional_matrix_visual_1776800140008.png" 
@@ -234,7 +234,7 @@ export default function Navbar({ onOpenModal, editMode, setEditMode, siteSetting
                               <div className="space-y-4">
                                 <div className="space-y-1">
                                   <span className="font-dm-mono text-[9px] text-brand uppercase tracking-[0.4em] block">Sovereign Standard</span>
-                                  <h4 className="font-syne font-black text-xl text-white uppercase leading-none tracking-tighter">
+                                  <h4 className="font-syne font-black text-xl text-text-custom uppercase leading-none tracking-tighter">
                                     Strategic<br />Institutional<br />Mastery
                                   </h4>
                                 </div>
@@ -267,7 +267,7 @@ export default function Navbar({ onOpenModal, editMode, setEditMode, siteSetting
                               <div className="flex items-center gap-3">
                                 <div className="w-1.5 h-6 bg-brand rounded-full" />
                                 <div>
-                                  <h4 className="font-syne font-black text-sm text-white uppercase tracking-wider">Admissions Operations Hub</h4>
+                                  <h4 className="font-syne font-black text-sm text-text-custom uppercase tracking-wider">Admissions Operations Hub</h4>
                                   <p className="font-dm-mono text-[8px] text-text-dim uppercase tracking-[0.2em] mt-0.5">Secure Gateway // Enterprise Flow</p>
                                 </div>
                               </div>
@@ -285,16 +285,16 @@ export default function Navbar({ onOpenModal, editMode, setEditMode, siteSetting
                                   key={i} 
                                   to={c.path} 
                                   onClick={() => setActiveDropdown(null)}
-                                  className="group/gate p-4 rounded-xl bg-white/[0.02] border border-white/5 hover:border-white/10 hover:bg-white/[0.04] transition-all relative overflow-hidden"
+                                  className="group/gate p-4 rounded-xl bg-glass-bg border border-border-custom hover:border-border2 hover:bg-glass-bg transition-all relative overflow-hidden"
                                 >
                                   <div className="flex items-start gap-4">
-                                    <div className={`p-2 rounded-lg ${c.bg} border border-white/5 group-hover/gate:scale-110 transition-transform`}>{c.icon}</div>
+                                    <div className={`p-2 rounded-lg ${c.bg} border border-border-custom group-hover/gate:scale-110 transition-transform`}>{c.icon}</div>
                                     <div className="flex-1">
                                       <div className="flex items-center justify-between mb-1">
                                         <span className="font-dm-mono text-[9px] text-text-dim group-hover/gate:text-brand transition-colors">{c.title}</span>
-                                        <span className="font-dm-mono text-[8px] text-white/20 uppercase tracking-widest">{c.code}</span>
+                                        <span className="font-dm-mono text-[8px] text-text-dim uppercase tracking-widest">{c.code}</span>
                                       </div>
-                                      <h5 className="font-syne font-black text-[11px] text-text-soft group-hover/gate:text-white transition-colors mt-1">{c.desc}</h5>
+                                      <h5 className="font-syne font-black text-[11px] text-text-soft group-hover/gate:text-text-custom transition-colors mt-1">{c.desc}</h5>
                                     </div>
                                   </div>
                                 </Link>
@@ -308,7 +308,7 @@ export default function Navbar({ onOpenModal, editMode, setEditMode, siteSetting
                                 <div className="flex items-center gap-4">
                                   <div className="p-2 rounded-lg bg-brand/10 border border-brand/20 text-brand"><MessageSquare className="w-5 h-5" /></div>
                                   <div>
-                                    <h5 className="font-syne font-black text-[13px] text-white group-hover/gate:text-brand transition-colors">Talk to an Advisor</h5>
+                                    <h5 className="font-syne font-black text-[13px] text-text-custom group-hover/gate:text-brand transition-colors">Talk to an Advisor</h5>
                                     <p className="text-[10px] text-text-dim leading-snug mt-1">One-on-one career consultation & deployment strategy</p>
                                   </div>
                                 </div>
@@ -318,7 +318,7 @@ export default function Navbar({ onOpenModal, editMode, setEditMode, siteSetting
                           </div>
 
                           {/* Panel B: Visual Anchor (Right 40%) */}
-                          <div className="flex-1 bg-black/40 relative overflow-hidden group/featured">
+                          <div className="flex-1 bg-card relative overflow-hidden group/featured">
                             <img 
                               src="/admissions_visual.png" 
                               className="absolute inset-0 w-full h-full object-cover opacity-60 grayscale group-hover/featured:grayscale-0 transition-all duration-1000 group-hover/featured:scale-110"
@@ -330,7 +330,7 @@ export default function Navbar({ onOpenModal, editMode, setEditMode, siteSetting
                               <div className="space-y-4">
                                 <div className="space-y-1">
                                   <span className="font-dm-mono text-[9px] text-emerald uppercase tracking-[0.4em] block">Access Granted</span>
-                                  <h4 className="font-syne font-black text-xl text-white uppercase leading-none tracking-tighter">
+                                  <h4 className="font-syne font-black text-xl text-text-custom uppercase leading-none tracking-tighter">
                                     Initialize<br />Enterprise<br />Gateway
                                   </h4>
                                 </div>
@@ -361,7 +361,7 @@ export default function Navbar({ onOpenModal, editMode, setEditMode, siteSetting
                               <div className="flex items-center gap-3">
                                 <div className="w-1.5 h-6 bg-brand rounded-full" />
                                 <div>
-                                  <h4 className="font-syne font-black text-sm text-white uppercase tracking-wider">Global Knowledge Network</h4>
+                                  <h4 className="font-syne font-black text-sm text-text-custom uppercase tracking-wider">Global Knowledge Network</h4>
                                   <p className="font-dm-mono text-[8px] text-text-dim uppercase tracking-[0.2em] mt-0.5">Faculty // Intelligence // Community</p>
                                 </div>
                               </div>
@@ -374,12 +374,12 @@ export default function Navbar({ onOpenModal, editMode, setEditMode, siteSetting
                                   key={i} 
                                   to={d.path} 
                                   onClick={() => setActiveDropdown(null)}
-                                  className="group/gate p-4 rounded-xl bg-white/[0.02] border border-white/5 hover:border-white/10 hover:bg-white/[0.04] transition-all relative overflow-hidden"
+                                  className="group/gate p-4 rounded-xl bg-glass-bg border border-border-custom hover:border-border2 hover:bg-glass-bg transition-all relative overflow-hidden"
                                 >
                                   <div className="flex items-start gap-4">
-                                    <div className="p-2 rounded-lg bg-white/5 border border-white/10 text-brand group-hover/gate:bg-brand/10 group-hover/gate:text-white transition-all">{d.icon}</div>
+                                    <div className="p-2 rounded-lg bg-glass-bg border border-border2 text-brand group-hover/gate:bg-brand/10 group-hover/gate:text-text-custom transition-all">{d.icon}</div>
                                     <div className="flex-1">
-                                      <h5 className="font-syne font-black text-[13px] text-white group-hover/gate:text-brand transition-colors">{d.label}</h5>
+                                      <h5 className="font-syne font-black text-[13px] text-text-custom group-hover/gate:text-brand transition-colors">{d.label}</h5>
                                       <p className="text-[10px] text-text-dim leading-snug mt-1 line-clamp-2">{d.desc}</p>
                                     </div>
                                   </div>
@@ -389,7 +389,7 @@ export default function Navbar({ onOpenModal, editMode, setEditMode, siteSetting
                           </div>
 
                           {/* Panel B: Visual Anchor (Right 40%) */}
-                          <div className="flex-1 bg-black/40 relative overflow-hidden group/featured">
+                          <div className="flex-1 bg-card relative overflow-hidden group/featured">
                             <video 
                               src="/network_visualization.mp4" 
                               poster="/discover_visual.png"
@@ -402,7 +402,7 @@ export default function Navbar({ onOpenModal, editMode, setEditMode, siteSetting
                               <div className="space-y-4">
                                 <div className="space-y-1">
                                   <span className="font-dm-mono text-[9px] text-sky uppercase tracking-[0.4em] block">Live Feed</span>
-                                  <h4 className="font-syne font-black text-xl text-white uppercase leading-none tracking-tighter">
+                                  <h4 className="font-syne font-black text-xl text-text-custom uppercase leading-none tracking-tighter">
                                     Ginashe<br />Ecosystem<br />Matrix
                                   </h4>
                                 </div>
@@ -413,7 +413,7 @@ export default function Navbar({ onOpenModal, editMode, setEditMode, siteSetting
                                     setActiveDropdown(null);
                                     navigate('/about'); 
                                   }}
-                                  className="w-full py-3 bg-sky/20 border border-sky/40 text-white font-syne font-black text-[10px] uppercase tracking-widest rounded-lg hover:bg-sky hover:text-navy transition-all shadow-[0_10px_25px_rgba(79,195,247,0.1)] hover:shadow-[0_10px_25px_rgba(79,195,247,0.3)]"
+                                  className="w-full py-3 bg-sky/20 border border-sky/40 text-text-custom font-syne font-black text-[10px] uppercase tracking-widest rounded-lg hover:bg-sky hover:text-navy transition-all shadow-[0_10px_25px_rgba(79,195,247,0.1)] hover:shadow-[0_10px_25px_rgba(79,195,247,0.3)]"
                                 >
                                   Access Network
                                 </button>
@@ -425,7 +425,7 @@ export default function Navbar({ onOpenModal, editMode, setEditMode, siteSetting
                       )}
 
                       {/* Bottom Bar */}
-                      <div className="bg-white/5 p-4 px-6 flex items-center justify-between">
+                      <div className="bg-glass-bg p-4 px-6 flex items-center justify-between">
                         <div className="flex items-center gap-2">
                           <div className="w-2 h-2 rounded-full bg-emerald shadow-[0_0_10px_rgba(34,197,94,0.5)] animate-pulse" />
                           <span className="text-[10px] font-jetbrains uppercase tracking-widest text-text-muted">Next Intake: April 2026</span>
@@ -448,14 +448,14 @@ export default function Navbar({ onOpenModal, editMode, setEditMode, siteSetting
 
         {/* --- NAVBAR ACTIONS --- */}
         <div className="flex items-center gap-4 ml-auto lg:ml-0">
-          <div className={`hidden sm:flex items-center gap-1.5 pr-4 border-r border-white/10`}>
-            <button onClick={toggleTheme} className={`p-2.5 rounded-xl transition-all ${isScrolled ? 'hover:bg-white/5 text-text-muted hover:text-brand' : 'hover:bg-white/5 text-white/70 hover:text-white'}`}>
+          <div className={`hidden sm:flex items-center gap-1.5 pr-4 border-r border-border2`}>
+            <button onClick={toggleTheme} className={`p-2.5 rounded-xl transition-all ${isScrolled ? 'hover:bg-glass-bg text-text-muted hover:text-brand' : 'hover:bg-glass-bg text-text-soft hover:text-text-custom'}`}>
               {theme === 'light' ? <Moon size={19} /> : <Sun size={19} />}
             </button>
             {isSuperAdmin && (
               <button 
                 onClick={editMode ? handleSaveAll : () => setEditMode(true)}
-                className={`p-2.5 rounded-xl transition-all ${editMode ? 'text-emerald bg-emerald/10 border border-emerald/20' : (isScrolled ? 'text-text-muted hover:text-brand hover:bg-white/5' : 'text-white/70 hover:text-brand hover:bg-white/5')}`}
+                className={`p-2.5 rounded-xl transition-all ${editMode ? 'text-emerald bg-emerald/10 border border-emerald/20' : (isScrolled ? 'text-text-muted hover:text-brand hover:bg-glass-bg' : 'text-text-soft hover:text-brand hover:bg-glass-bg')}`}
               >
                 <Zap size={19} className={editMode ? 'animate-pulse' : ''} />
               </button>
@@ -469,32 +469,32 @@ export default function Navbar({ onOpenModal, editMode, setEditMode, siteSetting
               onClick={!user ? (e) => { e.preventDefault(); onOpenModal('student'); } : undefined}
               className={`hidden lg:flex items-center gap-2 px-4 py-2 rounded-xl transition-all group no-underline ${
                 isScrolled 
-                  ? 'bg-white/5 hover:bg-brand/10 border border-white/10 hover:border-brand/30' 
-                  : 'bg-white/5 hover:bg-brand/20 border border-white/10 hover:border-brand/50'
+                  ? 'bg-glass-bg hover:bg-brand/10 border border-border2 hover:border-brand/30' 
+                  : 'bg-glass-bg hover:bg-brand/20 border border-border2 hover:border-brand/50'
               }`}
             >
-              <div className={`p-1.5 rounded-lg transition-colors ${isScrolled ? 'bg-brand/10 text-brand' : 'bg-white/10 text-white group-hover:bg-brand/20 group-hover:text-brand'}`}>
+              <div className={`p-1.5 rounded-lg transition-colors ${isScrolled ? 'bg-brand/10 text-brand' : 'bg-glass-border text-text-custom group-hover:bg-brand/20 group-hover:text-brand'}`}>
                 <GraduationCap className="w-3.5 h-3.5" />
               </div>
               <div className="flex flex-col">
                 <span className={`font-outfit font-black text-[10px] uppercase tracking-tight leading-none transition-colors ${
-                  isScrolled ? 'text-white group-hover:text-brand' : 'text-white group-hover:text-brand'
+                  isScrolled ? 'text-text-custom group-hover:text-brand' : 'text-text-custom group-hover:text-brand'
                 }`}>
                   {user ? (isAdmin ? 'Admin Console' : 'Student Portal') : 'Student Portal'}
                 </span>
               </div>
             </a>
 
-            <Link to="/contact" className={`hidden xl:flex items-center gap-2 font-jetbrains text-[9px] tracking-[0.2em] transition-colors no-underline ${isScrolled ? 'text-[#22c55e] hover:text-brand' : 'text-white hover:text-brand'}`}>
+            <Link to="/contact" className={`hidden xl:flex items-center gap-2 font-jetbrains text-[9px] tracking-[0.2em] transition-colors no-underline ${isScrolled ? 'text-[#22c55e] hover:text-brand' : 'text-text-custom hover:text-brand'}`}>
               <span className={`w-1.5 h-1.5 rounded-full animate-pulse ${isScrolled ? 'bg-[#22c55e]' : 'bg-brand'}`} />
               CONTACT US
             </Link>
             
             <button 
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={`p-2 rounded-xl transition-all relative z-[6000] lg:hidden ${isScrolled ? 'text-white hover:bg-white/10' : 'text-white hover:bg-white/10'}`}
+            className={`p-2 rounded-xl transition-all relative z-[6000] lg:hidden ${isScrolled ? 'text-text-custom hover:bg-glass-border' : 'text-text-custom hover:bg-glass-border'}`}
           >
-            {isMobileMenuOpen ? <X size={28} className="text-white" /> : <Menu size={28} />}
+            {isMobileMenuOpen ? <X size={28} className="text-text-custom" /> : <Menu size={28} />}
           </button>
           </div>
         </div>
@@ -510,16 +510,16 @@ export default function Navbar({ onOpenModal, editMode, setEditMode, siteSetting
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
             transition={{ type: 'spring', damping: 40, stiffness: 450 }}
-            className="fixed inset-0 z-[5000] bg-navy lg:hidden overflow-y-auto flex flex-col w-full h-full"
+            className="fixed inset-0 z-[5000] bg-bg lg:hidden overflow-y-auto flex flex-col w-full h-full"
           >
             {/* Mobile Menu Header */}
-            <div className="sticky top-0 z-[5001] bg-navy/90 backdrop-blur-xl flex items-center justify-between p-6 border-b border-white/5">
+            <div className="sticky top-0 z-[5001] bg-bg/90 backdrop-blur-xl flex items-center justify-between p-6 border-b border-border-custom">
               <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="no-underline">
-                <Logo variant="dark" />
+                <Logo />
               </Link>
               <button 
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white"
+                className="w-12 h-12 rounded-full bg-glass-bg border border-border2 flex items-center justify-center text-text-custom"
               >
                 <X size={24} />
               </button>
@@ -535,17 +535,17 @@ export default function Navbar({ onOpenModal, editMode, setEditMode, siteSetting
                 
                 <ul className="flex flex-col list-none gap-2">
                   {navItems.map(item => (
-                    <li key={item.label} className="border-b border-white/5 last:border-0 pb-2">
+                    <li key={item.label} className="border-b border-border-custom last:border-0 pb-2">
                       {item.hasMega ? (
                         <div className="flex flex-col">
                           <button 
                             onClick={() => setExpandedMobileItem(expandedMobileItem === item.label ? null : item.label)}
                             className="flex items-center justify-between w-full py-4 text-left group"
                           >
-                            <span className={`text-4xl font-outfit font-black transition-colors ${expandedMobileItem === item.label ? 'text-brand' : 'text-white'}`}>
+                            <span className={`text-4xl font-outfit font-black transition-colors ${expandedMobileItem === item.label ? 'text-brand' : 'text-text-custom'}`}>
                               {item.label}
                             </span>
-                            <ChevronDown className={`w-8 h-8 transition-transform duration-500 ${expandedMobileItem === item.label ? 'rotate-180 text-brand' : 'text-text-muted hover:text-white'}`} />
+                            <ChevronDown className={`w-8 h-8 transition-transform duration-500 ${expandedMobileItem === item.label ? 'rotate-180 text-brand' : 'text-text-muted hover:text-text-custom'}`} />
                           </button>
                           
                           <AnimatePresence>
@@ -560,10 +560,10 @@ export default function Navbar({ onOpenModal, editMode, setEditMode, siteSetting
                                 <div className="grid grid-cols-1 gap-3 py-4 pl-2">
                                   {/* Render Career Tracks sub-items */}
                                   {item.label === 'Streams' && streamsData.map((s, i) => (
-                                    <Link key={i} to={s.path} onClick={() => setIsMobileMenuOpen(false)} className="flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-brand/30 transition-all">
+                                    <Link key={i} to={s.path} onClick={() => setIsMobileMenuOpen(false)} className="flex items-center gap-4 p-4 rounded-2xl bg-glass-bg border border-border-custom hover:border-brand/30 transition-all">
                                       <div className={`w-10 h-10 rounded-xl ${s.bg} flex items-center justify-center`}>{s.icon}</div>
                                       <div>
-                                        <div className="font-bold text-sm text-white">{s.title}</div>
+                                        <div className="font-bold text-sm text-text-custom">{s.title}</div>
                                         <div className="text-[10px] text-text-muted">{s.desc}</div>
                                       </div>
                                     </Link>
@@ -578,10 +578,10 @@ export default function Navbar({ onOpenModal, editMode, setEditMode, siteSetting
                                     { title: 'Tuition & Fees', icon: <Landmark className="w-4 h-4" />, path: '/admissions#tuition' },
                                     { title: 'Entry Requirements', icon: <Shield className="w-4 h-4" />, path: '/admissions#entry' }
                                   ].map((l, i) => (
-                                    <Link key={i} to={l.path} onClick={() => setIsMobileMenuOpen(false)} className="flex items-center justify-between p-4 rounded-2xl bg-white/5 border border-white/5">
+                                    <Link key={i} to={l.path} onClick={() => setIsMobileMenuOpen(false)} className="flex items-center justify-between p-4 rounded-2xl bg-glass-bg border border-border-custom">
                                       <div className="flex items-center gap-4">
-                                        <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-brand">{l.icon}</div>
-                                        <span className="font-bold text-sm text-white">{l.title}</span>
+                                        <div className="w-10 h-10 rounded-xl bg-glass-bg flex items-center justify-center text-brand">{l.icon}</div>
+                                        <span className="font-bold text-sm text-text-custom">{l.title}</span>
                                       </div>
                                       <ChevronRight className="w-4 h-4 text-text-muted" />
                                     </Link>
@@ -589,10 +589,10 @@ export default function Navbar({ onOpenModal, editMode, setEditMode, siteSetting
 
                                   {/* Render Discover sub-items */}
                                   {item.label === 'Discover' && discoverItems.map((d, i) => (
-                                    <Link key={i} to={d.path} onClick={() => setIsMobileMenuOpen(false)} className="flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/5">
-                                      <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-brand">{d.icon}</div>
+                                    <Link key={i} to={d.path} onClick={() => setIsMobileMenuOpen(false)} className="flex items-center gap-4 p-4 rounded-2xl bg-glass-bg border border-border-custom">
+                                      <div className="w-10 h-10 rounded-xl bg-glass-bg flex items-center justify-center text-brand">{d.icon}</div>
                                       <div>
-                                        <div className="font-bold text-sm text-white">{d.label}</div>
+                                        <div className="font-bold text-sm text-text-custom">{d.label}</div>
                                         <div className="text-[10px] text-text-muted">{d.desc}</div>
                                       </div>
                                     </Link>
@@ -605,7 +605,7 @@ export default function Navbar({ onOpenModal, editMode, setEditMode, siteSetting
                       ) : (
                         <Link 
                           to={item.path} 
-                          className="block py-4 text-4xl font-outfit font-black text-white no-underline hover:text-brand transition-colors"
+                          className="block py-4 text-4xl font-outfit font-black text-text-custom no-underline hover:text-brand transition-colors"
                           onClick={() => setIsMobileMenuOpen(false)}
                         >
                           {item.label}
@@ -618,10 +618,10 @@ export default function Navbar({ onOpenModal, editMode, setEditMode, siteSetting
               
               <div className="mt-auto flex flex-col gap-4">
                 <div className="grid grid-cols-2 gap-4">
-                  <button onClick={() => { setIsMobileMenuOpen(false); onOpenModal('student'); }} className="py-4 rounded-2xl border border-white/10 font-outfit font-black text-white text-[13px] hover:bg-white/5 transition-all uppercase tracking-widest flex items-center justify-center gap-2">
+                  <button onClick={() => { setIsMobileMenuOpen(false); onOpenModal('student'); }} className="py-4 rounded-2xl border border-border2 font-outfit font-black text-text-custom text-[13px] hover:bg-glass-bg transition-all uppercase tracking-widest flex items-center justify-center gap-2">
                     <User size={16} /> Portal
                   </button>
-                  <button onClick={() => { setIsMobileMenuOpen(false); navigate('/apply'); }} className="py-4 rounded-2xl bg-white/5 border border-brand/30 font-outfit font-black text-brand text-[13px] hover:bg-brand/10 transition-all uppercase tracking-widest flex items-center justify-center gap-2">
+                  <button onClick={() => { setIsMobileMenuOpen(false); navigate('/apply'); }} className="py-4 rounded-2xl bg-glass-bg border border-brand/30 font-outfit font-black text-brand text-[13px] hover:bg-brand/10 transition-all uppercase tracking-widest flex items-center justify-center gap-2">
                     <Rocket size={16} /> Status
                   </button>
                 </div>

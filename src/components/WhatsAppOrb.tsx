@@ -34,7 +34,7 @@ export default function WhatsAppOrb() {
         whileTap={{ scale: 0.9 }}
         className="relative w-15 h-15 bg-[#25D366] rounded-full shadow-[0_15px_40px_rgba(37,211,102,0.4),0_0_20px_rgba(0,242,255,0.2)] flex items-center justify-center border border-white/20"
       >
-        <MessageCircle className="text-white w-8 h-8" />
+        <MessageCircle className="text-text-custom w-8 h-8" />
         
         {/* Indicators */}
         <div className="absolute top-0 right-0 w-4 h-4 bg-white rounded-full flex items-center justify-center shadow-sm">
@@ -43,12 +43,12 @@ export default function WhatsAppOrb() {
 
         {/* Technical Tooltip */}
         <div className="absolute right-full mr-5 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all pointer-events-none">
-          <div className="bg-[#0b0e14]/90 backdrop-blur-md border border-white/10 rounded-xl p-4 shadow-2xl flex items-center gap-4 min-w-[200px]">
+          <div className="bg-[#0b0e14]/90 backdrop-blur-md border border-border2 rounded-xl p-4 shadow-2xl flex items-center gap-4 min-w-[200px]">
             <div className="w-10 h-10 rounded-lg bg-[#25D366]/10 flex items-center justify-center">
               <MessageCircle className="w-5 h-5 text-[#25D366]" />
             </div>
             <div>
-              <div className="font-outfit font-black text-[12px] text-white uppercase tracking-tighter">Contact Admissions</div>
+              <div className="font-outfit font-black text-[12px] text-text-custom uppercase tracking-tighter">Contact Admissions</div>
               <div className="font-dm-mono text-[9px] text-[#25D366] uppercase tracking-widest mt-0.5">Secure_Line_27</div>
             </div>
             <div className="ml-auto w-1.5 h-8 bg-[#25D366]/20 rounded-full overflow-hidden">

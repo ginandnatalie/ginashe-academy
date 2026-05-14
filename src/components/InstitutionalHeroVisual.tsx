@@ -90,13 +90,13 @@ export default function InstitutionalHeroVisual({ className = '', showBackground
       </video>
 
       {/* Base Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#0B0C10]/55 via-[#001e23]/35 to-[#0B0C10]/70 z-[1]" />
+      <div className="absolute inset-0 bg-gradient-to-br from-bg/55 via-surface/35 to-bg/70 z-[1]" />
 
       {/* Scanlines */}
       <div className="absolute inset-0 bg-[repeating-linear-gradient(0deg,transparent,transparent_3px,rgba(0,242,255,0.025)_3px,rgba(0,242,255,0.025)_4px)] z-[2] pointer-events-none" />
 
       {/* Vignette */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_70%_at_50%_50%,transparent_40%,rgba(11,12,16,0.85)_100%)] z-[3] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_70%_at_50%_50%,transparent_40%,var(--color-bg)_100%)] z-[3] pointer-events-none" />
 
       {/* Data Canvas (Matrix effect) */}
       <canvas ref={canvasRef} className="absolute inset-0 opacity-[0.55] z-[4] pointer-events-none" />

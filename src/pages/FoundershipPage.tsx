@@ -20,7 +20,7 @@ export default function FoundershipPage({ onOpenModal }: { onOpenModal: (id: str
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <div>
               <div className="section-label">Empowerment Framework</div>
-              <h2 className="section-title text-white mb-6 animate-fadeUp">The Foundership <br /><span className="text-brand">Pivot Protocol.</span></h2>
+              <h2 className="section-title text-text-custom mb-6 animate-fadeUp">The Foundership <br /><span className="text-brand">Pivot Protocol.</span></h2>
               <p className="section-sub !max-w-none mb-10 animate-fadeUp delay-100">
                 Traditional education prepares you for a cubicle. GDA prepares you for the boardroom and the cloud. Our Foundership track is engineered for those who refuse to wait for permission to build.
               </p>
@@ -49,12 +49,12 @@ export default function FoundershipPage({ onOpenModal }: { onOpenModal: (id: str
                     bg: 'bg-emerald/10'
                   }
                 ].map((pillar, i) => (
-                  <div key={i} className="flex gap-5 group p-5 rounded-2xl border border-white/5 bg-white/2 hover:bg-white/5 transition-all animate-fadeUp" style={{ animationDelay: `${(i+2)*100}ms` }}>
-                    <div className={`w-12 h-12 rounded-xl ${pillar.bg} border border-white/10 flex items-center justify-center ${pillar.color} shrink-0 group-hover:scale-110 transition-transform`}>
+                  <div key={i} className="flex gap-5 group p-5 rounded-2xl border border-border-custom bg-white/2 hover:bg-glass-bg transition-all animate-fadeUp" style={{ animationDelay: `${(i+2)*100}ms` }}>
+                    <div className={`w-12 h-12 rounded-xl ${pillar.bg} border border-border2 flex items-center justify-center ${pillar.color} shrink-0 group-hover:scale-110 transition-transform`}>
                       {pillar.icon}
                     </div>
                     <div>
-                      <h4 className="font-syne font-bold text-[15px] text-white mb-1.5">{pillar.title}</h4>
+                      <h4 className="font-syne font-bold text-[15px] text-text-custom mb-1.5">{pillar.title}</h4>
                       <p className="text-[12px] text-text-soft leading-relaxed">{pillar.desc}</p>
                     </div>
                   </div>
@@ -74,22 +74,22 @@ export default function FoundershipPage({ onOpenModal }: { onOpenModal: (id: str
                 
                 {/* Institutional Performance Stats */}
                 <div className="absolute bottom-8 left-8 right-8 z-20 space-y-3">
-                  <div className="p-4 rounded-xl bg-[#0b0e14]/90 backdrop-blur-md border border-white/10 flex items-center gap-4">
+                  <div className="p-4 rounded-xl bg-[#0b0e14]/90 backdrop-blur-md border border-border2 flex items-center gap-4">
                     <div className="w-10 h-10 rounded-lg bg-emerald/10 flex items-center justify-center text-emerald">
                       <Target size={18} />
                     </div>
                     <div>
                       <div className="text-[9px] font-dm-mono text-text-dim uppercase tracking-widest leading-none mb-1">Venture Launch Rate</div>
-                      <div className="text-[16px] font-syne font-black text-white">32% of Alumni</div>
+                      <div className="text-[16px] font-syne font-black text-text-custom">32% of Alumni</div>
                     </div>
                   </div>
-                  <div className="p-4 rounded-xl bg-[#0b0e14]/90 backdrop-blur-md border border-white/10 flex items-center gap-4">
+                  <div className="p-4 rounded-xl bg-[#0b0e14]/90 backdrop-blur-md border border-border2 flex items-center gap-4">
                     <div className="w-10 h-10 rounded-lg bg-brand/10 flex items-center justify-center text-brand">
                       <Globe size={18} />
                     </div>
                     <div>
                       <div className="text-[9px] font-dm-mono text-text-dim uppercase tracking-widest leading-none mb-1">Global Market Reach</div>
-                      <div className="text-[16px] font-syne font-black text-white">14+ Countries</div>
+                      <div className="text-[16px] font-syne font-black text-text-custom">14+ Countries</div>
                     </div>
                   </div>
                 </div>
@@ -108,7 +108,7 @@ export default function FoundershipPage({ onOpenModal }: { onOpenModal: (id: str
         <div className="section-inner">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <div className="section-label mx-auto">The Freelance Hub</div>
-            <h2 className="section-title text-white animate-fadeUp">High-Value <br /><span className="text-emerald">Technical Consulting.</span></h2>
+            <h2 className="section-title text-text-custom animate-fadeUp">High-Value <br /><span className="text-emerald">Technical Consulting.</span></h2>
             <p className="text-text-soft text-[15px] mt-4 animate-fadeUp delay-100">Master the art of the high-ticket gig. We provide the technical backbone and business intelligence to help you transition from worker to high-impact consultant.</p>
           </div>
           
@@ -131,10 +131,10 @@ export default function FoundershipPage({ onOpenModal }: { onOpenModal: (id: str
               }
             ].map((card, i) => (
               <div key={i} className="p-8 md:p-10 bg-card hover:bg-card2 transition-colors group">
-                <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-brand mb-8 group-hover:bg-brand group-hover:text-navy transition-all">
+                <div className="w-12 h-12 rounded-2xl bg-glass-bg border border-border2 flex items-center justify-center text-brand mb-8 group-hover:bg-brand group-hover:text-navy transition-all">
                   {card.icon}
                 </div>
-                <h3 className="font-syne font-bold text-[18px] text-white mb-4">{card.title}</h3>
+                <h3 className="font-syne font-bold text-[18px] text-text-custom mb-4">{card.title}</h3>
                 <p className="text-[13px] text-text-soft leading-relaxed">{card.desc}</p>
               </div>
             ))}
@@ -151,7 +151,7 @@ export default function FoundershipPage({ onOpenModal }: { onOpenModal: (id: str
               <div className="w-16 h-16 rounded-2xl bg-brand/10 border border-brand/20 flex items-center justify-center text-brand mx-auto mb-8 animate-float1">
                 <Zap className="w-8 h-8" />
               </div>
-              <h2 className="font-syne font-black text-[32px] md:text-[48px] text-white leading-tight mb-6 animate-fadeUp">
+              <h2 className="font-syne font-black text-[32px] md:text-[48px] text-text-custom leading-tight mb-6 animate-fadeUp">
                 Claim Your <br />
                 <span className="text-brand">Technical Sovereignty.</span>
               </h2>

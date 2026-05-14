@@ -95,7 +95,7 @@ export function WhyGDA({ editMode }: { editMode?: boolean }) {
                         <span className="text-[11px] text-text-soft">{c.n}</span>
                         <span className="font-dm-mono text-[10px]" style={{ color: c.c }}>{c.f}% full</span>
                       </div>
-                      <div className="h-1 bg-white/5 rounded-sm overflow-hidden">
+                      <div className="h-1 bg-glass-bg rounded-sm overflow-hidden">
                         <div className="h-full rounded-sm" style={{ width: `${c.f}%`, background: c.c }}></div>
                       </div>
                     </div>
@@ -161,7 +161,7 @@ export function Alumni({ editMode }: { editMode?: boolean }) {
       <div className="section-inner">
         <div className="max-w-[540px] mb-14">
           <div className="section-label">Founder & Freelance Empowerment</div>
-          <h2 className="section-title animate-fadeUp text-white">The Foundation of<br /><span className="text-brand">African Foundership.</span></h2>
+          <h2 className="section-title animate-fadeUp text-text-custom">The Foundation of<br /><span className="text-brand">African Foundership.</span></h2>
           <p className="section-sub animate-fadeUp delay-100">We don't just build employees; we forge the technical architects and entrepreneurs building Africa's new digital infrastructure. Our alumni are currently delivering high-impact systems at the continent's most significant institutional players.</p>
         </div>
 

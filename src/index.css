@@ -98,26 +98,26 @@
 
   html.light {
     --bg: #f8fafc;
-    --bg2: #f1f5f9;
+    --bg2: #e2e8f0; /* Darkened slightly for better gradient contrast */
     --surface: #ffffff;
     --card: #ffffff;
-    --card2: #f8fafc;
-    --border-custom: rgba(0, 0, 0, 0.08);
-    --border2: rgba(0, 0, 0, 0.12);
+    --card2: #f1f5f9;
+    --border-custom: rgba(11, 12, 16, 0.12);
+    --border2: rgba(11, 12, 16, 0.18);
 
     --text-custom: #0B0C10;
-    --text-muted: #64748b;
-    --text-dim: #94a3b8;
-    --text-soft: #475569;
-    --text-stroke: rgba(11, 12, 16, 0.15);
-    --glass-bg: rgba(11, 12, 16, 0.03);
-    --glass-border: rgba(11, 12, 16, 0.06);
-    --glass-text: rgba(11, 12, 16, 0.03);
+    --text-muted: #334155; /* Increased contrast from #475569 */
+    --text-dim: #475569;   /* Increased contrast from #64748b */
+    --text-soft: #1e293b;  /* Darker slate for soft text */
+    --text-stroke: rgba(11, 12, 16, 0.45); /* Strengthened for visibility */
+    --glass-bg: rgba(11, 12, 16, 0.05); /* Beautiful dark-glass property */
+    --glass-border: rgba(11, 12, 16, 0.12);
+    --glass-text: rgba(11, 12, 16, 0.6);
 
-    --cyan-dim: rgba(0, 242, 255, 0.08);
-    --cyan-glow: rgba(0, 242, 255, 0.15);
-    --sky-dim: rgba(79, 195, 247, 0.08);
-    --emerald-dim: rgba(86, 207, 172, 0.08);
+    --cyan-dim: rgba(0, 242, 255, 0.15);
+    --cyan-glow: rgba(0, 242, 255, 0.25);
+    --sky-dim: rgba(79, 195, 247, 0.12);
+    --emerald-dim: rgba(86, 207, 172, 0.12);
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -184,9 +184,11 @@
 @layer components {
   .t-label {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 10px; font-weight: 500;
+    font-size: 10px; font-weight: 700;
     letter-spacing: 0.15em; text-transform: uppercase;
     color: var(--color-brand);
+    background-color: #0B0C10; padding: 6px 16px; border-radius: 9999px;
+    display: inline-block;
   }
 
   .t-display {
@@ -282,14 +284,11 @@
   }
 
   .section-label {
-    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700;
     letter-spacing: 0.25em; text-transform: uppercase;
     color: var(--color-brand); margin-bottom: 12px;
-    display: flex; align-items: center; gap: 12px;
-  }
-
-  .section-label::before {
-    content: ''; width: 24px; height: 1px; background: var(--color-brand);
+    display: inline-flex; align-items: center; justify-content: center;
+    background-color: #0B0C10; padding: 6px 16px; border-radius: 9999px;
   }
 
   .section-title {

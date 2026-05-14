@@ -104,7 +104,7 @@ const PartnerCard = ({ brand }: { brand: BrandPartner }) => {
     if (!svgData) {
       return (
         <div 
-          className="w-5 h-5 rounded-full border-2 border-white/10 animate-spin"
+          className="w-5 h-5 rounded-full border-2 border-border2 animate-spin"
           style={{ borderTopColor: brand.accent }}
         />
       );
@@ -114,7 +114,7 @@ const PartnerCard = ({ brand }: { brand: BrandPartner }) => {
   };
 
   return (
-    <div className="flex-1 min-w-[110px] max-w-[140px] group relative overflow-hidden bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 flex flex-col items-center gap-3 transition-all duration-300 hover:border-white/20 hover:bg-white/10 hover:-translate-y-1">
+    <div className="flex-1 min-w-[110px] max-w-[140px] group relative overflow-hidden bg-glass-bg backdrop-blur-sm border border-border2 rounded-xl p-4 flex flex-col items-center gap-3 transition-all duration-300 hover:border-white/20 hover:bg-glass-border hover:-translate-y-1">
       <div 
         className="absolute top-2 right-2 w-1 h-1 rounded-full opacity-40 shadow-[0_0_8px_currentColor]"
         style={{ color: brand.accent, backgroundColor: 'currentColor' }}
@@ -128,7 +128,7 @@ const PartnerCard = ({ brand }: { brand: BrandPartner }) => {
         <p className="text-[11px] font-bold tracking-wide transition-colors" style={{ color: brand.accent }}>
           {brand.short}
         </p>
-        <p className="text-[8px] leading-tight text-white/40 font-medium uppercase tracking-widest whitespace-nowrap">
+        <p className="text-[8px] leading-tight text-text-dim font-medium uppercase tracking-widest whitespace-nowrap">
           {brand.name}
         </p>
       </div>
@@ -423,21 +423,21 @@ export function Programs({ onOpenModal, editMode, isHomePage, initialFilterLevel
                 <div 
                   key={track.id}
                   onClick={() => setSelectedTrackId(track.id)}
-                  className="group relative bg-[#0a0a0b] border border-white/5 rounded-[24px] p-6 cursor-pointer transition-all duration-500 hover:border-brand/40 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] hover:-translate-y-1 overflow-hidden"
+                  className="group relative bg-[#0a0a0b] border border-border-custom rounded-[24px] p-6 cursor-pointer transition-all duration-500 hover:border-brand/40 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] hover:-translate-y-1 overflow-hidden"
                 >
                   {/* Subtle Glow Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-br from-brand/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                   
                   <div className="flex items-center gap-5 relative z-10">
                     {/* Icon Pill */}
-                    <div className="w-14 h-24 rounded-full bg-black/60 border border-white/10 flex items-center justify-center text-3xl shadow-2xl transition-all group-hover:border-brand/30 group-hover:scale-105">
+                    <div className="w-14 h-24 rounded-full bg-black/60 border border-border2 flex items-center justify-center text-3xl shadow-2xl transition-all group-hover:border-brand/30 group-hover:scale-105">
                       <span className="filter grayscale group-hover:grayscale-0 transition-all">{track.icon}</span>
                     </div>
                       <div className="flex-1 space-y-3">
 
 
                         {/* Command Title */}
-                        <h4 className="font-syne font-black text-xl text-text-custom leading-tight group-hover:text-white transition-colors">
+                        <h4 className="font-syne font-black text-xl text-text-custom leading-tight group-hover:text-text-custom transition-colors">
                           {track.title}
                         </h4>
                       </div>
@@ -458,7 +458,7 @@ export function Programs({ onOpenModal, editMode, isHomePage, initialFilterLevel
                    <div className="w-12 h-12 rounded-full border border-brand/50 bg-brand/10 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                      <LucideIcon name="Layers" className="w-5 h-5 text-brand" />
                    </div>
-                   <h4 className="font-syne font-bold text-sm text-white uppercase tracking-widest group-hover:text-brand transition-colors">
+                   <h4 className="font-syne font-bold text-sm text-text-custom uppercase tracking-widest group-hover:text-brand transition-colors">
                      Institutional<br />Strategic Design
                    </h4>
                    <p className="text-[9px] text-brand/80 font-dm-mono mt-2 uppercase tracking-widest font-bold">Custom Enterprise Pathways</p>
@@ -485,12 +485,12 @@ export function Programs({ onOpenModal, editMode, isHomePage, initialFilterLevel
                     animate={{ scale: 1, opacity: 1, y: 0 }}
                     exit={{ scale: 0.9, opacity: 0, y: 20 }}
                     onClick={(e) => e.stopPropagation()}
-                    className="relative w-full max-w-7xl max-h-full bg-card/40 border border-white/10 rounded-[40px] shadow-[0_50px_150px_rgba(0,0,0,0.8)] overflow-hidden flex flex-col md:flex-row"
+                    className="relative w-full max-w-7xl max-h-full bg-card/40 border border-border2 rounded-[40px] shadow-[0_50px_150px_rgba(0,0,0,0.8)] overflow-hidden flex flex-col md:flex-row"
                   >
                     {/* Close Button */}
                     <button 
                       onClick={() => setSelectedTrackId(null)}
-                      className="absolute top-8 right-8 z-50 w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white/40 hover:text-brand hover:border-brand transition-all"
+                      className="absolute top-8 right-8 z-50 w-12 h-12 rounded-full border border-border2 flex items-center justify-center text-text-dim hover:text-brand hover:border-brand transition-all"
                     >
                       ✕
                     </button>
@@ -510,7 +510,7 @@ export function Programs({ onOpenModal, editMode, isHomePage, initialFilterLevel
                             {TRACKS[selectedTrackId].icon}
                           </div>
                           <span className="font-dm-mono text-[10px] text-brand uppercase tracking-[0.6em] mb-3 block">Institutional Dimension</span>
-                          <h2 className="font-syne font-black text-4xl text-white tracking-tighter uppercase leading-none">
+                          <h2 className="font-syne font-black text-4xl text-text-custom tracking-tighter uppercase leading-none">
                             {TRACKS[selectedTrackId].title}
                           </h2>
                        </div>
@@ -520,7 +520,7 @@ export function Programs({ onOpenModal, editMode, isHomePage, initialFilterLevel
                     <div className="flex-1 overflow-y-auto p-8 md:p-20 md:pl-28">
                        <div className="max-w-3xl space-y-16">
                           <div className="space-y-6">
-                            <span className="font-dm-mono text-[10px] text-white/20 uppercase tracking-[0.5em] block">Institutional Mission</span>
+                            <span className="font-dm-mono text-[10px] text-text-dim uppercase tracking-[0.5em] block">Institutional Mission</span>
                             <p className="text-2xl md:text-3xl text-text-soft font-outfit leading-snug">
                               {TRACKS[selectedTrackId].mission}
                             </p>
@@ -529,24 +529,24 @@ export function Programs({ onOpenModal, editMode, isHomePage, initialFilterLevel
                           {/* Tactical Roadmap Timeline */}
                           <div className="space-y-10">
                             <div className="flex items-center justify-between">
-                              <span className="font-dm-mono text-[10px] text-white/20 uppercase tracking-[0.5em] block">Tactical Progression Matrix</span>
-                              <div className="h-px flex-1 mx-8 bg-white/5" />
+                              <span className="font-dm-mono text-[10px] text-text-dim uppercase tracking-[0.5em] block">Tactical Progression Matrix</span>
+                              <div className="h-px flex-1 mx-8 bg-glass-bg" />
                               <span className="font-dm-mono text-[9px] text-brand uppercase tracking-widest font-bold">4 Technical Gates</span>
                             </div>
 
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                                {TRACKS[selectedTrackId].roadmap.map((step, sIdx) => (
-                                 <div key={step.level} className="group/gate p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-brand/30 transition-all">
+                                 <div key={step.level} className="group/gate p-6 rounded-2xl bg-glass-bg border border-border-custom hover:border-brand/30 transition-all">
                                     <div className="flex items-start gap-4">
-                                      <div className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-sm font-syne font-black text-white/40 group-hover/gate:text-brand transition-colors">
+                                      <div className="w-10 h-10 rounded-full border border-border2 flex items-center justify-center text-sm font-syne font-black text-text-dim group-hover/gate:text-brand transition-colors">
                                         0{sIdx + 1}
                                       </div>
                                       <div>
-                                        <h5 className="font-syne font-bold text-lg text-white mb-2">{step.title}</h5>
+                                        <h5 className="font-syne font-bold text-lg text-text-custom mb-2">{step.title}</h5>
                                         <p className="text-xs text-text-soft/80 leading-relaxed">{step.description}</p>
                                         <div className="mt-4 flex flex-wrap gap-2">
                                            {step.vendor_alignment.map(v => (
-                                             <span key={v} className="px-2 py-0.5 rounded text-[8px] font-dm-mono bg-black/40 border border-white/10 text-text-dim uppercase tracking-widest">{v}</span>
+                                             <span key={v} className="px-2 py-0.5 rounded text-[8px] font-dm-mono bg-card border border-border2 text-text-dim uppercase tracking-widest">{v}</span>
                                            ))}
                                         </div>
                                       </div>
@@ -557,7 +557,7 @@ export function Programs({ onOpenModal, editMode, isHomePage, initialFilterLevel
                           </div>
 
                           {/* Action Hub */}
-                          <div className="pt-12 border-t border-white/5 flex flex-col sm:flex-row gap-6">
+                          <div className="pt-12 border-t border-border-custom flex flex-col sm:flex-row gap-6">
                              <button 
                                onClick={() => (setSelectedTrackId(null), navigate(`/tracks/${selectedTrackId}`))}
                                className="flex-1 bg-brand text-black font-syne font-black text-xs uppercase tracking-widest py-6 rounded-2xl hover:bg-white transition-all shadow-[0_20px_50px_rgba(0,242,255,0.2)] flex items-center justify-center gap-4 group"
@@ -566,7 +566,7 @@ export function Programs({ onOpenModal, editMode, isHomePage, initialFilterLevel
                              </button>
                              <button 
                                onClick={() => setSelectedTrackId(null)}
-                               className="px-12 py-6 rounded-2xl border border-white/10 font-syne font-black text-xs uppercase tracking-widest text-text-soft hover:bg-white/5 transition-all"
+                               className="px-12 py-6 rounded-2xl border border-border2 font-syne font-black text-xs uppercase tracking-widest text-text-soft hover:bg-glass-bg transition-all"
                              >
                                Close Master View
                              </button>
@@ -591,7 +591,7 @@ export function Programs({ onOpenModal, editMode, isHomePage, initialFilterLevel
             
             <button
               onClick={() => navigate('/curriculum')}
-              className="bg-white/5 border border-brand/40 text-brand font-syne font-bold px-8 py-4 rounded hover:bg-brand/10 transition-all uppercase tracking-widest text-xs inline-flex items-center gap-3"
+              className="bg-glass-bg border border-brand/40 text-brand font-syne font-bold px-8 py-4 rounded hover:bg-brand/10 transition-all uppercase tracking-widest text-xs inline-flex items-center gap-3"
             >
               View 28-Course Matrix
               <LucideIcon name="LayoutGrid" className="w-4 h-4" />
@@ -604,7 +604,7 @@ export function Programs({ onOpenModal, editMode, isHomePage, initialFilterLevel
         <div className="flex flex-col gap-8 mb-6 px-4">
           <div className="max-w-4xl px-4 md:px-0">
             <span className="font-dm-mono text-[10px] text-brand uppercase tracking-widest mb-2 block">Institutional Curriculum {initialFilterLevel ? 'Pathway' : 'Matrix'}</span>
-            <h2 className="font-syne font-extrabold text-4xl mb-3 text-white leading-tight">
+            <h2 className="font-syne font-extrabold text-4xl mb-3 text-text-custom leading-tight">
               {initialFilterLevel ? `${initialFilterLevel} Specialisation.` : 'Rigorous pathways.'}<br />
               <span className="text-brand">{initialFilterLevel ? 'Command the stack.' : 'Real-world outcomes.'}</span>
             </h2>
@@ -618,14 +618,14 @@ export function Programs({ onOpenModal, editMode, isHomePage, initialFilterLevel
           
           {/* Unified Horizontal Control Deck */}
           {!initialFilterLevel && (
-            <div className="w-full grid grid-cols-1 lg:grid-cols-[1fr_auto] items-end gap-6 border-t border-white/5 pt-4">
+            <div className="w-full grid grid-cols-1 lg:grid-cols-[1fr_auto] items-end gap-6 border-t border-border-custom pt-4">
               {/* Box 1: Level Filters */}
               <div className="flex flex-col gap-2">
-                <span className="font-dm-mono text-[8px] text-white/40 uppercase tracking-[0.4em]">Intelligence Matrix Filters — Institutional Level</span>
+                <span className="font-dm-mono text-[8px] text-text-dim uppercase tracking-[0.4em]">Intelligence Matrix Filters — Institutional Level</span>
                 <div className="flex flex-wrap gap-2">
                   <button 
                     onClick={() => setActiveLevel('all')}
-                    className={`px-4 py-2 rounded-md text-[9px] font-bold uppercase tracking-[0.2em] transition-all ${activeLevel === 'all' ? 'bg-brand text-black shadow-lg shadow-brand/20' : 'bg-white/5 text-text-dim hover:text-white hover:bg-white/10 border border-white/5'}`}
+                    className={`px-4 py-2 rounded-md text-[9px] font-bold uppercase tracking-[0.2em] transition-all ${activeLevel === 'all' ? 'bg-brand text-black shadow-lg shadow-brand/20' : 'bg-glass-bg text-text-dim hover:text-text-custom hover:bg-glass-border border border-border-custom'}`}
                   >
                     All
                   </button>
@@ -635,7 +635,7 @@ export function Programs({ onOpenModal, editMode, isHomePage, initialFilterLevel
                       <button 
                         key={lvl}
                         onClick={() => setActiveLevel(lvl.split(':')[1]?.trim().toLowerCase() || lvl.toLowerCase())}
-                        className={`px-4 py-2 rounded-md text-[9px] font-bold uppercase tracking-[0.2em] transition-all flex items-center gap-2 ${activeLevel === (lvl.split(':')[1]?.trim().toLowerCase() || lvl.toLowerCase()) ? 'bg-brand text-black shadow-lg shadow-brand/20' : 'bg-white/5 text-text-dim hover:text-white hover:bg-white/10 border border-white/5'}`}
+                        className={`px-4 py-2 rounded-md text-[9px] font-bold uppercase tracking-[0.2em] transition-all flex items-center gap-2 ${activeLevel === (lvl.split(':')[1]?.trim().toLowerCase() || lvl.toLowerCase()) ? 'bg-brand text-black shadow-lg shadow-brand/20' : 'bg-glass-bg text-text-dim hover:text-text-custom hover:bg-glass-border border border-border-custom'}`}
                       >
                         <span>{emoji}</span>
                         {lvl.split(':')[1]?.trim() || lvl}
@@ -646,12 +646,12 @@ export function Programs({ onOpenModal, editMode, isHomePage, initialFilterLevel
               </div>
 
               {/* Box 2: View Toggles */}
-              <div className="flex items-center gap-4 bg-black/20 p-2 rounded-xl border border-white/5 shadow-inner">
+              <div className="flex items-center gap-4 bg-surface p-2 rounded-xl border border-border-custom shadow-inner">
                 <button 
                   onClick={() => setViewMode('grid')}
-                  className={`flex items-center gap-2 font-dm-mono text-[9px] uppercase tracking-widest transition-all ${viewMode === 'grid' ? 'text-brand' : 'text-text-dim hover:text-white opacity-50'}`}
+                  className={`flex items-center gap-2 font-dm-mono text-[9px] uppercase tracking-widest transition-all ${viewMode === 'grid' ? 'text-brand' : 'text-text-dim hover:text-text-custom opacity-50'}`}
                 >
-                  <div className={`w-9 h-9 rounded border flex items-center justify-center ${viewMode === 'grid' ? 'border-brand bg-brand/10' : 'border-white/10'}`}>
+                  <div className={`w-9 h-9 rounded border flex items-center justify-center ${viewMode === 'grid' ? 'border-brand bg-brand/10' : 'border-border2'}`}>
                     <LayoutGrid className="w-4 h-4" />
                   </div>
                   <span className="font-bold">Grid</span>
@@ -659,9 +659,9 @@ export function Programs({ onOpenModal, editMode, isHomePage, initialFilterLevel
 
                 <button 
                   onClick={() => setViewMode('matrix')}
-                  className={`flex items-center gap-2 font-dm-mono text-[9px] uppercase tracking-widest transition-all ${viewMode === 'matrix' ? 'text-brand' : 'text-text-dim hover:text-white opacity-50'}`}
+                  className={`flex items-center gap-2 font-dm-mono text-[9px] uppercase tracking-widest transition-all ${viewMode === 'matrix' ? 'text-brand' : 'text-text-dim hover:text-text-custom opacity-50'}`}
                 >
-                  <div className={`w-9 h-9 rounded border flex items-center justify-center ${viewMode === 'matrix' ? 'border-brand bg-brand/10' : 'border-white/10'}`}>
+                  <div className={`w-9 h-9 rounded border flex items-center justify-center ${viewMode === 'matrix' ? 'border-brand bg-brand/10' : 'border-border2'}`}>
                     <TableProperties className="w-4 h-4" />
                   </div>
                   <span className="font-bold">Matrix</span>
@@ -669,9 +669,9 @@ export function Programs({ onOpenModal, editMode, isHomePage, initialFilterLevel
 
                 <button 
                   onClick={() => setViewMode('accordion')}
-                  className={`flex items-center gap-2 font-dm-mono text-[9px] uppercase tracking-widest transition-all ${viewMode === 'accordion' ? 'text-brand' : 'text-text-dim hover:text-white opacity-50'}`}
+                  className={`flex items-center gap-2 font-dm-mono text-[9px] uppercase tracking-widest transition-all ${viewMode === 'accordion' ? 'text-brand' : 'text-text-dim hover:text-text-custom opacity-50'}`}
                 >
-                  <div className={`w-9 h-9 rounded border flex items-center justify-center ${viewMode === 'accordion' ? 'border-brand bg-brand/10' : 'border-white/10'}`}>
+                  <div className={`w-9 h-9 rounded border flex items-center justify-center ${viewMode === 'accordion' ? 'border-brand bg-brand/10' : 'border-border2'}`}>
                     <ListOrdered className="w-4 h-4" />
                   </div>
                   <span className="font-bold">Syllabus</span>
@@ -683,15 +683,15 @@ export function Programs({ onOpenModal, editMode, isHomePage, initialFilterLevel
 
         {/* Track Filters Row */}
         {!initialFilterLevel && (
-          <div className="px-4 mt-2 pb-4 border-b border-white/5 transition-opacity opacity-100">
+          <div className="px-4 mt-2 pb-4 border-b border-border-custom transition-opacity opacity-100">
              <div className="flex items-center gap-4 mb-2">
-               <span className="font-dm-mono text-[7px] text-white/20 uppercase tracking-[0.4em] whitespace-nowrap">Specialisation Track Matrix</span>
+               <span className="font-dm-mono text-[7px] text-text-dim uppercase tracking-[0.4em] whitespace-nowrap">Specialisation Track Matrix</span>
                <div className="h-[1px] flex-1 bg-gradient-to-r from-white/10 to-transparent" />
              </div>
              <div className="flex flex-wrap gap-2 lg:gap-3">
                 <button 
                   onClick={() => setActiveTrack('all')}
-                  className={`px-4 py-2 rounded-md border font-dm-mono text-[9px] uppercase tracking-wider transition-all ${activeTrack === 'all' ? 'bg-brand/10 text-brand border-brand/40 shadow-[0_0_15px_rgba(0,242,255,0.05)]' : 'bg-white/[0.02] border-white/5 text-text-dim hover:border-white/10'}`}
+                  className={`px-4 py-2 rounded-md border font-dm-mono text-[9px] uppercase tracking-wider transition-all ${activeTrack === 'all' ? 'bg-brand/10 text-brand border-brand/40 shadow-[0_0_15px_rgba(0,242,255,0.05)]' : 'bg-glass-bg border-border-custom text-text-dim hover:border-border2'}`}
                 >
                   Universal
                 </button>
@@ -699,7 +699,7 @@ export function Programs({ onOpenModal, editMode, isHomePage, initialFilterLevel
                   <button 
                     key={track}
                     onClick={() => setActiveTrack(track)}
-                    className={`px-4 py-2 rounded-md border font-dm-mono text-[9px] uppercase tracking-wider transition-all ${activeTrack === track ? 'bg-brand/10 text-brand border-brand/40 shadow-[0_0_15px_rgba(0,242,255,0.05)]' : 'bg-white/[0.02] border-white/5 text-text-dim hover:border-white/10'}`}
+                    className={`px-4 py-2 rounded-md border font-dm-mono text-[9px] uppercase tracking-wider transition-all ${activeTrack === track ? 'bg-brand/10 text-brand border-brand/40 shadow-[0_0_15px_rgba(0,242,255,0.05)]' : 'bg-glass-bg border-border-custom text-text-dim hover:border-border2'}`}
                   >
                     {track}
                   </button>
@@ -731,12 +731,12 @@ export function Programs({ onOpenModal, editMode, isHomePage, initialFilterLevel
                return (
                  <div key={trackName} className="space-y-6 animate-fadeIn">
                     {/* Track Header */}
-                    <div className="flex items-center gap-6 py-6 border-b border-white/5">
+                    <div className="flex items-center gap-6 py-6 border-b border-border-custom">
                       <div className="flex flex-col">
                         <span className="font-dm-mono text-[9px] text-brand uppercase tracking-[0.4em] mb-1">Track Dimension</span>
                         <h3 
                           onClick={() => navigate(`/tracks/${getTrackId(trackName)}`)}
-                          className="font-syne font-extrabold text-2xl text-white uppercase tracking-tight hover:text-brand cursor-pointer transition-colors flex items-center gap-3"
+                          className="font-syne font-extrabold text-2xl text-text-custom uppercase tracking-tight hover:text-brand cursor-pointer transition-colors flex items-center gap-3"
                         >
                           {trackName}
                           <ArrowRight className="w-5 h-5 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all" />
@@ -745,7 +745,7 @@ export function Programs({ onOpenModal, editMode, isHomePage, initialFilterLevel
                       <div className="flex-1 h-px bg-gradient-to-r from-white/10 via-white/5 to-transparent"></div>
                       <button 
                         onClick={() => navigate(`/tracks/${getTrackId(trackName)}`)}
-                        className="px-6 py-2.5 rounded-full border border-white/10 font-syne font-black uppercase text-[10px] tracking-widest text-text-soft hover:bg-white hover:text-navy transition-all"
+                        className="px-6 py-2.5 rounded-full border border-border2 font-syne font-black uppercase text-[10px] tracking-widest text-text-soft hover:bg-white hover:text-navy transition-all"
                       >
                         Explore Full Track
                       </button>
@@ -766,9 +766,9 @@ export function Programs({ onOpenModal, editMode, isHomePage, initialFilterLevel
                         if (!course) {
                           // Render an empty placeholder that maintains the column structure
                           return (
-                            <div key={`empty-${lvl}`} className="rounded-3xl border border-white/5 bg-black/20 flex flex-col items-center justify-center min-h-[160px] opacity-30">
+                            <div key={`empty-${lvl}`} className="rounded-3xl border border-border-custom bg-surface flex flex-col items-center justify-center min-h-[160px] opacity-30">
                               <span className="font-dm-mono text-[9px] uppercase tracking-widest text-text-muted">{targetLevel}</span>
-                              <div className="w-8 h-px bg-white/10 mt-3" />
+                              <div className="w-8 h-px bg-glass-border mt-3" />
                             </div>
                           );
                         }
@@ -779,7 +779,7 @@ export function Programs({ onOpenModal, editMode, isHomePage, initialFilterLevel
                           onClick={() => onOpenModal(course.id)}
                           className={`
                             group rounded-3xl border transition-all duration-700 overflow-hidden relative cursor-pointer
-                            ${expandedCourse === course.id ? 'bg-bg border-brand/40 shadow-[0_30px_100px_rgba(0,0,0,0.8)]' : 'bg-white/[0.02] border-white/5 hover:border-white/20 hover:bg-white/[0.04]'}
+                            ${expandedCourse === course.id ? 'bg-bg border-brand/40 shadow-[0_30px_100px_rgba(0,0,0,0.8)]' : 'bg-glass-bg border-border-custom hover:border-white/20 hover:bg-glass-bg'}
                           `}
                         >
                           {/* Header: Core Info */}
@@ -788,17 +788,17 @@ export function Programs({ onOpenModal, editMode, isHomePage, initialFilterLevel
                             <div className="absolute inset-0 bg-gradient-to-r from-brand/0 to-brand/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
                             <div className="flex items-center gap-6 relative z-10 flex-1">
-                              <div className="w-16 h-16 rounded-xl bg-black/60 border border-white/10 flex items-center justify-center text-3xl group-hover:scale-110 group-hover:border-brand/30 transition-all duration-500 shadow-2xl relative overflow-hidden flex-shrink-0">
+                              <div className="w-16 h-16 rounded-xl bg-black/60 border border-border2 flex items-center justify-center text-3xl group-hover:scale-110 group-hover:border-brand/30 transition-all duration-500 shadow-2xl relative overflow-hidden flex-shrink-0">
                                 <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-50" />
                                 <LucideIcon name={course.icon} className="w-8 h-8 relative z-10" />
                               </div>
                               <div>
                                 <div className="flex flex-wrap items-center gap-2 mb-2">
                                   <span className="px-2 py-0.5 rounded bg-brand/10 border border-brand/20 font-dm-mono text-[8px] text-brand uppercase tracking-widest">{course.level || 'Professional'} Level</span>
-                                  <span className="w-1 h-1 rounded-full bg-white/10"></span>
+                                  <span className="w-1 h-1 rounded-full bg-glass-border"></span>
                                   <span className="font-dm-mono text-[9px] text-text-soft uppercase tracking-[0.2em]">{course.duration} intensive</span>
                                 </div>
-                                <h4 className="font-syne font-extrabold text-xl text-white group-hover:text-brand transition-colors tracking-tight leading-tight">{course.title}</h4>
+                                <h4 className="font-syne font-extrabold text-xl text-text-custom group-hover:text-brand transition-colors tracking-tight leading-tight">{course.title}</h4>
                               </div>
                             </div>
                           </div>
@@ -812,13 +812,13 @@ export function Programs({ onOpenModal, editMode, isHomePage, initialFilterLevel
            </div>
         ) : (viewMode === 'matrix') ? (
           /* High-Fidelity Legacy Matrix View - Restored for All Pages */
-          <div className="relative w-[100vw] ml-[calc(-50vw+50%)] pb-12 overflow-x-auto scrollbar-hide bg-black/20 border-t border-b border-white/10 px-4 md:px-0">
-            <div className="min-w-[1240px] max-w-7xl mx-auto bg-navy border-x border-white/10 shadow-2xl relative">
-              <div className="grid grid-cols-[220px_repeat(4,1fr)] border-b border-white/10 bg-black/40 sticky top-0 z-30">
-                <div className="pl-8 p-3 font-dm-mono text-[9px] uppercase text-brand/60 tracking-[0.3em] border-r border-white/10 flex items-center bg-navy sticky left-0 z-40 shadow-[4px_0_10px_rgba(0,0,0,0.3)]">Tracks</div>
+          <div className="relative w-[100vw] ml-[calc(-50vw+50%)] pb-12 overflow-x-auto scrollbar-hide bg-surface border-t border-b border-border2 px-4 md:px-0">
+            <div className="min-w-[1240px] max-w-7xl mx-auto bg-navy border-x border-border2 shadow-2xl relative">
+              <div className="grid grid-cols-[220px_repeat(4,1fr)] border-b border-border2 bg-card sticky top-0 z-30">
+                <div className="pl-8 p-3 font-dm-mono text-[9px] uppercase text-brand/60 tracking-[0.3em] border-r border-border2 flex items-center bg-navy sticky left-0 z-40 shadow-[4px_0_10px_rgba(0,0,0,0.3)]">Tracks</div>
                 {levels.map(lvl => (
                   <div key={lvl} className="p-3 text-center border-r border-border-custom last:border-r-0 flex items-center justify-center">
-                    <span className="font-syne font-bold text-[10px] text-white uppercase tracking-tighter leading-tight">{lvl}</span>
+                    <span className="font-syne font-bold text-[10px] text-text-custom uppercase tracking-tighter leading-tight">{lvl}</span>
                   </div>
                 ))}
               </div>
@@ -838,10 +838,10 @@ export function Programs({ onOpenModal, editMode, isHomePage, initialFilterLevel
                 })
                 .map(track => (
                 <div key={track} className="grid grid-cols-[220px_repeat(4,1fr)] border-b border-white/[0.05] group">
-                  <div className="pl-8 p-6 flex flex-col justify-center border-r border-white/10 bg-navy sticky left-0 z-20 shadow-[4px_0_10px_rgba(0,0,0,0.2)]">
+                  <div className="pl-8 p-6 flex flex-col justify-center border-r border-border2 bg-navy sticky left-0 z-20 shadow-[4px_0_10px_rgba(0,0,0,0.2)]">
                     <span 
                       onClick={() => navigate(`/tracks/${getTrackId(track)}`)}
-                      className="font-syne font-black text-[13px] text-white uppercase tracking-tighter group-hover:text-brand cursor-pointer transition-colors"
+                      className="font-syne font-black text-[13px] text-text-custom uppercase tracking-tighter group-hover:text-brand cursor-pointer transition-colors"
                     >
                       {track}
                     </span>
@@ -863,8 +863,8 @@ export function Programs({ onOpenModal, editMode, isHomePage, initialFilterLevel
                     return (
                       <div 
                         key={`${track}-${lvl}`} 
-                        className={`p-3 last:pr-8 border-r border-white/10 last:border-r-0 min-h-[140px] flex flex-col justify-between group cursor-pointer transition-all ${
-                          course ? 'hover:bg-white/[0.02]' : 'bg-black/40'
+                        className={`p-3 last:pr-8 border-r border-border2 last:border-r-0 min-h-[140px] flex flex-col justify-between group cursor-pointer transition-all ${
+                          course ? 'hover:bg-glass-bg' : 'bg-card'
                         } ${isFaint ? 'opacity-30 grayscale hover:opacity-100 hover:grayscale-0' : ''}`}
                         onClick={() => course && (isHomePage ? navigate('/curriculum') : onOpenModal(course.id))}
                       >
@@ -911,9 +911,9 @@ export function Programs({ onOpenModal, editMode, isHomePage, initialFilterLevel
               {filteredCourses.map((course) => (
                 <div 
                   key={course.id} 
-                  className="bg-white/[0.02] border border-white/5 hover:border-white/20 hover:bg-white/[0.04] rounded-3xl p-8 flex flex-col min-h-[480px] group relative transition-all duration-500 overflow-hidden"
+                  className="bg-glass-bg border border-border-custom hover:border-white/20 hover:bg-glass-bg rounded-3xl p-8 flex flex-col min-h-[480px] group relative transition-all duration-500 overflow-hidden"
                 >
-                  <div className="absolute top-8 right-8 font-syne font-black text-[80px] leading-none pointer-events-none tracking-tighter text-white/[0.03] group-hover:text-brand/[0.05] transition-colors">{course.num}</div>
+                  <div className="absolute top-8 right-8 font-syne font-black text-[80px] leading-none pointer-events-none tracking-tighter text-text-custom/[0.03] group-hover:text-brand/[0.05] transition-colors">{course.num}</div>
                   
                   <div className="flex items-center justify-between mb-8">
                     <div className="w-12 h-12 rounded-xl bg-brand/5 border border-brand/10 flex items-center justify-center text-brand group-hover:bg-brand/10 group-hover:border-brand/20 transition-all">
@@ -986,7 +986,7 @@ export function Programs({ onOpenModal, editMode, isHomePage, initialFilterLevel
                     <div key={track} className="relative">
                       <div className="flex items-center gap-4 mb-12">
                         <div className="h-[1px] w-12 bg-brand/30" />
-                        <h3 className="font-syne font-bold text-xl uppercase tracking-tighter text-white">
+                        <h3 className="font-syne font-bold text-xl uppercase tracking-tighter text-text-custom">
                           {track} <span className="text-brand/40 ml-2 font-dm-mono text-sm tracking-widest">({trackCourses.length})</span>
                         </h3>
                         <div className="h-[1px] flex-1 bg-gradient-to-r from-white/10 to-transparent" />
@@ -1008,7 +1008,7 @@ export function Programs({ onOpenModal, editMode, isHomePage, initialFilterLevel
                               border rounded-2xl p-6 transition-all duration-500 group cursor-pointer relative overflow-hidden
                               ${isCurrentLevel 
                                 ? 'bg-brand/10 border-brand/60 scale-105 shadow-[0_0_30px_rgba(0,242,255,0.1)] z-10' 
-                                : 'bg-white/3 border-white/10 shadow-none'
+                                : 'bg-white/3 border-border2 shadow-none'
                               }
                               ${isFaint 
                                 ? 'opacity-20 grayscale scale-95 hover:opacity-100 hover:grayscale-0 hover:scale-100 hover:z-20 hover:border-white/30' 
@@ -1025,12 +1025,12 @@ export function Programs({ onOpenModal, editMode, isHomePage, initialFilterLevel
                               <span className="font-dm-mono text-[9px] text-brand/60 uppercase tracking-[0.2em]">{course.level}</span>
                             </div>
 
-                            <h4 className="font-syne font-bold text-lg mb-3 text-white group-hover:text-brand transition-colors leading-tight">{course.title}</h4>
+                            <h4 className="font-syne font-bold text-lg mb-3 text-text-custom group-hover:text-brand transition-colors leading-tight">{course.title}</h4>
                             <p className="text-text-dim text-[12px] leading-relaxed line-clamp-3 mb-6">
                               {sanitizeAccreditation(course.description)}
                             </p>
 
-                            <div className="pt-4 border-t border-white/5 flex items-center justify-between">
+                            <div className="pt-4 border-t border-border-custom flex items-center justify-between">
                                <span className="font-dm-mono text-[9px] text-text-dim uppercase tracking-widest">{course.duration || '12-24 Weeks'}</span>
                                <span className="font-syne font-bold text-[9px] text-brand uppercase tracking-[0.2em] opacity-0 group-hover:opacity-100 transition-opacity">Explore Intel →</span>
                             </div>

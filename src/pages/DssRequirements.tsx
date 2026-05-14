@@ -39,11 +39,11 @@ export default function DssRequirements({ onOpenModal, editMode }: DssRequiremen
         image="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=2070"
       />
 
-      <section className="py-16 relative z-10 border-t border-white/5 bg-bg2">
+      <section className="py-16 relative z-10 border-t border-border-custom bg-bg2">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-syne font-black text-white uppercase tracking-tighter mb-4">DSS Entry Policy</h2>
+              <h2 className="text-3xl font-syne font-black text-text-custom uppercase tracking-tighter mb-4">DSS Entry Policy</h2>
               <p className="text-text-muted font-outfit mb-6">
                 The Digital Systems Stream is rigorous but accessible. We prioritize aptitude and technical intuition.
               </p>
@@ -51,13 +51,13 @@ export default function DssRequirements({ onOpenModal, editMode }: DssRequiremen
                 {['Minimum Grade 12 (Matric) with a focus on logic or mathematics.', 'Baseline digital literacy (ability to navigate OS and web).', 'Passing grade in the GA Technical Aptitude Assessment.'].map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
-                    <span className="text-sm text-white/80 font-outfit">{item}</span>
+                    <span className="text-sm text-text-soft font-outfit">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="bg-card border border-white/5 rounded-xl p-8 relative overflow-hidden">
-              <h3 className="font-syne font-bold text-xl text-white mb-6 relative z-10">Application Pipeline</h3>
+            <div className="bg-card border border-border-custom rounded-xl p-8 relative overflow-hidden">
+              <h3 className="font-syne font-bold text-xl text-text-custom mb-6 relative z-10">Application Pipeline</h3>
               <div className="space-y-6 relative z-10">
                 {steps.map((step, i) => (
                   <div key={i} className="flex gap-4">
@@ -65,7 +65,7 @@ export default function DssRequirements({ onOpenModal, editMode }: DssRequiremen
                       {step.num}
                     </div>
                     <div>
-                      <h4 className="font-syne font-bold text-white text-sm mb-1">{step.title}</h4>
+                      <h4 className="font-syne font-bold text-text-custom text-sm mb-1">{step.title}</h4>
                       <p className="text-xs text-text-muted font-outfit">{step.desc}</p>
                     </div>
                   </div>
@@ -84,19 +84,19 @@ export default function DssRequirements({ onOpenModal, editMode }: DssRequiremen
         </div>
       </section>
 
-      <section className="py-20 border-t border-white/5">
+      <section className="py-20 border-t border-border-custom">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-syne font-black text-white uppercase tracking-tighter mb-4">Technical Investment Scale</h2>
+            <h2 className="text-3xl font-syne font-black text-text-custom uppercase tracking-tighter mb-4">Technical Investment Scale</h2>
             <p className="text-text-muted font-outfit max-w-2xl mx-auto">Fees are adjusted to your economic reality.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {feeStructure.map((fee, i) => (
-              <div key={i} className="bg-white/[0.02] border border-white/5 p-6 rounded-xl relative hover:border-brand/30 transition-all flex flex-col">
+              <div key={i} className="bg-glass-bg border border-border-custom p-6 rounded-xl relative hover:border-brand/30 transition-all flex flex-col">
                 <div className="absolute -top-3 left-6">
                   <span className="text-[9px] font-dm-mono uppercase tracking-widest px-2 py-1 bg-brand text-navy rounded-sm font-bold">{fee.badge}</span>
                 </div>
-                <h3 className="font-syne font-bold text-white text-sm mt-4 mb-2">{fee.tier}</h3>
+                <h3 className="font-syne font-bold text-text-custom text-sm mt-4 mb-2">{fee.tier}</h3>
                 <div className="font-syne font-black text-2xl text-brand mb-4">{fee.price}</div>
                 <p className="text-[13px] text-text-muted font-outfit leading-relaxed flex-1">{fee.desc}</p>
               </div>
@@ -105,9 +105,9 @@ export default function DssRequirements({ onOpenModal, editMode }: DssRequiremen
         </div>
       </section>
 
-      <section className="py-20 bg-bg2 border-t border-white/5">
+      <section className="py-20 bg-bg2 border-t border-border-custom">
         <div className="max-w-7xl mx-auto px-6 text-center">
-           <h2 className="text-3xl font-syne font-black text-white uppercase mb-8">Ready to Launch?</h2>
+           <h2 className="text-3xl font-syne font-black text-text-custom uppercase mb-8">Ready to Launch?</h2>
            <button onClick={() => onOpenModal?.('apply_direct')} className="btn btn-brand btn-lg">Start DSS Application →</button>
         </div>
       </section>

@@ -85,7 +85,7 @@ export function Cohorts({ onOpenModal, editMode }: { onOpenModal: (id: string) =
           {/* ─── RIGHT: APPLICATION FORM ─── */}
           <div className="bg-card border border-border-custom rounded-3xl p-6 sm:p-10 sticky top-20 animate-fadeUp">
             <div className="flex flex-col gap-6">
-              <div className="p-8 rounded-2xl bg-white/[0.03] border border-white/5 flex flex-col items-center text-center">
+              <div className="p-8 rounded-2xl bg-white/[0.03] border border-border-custom flex flex-col items-center text-center">
                 <div className="w-16 h-16 rounded-full bg-brand/10 border border-brand/20 flex items-center justify-center text-2xl mb-6 shadow-[0_0_30px_rgba(0,242,255,0.1)]">📜</div>
                 <h3 className="font-syne font-extrabold text-[22px] mb-3">Begin Your Application</h3>
                 <p className="text-[13px] text-text-muted leading-relaxed mb-8 max-w-sm">Secure your seat in the 2026 Academic Cycle through our institutional Hub.</p>

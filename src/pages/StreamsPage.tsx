@@ -29,15 +29,15 @@ export default function StreamsPage() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-navy via-bg to-bg" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-            <div className="inline-flex items-center gap-2 text-brand font-jetbrains text-[10px] uppercase tracking-[0.3em] mb-4"><div className="w-8 h-px bg-brand/40" /> Stream Directory <div className="w-8 h-px bg-brand/40" /></div>
-            <h1 className="text-4xl md:text-6xl font-syne font-black text-white uppercase tracking-tighter mb-4">Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand to-emerald">Streams</span></h1>
+            <div className="section-label mb-4">Stream Directory</div>
+            <h1 className="text-4xl md:text-6xl font-syne font-black text-text-custom uppercase tracking-tighter mb-4">Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand to-emerald">Streams</span></h1>
             <p className="text-lg text-text-muted font-outfit max-w-2xl mb-8">10 purpose-built streamsData spanning 80+ courses, aligned to 9 SETAs, designed to close Africa's most urgent skills gaps.</p>
           </motion.div>
 
           {/* Tier Filter */}
           <div className="flex items-center gap-2 flex-wrap">
             {tiers.map(tier => (
-              <button key={tier} onClick={() => setActiveTier(tier)} className={`px-4 py-2 rounded-lg font-outfit font-bold text-[12px] uppercase tracking-wider transition-all border ${activeTier === tier ? 'bg-brand text-navy border-brand' : 'bg-white/5 text-white/60 border-white/10 hover:bg-white/10 hover:text-white'}`}>
+              <button key={tier} onClick={() => setActiveTier(tier)} className={`px-4 py-2 rounded-lg font-outfit font-bold text-[12px] uppercase tracking-wider transition-all border ${activeTier === tier ? 'bg-brand text-navy border-brand' : 'bg-glass-bg text-text-muted border-border2 hover:bg-glass-border hover:text-text-custom'}`}>
                 {tier} {tier !== 'All' && <span className="ml-1 text-[10px] opacity-60">({streamsData.filter(s => tier === 'All' || s.tier === tier).length})</span>}
               </button>
             ))}
@@ -51,34 +51,34 @@ export default function StreamsPage() {
           <div className="flex flex-col gap-6">
             {filtered.map((stream, idx) => (
               <motion.div key={stream.id} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 * idx }}>
-                <Link to={stream.path} className={`block rounded-2xl border ${stream.border} bg-white/[0.02] hover:bg-white/[0.04] transition-all group relative overflow-hidden no-underline`}>
+                <Link to={stream.path} className={`block rounded-2xl border ${stream.border} bg-glass-bg hover:bg-glass-bg transition-all group relative overflow-hidden no-underline`}>
                   <div className="flex flex-col lg:flex-row">
                     {/* Left: Stream Identity */}
                     <div className="p-8 lg:w-[320px] shrink-0 flex flex-col items-start">
                       <div className={`w-16 h-16 rounded-xl ${stream.bg} ${stream.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>{stream.icon}</div>
                       <span className={`font-syne font-black text-3xl ${stream.color} mb-1`}>{stream.abbr}</span>
-                      <h2 className="text-lg font-syne font-bold text-white mb-1 group-hover:text-brand transition-colors">{stream.title}</h2>
+                      <h2 className="text-lg font-syne font-bold text-text-custom mb-1 group-hover:text-brand transition-colors">{stream.title}</h2>
                       <p className="text-[11px] font-dm-mono text-brand/60 uppercase tracking-widest italic mb-3">"{stream.tagline}"</p>
                       <div className="flex items-center gap-2 flex-wrap">
-                        <span className={`text-[9px] font-jetbrains uppercase tracking-widest px-2 py-0.5 rounded border ${stream.status === 'Live' ? 'bg-brand/10 text-brand border-brand/20' : 'bg-white/5 text-text-muted border-white/10'}`}>{stream.status}</span>
-                        <span className="text-[9px] font-jetbrains uppercase tracking-widest text-white/30 px-2 py-0.5 rounded border border-white/5">{stream.tier}</span>
+                        <span className={`text-[9px] font-jetbrains uppercase tracking-widest px-2 py-0.5 rounded border ${stream.status === 'Live' ? 'bg-brand/10 text-brand border-brand/20' : 'bg-glass-bg text-text-muted border-border2'}`}>{stream.status}</span>
+                        <span className="text-[9px] font-jetbrains uppercase tracking-widest text-text-dim px-2 py-0.5 rounded border border-border-custom">{stream.tier}</span>
                       </div>
                     </div>
 
                     {/* Right: Details */}
-                    <div className="flex-1 p-8 border-t lg:border-t-0 lg:border-l border-white/5">
+                    <div className="flex-1 p-8 border-t lg:border-t-0 lg:border-l border-border-custom">
                       <p className="text-[13px] text-text-muted leading-relaxed mb-6">{stream.why}</p>
                       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
-                        <div><div className="text-[8px] font-dm-mono text-text-dim uppercase tracking-widest mb-1">Courses</div><div className="font-syne font-bold text-sm text-white">{stream.courses}</div></div>
-                        <div><div className="text-[8px] font-dm-mono text-text-dim uppercase tracking-widest mb-1">NQF Range</div><div className="font-syne font-bold text-sm text-white">{stream.nqf}</div></div>
-                        <div><div className="text-[8px] font-dm-mono text-text-dim uppercase tracking-widest mb-1">Duration</div><div className="font-syne font-bold text-sm text-white">{stream.duration}</div></div>
-                        <div><div className="text-[8px] font-dm-mono text-text-dim uppercase tracking-widest mb-1">SETA</div><div className="font-syne font-bold text-sm text-white">{stream.seta}</div></div>
+                        <div><div className="text-[8px] font-dm-mono text-text-dim uppercase tracking-widest mb-1">Courses</div><div className="font-syne font-bold text-sm text-text-custom">{stream.courses}</div></div>
+                        <div><div className="text-[8px] font-dm-mono text-text-dim uppercase tracking-widest mb-1">NQF Range</div><div className="font-syne font-bold text-sm text-text-custom">{stream.nqf}</div></div>
+                        <div><div className="text-[8px] font-dm-mono text-text-dim uppercase tracking-widest mb-1">Duration</div><div className="font-syne font-bold text-sm text-text-custom">{stream.duration}</div></div>
+                        <div><div className="text-[8px] font-dm-mono text-text-dim uppercase tracking-widest mb-1">SETA</div><div className="font-syne font-bold text-sm text-text-custom">{stream.seta}</div></div>
                       </div>
                       <div>
                         <div className="text-[8px] font-dm-mono text-text-dim uppercase tracking-widest mb-2">Graduate Outcomes</div>
-                        <p className="text-[12px] text-white/70 font-outfit">{stream.graduates}</p>
+                        <p className="text-[12px] text-text-soft font-outfit">{stream.graduates}</p>
                       </div>
-                      <div className="mt-6 flex items-center gap-2 text-xs font-bold text-white group-hover:text-brand transition-colors uppercase tracking-wider">
+                      <div className="mt-6 flex items-center gap-2 text-xs font-bold text-text-custom group-hover:text-brand transition-colors uppercase tracking-wider">
                         {stream.status === 'Live' ? 'Enter Stream' : 'View Curriculum'} <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                       </div>
                     </div>
@@ -91,7 +91,7 @@ export default function StreamsPage() {
       </section>
 
       {/* Stats Bar */}
-      <section className="py-16 bg-black/20 border-t border-white/5">
+      <section className="py-16 bg-surface border-t border-border-custom">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
