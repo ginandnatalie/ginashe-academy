@@ -128,7 +128,7 @@ export default function Navbar({ onOpenModal, editMode, setEditMode, siteSetting
                 to={item.path}
                 onClick={() => setActiveDropdown(null)}
                 className={`inline-flex items-center gap-1.5 font-outfit font-medium text-[14px] tracking-wide no-underline px-5 py-2.5 rounded-xl transition-all ${
-                  pathname === item.path 
+                  pathname === item.path || (item.label === 'Streams' && (/^\/streams\/[a-z0-9-]+/.test(pathname) || /^\/tracks(\/|$)/.test(pathname)))
                     ? (isScrolled ? 'text-brand bg-brand/10 shadow-[0_0_15px_rgba(0,242,255,0.15)]' : 'text-brand bg-[#0B0C10] shadow-[0_4px_20px_rgba(0,0,0,0.25)]') 
                     : (isScrolled ? 'text-text-soft hover:text-text-custom hover:bg-glass-bg' : 'text-text-custom hover:text-brand hover:bg-glass-bg')
                 }`}

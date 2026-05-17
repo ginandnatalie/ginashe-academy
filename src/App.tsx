@@ -174,8 +174,8 @@ function AppContent() {
 
   const isPortal = pathname.startsWith('/portal') || pathname.startsWith('/admin') || pathname.startsWith('/course') || pathname.startsWith('/verify');
   
-  // Detect school context for StreamNavbar
-  const isStreamContext = /^\/streams\/[a-z0-9-]+/.test(pathname);
+  // Detect school context for StreamNavbar (includes /tracks as DSS-specific)
+  const isStreamContext = /^\/streams\/[a-z0-9-]+/.test(pathname) || /^\/tracks(\/|$)/.test(pathname);
 
   return (
     <div className="min-h-screen bg-bg text-text-custom selection:bg-brand/30 selection:text-brand transition-colors duration-300 flex flex-col">

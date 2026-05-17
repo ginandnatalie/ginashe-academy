@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
-import { ChevronDown, X, Menu, LayoutDashboard, BookOpen, ClipboardList, Landmark, Users as UsersIcon } from 'lucide-react';
+import { ChevronDown, X, Menu, LayoutDashboard, BookOpen, ClipboardList, Landmark, Users as UsersIcon, Target } from 'lucide-react';
 import { streamsData } from '../data/streams';
 
 export default function StreamNavbar() {
@@ -12,14 +12,17 @@ export default function StreamNavbar() {
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   // Extract stream slug from path e.g. /streams/health-sciences/about
+  // Also treat /tracks as DSS-specific context
+  const isTracksPage = /^\/tracks(\/|$)/.test(pathname);
   const parts = pathname.split('/');
-  const streamSlug = parts[2];
+  const streamSlug = isTracksPage ? 'digital-systems' : parts[2];
   const stream = streamsData.find(s => s.id === streamSlug);
 
   if (!stream) return null;
 
   const menuItems = [
     { label: 'Dashboard', path: `/streams/${stream.id}`, icon: LayoutDashboard },
+    ...(stream.id === 'digital-systems' ? [{ label: 'Career Tracks', path: '/tracks', icon: Target }] : []),
     { label: 'Curriculum', path: `/streams/${stream.id}/curriculum`, icon: BookOpen },
     { label: 'Requirements', path: `/streams/${stream.id}/requirements`, icon: ClipboardList },
     { label: 'Authority', path: `/streams/${stream.id}/authority`, icon: Landmark },
@@ -67,7 +70,7 @@ export default function StreamNavbar() {
                     to={item.path}
                     className={`px-3 py-1.5 rounded-lg text-[11px] font-outfit tracking-wide no-underline transition-all flex items-center gap-1 ${
                       pathname === item.path || (item.path !== `/streams/${stream.id}` && pathname.startsWith(item.path))
-                        ? 'bg-brand/15 text-brand font-bold'
+                        ? 'text-[#0B0C10] bg-brand font-bold shadow-[0_4px_20px_rgba(0,242,255,0.25)]'
                         : 'text-text-muted hover:text-text-custom hover:bg-glass-bg'
                     }`}
                   >
@@ -159,7 +162,7 @@ export default function StreamNavbar() {
                         onClick={() => setIsMenuOpen(false)}
                         className={`flex items-center gap-4 px-6 py-4 rounded-2xl no-underline transition-all group ${
                           isActive 
-                            ? `${stream.bg} ${stream.color} font-bold shadow-lg shadow-black/20` 
+                            ? 'bg-brand text-[#0B0C10] font-bold shadow-[0_4px_20px_rgba(0,242,255,0.25)]' 
                             : 'text-text-dim hover:text-text-custom hover:bg-glass-bg'
                         }`}
                       >
