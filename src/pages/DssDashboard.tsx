@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { TrustBar, Programs } from '../components/Programs';
 import { CTA } from '../components/Footer';
 import { motion } from 'motion/react';
+import { SEO } from '../components/SEO';
 
 interface DssDashboardProps {
   stream: any;
@@ -101,6 +102,10 @@ function Testimonials() {
 export default function DssDashboard({ stream, onOpenModal, editMode }: DssDashboardProps) {
   return (
     <div className="bg-bg">
+      <SEO 
+        title={stream.title} 
+        description={stream.desc + ' - ' + stream.why} 
+      />
       {/* Custom DSS Hero */}
       <div className="max-w-7xl mx-auto px-6 pt-12 pb-4">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>

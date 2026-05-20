@@ -7,6 +7,8 @@ import { TrustBar } from '../components/Programs';
 import { CTA } from '../components/Footer';
 import { streamsData } from '../data/streams';
 
+import { SEO } from '../components/SEO';
+
 interface AcademyHomeProps {
   onOpenModal?: (id: string) => void;
   editMode?: boolean;
@@ -30,6 +32,10 @@ export default function AcademyHome({ onOpenModal, editMode }: AcademyHomeProps)
 
   return (
     <div className="min-h-screen bg-bg">
+      <SEO 
+        title="Home"
+        description="Africa's definitive practitioner-led institution housing multiple schools of excellence across Cloud, AI, Cybersecurity, Data, and Digital Business."
+      />
       {/* Sophisticated Hero (from previous SDS Home) */}
       <Hero onOpenModal={onOpenModal || (() => {})} editMode={editMode} />
 

@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { streamsData } from '../data/streams';
 import { ArrowRight, FileText, Info, GraduationCap, Users } from 'lucide-react';
 import { motion } from 'motion/react';
+import { SEO } from '../components/SEO';
 
 import DssDashboard from './DssDashboard';
 
@@ -13,6 +14,7 @@ export default function StreamDashboard({ onOpenModal, editMode }: { onOpenModal
   if (!stream) {
     return (
       <div className="min-h-screen bg-bg flex items-center justify-center">
+        <SEO title="Stream Not Found" description="The requested stream could not be found." />
         <h1 className="text-text-custom text-2xl font-syne">Stream not found</h1>
       </div>
     );
@@ -24,6 +26,10 @@ export default function StreamDashboard({ onOpenModal, editMode }: { onOpenModal
 
   return (
     <div className="min-h-screen bg-bg pt-12 pb-20">
+      <SEO 
+        title={stream.title} 
+        description={stream.desc + ' - ' + stream.why} 
+      />
       <div className="max-w-7xl mx-auto px-6">
         
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-12">

@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { Code, Activity, Battery, Leaf, Coins, Wrench, Palette, Rocket, BookOpen, SunMedium, ArrowRight, Search } from 'lucide-react';
 
+import { SEO } from '../components/SEO';
+
 const streamsData = [
   { id: 'digital-systems', abbr: 'SDS', title: 'Stream of Digital Systems', tagline: 'Deploy to Cape Town', desc: 'Software, cloud & artificial intelligence', why: 'Largest skills gap in SA — over 20,000 unfilled cloud jobs by 2027. Direct POPIA compliance demand. AWS af-south-1 in Cape Town gives SA learners a uniquely accessible entry point.', courses: '8 courses', nqf: 'NQF L2–L6', duration: '4–20 weeks', seta: 'MICT SETA', graduates: 'Cloud Engineer · AI/ML Specialist · Full-Stack Developer · Security Analyst', icon: <Code className="w-10 h-10" />, color: 'text-brand', bg: 'bg-brand/10', border: 'border-brand/30', path: '/streams/digital-systems', status: 'Live', tier: 'Flagship' },
   { id: 'health-sciences', abbr: 'SHS', title: 'Stream of Health Sciences', tagline: 'Heal Your Community', desc: 'Community health, nursing & mental wellbeing', why: 'SA has 1 doctor per 1,700 people. Community Health Workers are the most scalable health intervention. Post-COVID mental health crisis is the most underserved public health concern.', courses: '9 courses', nqf: 'NQF L4–L5', duration: '8–32 weeks', seta: 'HWSETA', graduates: 'Community Health Worker · Mental Health Counsellor · Clinic Administrator · Health Educator', icon: <Activity className="w-10 h-10" />, color: 'text-rose-400', bg: 'bg-rose-400/10', border: 'border-rose-400/30', path: '/streams/health-sciences', status: 'Coming Soon', tier: 'Flagship' },
@@ -24,6 +26,10 @@ export default function StreamsPage() {
 
   return (
     <div className="min-h-screen bg-bg">
+      <SEO 
+        title="Streams Directory"
+        description="Explore 10 purpose-built streams spanning 80+ courses, aligned to 9 SETAs, designed to close Africa's most urgent skills gaps."
+      />
       {/* Hero */}
       <section className="relative pt-28 pb-16 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-navy via-bg to-bg" />

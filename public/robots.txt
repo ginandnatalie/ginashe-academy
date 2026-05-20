@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Disallow internal/authenticated areas
+Disallow: /admin
+Disallow: /portal
+Disallow: /course/
+Disallow: /activate
+Disallow: /verify
+
+# Sitemap
+Sitemap: https://www.ginashe.academy/sitemap.xml

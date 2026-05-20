@@ -11,6 +11,7 @@ import WhatsAppOrb from './components/WhatsAppOrb';
 import { ArrowRight } from 'lucide-react';
 import { Toaster, toast } from 'sonner';
 import ErrorBoundary from './components/ErrorBoundary';
+import { HelmetProvider } from 'react-helmet-async';
 
 function ExternalRedirect({ url }: { url: string }) {
   useEffect(() => {
@@ -280,13 +281,15 @@ function AppContent() {
 
 export default function App() {
   return (
-    <ThemeProvider>
-      <AuthProvider>
-        <Router>
-          <ScrollManager />
-          <AppContent />
-        </Router>
-      </AuthProvider>
-    </ThemeProvider>
+    <HelmetProvider>
+      <ThemeProvider>
+        <AuthProvider>
+          <Router>
+            <ScrollManager />
+            <AppContent />
+          </Router>
+        </AuthProvider>
+      </ThemeProvider>
+    </HelmetProvider>
   );
 }
