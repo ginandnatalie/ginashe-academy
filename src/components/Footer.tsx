@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
 import GinasheAcademyLogo from './GinasheAcademyLogo';
+import { Linkedin, Instagram, Facebook } from 'lucide-react';
 
 export function CTA({ onOpenModal, editMode }: { onOpenModal: (id: string) => void, editMode?: boolean }) {
   const navigate = useNavigate();
@@ -138,9 +139,38 @@ export function Footer({ onOpenModal, editMode }: { onOpenModal: (id: string) =>
           <p className="text-[12px] text-text-muted leading-[1.7] max-w-[280px] mb-4">
             Africa's multi-disciplinary academy for practitioner-led skills development across 10 purpose-built schools. Johannesburg, South Africa.
           </p>
-          <div className="flex gap-2.5 flex-wrap">
+          <div className="flex gap-2.5 flex-wrap mb-6">
             <span className="chip chip-em"><span className="w-1.25 h-1.25 rounded-full bg-emerald shrink-0"></span> 10 Streams</span>
             <span className="chip chip-brand"><span className="w-1.25 h-1.25 rounded-full bg-brand shrink-0"></span> 9 SETAs</span>
+          </div>
+          <div className="flex gap-4 items-center">
+            <a 
+              href="https://www.linkedin.com/company/ginashe-academy" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-text-dim hover:text-brand transition-colors p-1.5 rounded-lg border border-border-custom hover:border-brand/30 bg-surface/50"
+              title="LinkedIn"
+            >
+              <Linkedin size={16} />
+            </a>
+            <a 
+              href="https://www.instagram.com/ginasheconsulting" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-text-dim hover:text-brand transition-colors p-1.5 rounded-lg border border-border-custom hover:border-brand/30 bg-surface/50"
+              title="Instagram"
+            >
+              <Instagram size={16} />
+            </a>
+            <a 
+              href="https://www.facebook.com/GinasheAcademy" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-text-dim hover:text-brand transition-colors p-1.5 rounded-lg border border-border-custom hover:border-brand/30 bg-surface/50"
+              title="Facebook"
+            >
+              <Facebook size={16} />
+            </a>
           </div>
         </div>
 
