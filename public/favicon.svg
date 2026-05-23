@@ -1,73 +1,101 @@
-<svg width="512" height="512" viewBox="53 15 144 222" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="512" height="512" viewBox="45 5 160 240" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <g id="master-circuit2">
-      <path d="M 75 70 L 80 70 L 95 85 L 105 85" fill="none" />
-      <circle cx="105" cy="85" r="2" fill="#0B0C10" />
-      <circle cx="75" cy="70" r="3" fill="#0B0C10" />
-      <path d="M 65 105 L 80 105 L 90 115 L 105 115" fill="none" />
-      <circle cx="105" cy="115" r="2" fill="#0B0C10" />
-      <circle cx="65" cy="105" r="3" fill="#0B0C10" />
-      <path d="M 55 140 L 70 140 L 85 125 L 100 125" fill="none" />
-      <circle cx="100" cy="125" r="2" fill="#0B0C10" />
-      <circle cx="55" cy="140" r="3" fill="#0B0C10" />
-      <path d="M 90 45 L 105 55 L 105 70" fill="none" />
-      <circle cx="90" cy="45" r="1.5" fill="#0B0C10" />
+
+    <g id="circuit-traces_sq_black-neon">
+      <path d="M 72 68 L 78 68 L 88 78 L 96 78" fill="none" />
+      <circle cx="96" cy="78" r="1.8" fill="#0B0C10" />
+      <circle cx="72" cy="68" r="2" fill="#0B0C10" />
+      
+      <path d="M 64 100 L 74 100 L 82 108 L 92 108" fill="none" />
+      <circle cx="92" cy="108" r="1.8" fill="#0B0C10" />
+      <circle cx="64" cy="100" r="2" fill="#0B0C10" />
+      
+      <path d="M 60 135 L 70 135 L 78 127 L 88 127" fill="none" />
+      <circle cx="88" cy="127" r="1.8" fill="#0B0C10" />
+      <circle cx="60" cy="135" r="2" fill="#0B0C10" />
+      
+      <path d="M 88 50 L 98 58 L 98 68" fill="none" />
+      <circle cx="88" cy="50" r="1.5" fill="#0B0C10" />
     </g>
 
-    <g id="master-circuit-flow2">
-      <path class="tech-pulse2 c-delay-1" d="M 75 70 L 80 70 L 95 85 L 105 85" fill="none" />
-      <path class="tech-pulse2 c-delay-2" d="M 65 105 L 80 105 L 90 115 L 105 115" fill="none" />
-      <path class="tech-pulse2 c-delay-3" d="M 55 140 L 70 140 L 85 125 L 100 125" fill="none" />
+    <g id="circuit-flow_sq_black-neon">
+      <path class="pulse_sq_black-neon p-d1" d="M 72 68 L 78 68 L 88 78 L 96 78" fill="none" />
+      <path class="pulse_sq_black-neon p-d2" d="M 64 100 L 74 100 L 82 108 L 92 108" fill="none" />
+      <path class="pulse_sq_black-neon p-d3" d="M 60 135 L 70 135 L 78 127 L 88 127" fill="none" />
     </g>
 
     <style>
-      .flow-delay-1 { animation-delay: 0.1s; }
-      .flow-delay-2 { animation-delay: 0.3s; }
-      .flow-delay-3 { animation-delay: 0.5s; }
-
-      @keyframes circuitPulse2 {
+      @keyframes pulseFlow_sq_black-neon {
         0%, 80% { stroke-dashoffset: 60; opacity: 0; }
-        85% { opacity: 1;  }
-        95% { opacity: 1;  }
+        85% { opacity: 1; }
+        95% { opacity: 1; }
         100% { stroke-dashoffset: -60; opacity: 0; }
       }
-      .tech-pulse2 {
+      .pulse_sq_black-neon {
         stroke: #00f2ff;
         stroke-width: 2.5;
         stroke-linecap: round;
         stroke-dasharray: 15 120;
-        animation: circuitPulse2 4s infinite linear;
+        animation: pulseFlow_sq_black-neon 4s infinite linear;
       }
-      .c-delay-1 { animation-delay: 0s; }
-      .c-delay-2 { animation-delay: 1.3s; }
-      .c-delay-3 { animation-delay: 2.6s; }
+      .p-d1 { animation-delay: 0s; }
+      .p-d2 { animation-delay: 1.3s; }
+      .p-d3 { animation-delay: 2.6s; }
     </style>
+
   </defs>
 
-  <g transform="translate(0, 10)">
-    <path d="M 125 35 C 170 35, 195 45, 195 60 L 195 140 C 195 180, 160 210, 125 225 C 90 210, 55 180, 55 140 L 55 60 C 55 45, 80 35, 125 35 Z" 
+  <g>
+    <path d="M 125 35 
+             C 170 35, 195 45, 195 60 
+             L 195 140 
+             C 195 180, 160 210, 125 225 
+             C 90 210, 55 180, 55 140 
+             L 55 60 
+             C 55 45, 80 35, 125 35 Z" 
           fill="#00f2ff" stroke="#0B0C10" stroke-width="7" />
 
     <g stroke="#0B0C10" stroke-width="1.5" opacity="0.4">
-      <use href="#master-circuit2" />
-      <use href="#master-circuit2" transform="translate(250, 0) scale(-1, 1)" />
-      <path d="M 125 35 L 125 65 M 125 185 L 125 225" stroke-dasharray="2 4" stroke-width="2" opacity="0.5" />
+      <use href="#circuit-traces_sq_black-neon" />
+      <use href="#circuit-traces_sq_black-neon" transform="translate(250, 0) scale(-1, 1)" />
     </g>
+
     <g>
-      <use href="#master-circuit-flow2" />
-      <use href="#master-circuit-flow2" transform="translate(250, 0) scale(-1, 1)" />
+      <use href="#circuit-flow_sq_black-neon" />
+      <use href="#circuit-flow_sq_black-neon" transform="translate(250, 0) scale(-1, 1)" />
     </g>
 
-    <path d="M 125 160 L 175 145 L 125 155 L 75 145 Z" fill="#0B0C10" opacity="0.1"/>
-    <path d="M 125 170 L 185 155 L 125 165 L 65 155 Z" fill="#0B0C10" opacity="0.15"/>
-    <path d="M 125 180 L 190 165 L 125 175 L 60 165 Z" fill="none" stroke="#0B0C10" stroke-width="1.5" opacity="0.8"/>
-    <polygon points="124,155 126,155 132,180 118,180" fill="#0B0C10" />
+    <path d="M 125 162 Q 155 152, 178 148 Q 150 155, 125 158 Q 100 155, 72 148 Q 95 152, 125 162 Z" fill="#0B0C10" opacity="0.1"/>
+    <path d="M 125 172 Q 160 160, 186 155 Q 155 163, 125 168 Q 95 163, 64 155 Q 90 160, 125 172 Z" fill="#0B0C10" opacity="0.15"/>
+    <path d="M 125 182 Q 162 170, 190 164 Q 158 172, 125 178 Q 92 172, 60 164 Q 88 170, 125 182 Z" 
+          fill="none" stroke="#0B0C10" stroke-width="1.5" opacity="0.8"/>
+    
+    <line x1="125" y1="157" x2="125" y2="182" stroke="#0B0C10" stroke-width="1.5" opacity="0.5" />
 
-    <path d="M 160 85 L 125 65 L 90 85 L 90 125 L 125 145 L 160 125 L 160 105 L 125 105" 
-          fill="none" stroke="#0B0C10" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" />
+    <polygon points="
+      125,58
+      166,78
+      166,90
+      155,84
+      155,80
+      125,66
+      95,80
+      95,130
+      125,150
+      155,130
+      155,112
+      131,112
+      131,100
+      166,100
+      166,130
+      125,158
+      84,130
+      84,78
+    " fill="#0B0C10" />
 
-    <polygon points="125,12 145,22 125,32 105,22" fill="#0B0C10" />
-    <path d="M 125 22 C 135 27, 140 32, 142 42" fill="none" stroke="#0B0C10" stroke-width="1.5" />
-    <rect x="140" y="40" width="4" height="4" fill="#0B0C10" />
+    <polygon points="125,12 148,23 125,34 102,23" fill="#0B0C10" />
+    <path d="M 125 23 C 133 27, 138 31, 140 38" fill="none" stroke="#0B0C10" stroke-width="1.5" stroke-linecap="round" />
+    <circle cx="140.5" cy="39.5" r="2.5" fill="#0B0C10" />
   </g>
+
 </svg>
