@@ -64,7 +64,7 @@ export default function StreamsPage() {
                       <div className={`w-16 h-16 rounded-xl ${stream.bg} ${stream.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>{stream.icon}</div>
                       <span className={`font-syne font-black text-3xl ${stream.color} mb-1`}>{stream.abbr}</span>
                       <h2 className="text-lg font-syne font-bold text-text-custom mb-1 group-hover:text-brand transition-colors">{stream.title}</h2>
-                      <p className="text-[11px] font-dm-mono text-brand/60 uppercase tracking-widest italic mb-3">"{stream.tagline}"</p>
+                      <p className="text-[11px] font-dm-mono text-text-muted uppercase tracking-widest italic mb-3">"{stream.tagline}"</p>
                       <div className="flex items-center gap-2 flex-wrap">
                         <span className={`text-[9px] font-jetbrains uppercase tracking-widest px-2 py-0.5 rounded border ${stream.status === 'Live' ? 'bg-brand/10 text-brand border-brand/20' : 'bg-glass-bg text-text-muted border-border2'}`}>{stream.status}</span>
                         <span className="text-[9px] font-jetbrains uppercase tracking-widest text-text-dim px-2 py-0.5 rounded border border-border-custom">{stream.tier}</span>

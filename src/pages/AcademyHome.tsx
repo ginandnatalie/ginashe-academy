@@ -56,7 +56,7 @@ export default function AcademyHome({ onOpenModal, editMode }: AcademyHomeProps)
                   </div>
                   <div className={`w-16 h-16 rounded-xl ${stream.bg} ${stream.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>{stream.icon}</div>
                   <h3 className="text-xl font-syne font-bold text-text-custom mb-2 group-hover:text-brand transition-colors">{stream.title}</h3>
-                  <p className="text-[11px] font-dm-mono text-brand/60 uppercase tracking-widest mb-3 italic">"{stream.tagline}"</p>
+                  <p className="text-[11px] font-dm-mono text-text-muted uppercase tracking-widest mb-3 italic">"{stream.tagline}"</p>
                   <p className="text-sm text-text-muted font-outfit leading-relaxed mb-8">{stream.desc}</p>
                   <div className="mt-auto flex items-center gap-2 text-xs font-bold text-text-custom group-hover:text-brand transition-colors uppercase tracking-wider">
                     {stream.status === 'Live' ? 'Enter Stream' : 'View Curriculum'} <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
