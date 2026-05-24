@@ -154,7 +154,7 @@ export function Footer({ onOpenModal, editMode }: { onOpenModal: (id: string) =>
               <Linkedin size={16} />
             </a>
             <a 
-              href="https://www.instagram.com/ginasheconsulting" 
+              href="https://www.instagram.com/ginashe_academy" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="text-text-dim hover:text-brand transition-colors p-1.5 rounded-lg border border-border-custom hover:border-brand/30 bg-surface/50"
