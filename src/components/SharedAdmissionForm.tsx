@@ -19,7 +19,7 @@ import {
   INSTITUTIONAL_CODES
 } from '../lib/constants';
 
-const PORTAL_URL = 'https://gda-student-portal.pages.dev/';
+const PORTAL_URL = 'https://student.ginashe.academy/';
 
 // ─── STYLES (Based on GDA Design System) ────────────────────────
 const INPUT_CLASS = "w-full bg-surface border border-border-custom rounded-sm p-2.75 px-3.5 font-dm-sans text-[13px] text-text-custom outline-none focus:border-brand/40 focus:shadow-[0_0_0_3px_rgba(0,242,255,0.07)] transition-all";

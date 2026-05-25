@@ -254,7 +254,7 @@ export function Footer({ onOpenModal, editMode }: { onOpenModal: (id: string) =>
             <ul className="list-none flex flex-col gap-2">
               <li><Link to="/apply" className="text-[11px] text-brand no-underline hover:underline font-bold">Apply Now →</Link></li>
               <li><Link to="/careers" className="text-[11px] text-brand no-underline hover:underline font-bold">Careers / Work With Us →</Link></li>
-              <li><a href="https://gda-student-portal.pages.dev/" target="_blank" rel="noopener noreferrer" className="text-[11px] text-text-muted no-underline hover:text-text-custom">Student Portal ↗</a></li>
+              <li><a href="https://student.ginashe.academy/" target="_blank" rel="noopener noreferrer" className="text-[11px] text-text-muted no-underline hover:text-text-custom">Student Portal ↗</a></li>
               <li><a href="https://staff.ginashe.academy" target="_blank" rel="noopener noreferrer" className="text-[11px] text-text-muted no-underline hover:text-text-custom">Staff Portal ↗</a></li>
             </ul>
           </div>

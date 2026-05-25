@@ -254,11 +254,11 @@ function AppContent() {
               />
               <Route 
                 path="/portal" 
-                element={<ExternalRedirect url="https://gda-student-portal.pages.dev/" />} 
+                element={<ExternalRedirect url="https://student.ginashe.academy/" />} 
               />
               <Route 
                 path="/course/*" 
-                element={<ExternalRedirect url="https://gda-student-portal.pages.dev/" />} 
+                element={<ExternalRedirect url="https://student.ginashe.academy/" />} 
               />
               <Route path="/activate" element={<ExternalRedirect url="https://staff.ginashe.academy" />} />
             </Routes>

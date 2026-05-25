@@ -386,7 +386,7 @@ export function Modals({ activeModal, onClose, onSwitchModal, onLoginSuccess, me
                   </p>
                   <div className="flex flex-col gap-3">
                     <a 
-                      href="https://gda-student-portal.pages.dev/"
+                      href="https://student.ginashe.academy/"
                       className="btn btn-brand w-full py-4 justify-center text-[13px]"
                     >
                       Return to My Portal →

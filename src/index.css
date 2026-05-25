@@ -120,6 +120,28 @@
     --emerald-dim: rgba(86, 207, 172, 0.12);
   }
 
+  /* Stream card text — light mode, hover: neon text + subtle dark bg */
+  html.light .stream-card-title,
+  html.light .stream-card-tagline,
+  html.light .stream-card-desc,
+  html.light .stream-card-cta {
+    transition: color 0.25s ease, text-shadow 0.25s ease;
+  }
+  html.light .stream-card:hover .stream-card-title {
+    color: #00f2ff;
+    text-shadow: 0 0 8px rgba(0, 242, 255, 0.3);
+  }
+  html.light .stream-card:hover .stream-card-tagline {
+    color: #00d4e0;
+  }
+  html.light .stream-card:hover .stream-card-desc {
+    color: #0B0C10;
+  }
+  html.light .stream-card:hover .stream-card-cta {
+    color: #00f2ff !important;
+    text-shadow: 0 0 8px rgba(0, 242, 255, 0.3);
+  }
+
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; font-size: 16px; }
 

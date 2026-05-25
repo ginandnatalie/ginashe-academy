@@ -505,7 +505,7 @@ export default function Navbar({ onOpenModal, editMode, setEditMode, siteSetting
           <div className="flex items-center gap-3">
             {/* STUDENT PORTAL BUTTON */}
             <a 
-              href={user ? (isAdmin ? 'https://staff.ginashe.academy' : 'https://gda-student-portal.pages.dev/') : 'https://gda-student-portal.pages.dev/'}
+              href={user ? (isAdmin ? 'https://staff.ginashe.academy' : 'https://student.ginashe.academy/') : 'https://student.ginashe.academy/'}
               onClick={!user ? (e) => { e.preventDefault(); onOpenModal('student'); } : undefined}
               className={`hidden lg:flex items-center gap-2 px-4 py-2 rounded-xl transition-all group no-underline ${
                 isScrolled 
