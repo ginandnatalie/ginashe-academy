@@ -194,7 +194,7 @@ async function startServer() {
     const { email, name, status, program } = req.body;
     console.log(`[Email] Sending status email to ${email} (Status: ${status})`);
 
-    const fromEmail = process.env.RESEND_FROM_EMAIL || "Ginashe Digital Academy <noreply@academy.ginashe.co.za>";
+    const fromEmail = process.env.RESEND_FROM_EMAIL || "Ginashe Academy <noreply@updates.ginashe.academy>";
 
     if (!process.env.RESEND_API_KEY) {
       console.warn("RESEND_API_KEY is missing. Email not sent.");
@@ -271,7 +271,7 @@ async function startServer() {
     const { email, name, program, details, type = 'individual' } = req.body;
     console.log(`[Process] New application from ${email} (${type})`);
 
-    const fromEmail = process.env.RESEND_FROM_EMAIL || "Ginashe Digital Academy <noreply@send.academy.ginashe.co.za>";
+    const fromEmail = process.env.RESEND_FROM_EMAIL || "Ginashe Academy <noreply@updates.ginashe.academy>";
 
     if (!process.env.RESEND_API_KEY) {
       console.warn("RESEND_API_KEY is missing. Emails skipped.");
@@ -514,7 +514,7 @@ async function startServer() {
       // 4. Welcome Email
       if (resend) {
         await resend.emails.send({
-          from: process.env.RESEND_FROM_EMAIL || "Ginashe Digital Academy <noreply@send.academy.ginashe.co.za>",
+          from: process.env.RESEND_FROM_EMAIL || "Ginashe Academy <noreply@updates.ginashe.academy>",
           to: [email],
           subject: "Welcome to Ginashe Digital Academy",
           html: `<div style="font-family: sans-serif; padding: 40px; background: #080b12; color: #f0f0f0;">

@@ -137,7 +137,7 @@ export async function onRequestPost(context) {
     // 6. OFFICIAL WELCOME EMAIL (Email #2)
     try {
       const origin = new URL(request.url).origin;
-      const fromEmail = env.RESEND_FROM_EMAIL || "Ginashe Digital Academy <noreply@send.academy.ginashe.co.za>";
+      const fromEmail = env.RESEND_FROM_EMAIL || "Ginashe Academy <noreply@updates.ginashe.academy>";
       
       const welcomeHtml = `
         <div style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; padding: 40px 20px; background-color: #080b12; color: #f0f0f0; border-radius: 16px;">

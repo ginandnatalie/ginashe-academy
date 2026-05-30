@@ -12,7 +12,7 @@ serve(async (req) => {
 
   try {
     const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY') || 're_g9aDKBEy_FQT6yxzaq1oQKeNWEhBjF3Ev';
-    const RESEND_FROM_EMAIL = Deno.env.get('RESEND_FROM_EMAIL') || 'Ginashe Digital Academy <noreply@academy.ginashe.co.za>';
+    const RESEND_FROM_EMAIL = Deno.env.get('RESEND_FROM_EMAIL') || 'Ginashe Academy <noreply@updates.ginashe.academy>';
     
     const body = await req.json();
     const { email, name, type, target_department, details } = body;

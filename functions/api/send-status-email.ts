@@ -18,7 +18,7 @@ export async function onRequestPost(context) {
       ? `Hi ${name},\n\nWe are excited to inform you that your application for the ${program} at Ginashe Digital Academy has been APPROVED! \n\nPlease log in to your student portal to see the next steps.\n\nBest regards,\nGDA Admissions Team`
       : `Hi ${name},\n\nThank you for your interest in Ginashe Digital Academy. After careful review, we regret to inform you that we are unable to move forward with your application for ${program} at this time.\n\nWe wish you the best in your future endeavours.\n\nBest regards,\nGDA Admissions Team`;
 
-    const fromEmail = env.RESEND_FROM_EMAIL || "Ginashe Digital Academy <noreply@academy.ginashe.co.za>";
+    const fromEmail = env.RESEND_FROM_EMAIL || "Ginashe Academy <noreply@updates.ginashe.academy>";
 
     const response = await fetch("https://api.resend.com/emails", {
       method: "POST",

@@ -154,7 +154,7 @@ export async function onRequestPost(context) {
       </div>
     `;
 
-    const fromEmail = env.RESEND_FROM_EMAIL || "Ginashe Digital Academy <noreply@send.academy.ginashe.co.za>";
+    const fromEmail = env.RESEND_FROM_EMAIL || "Ginashe Academy <noreply@updates.ginashe.academy>";
 
     // 3. Send Notification Emails via Resend
     const resendHeaders = {

@@ -11,6 +11,19 @@ export default function StreamNavbar() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
+  // Read banner offset from CSS custom property set by Navbar
+  const [bannerOffset, setBannerOffset] = useState(36);
+  useEffect(() => {
+    const check = () => {
+      const val = getComputedStyle(document.documentElement).getPropertyValue('--banner-h').trim();
+      setBannerOffset(val === '0' ? 0 : 36);
+    };
+    check();
+    const observer = new MutationObserver(check);
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['style'] });
+    return () => observer.disconnect();
+  }, []);
+
   // Extract stream slug from path e.g. /streams/health-sciences/about
   // Also treat /tracks as DSS-specific context
   const isTracksPage = /^\/tracks(\/|$)/.test(pathname);
@@ -53,7 +66,8 @@ export default function StreamNavbar() {
             initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -20, opacity: 0 }}
-            className="fixed top-[90px] left-0 right-0 z-[990] bg-surface/90 backdrop-blur-xl border-b border-border-custom h-10 flex items-center px-4 sm:px-8 transition-all shadow-[0_4px_30px_rgba(0,0,0,0.05)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.5)] hidden md:flex"
+            className="fixed left-0 right-0 z-[990] bg-surface/90 backdrop-blur-xl border-b border-border-custom h-10 flex items-center px-4 sm:px-8 transition-all shadow-[0_4px_30px_rgba(0,0,0,0.05)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.5)] hidden md:flex"
+            style={{ top: `${72 + bannerOffset}px` }}
           >
             <div className="flex items-center max-w-7xl mx-auto w-full gap-6">
               <Link to={`/streams/${stream.id}`} className="flex items-center gap-2 group no-underline shrink-0">
@@ -100,7 +114,8 @@ export default function StreamNavbar() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 20 }}
             onClick={() => setIsVisible(true)}
-            className="fixed top-[92px] right-6 z-[1000] bg-brand text-navy px-3 py-1.5 rounded-lg font-syne font-black text-[10px] uppercase tracking-widest hidden md:flex items-center gap-2 hover:bg-white hover:scale-105 transition-all shadow-[0_10px_25px_rgba(0,242,255,0.2)]"
+            className="fixed right-6 z-[1000] bg-brand text-navy px-3 py-1.5 rounded-lg font-syne font-black text-[10px] uppercase tracking-widest hidden md:flex items-center gap-2 hover:bg-white hover:scale-105 transition-all shadow-[0_10px_25px_rgba(0,242,255,0.2)]"
+            style={{ top: `${74 + bannerOffset}px` }}
           >
             Maximise
             <ChevronDown className="w-3.5 h-3.5" />

@@ -100,7 +100,7 @@ export default function SharedAdmissionForm({ onOpenModal, onSuccess, initialPro
   const [cvFile, setCvFile] = useState<File | null>(null);
   
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [duplicateCheckDone, setDuplicateCheckDone] = useState(false);
+  const [isDuplicateBlocked, setIsDuplicateBlocked] = useState(false);
 
   // ─── CHECK EXISTING ACCOUNT ──────
   const handleAccountCheck = async () => {
@@ -140,6 +140,7 @@ export default function SharedAdmissionForm({ onOpenModal, onSuccess, initialPro
 
   // ─── PRE-SUBMIT DUPLICATE CHECK (Intelligent Scan) ──
   const checkForDuplicates = async (): Promise<boolean> => {
+    if (isDuplicateBlocked) return true; // Already blocked — cannot proceed
     setIsScanning(true);
     try {
       const emailClean = form.email.trim().toLowerCase();
@@ -155,23 +156,26 @@ export default function SharedAdmissionForm({ onOpenModal, onSuccess, initialPro
         .maybeSingle();
 
       if (profileMatch) {
-        setDuplicateMessage(`Institutional Record Detected: You are already registered as a student (${profileMatch.student_number}). Please select 'Forgot Password' on the Student Portal to regain access and apply for further programmes from your dashboard.`);
+        setDuplicateMessage(`Institutional Record Detected: You are already registered as a student (${profileMatch.student_number}). Please use the Student Portal to manage your account and apply for additional programmes.`);
         setStep('existing');
+        setIsDuplicateBlocked(true);
         setIsScanning(false);
         return true;
       }
 
-      // 2. Check Applications (Pending/Historical)
+      // 2. Check Applications (Pending/Historical — exclude rejected/withdrawn)
       let { data: appMatch } = await supabase
         .from('applications')
         .select('id, email, first_name, status, program')
         .or(`email.ilike.${emailClean}${phoneClean ? `,phone.eq.${phoneClean}` : ''}${idClean ? `,id_number.eq.${idClean}` : ''}`)
+        .not('status', 'in', '(rejected,withdrawn)')
         .limit(1)
         .maybeSingle();
 
       if (appMatch) {
-        setDuplicateMessage(`Existing Application Found: You have a previous record for ${appMatch.program || 'a programme'} (Status: ${appMatch.status}). To maintain your academic history, please sign in to your Student Portal. If you cannot access your account, use the 'Forgot Password' option.`);
+        setDuplicateMessage(`Existing Application Found: You have an active record for ${appMatch.program || 'a programme'} (Status: ${appMatch.status}). To maintain your academic history, please sign in to your Student Portal. If you cannot access your account, use the 'Forgot Password' option.`);
         setStep('existing');
+        setIsDuplicateBlocked(true);
         setIsScanning(false);
         return true;
       }
@@ -201,13 +205,11 @@ export default function SharedAdmissionForm({ onOpenModal, onSuccess, initialPro
 
     setIsSubmitting(true);
     try {
-      if (!duplicateCheckDone) {
-        const isDuplicate = await checkForDuplicates();
-        if (isDuplicate) {
-          setIsSubmitting(false);
-          return;
-        }
-        setDuplicateCheckDone(true);
+      // Always run duplicate check on every submission attempt — no bypass
+      const isDuplicate = await checkForDuplicates();
+      if (isDuplicate) {
+        setIsSubmitting(false);
+        return;
       }
 
       // Generate institutional ID
@@ -320,7 +322,7 @@ export default function SharedAdmissionForm({ onOpenModal, onSuccess, initialPro
               {hasAccount === 'yes' && (
                 <div className="animate-fadeUp">
                   <label className={LABEL_CLASS}>Student Number or Email</label>
-                  <input type="text" className={INPUT_CLASS} placeholder="ST-XXXX or your@email.com" value={studentNumberInput} onChange={e => setStudentNumberInput(e.target.value)} />
+                  <input type="text" className={INPUT_CLASS} placeholder="Student Number or your@email.com" value={studentNumberInput} onChange={e => setStudentNumberInput(e.target.value)} />
                 </div>
               )}
 
@@ -357,7 +359,7 @@ export default function SharedAdmissionForm({ onOpenModal, onSuccess, initialPro
             >
               Forgot Password / Reset Access
             </button>
-            <button onClick={() => { setStep('form'); setDuplicateCheckDone(false); }} className="w-full p-3 bg-transparent text-text-muted font-dm-mono text-[11px] tracking-wider uppercase border border-border-custom rounded-sm hover:text-brand transition-all">Apply for a different programme</button>
+            <p className="text-[10px] text-text-dim text-center pt-1">To apply for additional programmes, please sign in to your Student Portal first.</p>
           </div>
         </div>
       )}

@@ -50,6 +50,11 @@ export default function Navbar({ onOpenModal, editMode, setEditMode, siteSetting
   const [isSaving, setIsSaving] = useState(false);
   const [bannerDismissed, setBannerDismissed] = useState(false);
 
+  // Sync banner height to CSS variable for StreamNavbar
+  useEffect(() => {
+    document.documentElement.style.setProperty('--banner-h', bannerDismissed ? '0' : '36');
+  }, [bannerDismissed]);
+
   const isAdmin = profile?.role === 'admin' || profile?.role === 'super_admin' || user?.email?.includes('ginashe.co.za');
   const isSuperAdmin = profile?.role === 'super_admin' || user?.email === 'ginandNatalie@gmail.com' || user?.email === 'academy@ginashe.co.za';
 

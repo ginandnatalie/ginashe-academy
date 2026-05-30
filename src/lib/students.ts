@@ -2,50 +2,20 @@ import { supabase } from './supabase';
 
 /**
  * Institutional helper to generate the next available Student Number.
- * Format: ST-XXXX (e.g. ST-1011)
+ * Format: YYYYNNNNN (e.g. 202600100, 202600101, ...)
+ * Reserved range: 202600000–202600099 (testing & admin)
+ * Sequential allocation starts from 202600100 via Postgres sequence.
  */
 export async function getNextStudentNumber(): Promise<string> {
-  const RESERVED_MAX = 1010;
-  const STARTING_NUMBER = 1011;
-
   try {
-    // 1. Fetch from applications
-    const { data: appData } = await supabase
-      .from('applications')
-      .select('student_number')
-      .not('student_number', 'is', null);
-
-    // 2. Fetch from profiles
-    const { data: profileData } = await supabase
-      .from('profiles')
-      .select('student_number')
-      .not('student_number', 'is', null);
-
-    // 3. Extract and combine numbers
-    const allNumbers: number[] = [
-      ...(appData?.map(d => extractNumber(d.student_number)) || []),
-      ...(profileData?.map(d => extractNumber(d.student_number)) || [])
-    ].filter((n): n is number => n !== null);
-
-    const maxFound = allNumbers.length > 0 ? Math.max(...allNumbers) : RESERVED_MAX;
-    
-    // Ensure we don't go below the reserved range
-    const nextNum = Math.max(maxFound + 1, STARTING_NUMBER);
-    
-    return `ST-${nextNum}`;
+    const { data, error } = await supabase.rpc('generate_student_number');
+    if (error) throw error;
+    return String(data);
   } catch (err) {
     console.error('Error generating student number:', err);
-    // Fallback to a safe starting number if query fails
-    return `ST-${STARTING_NUMBER}`;
+    // Fallback: timestamp-based to avoid collision
+    return `2026${Date.now().toString().slice(-5)}`;
   }
-}
-
-function extractNumber(sn: string | null): number | null {
-  if (!sn) return null;
-  // Match the new format: GDA-2026-XXXX or legacy ST-XXXX
-  const match = sn.match(/(?:GDA-\d{4}-|ST-)(\d+)/);
-  if (match) return parseInt(match[1], 10);
-  return null;
 }
 
 /**

@@ -1551,7 +1551,7 @@ function InstitutionalUserRegistry() {
                 )}
                 <div className="overflow-hidden">
                   <h3 className="font-syne font-black text-base text-text-soft truncate leading-tight uppercase">{u.first_name} <br /> {u.last_name}</h3>
-                  <p className="text-[10px] font-dm-mono text-brand mt-1 truncate">{u.student_number || 'GDA-ADMIN-' + u.id.slice(0, 4).toUpperCase()}</p>
+                  <p className="text-[10px] font-dm-mono text-brand mt-1 truncate">{u.student_number || 'ADMIN-' + u.id.slice(0, 4).toUpperCase()}</p>
                 </div>
               </div>
 
