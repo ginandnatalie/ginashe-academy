@@ -370,9 +370,9 @@ export function Modals({ activeModal, onClose, onSwitchModal, onLoginSuccess, me
                 ✕
               </button>
             </div>
-            <div className="flex gap-0.5 px-7 md:px-8 pt-4 border-b border-border-custom">
-              <button className={`px-4.5 pb-3 rounded-t-sm font-dm-mono text-[10px] tracking-[0.1em] uppercase cursor-pointer border-none bg-none transition-all border-b-2 ${studentTab === 'login' ? 'text-brand border-brand' : 'text-text-muted border-transparent hover:text-text-soft'}`} onClick={() => setStudentTab('login')}>Sign In</button>
-              <button className={`px-4.5 pb-3 rounded-t-sm font-dm-mono text-[10px] tracking-[0.1em] uppercase cursor-pointer border-none bg-none transition-all border-b-2 ${studentTab === 'forgot' ? 'text-brand border-brand' : 'text-text-muted border-transparent hover:text-text-soft'}`} onClick={() => setStudentTab('forgot')}>Reset Password</button>
+            <div className="flex gap-2 px-7 md:px-8 pt-4 border-b border-border-custom pb-4">
+              <button className={`tab-btn ${studentTab === 'login' ? 'tab-active' : 'tab-inactive'}`} onClick={() => setStudentTab('login')}>Sign In</button>
+              <button className={`tab-btn ${studentTab === 'forgot' ? 'tab-active' : 'tab-inactive'}`} onClick={() => setStudentTab('forgot')}>Reset Password</button>
             </div>
             <div className="p-6 md:p-8">
               {user ? (
@@ -476,10 +476,10 @@ export function Modals({ activeModal, onClose, onSwitchModal, onLoginSuccess, me
                 ✕
               </button>
             </div>
-            <div className="flex gap-0.5 px-7 md:px-8 pt-4 border-b border-border-custom">
-              <button className={`px-4.5 pb-3 rounded-t-sm font-dm-mono text-[10px] tracking-[0.1em] uppercase cursor-pointer border-none bg-none transition-all border-b-2 ${adminTab === 'login' ? 'text-brand border-brand' : 'text-text-muted border-transparent hover:text-text-soft'}`} onClick={() => setAdminTab('login')}>Staff Login</button>
-              <button className={`px-4.5 pb-3 rounded-t-sm font-dm-mono text-[10px] tracking-[0.1em] uppercase cursor-pointer border-none bg-none transition-all border-b-2 ${adminTab === 'forgot' ? 'text-brand border-brand' : 'text-text-muted border-transparent hover:text-text-soft'}`} onClick={() => setAdminTab('forgot')}>Reset Password</button>
-              <button className={`px-4.5 pb-3 rounded-t-sm font-dm-mono text-[10px] tracking-[0.1em] uppercase cursor-pointer border-none bg-none transition-all border-b-2 ${adminTab === 'twofa' ? 'text-brand border-brand' : 'text-text-muted border-transparent hover:text-text-soft'}`} onClick={() => setAdminTab('twofa')}>2FA Verify</button>
+            <div className="flex gap-2 px-7 md:px-8 pt-4 border-b border-border-custom pb-4">
+              <button className={`tab-btn ${adminTab === 'login' ? 'tab-active' : 'tab-inactive'}`} onClick={() => setAdminTab('login')}>Staff Login</button>
+              <button className={`tab-btn ${adminTab === 'forgot' ? 'tab-active' : 'tab-inactive'}`} onClick={() => setAdminTab('forgot')}>Reset Password</button>
+              <button className={`tab-btn ${adminTab === 'twofa' ? 'tab-active' : 'tab-inactive'}`} onClick={() => setAdminTab('twofa')}>2FA Verify</button>
             </div>
             <div className="p-6 md:p-8">
               {user ? (

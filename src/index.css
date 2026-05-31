@@ -87,6 +87,10 @@
     --glass-border: rgba(255, 255, 255, 0.06);
     --glass-text: rgba(255, 255, 255, 0.03);
 
+    --tab-active-bg: transparent;
+    --tab-inactive-bg: transparent;
+    --tab-active-border: var(--color-brand);
+
     /* Curriculum Aligned Brand Colors */
     --aws: #FF9900;
     --gcp: #4285F4;
@@ -105,14 +109,18 @@
     --border-custom: rgba(11, 12, 16, 0.12);
     --border2: rgba(11, 12, 16, 0.18);
 
-    --text-custom: #0B0C10;
-    --text-muted: #334155; /* Increased contrast from #475569 */
-    --text-dim: #475569;   /* Increased contrast from #64748b */
-    --text-soft: #1e293b;  /* Darker slate for soft text */
-    --text-stroke: rgba(11, 12, 16, 0.45); /* Strengthened for visibility */
-    --glass-bg: rgba(11, 12, 16, 0.05); /* Beautiful dark-glass property */
-    --glass-border: rgba(11, 12, 16, 0.12);
-    --glass-text: rgba(11, 12, 16, 0.6);
+    --text-custom: #000000;
+    --text-muted: #111111; /* Increased contrast from #475569 */
+    --text-dim: #222222;   /* Increased contrast from #64748b */
+    --text-soft: #000000;  /* Darker slate for soft text */
+    --text-stroke: rgba(0, 0, 0, 0.45); /* Strengthened for visibility */
+    --glass-bg: rgba(0, 0, 0, 0.05); /* Beautiful dark-glass property */
+    --glass-border: rgba(0, 0, 0, 0.12);
+    --glass-text: rgba(0, 0, 0, 0.6);
+
+    --tab-active-bg: #000000;
+    --tab-inactive-bg: rgba(0, 0, 0, 0.06);
+    --tab-active-border: #000000;
 
     --cyan-dim: rgba(0, 242, 255, 0.15);
     --cyan-glow: rgba(0, 242, 255, 0.25);
@@ -135,11 +143,27 @@
     color: #00d4e0;
   }
   html.light .stream-card:hover .stream-card-desc {
-    color: #0B0C10;
+    color: #000000;
   }
   html.light .stream-card:hover .stream-card-cta {
     color: #00f2ff !important;
     text-shadow: 0 0 8px rgba(0, 242, 255, 0.3);
+  }
+
+  /* ─── NEON TEXT LIGHT MODE HIGHLIGHTS ─── */
+  html.light a.text-brand,
+  html.light span.text-brand:not(.w-4):not(.w-6):not(.mt-1) {
+    background-color: #000000;
+    padding: 2px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    box-shadow: 0 2px 8px rgba(0, 242, 255, 0.15);
+  }
+  
+  html.light a.text-brand:hover {
+    box-shadow: 0 4px 12px rgba(0, 242, 255, 0.3);
+    transform: translateY(-1px);
+    transition: all 0.2s ease;
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -285,6 +309,32 @@
 
   .btn-sm { padding: 8px 18px; font-size: 10px; }
   .btn-lg { padding: 16px 38px; font-size: 13px; }
+
+  /* ─── TAB BUTTONS ─── */
+  .tab-btn {
+    padding: 12px 20px;
+    border-radius: var(--r-sm);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .tab-active {
+    color: var(--tab-active-text, var(--color-brand));
+    background: var(--tab-active-bg);
+    border-bottom-color: var(--tab-active-border);
+  }
+  .tab-inactive {
+    color: var(--color-text-muted);
+    background: var(--tab-inactive-bg);
+    border-bottom-color: transparent;
+  }
+  .tab-inactive:hover {
+    color: var(--color-text-custom);
+  }
 
   /* ─── MOBILE-FIRST SECTION PADDING ─── */
   .section-inner {
