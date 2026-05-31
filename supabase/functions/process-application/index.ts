@@ -26,18 +26,62 @@ serve(async (req) => {
     
     const isIndividual = type === 'individual' || !type;
 
-    // 1. Create Auth User & Send Invite Email (For Students/Individuals)
+    let actionLink = null;
+    let authErrorMsg = null;
+
+    // 1. Create Auth User via generateLink (bypasses Supabase SMTP rate limits)
     if (isIndividual) {
-      console.log(`Creating auth user for ${cleanEmail}`);
-      const { data: authData, error: authError } = await supabase.auth.admin.inviteUserByEmail(cleanEmail, {
+      console.log(`Generating invite link for ${cleanEmail}`);
+      const { data: linkData, error: linkError } = await supabase.auth.admin.generateLink({
+        type: 'invite',
+        email: cleanEmail,
         data: { full_name: name, program: program }
       });
-      if (authError) {
-        console.error("Auth Invite Error:", authError.message);
+      
+      if (linkError) {
+        authErrorMsg = linkError.message;
+        console.error("Auth Generate Link Error:", linkError.message);
+      } else {
+        actionLink = linkData.properties?.action_link;
+        authDataResult = linkData;
       }
     }
 
-    // 2. Prepare Admin Notification Email
+    // 2. Send the Applicant Welcome Email via Resend if we got an action link
+    if (actionLink) {
+      const applicantHtml = `
+      <div style="font-family: 'Inter', sans-serif; max-width: 600px; margin: 0 auto; padding: 40px 20px; background-color: #0B0C10; color: #e8ecf8; border-radius: 16px;">
+        <div style="text-align: center; margin-bottom: 32px;">
+          <h1 style="color: #00f2ff; font-weight: 900; letter-spacing: 2px;">GINASHE ACADEMY</h1>
+        </div>
+        <div style="background-color: #14171f; padding: 32px; border-radius: 12px; margin-bottom: 24px;">
+          <h2 style="color: #00f2ff; margin-top: 0; text-align: center;">Welcome to the Academy</h2>
+          <p>Hi ${name || 'there'},</p>
+          <p>You have been invited to join Ginashe Academy. Your application has been received successfully! To begin your journey and access your Student Portal, please activate your account by setting your secure password below.</p>
+          <div style="text-align: center; margin: 32px 0;">
+            <a href="${actionLink}" style="padding: 16px 32px; background-color: #00f2ff; color: #0B0C10; text-decoration: none; border-radius: 8px; font-weight: 800;">Activate My Account &rarr;</a>
+          </div>
+          <p style="font-size: 12px; color: #5a607c;">If the button doesn't work, copy this link: <br>${actionLink}</p>
+        </div>
+      </div>`;
+
+      await fetch('https://api.resend.com/emails', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${RESEND_API_KEY}`
+        },
+        body: JSON.stringify({
+          from: RESEND_FROM_EMAIL,
+          to: [cleanEmail],
+          subject: "You've Been Invited — Ginashe Academy",
+          html: applicantHtml,
+          reply_to: "skills@ginashe.academy"
+        })
+      });
+    }
+
+    // 3. Prepare Admin Notification Email
     let htmlContent = `<h2>New Platform Submission: ${type ? type.toUpperCase() : 'GENERAL'}</h2>`;
     htmlContent += `<p><strong>Name/Org:</strong> ${name || 'N/A'}</p>`;
     htmlContent += `<p><strong>Contact Email:</strong> ${cleanEmail || 'N/A'}</p>`;
@@ -70,7 +114,12 @@ serve(async (req) => {
     const resendRes = await resendReq.json();
 
     return new Response(
-      JSON.stringify({ success: true, resend: resendRes }),
+      JSON.stringify({ 
+        success: true, 
+        authData: authDataResult,
+        authError: authErrorMsg,
+        resend: resendRes 
+      }),
       { 
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
         status: resendReq.ok ? 200 : 400 
