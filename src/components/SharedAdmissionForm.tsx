@@ -850,24 +850,24 @@ export default function SharedAdmissionForm({ onOpenModal, onSuccess, initialPro
               <label className={LABEL_CLASS}>Institutional Document Portfolio (PDF Only) <span className="text-coral">*</span></label>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-2">
                 <div className="p-3 rounded-lg border border-border-custom bg-surface/50">
-                  <label className="block text-[8px] font-dm-mono uppercase text-text-muted mb-1.5">1. Certified ID / Passport</label>
+                  <label className="block text-[9px] font-dm-mono uppercase text-text-muted mb-1.5">1. Certified ID / Passport</label>
                   <input type="file" accept=".pdf" className="w-full text-[11px] text-text-soft file:mr-3 file:py-1 file:px-3 file:rounded-sm file:border-0 file:text-[10px] file:font-dm-mono file:uppercase file:bg-brand/10 file:text-brand hover:file:bg-brand/20 cursor-pointer" onChange={e => setIdFile(e.target.files?.[0] || null)} required />
                 </div>
                 <div className="p-3 rounded-lg border border-border-custom bg-surface/50">
-                  <label className="block text-[8px] font-dm-mono uppercase text-text-muted mb-1.5">2. Matric / Highest Qualification</label>
+                  <label className="block text-[9px] font-dm-mono uppercase text-text-muted mb-1.5">2. Matric / Highest Qualification</label>
                   <input type="file" accept=".pdf" className="w-full text-[11px] text-text-soft file:mr-3 file:py-1 file:px-3 file:rounded-sm file:border-0 file:text-[10px] file:font-dm-mono file:uppercase file:bg-brand/10 file:text-brand hover:file:bg-brand/20 cursor-pointer" onChange={e => setMatricFile(e.target.files?.[0] || null)} required />
                 </div>
                 <div className="p-3 rounded-lg border border-border-custom bg-surface/50">
-                  <label className="block text-[8px] font-dm-mono uppercase text-text-muted mb-1.5">3. Proof of Residence</label>
+                  <label className="block text-[9px] font-dm-mono uppercase text-text-muted mb-1.5">3. Proof of Residence</label>
                   <input type="file" accept=".pdf" className="w-full text-[11px] text-text-soft file:mr-3 file:py-1 file:px-3 file:rounded-sm file:border-0 file:text-[10px] file:font-dm-mono file:uppercase file:bg-brand/10 file:text-brand hover:file:bg-brand/20 cursor-pointer" onChange={e => setResidenceFile(e.target.files?.[0] || null)} required />
                 </div>
                 <div className="p-3 rounded-lg border border-border-custom bg-surface/50">
-                  <label className="block text-[8px] font-dm-mono uppercase text-text-muted mb-1.5">4. Motivation Letter</label>
+                  <label className="block text-[9px] font-dm-mono uppercase text-text-muted mb-1.5">4. Motivation Letter</label>
                   <input type="file" accept=".pdf" className="w-full text-[11px] text-text-soft file:mr-3 file:py-1 file:px-3 file:rounded-sm file:border-0 file:text-[10px] file:font-dm-mono file:uppercase file:bg-brand/10 file:text-brand hover:file:bg-brand/20 cursor-pointer" onChange={e => setMotivationFile(e.target.files?.[0] || null)} required />
                 </div>
               </div>
               <div className="mt-3 p-3 rounded-lg border border-border-custom bg-surface/20">
-                <label className="block text-[8px] font-dm-mono uppercase text-text-muted mb-1.5">Optional: Professional CV / Resume</label>
+                <label className="block text-[9px] font-dm-mono uppercase text-text-muted mb-1.5">Optional: Professional CV / Resume</label>
                 <input type="file" accept=".pdf" className="w-full text-[11px] text-text-soft file:mr-3 file:py-1 file:px-3 file:rounded-sm file:border-0 file:text-[10px] file:font-dm-mono file:uppercase file:bg-surface/50 file:text-text-muted hover:file:bg-surface cursor-pointer" onChange={e => setCvFile(e.target.files?.[0] || null)} />
               </div>
             </div>

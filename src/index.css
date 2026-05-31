@@ -106,8 +106,8 @@
     --surface: #ffffff;
     --card: #ffffff;
     --card2: #f1f5f9;
-    --border-custom: rgba(11, 12, 16, 0.12);
-    --border2: rgba(11, 12, 16, 0.18);
+    --border-custom: rgba(11, 12, 16, 0.25); /* Increased contrast */
+    --border2: rgba(11, 12, 16, 0.35); /* Increased contrast */
 
     --text-custom: #000000;
     --text-muted: #111111; /* Increased contrast from #475569 */
@@ -164,6 +164,19 @@
     box-shadow: 0 4px 12px rgba(0, 242, 255, 0.3);
     transform: translateY(-1px);
     transition: all 0.2s ease;
+  }
+
+  /* File Input Buttons in Light Mode */
+  html.light input[type="file"]::file-selector-button {
+    background-color: #000000 !important;
+    color: #00f2ff !important;
+    border: 1px solid #000000 !important;
+    box-shadow: 0 2px 8px rgba(0, 242, 255, 0.15);
+  }
+
+  /* Stronger input borders in light mode for readability */
+  html.light input, html.light select, html.light textarea, html.light .form-container .border-border-custom {
+    border-color: rgba(0, 0, 0, 0.3) !important;
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
