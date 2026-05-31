@@ -10,7 +10,7 @@ import {
   ChevronRight, LogOut, CheckCircle2, Clock, MapPin, Phone,
   Briefcase, GraduationCap, ArrowRight, ShieldCheck, Mail, Globe,
   Calendar, Zap, Star, AlertCircle, FileText, Lock, AlertTriangle,
-  LayoutGrid, List, UserRound, Verified, History, XCircle, Shield
+  LayoutGrid, List, UserRound, Verified, History, XCircle, Shield, Menu, X
 } from 'lucide-react';
 import { GovernanceMotivationModal } from './GovernanceMotivationModal';
 
@@ -343,7 +343,7 @@ export function AdminDashboard() {
         .order('nqf_level', { ascending: true });
 
       if (error) throw error;
-      setCourses(data || []);
+      setCourses(data?.map((c: any) => ({ ...c, track: c.curriculum_tracks?.name })) || []);
     } catch (err: any) {
       console.error('Error fetching courses:', err.message);
     } finally {
@@ -541,7 +541,7 @@ export function AdminDashboard() {
         <>
           <div className="flex flex-col lg:flex-row min-h-screen bg-bg relative isolate">
             {/* ─── ADMIN SIDEBAR ─── */}
-            <aside className={`fixed lg:h-screen lg:border-r border-border-custom bg-surface/80 backdrop-blur-2xl z-50 transition-all duration-300 ease-[0.25,0.1,0.25,1] ${isSidebarCollapsed ? 'lg:w-20' : 'lg:w-64'} ${isMobileMenuOpen ? 'translate-x-0 w-64' : '-translate-x-full lg:translate-x-0'}`}>
+            <aside className={`fixed inset-y-0 left-0 h-[100dvh] w-64 lg:h-screen lg:border-r border-border-custom bg-surface/80 backdrop-blur-2xl z-50 transition-all duration-300 ease-[0.25,0.1,0.25,1] ${isSidebarCollapsed ? 'lg:w-20' : 'lg:w-64'} ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}`}>
               <div className="flex flex-col h-full relative">
                 {/* Collapse Toggle Button (Desktop Only) */}
                 <button
@@ -566,13 +566,24 @@ export function AdminDashboard() {
                     </button>
                   </div>
 
-                  <div className={`mb-8 flex items-center overflow-hidden transition-all duration-200 ${isSidebarCollapsed ? 'lg:justify-center' : 'px-2 justify-start gap-2.5'}`}>
-                    <div className="w-9 h-9 rounded-xl bg-brand text-bg flex items-center justify-center font-black shadow-lg shadow-brand/20 shrink-0">G</div>
-                    {(!isSidebarCollapsed || isMobileMenuOpen) && (
-                      <div className="flex flex-col animate-fade">
-                        <h2 className="font-syne font-extrabold text-lg tracking-tighter whitespace-nowrap leading-none">ADMIN HUB</h2>
-                        <span className="text-[7px] font-dm-mono text-brand tracking-widest uppercase opacity-70">Institutional Control</span>
-                      </div>
+                  <div className={`mb-8 flex items-center justify-between overflow-hidden transition-all duration-200 ${isSidebarCollapsed ? 'lg:justify-center' : 'px-2 justify-start gap-2.5'}`}>
+                    <div className="flex items-center gap-2.5">
+                      <div className="w-9 h-9 rounded-xl bg-brand text-bg flex items-center justify-center font-black shadow-lg shadow-brand/20 shrink-0">G</div>
+                      {(!isSidebarCollapsed || isMobileMenuOpen) && (
+                        <div className="flex flex-col animate-fade">
+                          <h2 className="font-syne font-extrabold text-lg tracking-tighter whitespace-nowrap leading-none">ADMIN HUB</h2>
+                          <span className="text-[7px] font-dm-mono text-brand tracking-widest uppercase opacity-70">Institutional Control</span>
+                        </div>
+                      )}
+                    </div>
+                    {isMobileMenuOpen && (
+                      <button 
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className="lg:hidden p-2 text-text-muted hover:text-white rounded-lg border border-border-custom bg-surface/50"
+                        aria-label="Close menu"
+                      >
+                        <X className="w-4 h-4" />
+                      </button>
                     )}
                   </div>
 
@@ -658,9 +669,10 @@ export function AdminDashboard() {
                   {/* Mobile Menu Toggle */}
                   <button
                     onClick={() => setIsMobileMenuOpen(true)}
-                    className="lg:hidden p-3 bg-surface border border-border-custom rounded-2xl text-brand"
+                    className="lg:hidden p-3 bg-surface border border-border-custom rounded-2xl text-brand hover:text-white transition-colors"
+                    aria-label="Open mobile menu"
                   >
-                    <Layout className="w-5 h-5" />
+                    <Menu className="w-5 h-5" />
                   </button>
                   <div>
                     <h1 className="font-syne font-extrabold text-4xl md:text-5xl tracking-tighter mb-2">
@@ -3465,7 +3477,7 @@ export function StudentPortal({ onStartCourse }: { onStartCourse: (courseId: str
       const { data: modules } = await supabase.from('modules').select('*, lessons(*), quizzes(*)');
 
       // New data fetches
-      const { data: allCourses } = await supabase.from('courses').select('*').eq('is_active', true);
+      const { data: allCourses } = await supabase.from('courses').select('*, curriculum_tracks(*)').eq('is_published', true);
       const { data: allAnnouncements } = await supabase.from('announcements').select('*').eq('is_active', true).order('created_at', { ascending: false });
       const { data: allAssessments } = await supabase.from('assessments').select('*');
       const { data: allSubmissions } = await supabase.from('assessment_submissions').select('*').eq('user_id', user?.id);
@@ -3474,7 +3486,7 @@ export function StudentPortal({ onStartCourse }: { onStartCourse: (courseId: str
       const { data: settings } = await supabase.from('school_settings').select('*');
       const { data: schedule } = await supabase.from('academic_schedule').select('*').order('start_time', { ascending: true });
 
-      setCourses(allCourses || []);
+      setCourses(allCourses?.map((c: any) => ({ ...c, track: c.curriculum_tracks?.name })) || []);
       setAnnouncements(allAnnouncements || []);
       setAssessments(allAssessments || []);
       setSubmissions(allSubmissions || []);
@@ -3575,19 +3587,39 @@ export function StudentPortal({ onStartCourse }: { onStartCourse: (courseId: str
   return (
     <div className="flex flex-col lg:flex-row min-h-screen bg-bg relative isolate">
       {/* ─── SIDEBAR NAVIGATION ─── */}
-      <aside className={`fixed lg:h-screen lg:border-r border-border-custom bg-[#0a0d14]/95 backdrop-blur-3xl z-50 transition-all duration-300 ease-[0.25,0.1,0.25,1] ${isSidebarCollapsed ? 'lg:w-20' : 'lg:w-64'} ${isMobileMenuOpen ? 'translate-x-0 w-64' : '-translate-x-full lg:translate-x-0'}`}>
+      <aside className={`fixed inset-y-0 left-0 h-[100dvh] w-64 border-r border-border-custom bg-[#0a0d14]/95 backdrop-blur-3xl z-50 transition-all duration-300 ease-[0.25,0.1,0.25,1] ${isSidebarCollapsed ? 'lg:w-20' : 'lg:w-64'} ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}`}>
         <div className="flex flex-col h-full relative">
           {/* Collapse Toggle Button (Desktop Only) */}
-          <button
+          <button 
             onClick={() => setIsSidebarCollapsed(!isSidebarCollapsed)}
-            className="absolute -right-3 top-20 w-6 h-6 bg-brand text-bg rounded-full hidden lg:flex items-center justify-center shadow-lg z-30 hover:scale-110 transition-transform"
+            className="absolute -right-3 top-20 w-6 h-6 bg-gold text-bg rounded-full hidden lg:flex items-center justify-center shadow-lg z-30 hover:scale-110 transition-transform"
           >
             {isSidebarCollapsed ? <ChevronRight size={14} /> : <ChevronRight size={14} className="rotate-180" />}
           </button>
 
           <div className="p-4 h-full flex flex-col">
-            {/* Institutional Navigation */}
-            <div className="mb-8">
+            <div className={`mb-8 flex items-center justify-between overflow-hidden transition-all duration-200 ${isSidebarCollapsed ? 'lg:justify-center' : 'px-2 justify-start gap-2.5'}`}>
+              <div className="flex items-center gap-2.5">
+                <div className="w-9 h-9 rounded-xl bg-brand text-bg flex items-center justify-center font-black shadow-lg shadow-brand/20 shrink-0 uppercase tracking-tighter">G</div>
+                {(!isSidebarCollapsed || isMobileMenuOpen) && (
+                  <div className="flex flex-col animate-fade">
+                    <h2 className="font-syne font-extrabold text-lg tracking-tighter whitespace-nowrap leading-none">STUDENT HUB</h2>
+                    <span className="text-[7px] font-dm-mono text-brand tracking-widest uppercase opacity-70 italic font-bold">Institutional Portal</span>
+                  </div>
+                )}
+              </div>
+              {isMobileMenuOpen && (
+                <button 
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="lg:hidden p-2 text-text-muted hover:text-white rounded-lg border border-border-custom bg-surface/50"
+                  aria-label="Close menu"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              )}
+            </div>
+
+            <nav className="flex-1 space-y-1 overflow-y-auto custom-scrollbar pr-2">
               <button
                 onClick={async () => {
                   await supabase.auth.signOut();

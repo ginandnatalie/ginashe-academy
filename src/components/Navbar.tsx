@@ -94,10 +94,10 @@ export default function Navbar({ onOpenModal, editMode, setEditMode, siteSetting
   // Streams data for mega menu
   const streamsData = [
     { title: 'Digital Systems (DSS)', desc: 'Cloud, AI, Cyber, DevOps', icon: <Cpu className="w-5 h-5 text-brand" />, bg: 'bg-brand/5', path: '/streams/digital-systems' },
+    { title: 'Financial Literacy (FLS)', desc: 'FinTech, insurance, accounting', icon: <Landmark className="w-5 h-5 text-sky" />, bg: 'bg-sky/5', path: '/streams/financial-literacy' },
     { title: 'Health Sciences (HSS)', desc: 'Community & allied health', icon: <Shield className="w-5 h-5 text-rose-400" />, bg: 'bg-rose-400/5', path: '/streams/health-sciences' },
     { title: 'Energy & Infrastructure (EIS)', desc: 'Solar, renewables, construction', icon: <Zap className="w-5 h-5 text-amber-400" />, bg: 'bg-amber-400/5', path: '/streams/energy-infrastructure' },
     { title: 'Agriculture & Food (AFS)', desc: 'Agri-tech & food security', icon: <Globe className="w-5 h-5 text-emerald" />, bg: 'bg-emerald/5', path: '/streams/agriculture-food' },
-    { title: 'Financial Literacy (FLS)', desc: 'FinTech, insurance, accounting', icon: <Landmark className="w-5 h-5 text-sky" />, bg: 'bg-sky/5', path: '/streams/financial-literacy' },
     { title: 'Applied Trades (ATS)', desc: 'Plumbing, electrical, welding', icon: <Code className="w-5 h-5 text-orange-400" />, bg: 'bg-orange-400/5', path: '/streams/applied-trades' },
     { title: 'Creative & Digital Media (CDS)', desc: 'Design, film, content', icon: <Layout className="w-5 h-5 text-violet" />, bg: 'bg-violet/5', path: '/streams/creative-media' },
     { title: 'Leadership (LES)', desc: 'Management & entrepreneurship', icon: <Rocket className="w-5 h-5 text-pink-400" />, bg: 'bg-pink-400/5', path: '/streams/leadership-entrepreneurship' },

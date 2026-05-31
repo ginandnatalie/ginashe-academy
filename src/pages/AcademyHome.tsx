@@ -52,14 +52,14 @@ export default function AcademyHome({ onOpenModal, editMode }: AcademyHomeProps)
               <motion.div key={stream.id} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 * idx }}>
                 <Link to={stream.path} className={`stream-card block p-8 rounded-2xl border ${stream.border} bg-surface transition-all group relative overflow-hidden h-full`}>
                   <div className="absolute top-0 right-0 p-4">
-                    <span className={`stream-card-status text-[10px] font-jetbrains uppercase tracking-widest px-2 py-1 rounded border transition-colors ${stream.status === 'Live' ? 'bg-brand/10 text-brand border-brand/20' : 'bg-bg2 text-text-muted border-border2'}`}>{stream.status}</span>
+                    <span className={`stream-card-status text-[10px] font-jetbrains uppercase tracking-widest px-2 py-1 rounded border transition-colors ${(stream.status === 'Live' || stream.status === 'Enrolling') ? 'bg-brand/10 text-brand border-brand/20' : 'bg-bg2 text-text-muted border-border2'}`}>{stream.status}</span>
                   </div>
                   <div className={`w-16 h-16 rounded-xl ${stream.bg} ${stream.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>{stream.icon}</div>
                   <h3 className="stream-card-title text-xl font-syne font-bold text-text-custom mb-2 group-hover:text-brand transition-colors">{stream.title}</h3>
                   <p className="stream-card-tagline text-[11px] font-dm-mono text-text-muted uppercase tracking-widest mb-3 italic transition-colors">"{stream.tagline}"</p>
                   <p className="stream-card-desc text-sm text-text-muted font-outfit leading-relaxed mb-8 transition-colors">{stream.desc}</p>
                   <div className="stream-card-cta mt-auto flex items-center gap-2 text-xs font-bold text-text-custom group-hover:text-brand transition-colors uppercase tracking-wider">
-                    {stream.status === 'Live' ? 'Enter Stream' : 'View Curriculum'} <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    {(stream.status === 'Live' || stream.status === 'Enrolling') ? 'Enter Stream' : 'View Curriculum'} <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </Link>
               </motion.div>

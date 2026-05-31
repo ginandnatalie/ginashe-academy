@@ -5,7 +5,8 @@ export const INSTITUTIONAL_TRACKS = [
   'Data & Analytics',
   'Digital Transformation',
   'Software & DevOps',
-  'Digital Business'
+  'Digital Business',
+  'Financial Literacy & FinTech'
 ];
 
 export const TRACK_PROGRAMMES: Record<string, string[]> = {
@@ -15,7 +16,13 @@ export const TRACK_PROGRAMMES: Record<string, string[]> = {
   'Data & Analytics': ['Data Literacy', 'Data Analysis & BI', 'Data Engineering', 'AI-Driven Analytics'],
   'Digital Transformation': ['Digital Literacy for Work', 'Process Digitisation', 'Digital Transformation Lead', 'CDO Programme'],
   'Software & DevOps': ['Code Launchpad', 'Full-Stack Development', 'DevOps & Cloud-Native', 'Platform Engineering'],
-  'Digital Business': ['Digital Entrepreneurship 101', 'E-Commerce & Marketing', 'Digital Business Strategy', 'Innovation & Ventures']
+  'Digital Business': ['Digital Entrepreneurship 101', 'E-Commerce & Marketing', 'Digital Business Strategy', 'Innovation & Ventures'],
+  'Financial Literacy & FinTech': [
+    'Personal Finance & Money Management',
+    'Business Accounting & Bookkeeping',
+    'FinTech Fundamentals',
+    'Investment & Wealth Building'
+  ]
 };
 
 export const ENTERPRISE_SOLUTIONS = [
@@ -70,7 +77,13 @@ export const COURSE_MODULES: Record<string, string[]> = {
   'Digital Entrepreneurship 101': ['Ideation & Validation', 'Digital MVP Building', 'Launch Strategy', 'Growth Hacking'],
   'E-Commerce & Marketing': ['Shopify Essentials', 'SEO/SEM Strategy', 'Social Commerce', 'Payment Integrations'],
   'Digital Business Strategy': ['Digital Pivot Logic', 'Platform Business Models', 'Customer Acquisition', 'Financial Modeling'],
-  'Innovation & Ventures': ['Corporate Innovation', 'Venture Capital', 'Pitching & Funding', 'Exits & Scaling']
+  'Innovation & Ventures': ['Corporate Innovation', 'Venture Capital', 'Pitching & Funding', 'Exits & Scaling'],
+  
+  // Financial Literacy & FinTech
+  'Personal Finance & Money Management': ['Budgeting Basics', 'Debt Management', 'Banking Products', 'Saving & Goals', 'Insurance Basics', 'Credit Score', 'Consumer Rights', 'Retirement Intro'],
+  'Business Accounting & Bookkeeping': ['Double-Entry Bookkeeping', 'Sage & Xero', 'VAT & PAYE', 'Financial Statements', 'Cash Flow Management', 'Payroll Basics', 'SARS e-Filing', 'Annual Returns'],
+  'FinTech Fundamentals': ['SA Financial System', 'Digital Banking', 'Payment APIs', 'Blockchain Basics', 'Regulatory Sandbox', 'Open Finance', 'FSCA Compliance', 'Case Studies'],
+  'Investment & Wealth Building': ['Investment Basics', 'JSE & Equities', 'Unit Trusts & ETFs', 'Property Investment', 'Retirement Annuities', 'Risk Profiling', 'Tax-Efficient Investing', 'Portfolio Building']
 };
 
 export const PROGRAMMES = [
