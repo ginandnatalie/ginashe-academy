@@ -16,10 +16,10 @@ export default function AdmissionsPage({ onOpenModal, editMode }: AdmissionsPage
   ];
 
   const feeStructure = [
-    { tier: 'Unemployed (Sponsored)', price: 'R0', desc: 'Fully funded via bursaries or corporate B-BBEE skills spend.', badge: 'Priority Access' },
-    { tier: 'Employed (< R10k / mo)', price: 'R500 - R1,500', desc: 'Heavily subsidized co-payment model for low-income earners.', badge: 'Subsidized' },
-    { tier: 'Employed (R10k - R25k / mo)', price: 'R1,500 - R4,000', desc: 'Standard sliding scale based on exact income bracket.', badge: 'Standard' },
-    { tier: 'Corporate Sponsored', price: 'R5,000 - R15,000', desc: 'Full commercial rate for employer-funded professional development.', badge: 'Commercial' }
+    { tier: 'Corporate B-BBEE Sponsorship', price: 'Fully Funded', desc: 'Tuition sponsored by corporate partners looking to build talent pipelines and optimize skills development spend.', badge: 'Sponsored' },
+    { tier: 'SETA Bursaries & Grants', price: 'Fully Funded', desc: 'Government-allocated funding for qualifying students enrolled in specific SETA-aligned pathways.', badge: 'Government Grant' },
+    { tier: 'Flexible Payment Plans', price: 'Interest-Free', desc: 'Self-funded students can split their tuition into flexible interest-free monthly instalments over the course duration.', badge: 'Flexible Plan' },
+    { tier: 'Institutional Scholarships', price: 'Up to 100%', desc: 'Need-based and merit-based institutional assistance covering up to 100% of fees for eligible applicants.', badge: 'Scholarships' }
   ];
 
   const steps = [
@@ -82,13 +82,13 @@ export default function AdmissionsPage({ onOpenModal, editMode }: AdmissionsPage
         </div>
       </section>
 
-      {/* Sliding Scale Fees */}
+      {/* Flexible Funding Options */}
       <section className="py-20 relative z-10 border-t border-border-custom">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-syne font-black text-text-custom uppercase tracking-tighter mb-4">Sliding-Scale Fee Model</h2>
+            <h2 className="text-3xl font-syne font-black text-text-custom uppercase tracking-tighter mb-4">Flexible Funding Options</h2>
             <p className="text-text-muted font-outfit max-w-2xl mx-auto">
-              We do not believe in a one-size-fits-all tuition. Our fees are dynamically adjusted based on your employment status and income bracket to ensure maximum accessibility.
+              We believe that financial barriers should not stand in the way of high-value skills development. We offer multiple funding channels tailored to your circumstances.
             </p>
           </div>
 
