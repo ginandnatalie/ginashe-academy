@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'sonner';
+import { AlertCircle, X, FileText } from 'lucide-react';
 import { supabase, uploadFile } from '../lib/supabase';
 import { getNextStudentNumber, validateStudentIdentity } from '../lib/students';
 import { 
@@ -98,6 +99,68 @@ export default function SharedAdmissionForm({ onOpenModal, onSuccess, initialPro
   const [residenceFile, setResidenceFile] = useState<File | null>(null);
   const [motivationFile, setMotivationFile] = useState<File | null>(null);
   const [cvFile, setCvFile] = useState<File | null>(null);
+  
+  // File Error State (5MB Limit)
+  const [fileErrors, setFileErrors] = useState<{ id?: string, matric?: string, residence?: string, motivation?: string, cv?: string }>({});
+  
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>, setter: React.Dispatch<React.SetStateAction<File | null>>, errorKey: keyof typeof fileErrors) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    
+    if (file.size > 5 * 1024 * 1024) {
+      setFileErrors(prev => ({ ...prev, [errorKey]: `Exceeds 5MB maximum size.` }));
+      e.target.value = ''; // Reset input
+    } else {
+      setFileErrors(prev => ({ ...prev, [errorKey]: undefined }));
+      setter(file);
+    }
+  };
+
+  const renderFileInput = (
+    label: string, 
+    file: File | null, 
+    setter: React.Dispatch<React.SetStateAction<File | null>>, 
+    errorKey: keyof typeof fileErrors,
+    required: boolean = false,
+    optional: boolean = false
+  ) => {
+    return (
+      <div className={`p-3 rounded-lg border border-border-custom ${optional ? 'bg-surface/20' : 'bg-surface/50'}`}>
+        <label className={`block text-[9px] font-dm-mono uppercase text-text-muted mb-1.5`}>{label}</label>
+        
+        {!file ? (
+          <div>
+            <input 
+              type="file" 
+              accept=".pdf" 
+              className={`w-full text-[11px] text-text-soft file:mr-3 file:py-1 file:px-3 file:rounded-sm file:border-0 file:text-[10px] file:font-dm-mono file:uppercase ${optional ? 'file:bg-surface/50 file:text-text-muted hover:file:bg-surface' : 'file:bg-brand/10 file:text-brand hover:file:bg-brand/20'} cursor-pointer`} 
+              onChange={e => handleFileChange(e, setter, errorKey)} 
+              required={required} 
+            />
+            {fileErrors[errorKey] && (
+              <p className="text-coral text-[10px] mt-2 flex items-center gap-1 bg-coral/10 p-1.5 rounded-sm"><AlertCircle className="w-3 h-3" /> {fileErrors[errorKey]}</p>
+            )}
+          </div>
+        ) : (
+          <div className="flex items-center justify-between bg-bg2 p-2 rounded border border-border-custom mt-1">
+            <div className="flex items-center gap-2 overflow-hidden">
+              <FileText className="w-4 h-4 text-brand shrink-0" />
+              <span className="text-[11px] text-text-custom truncate" title={file.name}>{file.name}</span>
+              <span className="text-[9px] text-text-muted shrink-0">({(file.size / 1024 / 1024).toFixed(1)}MB)</span>
+            </div>
+            <button 
+              type="button" 
+              onClick={() => { setter(null); setFileErrors(prev => ({ ...prev, [errorKey]: undefined })); }}
+              className="w-6 h-6 flex items-center justify-center rounded-full bg-surface border border-border-custom hover:bg-coral/10 hover:border-coral/30 hover:text-coral transition-colors shrink-0 ml-2"
+              title="Replace file"
+            >
+              <X className="w-3 h-3" />
+            </button>
+          </div>
+        )}
+      </div>
+    );
+  };
   
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isDuplicateBlocked, setIsDuplicateBlocked] = useState(false);
@@ -849,26 +912,13 @@ export default function SharedAdmissionForm({ onOpenModal, onSuccess, initialPro
             <div className="mb-6">
               <label className={LABEL_CLASS}>Institutional Document Portfolio (PDF Only) <span className="text-coral">*</span></label>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-2">
-                <div className="p-3 rounded-lg border border-border-custom bg-surface/50">
-                  <label className="block text-[9px] font-dm-mono uppercase text-text-muted mb-1.5">1. Certified ID / Passport</label>
-                  <input type="file" accept=".pdf" className="w-full text-[11px] text-text-soft file:mr-3 file:py-1 file:px-3 file:rounded-sm file:border-0 file:text-[10px] file:font-dm-mono file:uppercase file:bg-brand/10 file:text-brand hover:file:bg-brand/20 cursor-pointer" onChange={e => setIdFile(e.target.files?.[0] || null)} required />
-                </div>
-                <div className="p-3 rounded-lg border border-border-custom bg-surface/50">
-                  <label className="block text-[9px] font-dm-mono uppercase text-text-muted mb-1.5">2. Matric / Highest Qualification</label>
-                  <input type="file" accept=".pdf" className="w-full text-[11px] text-text-soft file:mr-3 file:py-1 file:px-3 file:rounded-sm file:border-0 file:text-[10px] file:font-dm-mono file:uppercase file:bg-brand/10 file:text-brand hover:file:bg-brand/20 cursor-pointer" onChange={e => setMatricFile(e.target.files?.[0] || null)} required />
-                </div>
-                <div className="p-3 rounded-lg border border-border-custom bg-surface/50">
-                  <label className="block text-[9px] font-dm-mono uppercase text-text-muted mb-1.5">3. Proof of Residence</label>
-                  <input type="file" accept=".pdf" className="w-full text-[11px] text-text-soft file:mr-3 file:py-1 file:px-3 file:rounded-sm file:border-0 file:text-[10px] file:font-dm-mono file:uppercase file:bg-brand/10 file:text-brand hover:file:bg-brand/20 cursor-pointer" onChange={e => setResidenceFile(e.target.files?.[0] || null)} required />
-                </div>
-                <div className="p-3 rounded-lg border border-border-custom bg-surface/50">
-                  <label className="block text-[9px] font-dm-mono uppercase text-text-muted mb-1.5">4. Motivation Letter</label>
-                  <input type="file" accept=".pdf" className="w-full text-[11px] text-text-soft file:mr-3 file:py-1 file:px-3 file:rounded-sm file:border-0 file:text-[10px] file:font-dm-mono file:uppercase file:bg-brand/10 file:text-brand hover:file:bg-brand/20 cursor-pointer" onChange={e => setMotivationFile(e.target.files?.[0] || null)} required />
-                </div>
+                {renderFileInput("1. Certified ID / Passport", idFile, setIdFile, "id", true)}
+                {renderFileInput("2. Matric / Highest Qualification", matricFile, setMatricFile, "matric", true)}
+                {renderFileInput("3. Proof of Residence", residenceFile, setResidenceFile, "residence", true)}
+                {renderFileInput("4. Motivation Letter", motivationFile, setMotivationFile, "motivation", true)}
               </div>
-              <div className="mt-3 p-3 rounded-lg border border-border-custom bg-surface/20">
-                <label className="block text-[9px] font-dm-mono uppercase text-text-muted mb-1.5">Optional: Professional CV / Resume</label>
-                <input type="file" accept=".pdf" className="w-full text-[11px] text-text-soft file:mr-3 file:py-1 file:px-3 file:rounded-sm file:border-0 file:text-[10px] file:font-dm-mono file:uppercase file:bg-surface/50 file:text-text-muted hover:file:bg-surface cursor-pointer" onChange={e => setCvFile(e.target.files?.[0] || null)} />
+              <div className="mt-3">
+                {renderFileInput("Optional: Professional CV / Resume", cvFile, setCvFile, "cv", false, true)}
               </div>
             </div>
 
