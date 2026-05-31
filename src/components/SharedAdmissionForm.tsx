@@ -275,8 +275,6 @@ export default function SharedAdmissionForm({ onOpenModal, onSuccess, initialPro
       } catch (processErr) {
         console.error('Email process error:', processErr);
       }
-
-      if (onSuccess) onSuccess();
       
       // Set to success step instead of immediate redirect
       setStep('success');
