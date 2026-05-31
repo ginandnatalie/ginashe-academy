@@ -147,37 +147,33 @@ export default function SharedAdmissionForm({ onOpenModal, onSuccess, initialPro
       const phoneClean = form.phone.trim();
       const idClean = form.idNumber.trim();
 
-      // 1. Check Profiles (Registered Students)
-      let { data: profileMatch } = await supabase
-        .from('profiles')
-        .select('id, email, first_name, student_number')
-        .or(`email.ilike.${emailClean}${phoneClean ? `,phone.eq.${phoneClean}` : ''}${idClean ? `,id_number.eq.${idClean}` : ''}`)
-        .limit(1)
-        .maybeSingle();
+      // Call Postgres RPC which runs securely and bypasses RLS
+      const { data, error } = await supabase.rpc('check_applicant_duplicate', {
+        p_email: emailClean,
+        p_phone: phoneClean,
+        p_id_number: idClean
+      });
 
-      if (profileMatch) {
-        setDuplicateMessage(`Institutional Record Detected: You are already registered as a student (${profileMatch.student_number}). Please use the Student Portal to manage your account and apply for additional programmes.`);
-        setStep('existing');
-        setIsDuplicateBlocked(true);
+      if (error) {
+        console.error('Intelligent Scan RPC Error:', error);
         setIsScanning(false);
-        return true;
+        return false;
       }
 
-      // 2. Check Applications (Pending/Historical — exclude rejected/withdrawn)
-      let { data: appMatch } = await supabase
-        .from('applications')
-        .select('id, email, first_name, status, program')
-        .or(`email.ilike.${emailClean}${phoneClean ? `,phone.eq.${phoneClean}` : ''}${idClean ? `,id_number.eq.${idClean}` : ''}`)
-        .not('status', 'in', '(rejected,withdrawn)')
-        .limit(1)
-        .maybeSingle();
-
-      if (appMatch) {
-        setDuplicateMessage(`Existing Application Found: You have an active record for ${appMatch.program || 'a programme'} (Status: ${appMatch.status}). To maintain your academic history, please sign in to your Student Portal. If you cannot access your account, use the 'Forgot Password' option.`);
-        setStep('existing');
-        setIsDuplicateBlocked(true);
-        setIsScanning(false);
-        return true;
+      if (data) {
+        if (data.type === 'profile') {
+          setDuplicateMessage(`Institutional Record Detected: You are already registered as a student (${data.data.student_number}). Please use the Student Portal to manage your account and apply for additional programmes.`);
+          setStep('existing');
+          setIsDuplicateBlocked(true);
+          setIsScanning(false);
+          return true;
+        } else if (data.type === 'application') {
+          setDuplicateMessage(`Existing Application Found: You have an active record for ${data.data.program || 'a programme'} (Status: ${data.data.status}). To maintain your academic history, please sign in to your Student Portal. If you cannot access your account, use the 'Forgot Password' option.`);
+          setStep('existing');
+          setIsDuplicateBlocked(true);
+          setIsScanning(false);
+          return true;
+        }
       }
 
       setIsScanning(false);
@@ -285,6 +281,11 @@ export default function SharedAdmissionForm({ onOpenModal, onSuccess, initialPro
       // Set to success step instead of immediate redirect
       setStep('success');
     } catch (error: any) {
+      if (error.message?.includes('idx_applications_email_active') || error.message?.includes('duplicate key')) {
+         setDuplicateMessage(`Existing Application Found: An active application with the email ${form.email} already exists. Please use the Student Portal to check your status.`);
+         setStep('existing');
+         return;
+      }
       toast.error('Admission Portal Error', {
         description: error.message || 'The application registry encountered an issue. Please try again.'
       });
@@ -884,8 +885,16 @@ export default function SharedAdmissionForm({ onOpenModal, onSuccess, initialPro
             </div>
           </div>
 
-          <button type="submit" disabled={isSubmitting} className={`w-full p-3.5 bg-brand text-[#080b12] font-syne font-extrabold text-[13px] tracking-[0.05em] uppercase rounded-sm hover:bg-brand-light transition-all ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}>
-            {isSubmitting ? 'Submitting Application...' : 'Submit Application →'}
+          <button type="submit" disabled={isSubmitting} className={`w-full p-3.5 bg-brand text-[#080b12] font-syne font-extrabold text-[13px] tracking-[0.05em] uppercase rounded-sm hover:bg-brand-light transition-all ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}>
+            {isSubmitting ? (
+              <span className="flex items-center justify-center gap-2">
+                <svg className="animate-spin h-4 w-4 text-[#080b12]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                SUBMITTING APPLICATION...
+              </span>
+            ) : 'SUBMIT APPLICATION →'}
           </button>
 
           <button type="button" onClick={() => { setStep('check'); setDuplicateCheckDone(false); }} className="block w-full text-center mt-4 text-[11px] text-text-muted hover:text-brand transition-colors">← Back to account check</button>
