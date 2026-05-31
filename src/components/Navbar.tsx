@@ -546,8 +546,7 @@ export default function Navbar({ onOpenModal, editMode, setEditMode, siteSetting
           <div className="flex items-center gap-3">
             {/* STUDENT PORTAL BUTTON */}
             <a 
-              href={user ? (isAdmin ? 'https://staff.ginashe.academy' : 'https://student.ginashe.academy/') : 'https://student.ginashe.academy/'}
-              onClick={!user ? (e) => { e.preventDefault(); onOpenModal('student'); } : undefined}
+              href={user && isAdmin ? 'https://staff.ginashe.academy' : 'https://student.ginashe.academy/'}
               className={`hidden lg:flex items-center gap-2 px-4 py-2 rounded-xl transition-all group no-underline ${
                 isScrolled 
                   ? 'bg-glass-bg hover:bg-brand/10 border border-border2 hover:border-brand/30' 
@@ -707,9 +706,9 @@ export default function Navbar({ onOpenModal, editMode, setEditMode, siteSetting
               
               <div className="mt-auto flex flex-col gap-4">
                 <div className="grid grid-cols-2 gap-4">
-                  <button onClick={() => { setIsMobileMenuOpen(false); onOpenModal('student'); }} className="py-4 rounded-2xl border border-border2 font-outfit font-black text-text-custom text-[13px] hover:bg-glass-bg transition-all uppercase tracking-widest flex items-center justify-center gap-2">
+                  <a href={user && isAdmin ? 'https://staff.ginashe.academy' : 'https://student.ginashe.academy/'} onClick={() => setIsMobileMenuOpen(false)} className="py-4 rounded-2xl border border-border2 font-outfit font-black text-text-custom text-[13px] hover:bg-glass-bg transition-all uppercase tracking-widest flex items-center justify-center gap-2 no-underline">
                     <User size={16} /> Portal
-                  </button>
+                  </a>
                   <button onClick={() => { setIsMobileMenuOpen(false); navigate('/apply'); }} className="py-4 rounded-2xl bg-glass-bg border border-brand/30 font-outfit font-black text-brand text-[13px] hover:bg-brand/10 transition-all uppercase tracking-widest flex items-center justify-center gap-2">
                     <Rocket size={16} /> Status
                   </button>

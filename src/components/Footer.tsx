@@ -74,7 +74,7 @@ export function CTA({ onOpenModal, editMode }: { onOpenModal: (id: string) => vo
             Apply Now — 2026 Intake
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
           </button>
-          <button className="btn btn-outline btn-lg w-full sm:w-auto justify-center" onClick={() => onOpenModal('student')}>Student Portal</button>
+          <a href="https://student.ginashe.academy/" className="btn btn-outline btn-lg w-full sm:w-auto justify-center inline-flex items-center no-underline">Student Portal</a>
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 pt-8 border-t border-border-custom animate-fadeUp delay-300">
           <div className="text-center sm:text-left">
@@ -221,7 +221,7 @@ export function Footer({ onOpenModal, editMode }: { onOpenModal: (id: string) =>
                 </Link>
               </li>
             ))}
-            <li><a href="#" onClick={() => onOpenModal('student')} className="text-[11px] text-text-muted no-underline transition-colors hover:text-text-custom tracking-[0.01em]">Student Portal</a></li>
+            <li><a href="https://student.ginashe.academy/" className="text-[11px] text-text-muted no-underline transition-colors hover:text-text-custom tracking-[0.01em]">Student Portal</a></li>
           </ul>
         </div>
 
