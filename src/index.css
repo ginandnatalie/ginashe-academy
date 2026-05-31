@@ -150,9 +150,9 @@
     text-shadow: 0 0 8px rgba(0, 242, 255, 0.3);
   }
 
-  /* ─── NEON TEXT LIGHT MODE HIGHLIGHTS ─── */
-  html.light a.text-brand,
-  html.light span.text-brand:not(.w-4):not(.w-6):not(.mt-1) {
+  /* ─── NEON TEXT LIGHT MODE HIGHLIGHTS (MODALS ONLY) ─── */
+  html.light .fixed.z-50 .bg-card a.text-brand,
+  html.light .fixed.z-50 .bg-card span.text-brand:not(.w-4):not(.w-6):not(.mt-1) {
     background-color: #000000;
     padding: 2px 8px;
     border-radius: 4px;
@@ -160,7 +160,7 @@
     box-shadow: 0 2px 8px rgba(0, 242, 255, 0.15);
   }
   
-  html.light a.text-brand:hover {
+  html.light .fixed.z-50 .bg-card a.text-brand:hover {
     box-shadow: 0 4px 12px rgba(0, 242, 255, 0.3);
     transform: translateY(-1px);
     transition: all 0.2s ease;
