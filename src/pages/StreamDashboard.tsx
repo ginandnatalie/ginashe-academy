@@ -84,7 +84,7 @@ export default function StreamDashboard({ onOpenModal, editMode }: { onOpenModal
             </div>
           </Link>
 
-          <Link to={`/faculty`} className="bg-glass-bg border border-border-custom p-6 rounded-2xl hover:border-brand/30 hover:bg-glass-bg transition-all group">
+          <Link to={`/streams/${stream.id}/faculty`} className="bg-glass-bg border border-border-custom p-6 rounded-2xl hover:border-brand/30 hover:bg-glass-bg transition-all group">
             <div className="w-10 h-10 rounded-full bg-fuchsia-400/10 text-fuchsia-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
               <Users className="w-5 h-5" />
             </div>

@@ -66,7 +66,7 @@ interface BrandPartner {
   initials?: string;
 }
 
-const PartnerCard = ({ brand }: { brand: BrandPartner }) => {
+const PartnerCard: React.FC<{ brand: BrandPartner }> = ({ brand }) => {
   const [svgData, setSvgData] = useState<string | null>(null);
   const [loadError, setLoadError] = useState(false);
 
@@ -465,113 +465,96 @@ export function Programs({ onOpenModal, editMode, isHomePage, initialFilterLevel
                 </div>
               </Link>
             </div>
-
-            {/* Track Master Modal: Full-Screen Deep Dive */}
+            {/* Track Master Modal: Simple, Clean Centered Design */}
             <AnimatePresence>
               {selectedTrackId && (
                 <div 
-                  className="fixed inset-0 z-[3000] flex items-center justify-center p-4 md:p-12 overflow-hidden"
+                  className="fixed inset-0 z-[3000] flex items-center justify-center p-4 md:p-6 overflow-hidden"
                   onClick={() => setSelectedTrackId(null)}
                 >
                   <motion.div 
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className="absolute inset-0 bg-bg/95 backdrop-blur-2xl"
+                    className="absolute inset-0 bg-bg/90 backdrop-blur-md"
                   />
                   
                   <motion.div 
-                    initial={{ scale: 0.9, opacity: 0, y: 20 }}
+                    initial={{ scale: 0.95, opacity: 0, y: 15 }}
                     animate={{ scale: 1, opacity: 1, y: 0 }}
-                    exit={{ scale: 0.9, opacity: 0, y: 20 }}
+                    exit={{ scale: 0.95, opacity: 0, y: 15 }}
                     onClick={(e) => e.stopPropagation()}
-                    className="relative w-full max-w-7xl max-h-full bg-card/40 border border-border2 rounded-[40px] shadow-[0_50px_150px_rgba(0,0,0,0.8)] overflow-hidden flex flex-col md:flex-row"
+                    className="relative w-full max-w-2xl bg-card border border-border-custom rounded-3xl shadow-[0_30px_90px_rgba(0,0,0,0.6)] overflow-hidden flex flex-col p-6 md:p-8"
                   >
                     {/* Close Button */}
                     <button 
                       onClick={() => setSelectedTrackId(null)}
-                      className="absolute top-8 right-8 z-50 w-12 h-12 rounded-full border border-border2 flex items-center justify-center text-text-dim hover:text-brand hover:border-brand transition-all"
+                      className="absolute top-6 right-6 w-8 h-8 rounded-full border border-border-custom flex items-center justify-center text-text-muted hover:text-brand hover:border-brand/40 transition-all text-xs"
                     >
                       ✕
                     </button>
 
-                    {/* Left Panel: High-Impact Visuals */}
-                    <div className="w-full md:w-[400px] h-64 md:h-auto relative overflow-hidden flex-shrink-0">
-                       <img 
-                        src={TRACKS[selectedTrackId].heroImage} 
-                        className="absolute inset-0 w-full h-full object-cover opacity-50 grayscale hover:grayscale-0 transition-all duration-1000"
-                        alt={TRACKS[selectedTrackId].title}
-                       />
-                       <div className="absolute inset-0 bg-gradient-to-r from-bg via-transparent to-transparent hidden md:block" />
-                       <div className="absolute inset-0 bg-gradient-to-t from-bg to-transparent md:hidden" />
-                       
-                       <div className="absolute bottom-12 left-12 right-12 z-10">
-                          <div className="w-20 h-20 rounded-2xl bg-black/60 border border-brand/40 flex items-center justify-center text-4xl mb-6 shadow-[0_0_30px_rgba(0,242,255,0.2)]">
-                            {TRACKS[selectedTrackId].icon}
-                          </div>
-                          <span className="font-dm-mono text-[10px] text-brand uppercase tracking-[0.6em] mb-3 block">Institutional Dimension</span>
-                          <h2 className="font-syne font-black text-4xl text-text-custom tracking-tighter uppercase leading-none">
-                            {TRACKS[selectedTrackId].title}
-                          </h2>
-                       </div>
+                    {/* Header */}
+                    <div className="flex items-center gap-4 mb-6 pr-8">
+                      <div className="w-12 h-12 rounded-xl bg-brand/10 border border-brand/20 flex items-center justify-center text-2xl shadow-md">
+                        {TRACKS[selectedTrackId].icon}
+                      </div>
+                      <div>
+                        <span className="font-dm-mono text-[9px] text-brand uppercase tracking-widest block mb-0.5">Career Track</span>
+                        <h2 className="font-syne font-bold text-2xl text-text-custom leading-tight">
+                          {TRACKS[selectedTrackId].title}
+                        </h2>
+                      </div>
                     </div>
 
-                    {/* Right Panel: Content Viewport */}
-                    <div className="flex-1 overflow-y-auto p-8 md:p-20 md:pl-28">
-                       <div className="max-w-3xl space-y-16">
-                          <div className="space-y-6">
-                            <span className="font-dm-mono text-[10px] text-text-dim uppercase tracking-[0.5em] block">Institutional Mission</span>
-                            <p className="text-2xl md:text-3xl text-text-soft font-outfit leading-snug">
-                              {TRACKS[selectedTrackId].mission}
-                            </p>
-                          </div>
+                    {/* Description */}
+                    <div className="mb-6">
+                      <p className="text-[14px] text-text-soft font-outfit leading-relaxed">
+                        {TRACKS[selectedTrackId].description || TRACKS[selectedTrackId].mission}
+                      </p>
+                    </div>
 
-                          {/* Tactical Roadmap Timeline */}
-                          <div className="space-y-10">
-                            <div className="flex items-center justify-between">
-                              <span className="font-dm-mono text-[10px] text-text-dim uppercase tracking-[0.5em] block">Tactical Progression Matrix</span>
-                              <div className="h-px flex-1 mx-8 bg-glass-bg" />
-                              <span className="font-dm-mono text-[9px] text-brand uppercase tracking-widest font-bold">4 Technical Gates</span>
+                    {/* Simplified Timeline */}
+                    <div className="space-y-4 mb-8">
+                      <div className="font-dm-mono text-[9px] text-text-dim uppercase tracking-[0.2em] mb-2 border-b border-border-custom pb-2">
+                        Progression Pathway
+                      </div>
+                      <div className="relative pl-6 space-y-4">
+                        {/* Timeline line */}
+                        <div className="absolute left-[7px] top-2 bottom-2 w-px bg-border-custom" />
+                        
+                        {TRACKS[selectedTrackId].roadmap.map((step, sIdx) => (
+                          <div key={step.level} className="relative flex gap-3.5 items-start">
+                            {/* Dot indicator */}
+                            <div className="absolute -left-[23px] w-3.5 h-3.5 rounded-full border border-border-custom bg-card flex items-center justify-center text-[8px] font-bold text-text-dim mt-1">
+                              {sIdx + 1}
                             </div>
-
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                               {TRACKS[selectedTrackId].roadmap.map((step, sIdx) => (
-                                 <div key={step.level} className="group/gate p-6 rounded-2xl bg-glass-bg border border-border-custom hover:border-brand/30 transition-all">
-                                    <div className="flex items-start gap-4">
-                                      <div className="w-10 h-10 rounded-full border border-border2 flex items-center justify-center text-sm font-syne font-black text-text-dim group-hover/gate:text-brand transition-colors">
-                                        0{sIdx + 1}
-                                      </div>
-                                      <div>
-                                        <h5 className="font-syne font-bold text-lg text-text-custom mb-2">{step.title}</h5>
-                                        <p className="text-xs text-text-soft/80 leading-relaxed">{step.description}</p>
-                                        <div className="mt-4 flex flex-wrap gap-2">
-                                           {step.vendor_alignment.map(v => (
-                                             <span key={v} className="px-2 py-0.5 rounded text-[8px] font-dm-mono bg-card border border-border2 text-text-dim uppercase tracking-widest">{v}</span>
-                                           ))}
-                                        </div>
-                                      </div>
-                                    </div>
-                                 </div>
-                               ))}
+                            <div>
+                              <h4 className="font-syne font-semibold text-[13px] text-text-custom leading-none flex items-center gap-2">
+                                {step.title}
+                                <span className="text-[9px] font-dm-mono text-text-muted">({step.level})</span>
+                              </h4>
+                              <p className="text-[11px] text-text-muted mt-1 leading-normal">{step.description}</p>
                             </div>
                           </div>
+                        ))}
+                      </div>
+                    </div>
 
-                          {/* Action Hub */}
-                          <div className="pt-12 border-t border-border-custom flex flex-col sm:flex-row gap-6">
-                             <button 
-                               onClick={() => (setSelectedTrackId(null), navigate(`/tracks/${selectedTrackId}`))}
-                               className="flex-1 bg-brand text-black font-syne font-black text-xs uppercase tracking-widest py-6 rounded-2xl hover:bg-white transition-all shadow-[0_20px_50px_rgba(0,242,255,0.2)] flex items-center justify-center gap-4 group"
-                             >
-                               Initialize Track Authority <ArrowRight className="group-hover:translate-x-1 transition-transform" />
-                             </button>
-                             <button 
-                               onClick={() => setSelectedTrackId(null)}
-                               className="px-12 py-6 rounded-2xl border border-border2 font-syne font-black text-xs uppercase tracking-widest text-text-soft hover:bg-glass-bg transition-all"
-                             >
-                               Close Master View
-                             </button>
-                          </div>
-                       </div>
+                    {/* Action Buttons */}
+                    <div className="flex gap-4">
+                      <button 
+                        onClick={() => (setSelectedTrackId(null), navigate(`/tracks/${selectedTrackId}`))}
+                        className="flex-grow bg-brand text-navy font-syne font-bold text-xs uppercase tracking-widest py-4.5 rounded-xl hover:bg-white transition-all flex items-center justify-center gap-2"
+                      >
+                        Explore Track <ArrowRight size={14} />
+                      </button>
+                      <button 
+                        onClick={() => setSelectedTrackId(null)}
+                        className="px-6 py-4.5 rounded-xl border border-border-custom font-syne font-bold text-xs uppercase tracking-widest text-text-soft hover:bg-glass-bg transition-all"
+                      >
+                        Close
+                      </button>
                     </div>
                   </motion.div>
                 </div>

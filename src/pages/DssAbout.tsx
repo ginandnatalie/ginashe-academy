@@ -2,7 +2,6 @@ import React from 'react';
 import PageHero from '../components/PageHero';
 import { WhyGDA, Alumni } from '../components/WhyGDA';
 import { Ecosystem } from '../components/Cohorts';
-import { AcademyStaff } from '../components/Staff';
 import InstitutionalHeroVisual from '../components/InstitutionalHeroVisual';
 import { Landmark, Network, Handshake, Truck, Shield, BookOpen } from 'lucide-react';
 import { motion } from 'motion/react';
@@ -79,7 +78,6 @@ export default function DssAbout({ onOpenModal, editMode }: DssAboutProps) {
       </section>
       
       <WhyGDA editMode={editMode} />
-      <AcademyStaff />
       <Alumni editMode={editMode} />
     </div>
   );

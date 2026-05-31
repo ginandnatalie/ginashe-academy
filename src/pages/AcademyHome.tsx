@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { motion } from 'motion/react';
 import Hero from '../components/Hero';
-import { TrustBar } from '../components/Programs';
 import { CTA } from '../components/Footer';
 import { streamsData } from '../data/streams';
 
@@ -68,8 +67,6 @@ export default function AcademyHome({ onOpenModal, editMode }: AcademyHomeProps)
         </div>
       </section>
 
-      {/* TrustBar for Social Proof */}
-      <TrustBar />
 
       {/* Why Ginashe Academy */}
       <section className="py-20 border-t border-border-custom relative z-10">

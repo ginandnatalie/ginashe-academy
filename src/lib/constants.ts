@@ -21,7 +21,10 @@ export const TRACK_PROGRAMMES: Record<string, string[]> = {
     'Personal Finance & Money Management',
     'Business Accounting & Bookkeeping',
     'FinTech Fundamentals',
-    'Investment & Wealth Building'
+    'Investment & Wealth Building',
+    'SARS Tax Compliance for Individuals',
+    'Microfinance & Community Finance',
+    'Digital Payments & Mobile Money'
   ]
 };
 
@@ -83,7 +86,10 @@ export const COURSE_MODULES: Record<string, string[]> = {
   'Personal Finance & Money Management': ['Budgeting Basics', 'Debt Management', 'Banking Products', 'Saving & Goals', 'Insurance Basics', 'Credit Score', 'Consumer Rights', 'Retirement Intro'],
   'Business Accounting & Bookkeeping': ['Double-Entry Bookkeeping', 'Sage & Xero', 'VAT & PAYE', 'Financial Statements', 'Cash Flow Management', 'Payroll Basics', 'SARS e-Filing', 'Annual Returns'],
   'FinTech Fundamentals': ['SA Financial System', 'Digital Banking', 'Payment APIs', 'Blockchain Basics', 'Regulatory Sandbox', 'Open Finance', 'FSCA Compliance', 'Case Studies'],
-  'Investment & Wealth Building': ['Investment Basics', 'JSE & Equities', 'Unit Trusts & ETFs', 'Property Investment', 'Retirement Annuities', 'Risk Profiling', 'Tax-Efficient Investing', 'Portfolio Building']
+  'Investment & Wealth Building': ['Investment Basics', 'JSE & Equities', 'Unit Trusts & ETFs', 'Property Investment', 'Retirement Annuities', 'Risk Profiling', 'Tax-Efficient Investing', 'Portfolio Building'],
+  'SARS Tax Compliance for Individuals': ['SA Tax System', 'Income Tax', 'Capital Gains', 'Provisional Tax', 'eFiling Step by Step', 'Common Mistakes', 'Penalties & Appeals', 'SMME Tax Relief'],
+  'Microfinance & Community Finance': ['SACCO Principles', 'Stokvel to Cooperative', 'Loan Assessment', 'Credit Risk', 'Member Services', 'Financial Records', 'NCA Compliance', 'Digital Tools'],
+  'Digital Payments & Mobile Money': ['Mobile Money Ecosystem', 'SnapScan & Ozow', 'Yoco & Card Payments', 'Crypto Basics', 'Cross-Border Payments', 'PASA Compliance', 'Merchant Services', 'Integration Basics']
 };
 
 export const PROGRAMMES = [

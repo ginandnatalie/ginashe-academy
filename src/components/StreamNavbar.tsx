@@ -39,7 +39,7 @@ export default function StreamNavbar() {
     { label: 'Curriculum', path: `/streams/${stream.id}/curriculum`, icon: BookOpen },
     { label: 'Requirements', path: `/streams/${stream.id}/requirements`, icon: ClipboardList },
     { label: 'Authority', path: `/streams/${stream.id}/authority`, icon: Landmark },
-    { label: 'Faculty', path: '/faculty', icon: UsersIcon },
+    { label: 'Faculty', path: `/streams/${stream.id}/faculty`, icon: UsersIcon },
   ];
 
   const floatingButton = (

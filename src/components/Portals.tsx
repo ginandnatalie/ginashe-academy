@@ -3630,19 +3630,7 @@ export function StudentPortal({ onStartCourse }: { onStartCourse: (courseId: str
                 <Globe className="w-4 h-4 shrink-0" />
                 {!isSidebarCollapsed && <span className="whitespace-nowrap">Main Website →</span>}
               </button>
-            </div>
 
-            <div className={`mb-8 flex items-center overflow-hidden transition-all duration-200 ${isSidebarCollapsed ? 'lg:justify-center' : 'px-2 justify-start gap-2.5'}`}>
-              <div className="w-9 h-9 rounded-xl bg-brand text-bg flex items-center justify-center font-black shadow-lg shadow-brand/20 shrink-0 uppercase tracking-tighter">G</div>
-              {(!isSidebarCollapsed || isMobileMenuOpen) && (
-                <div className="flex flex-col animate-fade">
-                  <h2 className="font-syne font-extrabold text-lg tracking-tighter whitespace-nowrap leading-none">STUDENT HUB</h2>
-                  <span className="text-[7px] font-dm-mono text-brand tracking-widest uppercase opacity-70 italic font-bold">Observer Portal</span>
-                </div>
-              )}
-            </div>
-
-            <nav className="flex-1 space-y-1 overflow-y-auto custom-scrollbar pr-2">
               {[
                 { id: 'dashboard', label: 'Overview', icon: BarChart3 },
                 { id: 'courses', label: 'My Learning', icon: BookOpen },

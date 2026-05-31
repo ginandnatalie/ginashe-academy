@@ -4,16 +4,24 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Calendar, Tag, ChevronRight, Newspaper } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 
-// Mock data for initial design
 const MOCK_POSTS = [
   {
-    id: '1',
-    title: 'Ginashe Digital Academy Launches New Sandton Innovation Hub',
-    excerpt: 'We are proud to announce the opening of our world-class campus in the heart of Sandton, designed for the next generation of cloud engineers.',
+    id: '4',
+    title: 'Digital Systems and Financial Literacy Streams Now Open for Enrollment',
+    excerpt: 'Ginashe Academy is officially accepting applications for our flagship Digital Systems (DSS) and Financial Literacy (FLS) streams for the upcoming cohort.',
     category: 'Academy Updates',
-    image_url: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200',
-    published_at: '2026-04-01T10:00:00Z',
-    slug: 'new-sandton-innovation-hub'
+    image_url: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=1200',
+    published_at: '2026-05-24T09:00:00Z',
+    slug: 'dss-fls-enrolling-2026'
+  },
+  {
+    id: '5',
+    title: 'New Physical Campus Scheduled to Open in Johannesburg by September 2026',
+    excerpt: 'Ginashe Academy is expanding its footprint with a brand-new physical campus in Johannesburg, scheduled to welcome students by the end of September.',
+    category: 'Academy Updates',
+    image_url: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200',
+    published_at: '2026-05-10T10:00:00Z',
+    slug: 'new-jhb-campus-september-2026'
   },
   {
     id: '2',
@@ -23,6 +31,15 @@ const MOCK_POSTS = [
     image_url: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1200',
     published_at: '2026-04-05T14:30:00Z',
     slug: 'future-of-ai-african-fintech'
+  },
+  {
+    id: '1',
+    title: 'Ginashe Academy looks to upskill the african continent.',
+    excerpt: 'We are proud to share our strategic expansion roadmap to upskill the African continent, driving technical capability and digital equity.',
+    category: 'Academy Updates',
+    image_url: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=1200',
+    published_at: '2026-04-01T10:00:00Z',
+    slug: 'ginashe-academy-upskill-african-continent'
   },
   {
     id: '3',

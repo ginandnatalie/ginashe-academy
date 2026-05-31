@@ -945,7 +945,7 @@ export default function SharedAdmissionForm({ onOpenModal, onSuccess, initialPro
             ) : 'SUBMIT APPLICATION →'}
           </button>
 
-          <button type="button" onClick={() => { setStep('check'); setDuplicateCheckDone(false); }} className="block w-full text-center mt-4 text-[11px] text-text-muted hover:text-brand transition-colors">← Back to account check</button>
+          <button type="button" onClick={() => { setStep('check'); setDuplicateMessage(''); setIsDuplicateBlocked(false); }} className="block w-full text-center mt-4 text-[11px] text-text-muted hover:text-brand transition-colors">← Back to account check</button>
         </form>
       )}
     </div>

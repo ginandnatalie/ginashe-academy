@@ -32,7 +32,8 @@ import LevelFoundationPage from './pages/LevelFoundationPage';
 import LevelAssociatePage from './pages/LevelAssociatePage';
 import LevelProfessionalPage from './pages/LevelProfessionalPage';
 import LevelEnterprisePage from './pages/LevelEnterprisePage';
-import FacultyPage from './pages/FacultyPage';
+import StreamFaculty from './pages/StreamFaculty';
+import OurStaffPage from './pages/OurStaffPage';
 import AboutPage from './pages/AboutPage';
 import AdmissionsPage from './pages/AdmissionsPage';
 import ContactPage from './pages/ContactPage';
@@ -223,9 +224,9 @@ function AppContent() {
               {(!siteSettings || siteSettings.showCurriculum !== false) && (
                 <Route path="/curriculum" element={<CurriculumPage onOpenModal={openModal} editMode={editMode} />} />
               )}
-              {(!siteSettings || siteSettings.showFaculty !== false) && (
-                <Route path="/faculty" element={<FacultyPage editMode={editMode} />} />
-              )}
+              <Route path="/faculty" element={<Navigate to="/streams/digital-systems/faculty" replace />} />
+              <Route path="/streams/:streamSlug/faculty" element={<StreamFaculty editMode={editMode} />} />
+              <Route path="/our-staff" element={<OurStaffPage />} />
               {(!siteSettings || siteSettings.showAbout !== false) && (
                 <Route path="/about" element={<AboutPage onOpenModal={openModal} editMode={editMode} />} />
               )}

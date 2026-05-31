@@ -4,36 +4,98 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, Calendar, User, Clock, Share2, Facebook, Twitter, Linkedin, ChevronRight, Tag } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 
-// Mock data for initial design
 const MOCK_POSTS = [
   {
-    id: '1',
-    title: 'Ginashe Digital Academy Launches New Sandton Innovation Hub',
-    excerpt: 'We are proud to announce the opening of our world-class campus in the heart of Sandton, designed for the next generation of cloud engineers.',
+    id: '4',
+    title: 'Digital Systems and Financial Literacy Streams Now Open for Enrollment',
+    excerpt: 'Ginashe Academy is officially accepting applications for our flagship Digital Systems (DSS) and Financial Literacy (FLS) streams for the upcoming cohort.',
     content: `
-      <p>Ginashe Digital Academy (GDA) has officially opened the doors to its new flagship <strong>Innovation Hub in Sandton, Johannesburg</strong>. The state-of-the-art facility is more than just a campus; it is a hub for transformation, collaboration, and high-performance learning.</p>
-      
-      <h3>A Vision for African Talent</h3>
-      <p>As Africa accelerates its digital transformation, the demand for certified cloud architects and AI specialists has never been higher. The Sandton Hub was designed specifically to bridge the gap between traditional tertiary education and the rapidly evolving tech industry.</p>
-      
+      <p>Ginashe Academy is pleased to announce that applications are officially open for both our <strong>Digital Systems Stream (DSS)</strong> and <strong>Financial Literacy Stream (FLS)</strong> for the 2026 academic year.</p>
+      <h3>Shape Your Professional Future</h3>
+      <p>These two streams represent our core institutional focus on equipping students with practical, industry-aligned capabilities. Whether you are aiming to master cloud-native systems and analytics, or build solid financial accounting, bookkeeping, and digital payments expertise, Ginashe Academy provides the roadmap to get you there.</p>
       <blockquote>
-        "Our mission is to create an environment that mimics the global tech offices of Silicon Valley and London, right here in the heart of Africa's financial capital."
+        "By offering concurrent enrollment in these high-demand streams, we are enabling our students to master both the technological and financial architectures that drive modern businesses."
       </blockquote>
-
-      <h3>What's Inside the Hub?</h3>
-      <ul>
-        <li><strong>Hyper-Cloud Labs:</strong> Dedicated spaces for hands-on AWS and Azure architecture simulations.</li>
-        <li><strong>AI Research Lounge:</strong> A collaborative zone for students focused on Generative AI and Machine Learning.</li>
-        <li><strong>Industry Interaction Zones:</strong> Where students can network directly with our corporate partners.</li>
-      </ul>
-
-      <p>The Sandton Hub will host the upcoming April intake for our Cloud Engineering and Data Science programs. Applications are now open for both full-time and executive weekend formats.</p>
+      <h3>Intake Details</h3>
+      <p>Both streams feature practitioner-led courses designed for immediate market application. We encourage all interested candidates to apply early as seats are strictly capped to ensure high-quality mentorship.</p>
     `,
     category: 'Academy Updates',
-    image_url: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200',
+    image_url: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=1200',
+    published_at: '2026-05-24T09:00:00Z',
+    slug: 'dss-fls-enrolling-2026',
+    author: 'GDA Admissions Office'
+  },
+  {
+    id: '5',
+    title: 'New Physical Campus Scheduled to Open in Johannesburg by September 2026',
+    excerpt: 'Ginashe Academy is expanding its footprint with a brand-new physical campus in Johannesburg, scheduled to welcome students by the end of September.',
+    content: `
+      <p>Ginashe Academy is thrilled to announce the upcoming launch of our new <strong>Johannesburg Physical Campus</strong>, scheduled to open its doors by the end of September 2026.</p>
+      <h3>Expanding Our Footprint</h3>
+      <p>This brand-new campus will serve as our primary physical learning node, featuring state-of-the-art infrastructure, collaborative code labs, and high-performance seminar rooms designed to facilitate peer learning and active mentorship.</p>
+      <blockquote>
+        "Our new physical space in Johannesburg is designed to create a premium, immersive hub where developers, analysts, and finance pioneers can connect, build, and innovate together."
+      </blockquote>
+      <h3>Hybrid Learning Options</h3>
+      <p>While our digital platforms continue to host thousands of students online, the Johannesburg campus will offer hybrid study options, executive weekend bootcamps, and direct face-to-face mentorship channels with our resident practitioners.</p>
+    `,
+    category: 'Academy Updates',
+    image_url: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200',
+    published_at: '2026-05-10T10:00:00Z',
+    slug: 'new-jhb-campus-september-2026',
+    author: 'Campus Operations Team'
+  },
+  {
+    id: '1',
+    title: 'Ginashe Academy looks to upskill the african continent.',
+    excerpt: 'We are proud to share our strategic expansion roadmap to upskill the African continent, driving technical capability and digital equity.',
+    content: `
+      <p>Ginashe Academy has officially detailed its strategic expansion roadmap to upskill the African continent, driving digital equity and high-value technical capability.</p>
+      <h3>Upskilling Africa</h3>
+      <p>With Africa representing the youngest and fastest-growing workforce globally, the demand for practical, industry-aligned training in cloud engineering, cybersecurity, financial technology, and data science has reached a critical turning point.</p>
+      <blockquote>
+        "Our goal is to build a massive network of practitioners and scholars who can lead technical execution and solve regional challenges from within."
+      </blockquote>
+      <h3>Practitioner-Led Impact</h3>
+      <p>Rather than relying on academic theory, Ginashe Academy partners with leading cloud vendors and financial institutions to ensure every module has direct market relevance, preparing learners for global opportunities.</p>
+     `,
+    category: 'Academy Updates',
+    image_url: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=1200',
     published_at: '2026-04-01T10:00:00Z',
-    slug: 'new-sandton-innovation-hub',
-    author: 'Dr. Girashe, Head of Academy'
+    slug: 'ginashe-academy-upskill-african-continent',
+    author: 'GDA Leadership Team'
+  },
+  {
+    id: '2',
+    title: 'The Future of AI in African Fintech: What Students Need to Know',
+    excerpt: 'A deep dive into how artificial intelligence is reshaping the financial landscape across the continent and the skills required to lead.',
+    content: `
+      <p>A deep dive into how artificial intelligence is reshaping the financial landscape across the continent and the skills required to lead.</p>
+      <h3>The AI Revolution in Payments</h3>
+      <p>African Fintech has been a global beacon of innovation, but the integration of machine learning and generative AI is taking it to the next level. In this article, we look at how students can prepare themselves for this shift.</p>
+      <p>From predictive credit scoring for microfinance in rural areas to automated fraud detection in mobile wallets, AI is rapidly becoming the core technology stack for regional fintech giants.</p>
+    `,
+    category: 'Tech Trends',
+    image_url: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1200',
+    published_at: '2026-04-05T14:30:00Z',
+    slug: 'future-of-ai-african-fintech',
+    author: 'Fintech Faculty Lead'
+  },
+  {
+    id: '3',
+    title: '5 Tips for Transitioning from Traditional IT to Cloud Engineering',
+    excerpt: 'Our career experts share the essential roadmap for developers looking to specialise in AWS and Azure environments.',
+    content: `
+      <p>Our career experts share the essential roadmap for developers looking to specialise in AWS and Azure environments.</p>
+      <h3>Embracing Cloud Native Architectures</h3>
+      <p>Transitioning from traditional on-premise IT administration to cloud-native architecture requires a shift in mindset—from server management to automation and infrastructure-as-code.</p>
+      <p>We recommend starting with foundational cloud certifications (such as AWS Cloud Practitioner or Microsoft Azure Fundamentals) and developing strong capabilities in scripting and CI/CD pipelines.</p>
+    `,
+    category: 'Career Advice',
+    image_url: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80&w=1200',
+    published_at: '2026-03-28T09:15:00Z',
+    slug: 'it-to-cloud-engineering-roadmap',
+    author: 'Cloud Engineering Advisor'
   }
 ];
 

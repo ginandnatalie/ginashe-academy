@@ -82,7 +82,7 @@ export default function Navbar({ onOpenModal, editMode, setEditMode, siteSetting
 
   // Discover Nested Items
   const discoverItems = [
-    { label: 'The Faculty', path: '/faculty', icon: <Users className="w-4 h-4" />, desc: 'World-class practitioner-led' },
+    { label: 'Our Staff', path: '/our-staff', icon: <Users className="w-4 h-4" />, desc: 'World-class practitioner-led' },
     { label: 'News & Insights', path: '/news', icon: <Newspaper className="w-4 h-4" />, desc: 'Weekly trends & articles' },
     { label: 'Upcoming Events', path: '/events', icon: <Calendar className="w-4 h-4" />, desc: 'Join our next masterclass' },
     { label: 'Employer Partners', path: '/employers', icon: <Briefcase className="w-4 h-4" />, desc: 'B-BBEE & talent pipelines' },
@@ -547,6 +547,8 @@ export default function Navbar({ onOpenModal, editMode, setEditMode, siteSetting
             {/* STUDENT PORTAL BUTTON */}
             <a 
               href={user && isAdmin ? 'https://staff.ginashe.academy' : 'https://student.ginashe.academy/'}
+              target="_blank"
+              rel="noopener noreferrer"
               className={`hidden lg:flex items-center gap-2 px-4 py-2 rounded-xl transition-all group no-underline ${
                 isScrolled 
                   ? 'bg-glass-bg hover:bg-brand/10 border border-border2 hover:border-brand/30' 
@@ -706,7 +708,13 @@ export default function Navbar({ onOpenModal, editMode, setEditMode, siteSetting
               
               <div className="mt-auto flex flex-col gap-4">
                 <div className="grid grid-cols-2 gap-4">
-                  <a href={user && isAdmin ? 'https://staff.ginashe.academy' : 'https://student.ginashe.academy/'} onClick={() => setIsMobileMenuOpen(false)} className="py-4 rounded-2xl border border-border2 font-outfit font-black text-text-custom text-[13px] hover:bg-glass-bg transition-all uppercase tracking-widest flex items-center justify-center gap-2 no-underline">
+                  <a 
+                    href={user && isAdmin ? 'https://staff.ginashe.academy' : 'https://student.ginashe.academy/'} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    onClick={() => setIsMobileMenuOpen(false)} 
+                    className="py-4 rounded-2xl border border-border2 font-outfit font-black text-text-custom text-[13px] hover:bg-glass-bg transition-all uppercase tracking-widest flex items-center justify-center gap-2 no-underline"
+                  >
                     <User size={16} /> Portal
                   </a>
                   <button onClick={() => { setIsMobileMenuOpen(false); navigate('/apply'); }} className="py-4 rounded-2xl bg-glass-bg border border-brand/30 font-outfit font-black text-brand text-[13px] hover:bg-brand/10 transition-all uppercase tracking-widest flex items-center justify-center gap-2">

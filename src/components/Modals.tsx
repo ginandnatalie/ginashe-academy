@@ -3,7 +3,7 @@ import { supabase, uploadFile } from '../lib/supabase';
 import { useAuth } from '../lib/auth';
 import { toast } from 'sonner';
 import SharedAdmissionForm from './SharedAdmissionForm';
-import { Eye, EyeOff, FileText, CheckCircle2, Target, Info, Shield, ShieldCheck, HelpCircle, Send, Briefcase, CreditCard, GraduationCap, Building2, Users, ArrowRight } from 'lucide-react';
+import { Eye, EyeOff, FileText, CheckCircle2, Target, Info, Shield, ShieldCheck, HelpCircle, Send, Briefcase, CreditCard, GraduationCap, Building2, Users, ArrowRight, Rocket } from 'lucide-react';
 
 interface ModalsProps {
   activeModal: string | null;
