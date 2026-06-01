@@ -23,25 +23,21 @@ export async function getNextStudentNumber(): Promise<string> {
  * Returns the relevant record if found.
  */
 export async function validateStudentIdentity(input: string) {
-  const identifier = input.trim().toLowerCase();
-  
-  // Check Applications
-  const { data: app } = await supabase
-    .from('applications')
-    .select('id, email, first_name, last_name, status, program, student_number')
-    .or(`student_number.eq.${input.trim()},email.ilike.${identifier}`)
-    .maybeSingle();
-
-  if (app) return { type: 'application', data: app };
-
-  // Check Profiles
-  const { data: profile } = await supabase
-    .from('profiles')
-    .select('id, email, first_name, last_name, student_number, role')
-    .or(`student_number.eq.${input.trim()},email.ilike.${identifier}`)
-    .maybeSingle();
-
-  if (profile) return { type: 'profile', data: profile };
-
-  return null;
+  try {
+    const response = await fetch('/api/validate-student', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ input })
+    });
+    if (!response.ok) {
+      const errData = await response.json();
+      throw new Error(errData.error || 'Server error checking student identity');
+    }
+    return await response.json();
+  } catch (err) {
+    console.error('Error in validateStudentIdentity:', err);
+    throw err;
+  }
 }

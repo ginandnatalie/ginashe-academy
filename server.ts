@@ -96,6 +96,53 @@ async function startServer() {
     }
   });
 
+  // ─── Student Validation Endpoint ───
+  app.post("/api/validate-student", async (req, res) => {
+    const { input } = req.body;
+    if (!input) return res.status(400).json({ error: "Input is required" });
+
+    try {
+      const adminKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+      const admin = createClient(supabaseUrl, adminKey || supabaseAnonKey);
+      const identifier = input.trim().toLowerCase();
+
+      // Check Applications
+      const { data: app, error: appError } = await admin
+        .from('applications')
+        .select('id, email, first_name, last_name, status, program, student_number')
+        .or(`student_number.eq.${input.trim()},email.ilike.${identifier}`)
+        .maybeSingle();
+
+      if (appError) {
+        console.error('Validate student app query error:', appError);
+      }
+
+      if (app) {
+        return res.json({ type: 'application', data: app });
+      }
+
+      // Check Profiles
+      const { data: profile, error: profError } = await admin
+        .from('profiles')
+        .select('id, email, first_name, last_name, student_number')
+        .or(`student_number.eq.${input.trim()},email.ilike.${identifier}`)
+        .maybeSingle();
+
+      if (profError) {
+        console.error('Validate student profile query error:', profError);
+      }
+
+      if (profile) {
+        return res.json({ type: 'profile', data: profile });
+      }
+
+      return res.json(null);
+    } catch (err: any) {
+      console.error('Student validation endpoint error:', err);
+      res.status(500).json({ error: err.message });
+    }
+  });
+
   // ─── Contact Form Endpoint ───
   app.post("/api/contact", async (req, res) => {
     const { name, email, subject, message } = req.body;
