@@ -1,3 +1,4 @@
+import { SEO } from '../components/SEO';
 import React from 'react';
 import PageHero from '../components/PageHero';
 import { Shield, BookOpen, Truck, Landmark, Handshake, Network } from 'lucide-react';
@@ -31,6 +32,10 @@ export default function AboutPage({ onOpenModal, editMode }: AboutPageProps) {
 
   return (
     <div className="min-h-screen bg-bg">
+      <SEO 
+        title="About Us" 
+        description="Ginashe Academy's mission, delivery architecture, and academic governance." 
+      />
       <PageHero
         label="Institutional Overview"
         title={<>Build Something <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand to-emerald">Real.</span></>}

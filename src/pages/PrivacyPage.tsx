@@ -1,3 +1,4 @@
+import { SEO } from '../components/SEO';
 import React from 'react';
 import PageHero from '../components/PageHero';
 import { Lock, Eye, Database, Share2, ShieldCheck, UserCheck } from 'lucide-react';
@@ -38,6 +39,10 @@ export default function PrivacyPage() {
 
   return (
     <div className="bg-bg min-h-screen">
+      <SEO 
+        title="Privacy Policy" 
+        description="Privacy policy and data protection terms." 
+      />
       <PageHero
         label="Cyber-Sovereignty"
         title={<>Data Privacy<br /><span className="text-brand">Protocol</span>.</>}

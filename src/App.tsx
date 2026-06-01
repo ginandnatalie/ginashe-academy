@@ -209,7 +209,14 @@ function AppContent() {
           <ErrorBoundary>
             {isStreamContext && <StreamNavbar />}
             
-            <main className={`flex-1 ${isStreamContext ? 'pt-[108px]' : 'pt-[68px]'}`}>
+            <main 
+              className="flex-1" 
+              style={{ 
+                paddingTop: isStreamContext 
+                  ? 'calc(var(--header-height, 72px) + var(--stream-nav-height, 0px))' 
+                  : 'var(--header-height, 72px)' 
+              }}
+            >
               <Routes>
               <Route path="/" element={<AcademyHome />} />
               <Route path="/streams" element={<StreamsPage />} />

@@ -1,3 +1,4 @@
+import { SEO } from '../components/SEO';
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
@@ -176,6 +177,10 @@ export default function VerifyPage() {
 
   return (
     <div className="min-h-screen bg-bg flex flex-col items-center justify-center p-6 relative overflow-hidden">
+      <SEO 
+        title="Account Activation" 
+        description="Activate your Ginashe Academy student credentials and set your password." 
+      />
       {/* Background Ambience */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
         <div className="absolute top-1/4 -left-1/4 w-[500px] h-[500px] bg-brand/5 blur-[120px] rounded-full"></div>

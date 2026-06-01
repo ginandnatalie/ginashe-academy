@@ -1,3 +1,4 @@
+import { SEO } from '../components/SEO';
 import React from 'react';
 import PageHero from '../components/PageHero';
 import { Shield, Users, Target, Rocket } from 'lucide-react';
@@ -34,7 +35,11 @@ export default function EnterprisePage({ onOpenModal, editMode }: EnterprisePage
 
   return (
     <>
-      <PageHero
+
+      <SEO 
+        title="Enterprise Solutions" 
+        description="Bespoke digital transformation and upskilling frameworks for corporate teams." 
+      />      <PageHero
         label="Institutional Strategic Design"
         title={<>Custom Enterprise<br />Training Pathways.</>}
         subtitle="Empower your workforce with high-fidelity, practitioner-led technical training perfectly aligned to your organisation's architectural goals."

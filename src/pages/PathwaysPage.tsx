@@ -1,3 +1,4 @@
+import { SEO } from '../components/SEO';
 import React from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
@@ -16,6 +17,10 @@ export default function PathwaysPage({ onOpenModal, editMode }: PathwaysPageProp
 
   return (
     <div className="bg-bg min-h-screen">
+      <SEO 
+        title="Career Pathways" 
+        description="Explore Ginashe Academy's structural career tracks." 
+      />
       <PageHero
         label="Professional Careers"
         title={<>Choose Your <span className="text-brand">Technical Destiny</span>.</>}

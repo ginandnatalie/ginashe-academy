@@ -1,3 +1,4 @@
+import { SEO } from '../components/SEO';
 import React from 'react';
 import PageHero from '../components/PageHero';
 import { WhyGDA, Alumni } from '../components/WhyGDA';
@@ -27,6 +28,10 @@ export default function DssAbout({ onOpenModal, editMode }: DssAboutProps) {
 
   return (
     <div className="min-h-screen bg-bg">
+      <SEO 
+        title="DSS Institutional Authority" 
+        description="Academic governance and credentials of the Digital Systems Stream (DSS)." 
+      />
       <PageHero
         label="Institutional Authority"
         title={<>The Sovereign Authority on<br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-brand to-emerald">Cloud & AI Engineering.</span></>}

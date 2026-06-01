@@ -1,3 +1,4 @@
+import { SEO } from '../components/SEO';
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Calendar, Clock, MapPin, Users, ArrowRight, X, CheckCircle, Sparkles } from 'lucide-react';
@@ -5,6 +6,16 @@ import { supabase } from '../lib/supabase';
 
 // Mock Events for initial design
 const MOCK_EVENTS = [
+  {
+    id: 'radio-1',
+    title: 'Exclusive Live Interview: SAUMA HD Radio',
+    description: 'Tune in to an exclusive live interview with SAUMA HD Radio starting from 11:00 AM SAST. Ginashe Academy leadership will discuss our 2026 academic cohorts, digital economy readiness, and practitioner-led skills development pipelines. Do not miss this opportunity to learn how GDA is shaping Africa\'s digital future!',
+    event_date: '2026-06-02',
+    event_time: '11:00',
+    type: 'Radio Interview',
+    location: 'SAUMA HD Radio (https://saumahdradio0.webradiosite.com/)',
+    image_url: '/sauma_logo.jpg'
+  },
   {
     id: '1',
     title: 'GDA Virtual Open Day: April Intake',
@@ -102,6 +113,10 @@ export default function EventsPage() {
 
   return (
     <div className="min-h-screen pt-32 pb-24 px-6 md:px-14">
+      <SEO 
+        title="Events & Masterclasses" 
+        description="Upcoming webinars, hackathons, and guest masterclasses." 
+      />
       <div className="max-w-7xl mx-auto mb-16">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-10 lg:gap-16 items-start">
           <motion.div
@@ -171,10 +186,20 @@ export default function EventsPage() {
                 <div className="absolute inset-0 bg-bg/40 group-hover:bg-transparent transition-colors duration-500"></div>
                 <div className="absolute top-6 left-6 flex flex-col items-center justify-center p-3 bg-bg/80 backdrop-blur-md rounded-xl border border-brand/30">
                   <span className="font-dm-mono text-xl font-bold text-brand">
-                    {new Date(event.event_date).getDate()}
+                    {(() => {
+                      const dateParts = event.event_date.split('-');
+                      return dateParts.length === 3 ? parseInt(dateParts[2], 10) : new Date(event.event_date).getDate();
+                    })()}
                   </span>
                   <span className="font-dm-mono text-[10px] tracking-widest uppercase text-text-soft">
-                    {new Date(event.event_date).toLocaleString('default', { month: 'short' })}
+                    {(() => {
+                      const dateParts = event.event_date.split('-');
+                      if (dateParts.length === 3) {
+                        const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+                        return months[parseInt(dateParts[1], 10) - 1];
+                      }
+                      return new Date(event.event_date).toLocaleString('default', { month: 'short' });
+                    })()}
                   </span>
                 </div>
               </div>
@@ -201,14 +226,39 @@ export default function EventsPage() {
                 <div className="flex flex-wrap items-center gap-6 mt-auto">
                   <div className="flex items-center gap-3 text-text-soft text-sm">
                     <MapPin size={18} className="text-brand" />
-                    {event.location}
+                    {event.location.includes('https://') ? (
+                      <span>
+                        {event.location.split('(')[0]}
+                        <a 
+                          href={event.location.match(/https?:\/\/[^\s)]+/)?.[0]} 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className="text-brand hover:underline font-medium inline-flex items-center gap-0.5"
+                        >
+                          (Link)
+                        </a>
+                      </span>
+                    ) : (
+                      event.location
+                    )}
                   </div>
-                  <button
-                    onClick={() => setSelectedEvent(event)}
-                    className="btn btn-brand px-8 py-4 ml-auto flex items-center gap-2 group/btn"
-                  >
-                    Register Now <ArrowRight size={16} className="transition-transform group-hover/btn:translate-x-1" />
-                  </button>
+                  {event.location.includes('https://') ? (
+                    <a
+                      href={event.location.match(/https?:\/\/[^\s)]+/)?.[0] || 'https://saumahdradio0.webradiosite.com/'}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn btn-brand px-8 py-4 ml-auto flex items-center gap-2 group/btn no-underline"
+                    >
+                      Tune In Live <ArrowRight size={16} className="transition-transform group-hover/btn:translate-x-1" />
+                    </a>
+                  ) : (
+                    <button
+                      onClick={() => setSelectedEvent(event)}
+                      className="btn btn-brand px-8 py-4 ml-auto flex items-center gap-2 group/btn"
+                    >
+                      Register Now <ArrowRight size={16} className="transition-transform group-hover/btn:translate-x-1" />
+                    </button>
+                  )}
                 </div>
               </div>
             </div>

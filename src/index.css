@@ -45,6 +45,7 @@
 @layer base {
   :root {
     --nav-h: 72px;
+    --stream-nav-height: 0px;
     --section-pad: 64px;
     --max-w: 1280px;
     --r-sm: 4px;
@@ -98,6 +99,12 @@
     --oracle: #F80000;
     --comptia: #00aeef;
     --iasa: #7c3aed;
+  }
+
+  @media (min-width: 768px) {
+    :root {
+      --stream-nav-height: 40px;
+    }
   }
 
   html.light {

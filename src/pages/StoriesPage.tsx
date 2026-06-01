@@ -1,3 +1,4 @@
+import { SEO } from '../components/SEO';
 import React from 'react';
 import { motion } from 'motion/react';
 import { Users } from 'lucide-react';
@@ -5,6 +6,10 @@ import { Users } from 'lucide-react';
 export default function StoriesPage() {
   return (
     <div className="min-h-screen bg-bg pt-20 px-6">
+      <SEO 
+        title="Success Stories" 
+        description="Read reviews and success stories from learners and hiring partners." 
+      />
       <div className="max-w-7xl mx-auto py-20 text-center">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="flex flex-col items-center gap-6">
           <div className="w-20 h-20 rounded-2xl bg-pink-400/10 text-pink-400 flex items-center justify-center">

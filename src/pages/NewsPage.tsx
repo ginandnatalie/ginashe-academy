@@ -1,3 +1,4 @@
+import { SEO } from '../components/SEO';
 import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
@@ -90,6 +91,10 @@ export default function NewsPage() {
 
   return (
     <div className="min-h-screen pt-32 pb-24 px-6 md:px-14">
+      <SEO 
+        title="News & Insights" 
+        description="Latest updates, cohort announcements, and industry insights." 
+      />
       {/* Header */}
       <div className="max-w-7xl mx-auto mb-16">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-10 lg:gap-16 items-start">

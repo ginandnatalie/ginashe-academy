@@ -1,3 +1,4 @@
+import { SEO } from '../components/SEO';
 import React from 'react';
 import PageHero from '../components/PageHero';
 import { Programs } from '../components/Programs';
@@ -11,7 +12,11 @@ interface CurriculumPageProps {
 export default function CurriculumPage({ onOpenModal, editMode }: CurriculumPageProps) {
   return (
     <>
-      <PageHero
+
+      <SEO 
+        title="Curriculum Overview" 
+        description="Explore our curriculum design and vocational learning pathways." 
+      />      <PageHero
         label="Career Tracks"
         title={<>World-Class Technical Rigour,<br />African by Design.</>}
         subtitle="Choose a career track and follow a structured sequence of programmes, micro-credentials, and capstone projects — all industry-verified and stackable."

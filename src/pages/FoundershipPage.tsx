@@ -1,3 +1,4 @@
+import { SEO } from '../components/SEO';
 import React from 'react';
 import { Rocket, Zap, Target, Briefcase, Globe, Shield, Code, Layout, MessageSquare, ArrowRight } from 'lucide-react';
 import PageHero from '../components/PageHero';
@@ -5,6 +6,10 @@ import PageHero from '../components/PageHero';
 export default function FoundershipPage({ onOpenModal }: { onOpenModal: (id: string) => void }) {
   return (
     <div className="min-h-screen bg-bg">
+      <SEO 
+        title="Foundership Programme" 
+        description="Launch your technical venture with Ginashe Academy's incubator and mentorship program." 
+      />
       {/* High-Fidelity Page Hero */}
       <PageHero
         label="Sovereign Execution"

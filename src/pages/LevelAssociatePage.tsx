@@ -1,3 +1,4 @@
+import { SEO } from '../components/SEO';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
@@ -13,7 +14,11 @@ interface LevelPageProps {
 export default function LevelAssociatePage({ onOpenModal, editMode }: LevelPageProps) {
   return (
     <>
-      <PageHero
+
+      <SEO 
+        title="Associate Pathway (Level 2)" 
+        description="Intermediate vocational pathway for developers and technicians." 
+      />      <PageHero
         label="Level: Associate"
         title={<>Specialise Your Skills.<br />Bridge the Gap to Production.</>}
         subtitle="The Associate Level is for learners with basic technical backgrounds looking to specialise. Move from foundational theory to deploying intermediate workloads."

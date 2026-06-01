@@ -1,3 +1,4 @@
+import { SEO } from '../components/SEO';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PageHero from '../components/PageHero';
@@ -31,6 +32,10 @@ export default function AdmissionsPage({ onOpenModal, editMode }: AdmissionsPage
 
   return (
     <div className="min-h-screen bg-bg">
+      <SEO 
+        title="Admissions & Funding" 
+        description="Learn about Ginashe Academy admissions requirements, corporate B-BBEE sponsorships, and flexible payment plans." 
+      />
       <PageHero
         label="Admissions & Funding"
         title={<>A Pathway for<br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-brand to-emerald">Every Learner.</span></>}

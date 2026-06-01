@@ -1,3 +1,4 @@
+import { SEO } from '../components/SEO';
 import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
@@ -77,6 +78,10 @@ export default function CoursesPage() {
 
   return (
     <div className="min-h-screen bg-bg">
+      <SEO 
+        title="Course Catalogue" 
+        description="Browse and search all practitioner-led courses across Ginashe Academy." 
+      />
       {/* Hero */}
       <section className="relative pt-28 pb-12 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-navy via-bg to-bg" />

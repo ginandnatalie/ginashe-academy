@@ -1,3 +1,4 @@
+import { SEO } from '../components/SEO';
 import React from 'react';
 import PageHero from '../components/PageHero';
 import { CreditCard, Calendar, AlertCircle, CheckCircle, RefreshCcw, Shield } from 'lucide-react';
@@ -33,6 +34,10 @@ export default function RefundsPage() {
 
   return (
     <div className="bg-bg min-h-screen">
+      <SEO 
+        title="Refunds & Cancellation Policy" 
+        description="Terms for student fee refunds and enrollment cancellations." 
+      />
       <PageHero
         label="Financial Governance"
         title={<>Tuition & Refund<br /><span className="text-brand">Protocol</span>.</>}

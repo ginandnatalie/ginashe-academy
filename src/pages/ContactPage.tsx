@@ -1,3 +1,4 @@
+import { SEO } from '../components/SEO';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { MapPin, Mail, Phone, Clock, Send, ExternalLink } from 'lucide-react';
@@ -36,7 +37,11 @@ export default function ContactPage({ onOpenModal, editMode }: ContactPageProps)
 
   return (
     <>
-      <PageHero
+
+      <SEO 
+        title="Contact Us" 
+        description="Get in touch with Ginashe Academy Sandton campus or submit a support enquiry." 
+      />      <PageHero
         label="Get in Touch"
         title={<>Let's Start<br />a Conversation.</>}
         subtitle="Have questions about our programmes, admissions, or enterprise training? We'd love to hear from you."

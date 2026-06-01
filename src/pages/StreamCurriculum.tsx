@@ -1,3 +1,4 @@
+import { SEO } from '../components/SEO';
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { streamsData } from '../data/streams';
@@ -18,6 +19,7 @@ export default function StreamCurriculum({ onOpenModal, editMode }: StreamCurric
   if (!stream) {
     return (
       <div className="min-h-screen bg-bg flex items-center justify-center">
+        <SEO title="Stream Not Found" description="The requested stream could not be found." />
         <h1 className="text-text-custom text-2xl font-syne">Stream not found</h1>
       </div>
     );
@@ -26,6 +28,10 @@ export default function StreamCurriculum({ onOpenModal, editMode }: StreamCurric
   if (stream.id === 'digital-systems') {
     return (
       <div className="min-h-screen bg-bg pt-12 pb-20">
+        <SEO 
+          title="DSS Curriculum"
+          description="Explore course modules and syllabus details for the Digital Systems Stream (DSS)."
+        />
         <div className="max-w-7xl mx-auto px-6 mb-8">
           <Link to={`/streams/${stream.id}`} className="inline-flex items-center gap-2 text-brand hover:text-text-custom transition-colors font-dm-mono text-sm uppercase tracking-wider">
             <ArrowLeft className="w-4 h-4" /> Back to Dashboard
@@ -51,6 +57,10 @@ export default function StreamCurriculum({ onOpenModal, editMode }: StreamCurric
 
   return (
     <div className="min-h-screen bg-bg pt-12 pb-20">
+      <SEO 
+        title={`${stream.title} | Curriculum`}
+        description={`Explore course modules and syllabus details for the ${stream.title} (${stream.abbr}) at Ginashe Academy.`}
+      />
       <div className="max-w-6xl mx-auto px-6">
         <Link to={`/streams/${stream.id}`} className="inline-flex items-center gap-2 text-brand hover:text-text-custom transition-colors mb-8 font-dm-mono text-sm uppercase tracking-wider">
           <ArrowLeft className="w-4 h-4" /> Back to Dashboard

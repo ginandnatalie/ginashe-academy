@@ -1,3 +1,4 @@
+import { SEO } from '../components/SEO';
 import React from 'react';
 import SharedAdmissionForm from '../components/SharedAdmissionForm';
 import { useSearchParams } from 'react-router-dom';
@@ -7,6 +8,10 @@ export default function ApplyPage() {
   const initialProgram = searchParams.get('program') || '';
   return (
     <div className="min-h-screen bg-bg relative overflow-hidden pt-28 pb-12 md:pb-20 px-6">
+      <SEO 
+        title="Apply for Admission" 
+        description="Start your academic application process for Ginashe Academy's Digital Systems (DSS) and Financial Literacy (FLS) streams." 
+      />
       {/* Background Ambience */}
       <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-brand/5 rounded-full blur-[120px] -translate-y-1/2 pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-sky/5 rounded-full blur-[150px] translate-y-1/2 pointer-events-none" />

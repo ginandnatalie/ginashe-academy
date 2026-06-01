@@ -1,3 +1,4 @@
+import { SEO } from '../components/SEO';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
@@ -13,7 +14,11 @@ interface LevelPageProps {
 export default function LevelEnterprisePage({ onOpenModal, editMode }: LevelPageProps) {
   return (
     <>
-      <PageHero
+
+      <SEO 
+        title="Enterprise Pathway (Level 4)" 
+        description="Advanced executive upskilling and organizational leadership." 
+      />      <PageHero
         label="Level: Enterprise"
         title={<>Enterprise Scalability.<br />Executive Digital Strategy.</>}
         subtitle="The highest tier of technical study. Tailored for enterprise architects, CTOs, and digital transformation leaders overseeing multi-cloud governance and financial operations."

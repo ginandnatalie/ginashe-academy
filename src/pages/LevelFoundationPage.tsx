@@ -1,3 +1,4 @@
+import { SEO } from '../components/SEO';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
@@ -13,7 +14,11 @@ interface LevelPageProps {
 export default function LevelFoundationPage({ onOpenModal, editMode }: LevelPageProps) {
   return (
     <>
-      <PageHero
+
+      <SEO 
+        title="Foundation Pathway (Level 1)" 
+        description="Entry-level digital literacy and foundational tech skills." 
+      />      <PageHero
         label="Level: Foundation"
         title={<>Start Your Digital Journey.<br />No Prior Tech Experience Required.</>}
         subtitle="The Foundation Level is designed for school leavers, non-technical professionals, and career changers. Master the fundamentals of Cloud, Networking, and Software."

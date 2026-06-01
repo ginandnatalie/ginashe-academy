@@ -1,3 +1,4 @@
+import { SEO } from '../components/SEO';
 import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
@@ -144,6 +145,10 @@ export default function NewsDetailPage() {
 
   return (
     <div className="min-h-screen pt-32 pb-24">
+      <SEO 
+        title={post.title}
+        description={post.excerpt}
+      />
       {/* Article Hero */}
       <div className="max-w-4xl mx-auto px-6 mb-12">
         <motion.div

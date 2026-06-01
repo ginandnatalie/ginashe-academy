@@ -1,3 +1,4 @@
+import { SEO } from '../components/SEO';
 import React from 'react';
 import PageHero from '../components/PageHero';
 import { Shield, Eye, Database, Lock, UserCheck, Scale, FileCheck, AlertTriangle } from 'lucide-react';
@@ -38,6 +39,10 @@ export default function PopiaPage() {
 
   return (
     <div className="bg-bg min-h-screen">
+      <SEO 
+        title="POPIA Compliance" 
+        description="Ginashe Academy's Protection of Personal Information Act privacy policy." 
+      />
       <PageHero
         label="Compliance Architecture"
         title={<>POPI Act<br /><span className="text-brand">Sovereignty Notice</span>.</>}

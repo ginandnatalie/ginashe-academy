@@ -1,3 +1,4 @@
+import { SEO } from '../components/SEO';
 import React from 'react';
 import PageHero from '../components/PageHero';
 import { CheckCircle2, Laptop, Wifi, Wallet, ArrowRight } from 'lucide-react';
@@ -32,6 +33,10 @@ export default function DssRequirements({ onOpenModal, editMode }: DssRequiremen
 
   return (
     <div className="min-h-screen bg-bg">
+      <SEO 
+        title="DSS Requirements" 
+        description="Admission requirements, computer specifications, and prerequisites for the Digital Systems Stream (DSS)." 
+      />
       <PageHero
         label="Admissions & Requirements"
         title={<>Join the Next Generation of<br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-brand to-emerald">African Engineers.</span></>}

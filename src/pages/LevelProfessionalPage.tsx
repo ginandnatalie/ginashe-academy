@@ -1,3 +1,4 @@
+import { SEO } from '../components/SEO';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
@@ -13,7 +14,11 @@ interface LevelPageProps {
 export default function LevelProfessionalPage({ onOpenModal, editMode }: LevelPageProps) {
   return (
     <>
-      <PageHero
+
+      <SEO 
+        title="Professional Pathway (Level 3)" 
+        description="Advanced technical track for engineers, architects, and managers." 
+      />      <PageHero
         label="Level: Professional"
         title={<>Architect Complex Solutions.<br />Lead Engineering Teams.</>}
         subtitle="Designed for experienced practitioners aiming for senior roles. Master advanced architecture, high availability, and multi-AZ deployments."

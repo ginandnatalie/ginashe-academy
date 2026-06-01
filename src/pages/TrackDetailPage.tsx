@@ -1,3 +1,4 @@
+import { SEO } from '../components/SEO';
 import React, { useEffect, useState } from 'react';
 import { useParams, Navigate, Link } from 'react-router-dom';
 import { motion } from 'motion/react';
@@ -32,6 +33,10 @@ export default function TrackDetailPage({ onOpenModal, editMode }: TrackDetailPa
 
   return (
     <div className="bg-bg min-h-screen">
+      <SEO 
+        title={data.title}
+        description={data.description}
+      />
       <PageHero
         label="Career Pathway"
         title={<>Master the <span style={{ color: data.color }}>{data.shortTitle}</span> Infrastructure.</>}

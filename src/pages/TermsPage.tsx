@@ -1,3 +1,4 @@
+import { SEO } from '../components/SEO';
 import React from 'react';
 import PageHero from '../components/PageHero';
 import { Shield, BookOpen, CreditCard, Scale, CheckCircle, AlertCircle } from 'lucide-react';
@@ -38,6 +39,10 @@ export default function TermsPage() {
 
   return (
     <div className="bg-bg min-h-screen">
+      <SEO 
+        title="Terms of Service" 
+        description="Terms of service and enrollment agreement for Ginashe Academy." 
+      />
       <PageHero
         label="Institutional Governance"
         title={<>Terms of<br /><span className="text-brand">Enrolment</span>.</>}

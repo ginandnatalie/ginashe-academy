@@ -1,3 +1,4 @@
+import { SEO } from '../components/SEO';
 import React from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
@@ -33,6 +34,10 @@ export default function OurStaffPage() {
 
   return (
     <div className="min-h-screen bg-bg relative overflow-hidden flex flex-col justify-between pt-32 pb-24 px-6 md:px-14">
+      <SEO 
+        title="Our Staff" 
+        description="Meet the team and leadership driving academic operations at Ginashe Academy." 
+      />
       {/* Ambient background glow effects */}
       <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-brand/5 rounded-full blur-[160px] pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-emerald/5 rounded-full blur-[160px] pointer-events-none" />

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../lib/auth';
 import { useTheme } from '../lib/theme';
@@ -49,11 +49,19 @@ export default function Navbar({ onOpenModal, editMode, setEditMode, siteSetting
   const [expandedMobileItem, setExpandedMobileItem] = useState<string | null>(null);
   const [isSaving, setIsSaving] = useState(false);
   const [bannerDismissed, setBannerDismissed] = useState(false);
+  const headerRef = useRef<HTMLDivElement>(null);
 
-  // Sync banner height to CSS variable for StreamNavbar
+  // Sync total header height to CSS variable for dynamic layout/StreamNavbar/pages
   useEffect(() => {
-    document.documentElement.style.setProperty('--banner-h', bannerDismissed ? '0' : '36');
-  }, [bannerDismissed]);
+    if (!headerRef.current) return;
+    const observer = new ResizeObserver((entries) => {
+      for (let entry of entries) {
+        document.documentElement.style.setProperty('--header-height', `${entry.target.clientHeight}px`);
+      }
+    });
+    observer.observe(headerRef.current);
+    return () => observer.disconnect();
+  }, []);
 
   const isAdmin = profile?.role === 'admin' || profile?.role === 'super_admin' || user?.email?.includes('ginashe.co.za');
   const isSuperAdmin = profile?.role === 'super_admin' || user?.email === 'ginandNatalie@gmail.com' || user?.email === 'academy@ginashe.co.za';
@@ -107,47 +115,47 @@ export default function Navbar({ onOpenModal, editMode, setEditMode, siteSetting
 
   return (
     <>
-      {/* Enrollment Announcement Banner */}
-      {!bannerDismissed && (
-        <div className="fixed top-0 left-0 right-0 z-[1001] bg-[#0B0C10] border-b border-brand/20">
-          <div className="mx-auto max-w-7xl px-6 py-2 flex items-center justify-center gap-3 relative">
-            <div className="flex items-center gap-2 flex-wrap justify-center">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#22c55e] animate-pulse shrink-0" />
-              <span className="font-outfit font-bold text-[11px] sm:text-[12px] text-white tracking-wide">
-                Now Enrolling:
-              </span>
-              <span className="font-outfit font-bold text-[11px] sm:text-[12px] text-brand">
-                Digital Systems
-              </span>
-              <span className="text-white/40 text-[11px]">&</span>
-              <span className="font-outfit font-bold text-[11px] sm:text-[12px] text-brand">
-                Finance
-              </span>
-              <span className="text-white/30 hidden sm:inline">|</span>
-              <a href="mailto:skills@ginashe.academy" className="font-jetbrains text-[10px] text-brand/80 hover:text-brand tracking-wider no-underline transition-colors">
-                skills@ginashe.academy
-              </a>
+      {/* Fixed top container grouping banner and nav to keep layout clean & dynamic */}
+      <div ref={headerRef} className="fixed top-0 left-0 right-0 z-[1000] flex flex-col">
+        {/* Enrollment Announcement Banner */}
+        {!bannerDismissed && (
+          <div className="w-full bg-[#0B0C10] border-b border-brand/20">
+            <div className="mx-auto max-w-7xl px-6 py-2 flex items-center justify-center gap-3 relative">
+              <div className="flex items-center gap-2 flex-wrap justify-center">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#22c55e] animate-pulse shrink-0" />
+                <span className="font-outfit font-bold text-[11px] sm:text-[12px] text-white tracking-wide">
+                  Now Enrolling:
+                </span>
+                <span className="font-outfit font-bold text-[11px] sm:text-[12px] text-brand">
+                  Digital Systems
+                </span>
+                <span className="text-white/40 text-[11px]">&</span>
+                <span className="font-outfit font-bold text-[11px] sm:text-[12px] text-brand">
+                  Finance
+                </span>
+                <span className="text-white/30 hidden sm:inline">|</span>
+                <a href="mailto:skills@ginashe.academy" className="font-jetbrains text-[10px] text-brand/80 hover:text-brand tracking-wider no-underline transition-colors">
+                  skills@ginashe.academy
+                </a>
+              </div>
+              <button 
+                onClick={() => setBannerDismissed(true)} 
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-white/30 hover:text-white transition-colors p-1"
+                aria-label="Dismiss banner"
+              >
+                <X size={14} />
+              </button>
             </div>
-            <button 
-              onClick={() => setBannerDismissed(true)} 
-              className="absolute right-4 top-1/2 -translate-y-1/2 text-white/30 hover:text-white transition-colors p-1"
-              aria-label="Dismiss banner"
-            >
-              <X size={14} />
-            </button>
           </div>
-        </div>
-      )}
+        )}
 
-      <nav id="nav" className={`fixed left-0 right-0 z-[1000] transition-all duration-500 border-b ${
-        bannerDismissed ? 'top-0' : 'top-[36px]'
-      } ${
-        isMobileMenuOpen ? 'h-screen z-[6000]' : ''
-      } ${
-        isScrolled 
-          ? 'bg-bg/95 backdrop-blur-3xl border-brand/30 shadow-[0_20px_60px_rgba(0,242,255,0.15)]' 
-          : 'bg-bg/95 backdrop-blur-3xl border-border-custom shadow-sm'
-      }`}>
+        <nav id="nav" className={`w-full relative transition-all duration-500 border-b ${
+          isMobileMenuOpen ? 'h-screen' : ''
+        } ${
+          isScrolled 
+            ? 'bg-bg/95 backdrop-blur-3xl border-brand/30 shadow-[0_20px_60px_rgba(0,242,255,0.15)]' 
+            : 'bg-bg/95 backdrop-blur-3xl border-border-custom shadow-sm'
+        }`}>
       {/* Main Navbar Bar */}
       <div className="mx-auto max-w-7xl relative z-[2001] h-[72px] flex items-center px-6 transition-all duration-700">
         
@@ -733,6 +741,7 @@ export default function Navbar({ onOpenModal, editMode, setEditMode, siteSetting
         )}
       </AnimatePresence>
     </nav>
+      </div>
     </>
   );
 }
