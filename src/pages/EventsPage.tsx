@@ -9,7 +9,7 @@ const MOCK_EVENTS = [
   {
     id: 'radio-1',
     title: 'Exclusive Live Interview: SAUMA HD Radio',
-    description: 'Tune in to an exclusive live interview with SAUMA HD Radio starting from 11:00 AM SAST. Ginashe Academy leadership will discuss our 2026 academic cohorts, digital economy readiness, and practitioner-led skills development pipelines. Do not miss this opportunity to learn how GDA is shaping Africa\'s digital future!',
+    description: 'Tune in to an exclusive live interview with SAUMA HD Radio starting from 11:00 AM SAST. Our Managing Director, George Kapendeka, will discuss our 2026 academic cohorts, digital economy readiness, and practitioner-led skills development pipelines. Do not miss this opportunity to learn how GDA is shaping Africa\'s digital future!',
     event_date: '2026-06-02',
     event_time: '11:00',
     type: 'Radio Interview',
@@ -65,7 +65,7 @@ export default function EventsPage() {
         .from('events')
         .select('*')
         .eq('is_published', true)
-        .order('event_date', { ascending: true });
+        .order('event_date', { ascending: false });
 
       if (error) {
         if (error.code === 'PGRST116' || error.message?.includes('not found')) {

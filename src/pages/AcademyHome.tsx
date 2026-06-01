@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
-import { motion } from 'motion/react';
+import { ArrowRight, X, Calendar, Clock, Volume2 } from 'lucide-react';
+import { motion, AnimatePresence } from 'motion/react';
 import Hero from '../components/Hero';
 import { CTA } from '../components/Footer';
 import { streamsData } from '../data/streams';
@@ -14,6 +14,22 @@ interface AcademyHomeProps {
 }
 
 export default function AcademyHome({ onOpenModal, editMode }: AcademyHomeProps) {
+  const [showPromo, setShowPromo] = useState(false);
+
+  useEffect(() => {
+    const isDismissed = localStorage.getItem('gda_sauma_dismissed_2026');
+    if (!isDismissed) {
+      const timer = setTimeout(() => {
+        setShowPromo(true);
+      }, 1200);
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
+  const handleDismissPromo = () => {
+    localStorage.setItem('gda_sauma_dismissed_2026', 'true');
+    setShowPromo(false);
+  };
   const voices = [
     { name: 'George K', role: 'Managing Director, Ginashe Group', quote: "At Ginashe, we aren't just teaching skills; we're architecting the future of African sovereignty across every sector that matters.", image: '/images/faculty/george.jpg' },
     { name: 'Talent K', role: 'Lead Faculty', quote: 'Our curriculum is live fire. We prepare candidates to handle production-scale challenges from Day 1, bridging the gap between theory and mastery.' },
@@ -117,6 +133,133 @@ export default function AcademyHome({ onOpenModal, editMode }: AcademyHomeProps)
 
       {/* CTA */}
       <CTA onOpenModal={onOpenModal || (() => {})} editMode={editMode} />
+
+      {/* Promo Splash Modal */}
+      <AnimatePresence>
+        {showPromo && (
+          <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 sm:p-6 md:p-10">
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={handleDismissPromo}
+              className="absolute inset-0 bg-black/85 backdrop-blur-md"
+            />
+
+            {/* Modal Box */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9, y: 30 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9, y: 30 }}
+              transition={{ type: 'spring', damping: 25, stiffness: 220 }}
+              className="relative w-full max-w-4xl bg-gradient-to-br from-navy via-[#121620] to-[#0A0B0E] border border-brand/30 rounded-[2.5rem] shadow-[0_0_50px_rgba(0,242,255,0.15)] overflow-hidden z-10"
+            >
+              {/* Close Button */}
+              <button
+                onClick={handleDismissPromo}
+                className="absolute top-6 right-6 text-text-muted hover:text-brand transition-colors p-2 rounded-full hover:bg-white/5 z-20"
+                aria-label="Close Promo"
+              >
+                <X size={20} />
+              </button>
+
+              <div className="grid grid-cols-1 md:grid-cols-[1.2fr_0.8fr]">
+                {/* Left Side (Content) */}
+                <div className="p-8 sm:p-12 flex flex-col justify-center">
+                  <div className="flex items-center gap-2 font-dm-mono text-[10px] tracking-[0.25em] uppercase text-brand mb-4">
+                    <span className="relative flex h-2 w-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald"></span>
+                    </span>
+                    Live Radio Broadcast
+                  </div>
+                  
+                  <h3 className="font-syne font-black text-2xl sm:text-4xl text-text-custom leading-tight tracking-tight mb-5">
+                    George Kapendeka <br />
+                    <span className="text-brand italic font-light font-dm-sans">Live on SAUMA HD Radio</span>
+                  </h3>
+                  
+                  <p className="text-text-soft text-[13px] sm:text-[14px] leading-relaxed mb-6">
+                    Tune in tomorrow to an exclusive live interview with our Managing Director, <strong>George Kapendeka</strong>. 
+                    He will discuss Ginashe Academy's 2026 academic cohorts, digital economy readiness, and our practitioner-led skills development pipelines designed to shape Africa's future economy.
+                  </p>
+
+                  <div className="space-y-3 mb-8">
+                    <div className="flex items-center gap-3 text-text-soft text-xs sm:text-sm">
+                      <Calendar size={16} className="text-brand shrink-0" />
+                      <span>Tomorrow, June 2nd, 2026</span>
+                    </div>
+                    <div className="flex items-center gap-3 text-text-soft text-xs sm:text-sm">
+                      <Clock size={16} className="text-brand shrink-0" />
+                      <span>11:00 AM SAST (GMT+2)</span>
+                    </div>
+                    <div className="flex items-center gap-3 text-text-soft text-xs sm:text-sm">
+                      <Volume2 size={16} className="text-brand shrink-0" />
+                      <span>Broadcasting globally online</span>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <a
+                      href="https://saumahdradio0.webradiosite.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn btn-brand justify-center text-center no-underline"
+                      onClick={handleDismissPromo}
+                    >
+                      Tune In Live
+                      <ArrowRight size={14} />
+                    </a>
+                    <button
+                      onClick={handleDismissPromo}
+                      className="btn btn-outline justify-center text-center"
+                    >
+                      Remind Me Later
+                    </button>
+                  </div>
+                </div>
+
+                {/* Right Side (Visual Card) */}
+                <div className="relative bg-[#07080a] border-t md:border-t-0 md:border-l border-brand/10 p-8 sm:p-12 flex flex-col items-center justify-center overflow-hidden group">
+                  {/* Neon Grid Backdrop */}
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,242,255,0.06),transparent_70%)] z-0" />
+                  
+                  {/* Glowing waves or graphic design */}
+                  <div className="relative z-10 w-full max-w-[240px] aspect-square rounded-3xl overflow-hidden border border-brand/20 shadow-[0_15px_35px_rgba(0,0,0,0.5)] transition-transform duration-700 group-hover:scale-105">
+                    <img
+                      src="/sauma_logo.jpg"
+                      alt="SAUMA HD Radio Logo"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+
+                  <div className="relative z-10 text-center mt-6">
+                    <div className="font-dm-mono text-[9px] text-text-dim uppercase tracking-[0.3em] mb-1">Broadcaster</div>
+                    <div className="font-syne font-extrabold text-sm text-text-custom tracking-wider">SAUMA HD RADIO</div>
+                    <p className="text-[10px] text-text-soft/60 mt-1">HD Streaming Portal</p>
+                  </div>
+
+                  {/* Audio visualization simulation animation */}
+                  <div className="flex items-center gap-1.5 mt-5 relative z-10 h-6">
+                    {[16, 24, 12, 28, 18, 14, 22, 10].map((h, i) => (
+                      <span
+                        key={i}
+                        className="w-1 bg-brand rounded-full transition-all duration-300 animate-pulse"
+                        style={{
+                          height: `${h}px`,
+                          animationDelay: `${i * 0.15}s`,
+                          animationDuration: '0.8s'
+                        }}
+                      />
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
