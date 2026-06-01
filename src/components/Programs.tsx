@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { useNavigate, Link } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
 import { sanitizeAccreditation } from '../utils/governance';
@@ -244,6 +245,18 @@ export function Programs({ onOpenModal, editMode, isHomePage, initialFilterLevel
   const [isAdding, setIsAdding] = useState(false);
   const [selectedTrackId, setSelectedTrackId] = useState<string | null>(null);
   const [dbStatus, setDbStatus] = useState<'connected' | 'error' | 'loading'>('loading');
+
+  // Lock body scroll when Track Master Modal is open
+  useEffect(() => {
+    if (selectedTrackId) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [selectedTrackId]);
   const [sectionContent, setSectionContent] = useState({
     title: 'Rigorous pathways.\nReal-world outcomes.',
     subtitle: 'Every course is co-designed with industry, built on cloud-vendor curricula, and delivered by practitioners who have solved the problems you\'ll face.'
@@ -467,7 +480,7 @@ export function Programs({ onOpenModal, editMode, isHomePage, initialFilterLevel
             </div>
             {/* Track Master Modal: Simple, Clean Centered Design */}
             <AnimatePresence>
-              {selectedTrackId && (
+              {selectedTrackId && createPortal(
                 <div 
                   className="fixed inset-0 z-[3000] flex items-center justify-center p-4 md:p-6 overflow-hidden"
                   onClick={() => setSelectedTrackId(null)}
@@ -557,7 +570,8 @@ export function Programs({ onOpenModal, editMode, isHomePage, initialFilterLevel
                       </button>
                     </div>
                   </motion.div>
-                </div>
+                </div>,
+                document.body
               )}
             </AnimatePresence>
           </div>
