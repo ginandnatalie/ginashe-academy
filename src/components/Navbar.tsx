@@ -567,9 +567,12 @@ export default function Navbar({ onOpenModal, editMode, setEditMode, siteSetting
               </div>
             </a>
 
-            <Link to="/contact" className={`hidden xl:flex items-center gap-2 font-jetbrains text-[9px] tracking-[0.2em] transition-colors no-underline ${isScrolled ? 'text-[#22c55e] hover:text-brand' : 'text-text-custom hover:text-brand'}`}>
-              <span className={`w-1.5 h-1.5 rounded-full animate-pulse ${isScrolled ? 'bg-[#22c55e]' : 'bg-brand'}`} />
-              CONTACT US
+            <Link 
+              to="/apply" 
+              className="hidden xl:flex items-center gap-2 px-4.5 py-2.5 bg-brand text-navy font-syne font-black text-[11px] uppercase tracking-[0.15em] rounded-xl hover:bg-white hover:text-navy hover:shadow-[0_0_20px_rgba(0,242,255,0.4)] active:scale-95 transition-all no-underline"
+            >
+              Apply Now
+              <ArrowRight className="w-3.5 h-3.5 text-navy" />
             </Link>
             
             <button 
