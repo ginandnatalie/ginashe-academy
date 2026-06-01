@@ -19,6 +19,24 @@ export const supabase = createClient(supabaseUrl || '', supabaseAnonKey || '', {
   }
 });
 
+export const withTimeout = async <T>(promise: Promise<T> | any, timeoutMs: number = 15000, errorMsg: string = 'Request timed out'): Promise<T> => {
+  let timeoutId: any;
+  const timeoutPromise = new Promise<never>((_, reject) => {
+    timeoutId = setTimeout(() => {
+      reject(new Error(errorMsg));
+    }, timeoutMs);
+  });
+
+  try {
+    const result = await Promise.race([Promise.resolve(promise), timeoutPromise]);
+    clearTimeout(timeoutId);
+    return result;
+  } catch (err) {
+    clearTimeout(timeoutId);
+    throw err;
+  }
+};
+
 export const uploadFile = async (file: File, bucket: string = 'documents', folder: string = 'cvs') => {
   console.log('Starting file upload...', { bucket, folder, fileName: file.name });
   
@@ -38,16 +56,15 @@ export const uploadFile = async (file: File, bucket: string = 'documents', folde
   const filePath = `${folder}/${fileName}`;
 
   try {
-    // Wrap upload in a promise timeout (30 seconds)
     const uploadPromise = supabase.storage
       .from(bucket)
       .upload(filePath, file);
 
-    const timeoutPromise = new Promise<never>((_, reject) =>
-      setTimeout(() => reject(new Error(`Upload timed out for ${file.name} after 30 seconds`)), 30000)
-    );
-
-    const { error: uploadError } = await Promise.race([uploadPromise, timeoutPromise]) as any;
+    const { error: uploadError } = await withTimeout(
+      uploadPromise,
+      30000,
+      `Upload timed out for ${file.name} after 30 seconds`
+    ) as any;
 
     if (uploadError) {
       console.error('Upload error:', uploadError);
@@ -66,4 +83,3 @@ export const uploadFile = async (file: File, bucket: string = 'documents', folde
     throw err;
   }
 };
-

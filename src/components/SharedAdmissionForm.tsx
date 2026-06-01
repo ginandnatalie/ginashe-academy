@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'sonner';
 import { AlertCircle, X, FileText, Search, BookOpen, Layers, ChevronRight } from 'lucide-react';
-import { supabase, uploadFile } from '../lib/supabase';
+import { supabase, uploadFile, withTimeout } from '../lib/supabase';
 import { getNextStudentNumber, validateStudentIdentity } from '../lib/students';
 import { 
   PROGRAMMES, 
@@ -252,11 +252,15 @@ export default function SharedAdmissionForm({ onOpenModal, onSuccess, initialPro
       const idClean = form.idNumber.trim();
 
       // Call Postgres RPC which runs securely and bypasses RLS
-      const { data, error } = await supabase.rpc('check_applicant_duplicate', {
-        p_email: emailClean,
-        p_phone: phoneClean,
-        p_id_number: idClean
-      });
+      const { data, error } = await withTimeout(
+        supabase.rpc('check_applicant_duplicate', {
+          p_email: emailClean,
+          p_phone: phoneClean,
+          p_id_number: idClean
+        }),
+        15000,
+        'Duplicate check timed out'
+      );
 
       if (error) {
         console.error('Intelligent Scan RPC Error:', error);
@@ -324,43 +328,47 @@ export default function SharedAdmissionForm({ onOpenModal, onSuccess, initialPro
         cvFile ? uploadFile(cvFile, 'documents', 'cvs') : Promise.resolve('')
       ]);
 
-      const { error } = await supabase
-        .from('applications')
-        .insert([{
-          first_name: form.first,
-          last_name: form.last,
-          email: form.email.trim().toLowerCase(),
-          phone: form.phone,
-          date_of_birth: form.dob || null,
-          id_number: form.idNumber || null,
-          gender: form.gender || null,
-          nationality: form.nationality,
-          address_line1: form.address_line1,
-          city: form.city,
-          province: form.province,
-          country: form.country,
-          postal_code: form.postal_code,
-          program: selectionType === 'level' ? form.level : form.prog,
-          qualification: form.qual,
-          payment_mode: form.payment_mode,
-          message: form.msg,
-          // Individual Document URLs
-          id_url: idUrl,
-          matric_url: matricUrl,
-          residence_url: residenceUrl,
-          motivation_url: motivationUrl,
-          cv_url: cvUrl,
-          // Academic Period
-          study_year: form.study_year,
-          study_intake: form.study_intake,
-          student_number: studentNumber,
-          type: 'individual',
-          history: JSON.stringify([{
-            event: 'Application Submitted',
-            timestamp: new Date().toISOString(),
-            details: `Initial application submitted for ${selectionType === 'level' ? form.level : form.prog}. Intake: ${form.study_intake} ${form.study_year}. Payment Mode: ${form.payment_mode}`
-          }])
-        }]);
+      const { error } = await withTimeout(
+        supabase
+          .from('applications')
+          .insert([{
+            first_name: form.first,
+            last_name: form.last,
+            email: form.email.trim().toLowerCase(),
+            phone: form.phone,
+            date_of_birth: form.dob || null,
+            id_number: form.idNumber || null,
+            gender: form.gender || null,
+            nationality: form.nationality,
+            address_line1: form.address_line1,
+            city: form.city,
+            province: form.province,
+            country: form.country,
+            postal_code: form.postal_code,
+            program: selectionType === 'level' ? form.level : form.prog,
+            qualification: form.qual,
+            payment_mode: form.payment_mode,
+            message: form.msg,
+            // Individual Document URLs
+            id_url: idUrl,
+            matric_url: matricUrl,
+            residence_url: residenceUrl,
+            motivation_url: motivationUrl,
+            cv_url: cvUrl,
+            // Academic Period
+            study_year: form.study_year,
+            study_intake: form.study_intake,
+            student_number: studentNumber,
+            type: 'individual',
+            history: JSON.stringify([{
+              event: 'Application Submitted',
+              timestamp: new Date().toISOString(),
+              details: `Initial application submitted for ${selectionType === 'level' ? form.level : form.prog}. Intake: ${form.study_intake} ${form.study_year}. Payment Mode: ${form.payment_mode}`
+            }])
+          }]),
+        20000,
+        'Database insertion timed out'
+      );
 
       if (error) throw error;
 

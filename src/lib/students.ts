@@ -1,4 +1,4 @@
-import { supabase } from './supabase';
+import { supabase, withTimeout } from './supabase';
 
 /**
  * Institutional helper to generate the next available Student Number.
@@ -8,7 +8,11 @@ import { supabase } from './supabase';
  */
 export async function getNextStudentNumber(): Promise<string> {
   try {
-    const { data, error } = await supabase.rpc('generate_student_number');
+    const { data, error } = await withTimeout(
+      supabase.rpc('generate_student_number'),
+      15000,
+      'Student number generation timed out'
+    );
     if (error) throw error;
     return String(data);
   } catch (err) {
