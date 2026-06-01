@@ -569,7 +569,7 @@ export default function Navbar({ onOpenModal, editMode, setEditMode, siteSetting
 
             <Link 
               to="/apply" 
-              className="hidden xl:flex items-center gap-2 px-4.5 py-2.5 bg-brand text-navy font-syne font-black text-[11px] uppercase tracking-[0.15em] rounded-xl hover:bg-white hover:text-navy hover:shadow-[0_0_20px_rgba(0,242,255,0.4)] active:scale-95 transition-all no-underline"
+              className="hidden lg:flex items-center gap-2 px-4.5 py-2.5 bg-brand text-navy font-syne font-black text-[11px] uppercase tracking-[0.15em] rounded-xl hover:bg-white hover:text-navy hover:shadow-[0_0_20px_rgba(0,242,255,0.4)] active:scale-95 transition-all no-underline"
             >
               Apply Now
               <ArrowRight className="w-3.5 h-3.5 text-navy" />
