@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'sonner';
-import { AlertCircle, X, FileText } from 'lucide-react';
+import { AlertCircle, X, FileText, Search, BookOpen, Layers, ChevronRight } from 'lucide-react';
 import { supabase, uploadFile } from '../lib/supabase';
 import { getNextStudentNumber, validateStudentIdentity } from '../lib/students';
 import { 
@@ -19,6 +19,44 @@ import {
   ENTERPRISE_SOLUTIONS,
   INSTITUTIONAL_CODES
 } from '../lib/constants';
+
+const ALL_COURSES = [
+  { name: 'Cloud Launchpad', track: 'Cloud Computing', stream: 'Digital Systems Stream' },
+  { name: 'Cloud Practitioner Pro', track: 'Cloud Computing', stream: 'Digital Systems Stream' },
+  { name: 'Cloud Architect', track: 'Cloud Computing', stream: 'Digital Systems Stream' },
+  { name: 'Multi-Cloud Enterprise', track: 'Cloud Computing', stream: 'Digital Systems Stream' },
+  { name: 'AI Fundamentals', track: 'AI & Machine Learning', stream: 'Digital Systems Stream' },
+  { name: 'ML Essentials', track: 'AI & Machine Learning', stream: 'Digital Systems Stream' },
+  { name: 'Applied AI Engineering', track: 'AI & Machine Learning', stream: 'Digital Systems Stream' },
+  { name: 'AI Strategy & Enterprise', track: 'AI & Machine Learning', stream: 'Digital Systems Stream' },
+  { name: 'Cyber Essentials', track: 'Cybersecurity', stream: 'Digital Systems Stream' },
+  { name: 'Ethical Hacking', track: 'Cybersecurity', stream: 'Digital Systems Stream' },
+  { name: 'Security Operations', track: 'Cybersecurity', stream: 'Digital Systems Stream' },
+  { name: 'CISO Programme', track: 'Cybersecurity', stream: 'Digital Systems Stream' },
+  { name: 'Data Literacy', track: 'Data & Analytics', stream: 'Digital Systems Stream' },
+  { name: 'Data Analysis & BI', track: 'Data & Analytics', stream: 'Digital Systems Stream' },
+  { name: 'Data Engineering', track: 'Data & Analytics', stream: 'Digital Systems Stream' },
+  { name: 'AI-Driven Analytics', track: 'Data & Analytics', stream: 'Digital Systems Stream' },
+  { name: 'Digital Literacy for Work', track: 'Digital Transformation', stream: 'Digital Systems Stream' },
+  { name: 'Process Digitisation', track: 'Digital Transformation', stream: 'Digital Systems Stream' },
+  { name: 'Digital Transformation Lead', track: 'Digital Transformation', stream: 'Digital Systems Stream' },
+  { name: 'CDO Programme', track: 'Digital Transformation', stream: 'Digital Systems Stream' },
+  { name: 'Code Launchpad', track: 'Software & DevOps', stream: 'Digital Systems Stream' },
+  { name: 'Full-Stack Development', track: 'Software & DevOps', stream: 'Digital Systems Stream' },
+  { name: 'DevOps & Cloud-Native', track: 'Software & DevOps', stream: 'Digital Systems Stream' },
+  { name: 'Platform Engineering', track: 'Software & DevOps', stream: 'Digital Systems Stream' },
+  { name: 'Digital Entrepreneurship 101', track: 'Digital Business', stream: 'Digital Systems Stream' },
+  { name: 'E-Commerce & Marketing', track: 'Digital Business', stream: 'Digital Systems Stream' },
+  { name: 'Digital Business Strategy', track: 'Digital Business', stream: 'Digital Systems Stream' },
+  { name: 'Innovation & Ventures', track: 'Digital Business', stream: 'Digital Systems Stream' },
+  { name: 'Personal Finance & Money Management', track: 'Financial Literacy & FinTech', stream: 'Financial Literacy & FinTech Stream' },
+  { name: 'Business Accounting & Bookkeeping', track: 'Financial Literacy & FinTech', stream: 'Financial Literacy & FinTech Stream' },
+  { name: 'FinTech Fundamentals', track: 'Financial Literacy & FinTech', stream: 'Financial Literacy & FinTech Stream' },
+  { name: 'Investment & Wealth Building', track: 'Financial Literacy & FinTech', stream: 'Financial Literacy & FinTech Stream' },
+  { name: 'SARS Tax Compliance for Individuals', track: 'Financial Literacy & FinTech', stream: 'Financial Literacy & FinTech Stream' },
+  { name: 'Microfinance & Community Finance', track: 'Financial Literacy & FinTech', stream: 'Financial Literacy & FinTech Stream' },
+  { name: 'Digital Payments & Mobile Money', track: 'Financial Literacy & FinTech', stream: 'Financial Literacy & FinTech Stream' }
+];
 
 const PORTAL_URL = 'https://student.ginashe.academy/';
 
@@ -45,6 +83,9 @@ export default function SharedAdmissionForm({ onOpenModal, onSuccess, initialPro
   const [duplicateMessage, setDuplicateMessage] = useState('');
   const [selectedTrack, setSelectedTrack] = useState<string>('');
   const [showCourseSelector, setShowCourseSelector] = useState(false);
+  const [wizardStep, setWizardStep] = useState<'stream' | 'track' | 'course'>('stream');
+  const [selectedStream, setSelectedStream] = useState<'DSS' | 'FLS' | ''>('');
+  const [searchTerm, setSearchTerm] = useState('');
   const [showModuleSelector, setShowModuleSelector] = useState(false);
   const [showEnterpriseSelector, setShowEnterpriseSelector] = useState(false);
   const [selectedCourseForModule, setSelectedCourseForModule] = useState<string>('');
@@ -594,64 +635,83 @@ export default function SharedAdmissionForm({ onOpenModal, onSuccess, initialPro
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 
-                {/* CAREER TRACK SELECTION CARD (LEFT - DEFAULT) */}
+                {/* ACADEMIC PROGRAM SELECTION CARD (LEFT - DEFAULT) */}
                 <div 
                   onClick={() => setSelectionType('level')}
-                  className={`relative p-4 rounded-xl border transition-all duration-300 cursor-pointer overflow-hidden group ${
+                  className={`relative p-4 rounded-xl border transition-all duration-300 cursor-pointer overflow-hidden group flex flex-col justify-between ${
                     selectionType === 'level' 
                       ? 'bg-brand/5 border-brand shadow-[0_0_20px_rgba(0,242,255,0.05)]' 
                       : 'bg-surface/20 border-border-custom opacity-50 grayscale scale-[0.98]'
                   }`}
                 >
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className={`w-8 h-8 rounded-lg flex items-center justify-center text-sm transition-colors ${selectionType === 'level' ? 'bg-brand text-[#080b12]' : 'bg-surface/50 text-brand'}`}>🏛️</div>
-                    <div className="font-syne font-bold text-[13px]">Career Track Selection</div>
-                  </div>
-                  
-                  {/* TRACK SELECTOR */}
-                  <select 
-                    className={`${SELECT_CLASS} !bg-none px-2 mb-2`} 
-                    value={selectedTrack} 
-                    onChange={e => {
-                      const track = e.target.value;
-                      setSelectedTrack(track);
-                      setSelectionType('level');
-                      if (track) setShowCourseSelector(true);
-                      setForm({...form, level: '', prog: ''});
-                    }}
-                    required={selectionType === 'level'}
-                  >
-                    <option value="">Select Track...</option>
-                    {INSTITUTIONAL_TRACKS.map(t => <option key={t} value={t}>{t}</option>)}
-                  </select>
-
-                  {/* SELECTED COURSE DISPLAY */}
-                  {form.level && (
-                    <div className="flex items-center gap-2 p-2 px-2.5 bg-brand/10 border border-brand/20 rounded-md mb-2 animate-fadeUp">
-                      <div className="w-1.5 h-1.5 rounded-full bg-brand"></div>
-                      <div className="font-dm-mono text-[10px] text-brand uppercase tracking-wider">{form.level}</div>
-                      <button 
-                        type="button" 
-                        onClick={(e) => { e.stopPropagation(); setShowCourseSelector(true); }}
-                        className="ml-auto text-[9px] text-text-muted hover:text-brand underline decoration-dotted"
-                      >
-                        Change
-                      </button>
+                  <div>
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className={`w-8 h-8 rounded-lg flex items-center justify-center text-sm transition-colors ${selectionType === 'level' ? 'bg-brand text-[#080b12]' : 'bg-surface/50 text-brand'}`}>🏛️</div>
+                      <div className="font-syne font-bold text-[13px]">Academic Program Selection</div>
                     </div>
-                  )}
 
-                  <div className="text-[9px] text-text-muted leading-tight opacity-70">Enrol in a full practitioner-led career track (e.g. Associate, Professional).</div>
+                    {/* SELECTED PATHWAY STATUS */}
+                    {form.level ? (
+                      <div className="flex items-center gap-2 p-2.5 bg-brand/10 border border-brand/20 rounded-lg mb-2 animate-fadeUp">
+                        <div className="w-1.5 h-1.5 rounded-full bg-brand shrink-0"></div>
+                        <div className="font-dm-mono text-[9px] text-brand uppercase tracking-wider truncate flex-1">{form.level}</div>
+                        <button 
+                          type="button" 
+                          onClick={(e) => { 
+                            e.stopPropagation(); 
+                            setSelectionType('level');
+                            setShowCourseSelector(true);
+                            setWizardStep('stream');
+                            setSelectedStream('');
+                            setSelectedTrack('');
+                            setSearchTerm('');
+                          }}
+                          className="text-[9px] text-text-muted hover:text-brand underline decoration-dotted font-bold shrink-0 ml-2"
+                        >
+                          Change
+                        </button>
+                      </div>
+                    ) : (
+                      <button
+                        type="button"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setSelectionType('level');
+                          setShowCourseSelector(true);
+                          setWizardStep('stream');
+                          setSelectedStream('');
+                          setSelectedTrack('');
+                          setSearchTerm('');
+                        }}
+                        className={`w-full py-2.5 bg-surface border border-border-custom rounded-lg text-left px-3.5 flex items-center justify-between font-dm-sans text-[12px] text-text-muted hover:border-brand/40 hover:text-text-custom transition-all mb-3`}
+                      >
+                        <span>Choose Stream & Program...</span>
+                        <svg className="w-3.5 h-3.5 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
+                      </button>
+                    )}
+                  </div>
+
+                  <div className="text-[9px] text-text-muted leading-tight opacity-70">Choose an enrolling stream (Digital Systems or Financial Literacy) and select your pathway.</div>
 
                   {/* POP-UP COURSE SELECTOR */}
-                  {showCourseSelector && selectedTrack && (
-                    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-[#080b12]/90 backdrop-blur-md animate-fadeIn">
-                      <div className="bg-bg2 border border-border-custom rounded-2xl w-full max-w-[440px] p-8 shadow-2xl relative overflow-hidden">
+                  {showCourseSelector && (
+                    <div className="fixed inset-0 z-[6000] flex items-center justify-center p-4 bg-[#080b12]/95 backdrop-blur-md animate-fadeIn" onClick={(e) => e.stopPropagation()}>
+                      <div className="bg-bg2 border border-border-custom rounded-2xl w-full max-w-[480px] p-8 shadow-2xl relative overflow-hidden flex flex-col max-h-[90vh]">
                         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand to-sky"></div>
                         
+                        {/* Header */}
                         <div className="flex justify-between items-start mb-6">
                           <div>
-                            <div className="text-[10px] font-dm-mono text-brand uppercase tracking-widest mb-1">{selectedTrack}</div>
-                            <h3 className="font-syne font-extrabold text-[18px]">Select Your Level</h3>
+                            <div className="text-[9px] font-dm-mono text-brand uppercase tracking-widest mb-1">
+                              {searchTerm.trim() 
+                                ? 'Search Mode' 
+                                : wizardStep === 'stream' 
+                                  ? 'Step 1 of 3 — Select Stream' 
+                                  : wizardStep === 'track' 
+                                    ? 'Step 2 of 3 — Select Track' 
+                                    : 'Step 3 — Select Program'}
+                            </div>
+                            <h3 className="font-syne font-extrabold text-[18px]">Academic Program Selector</h3>
                           </div>
                           <button 
                             type="button" 
@@ -662,36 +722,209 @@ export default function SharedAdmissionForm({ onOpenModal, onSuccess, initialPro
                           </button>
                         </div>
 
-                        <div className="grid gap-2.5">
-                          {TRACK_PROGRAMMES[selectedTrack]?.map(course => (
-                            <button
-                              key={course}
-                              type="button"
-                              onClick={() => {
-                                setForm({
-                                  ...form, 
-                                  level: course,
-                                  // Auto-nudge for Level 4 / Enterprise
-                                  study_intake: course.includes('Enterprise') ? 'Enterprise/Rolling' : form.study_intake
-                                });
-                                setShowCourseSelector(false);
-                              }}
-                              className={`p-4 rounded-xl border text-left transition-all group ${
-                                form.level === course 
-                                  ? 'bg-brand/5 border-brand ring-1 ring-brand/30' 
-                                  : 'bg-surface/30 border-border-custom hover:border-brand/40'
-                              }`}
+                        {/* Search Box */}
+                        <div className="relative mb-5">
+                          <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-text-muted" />
+                          <input 
+                            type="text" 
+                            placeholder="Search programs (e.g. Cloud, Tax)..." 
+                            value={searchTerm}
+                            onChange={e => setSearchTerm(e.target.value)}
+                            className="w-full bg-surface border border-border-custom rounded-xl py-2.5 pl-10 pr-4 text-[12px] font-dm-sans text-text-custom placeholder:text-text-muted outline-none focus:border-brand/40 focus:shadow-[0_0_0_3px_rgba(0,242,255,0.07)] transition-all"
+                          />
+                          {searchTerm && (
+                            <button 
+                              type="button" 
+                              onClick={() => setSearchTerm('')} 
+                              className="absolute right-3.5 top-1/2 -translate-y-1/2 text-text-muted hover:text-text-custom text-[11px] font-dm-mono uppercase"
                             >
-                              <div className="flex items-center gap-3">
-                                <div className={`w-2 h-2 rounded-full transition-colors ${form.level === course ? 'bg-brand' : 'bg-border-custom group-hover:bg-brand/40'}`}></div>
-                                <div className="font-dm-sans text-[13px] font-medium">{course}</div>
-                              </div>
+                              Clear
                             </button>
-                          ))}
+                          )}
                         </div>
 
-                        <div className="mt-8 pt-6 border-t border-border-custom flex justify-center">
-                           <div className="font-dm-mono text-[9px] text-text-muted uppercase tracking-[0.2em] opacity-40">Ginashe Institutional Matrix</div>
+                        {/* Content Area */}
+                        <div className="flex-1 overflow-y-auto pr-1 space-y-3 min-h-[220px]">
+                          {searchTerm.trim() !== '' ? (
+                            /* --- SEARCH MODE --- */
+                            <div className="space-y-2">
+                              {(() => {
+                                const term = searchTerm.toLowerCase();
+                                const results = ALL_COURSES.filter(c => 
+                                  c.name.toLowerCase().includes(term) ||
+                                  c.track.toLowerCase().includes(term) ||
+                                  c.stream.toLowerCase().includes(term)
+                                );
+
+                                if (results.length === 0) {
+                                  return (
+                                    <div className="text-center py-8 text-text-muted text-[12px] font-dm-sans">
+                                      No matching programs found.
+                                    </div>
+                                  );
+                                }
+
+                                return results.map(course => (
+                                  <button
+                                    key={course.name}
+                                    type="button"
+                                    onClick={() => {
+                                      setForm({
+                                        ...form, 
+                                        level: course.name,
+                                        study_intake: course.name.includes('Enterprise') ? 'Enterprise/Rolling' : form.study_intake
+                                      });
+                                      setShowCourseSelector(false);
+                                    }}
+                                    className="w-full p-4 rounded-xl border border-border-custom bg-surface/30 hover:border-brand/40 text-left transition-all hover:bg-brand/[0.02] flex items-center justify-between group"
+                                  >
+                                    <div>
+                                      <div className="font-dm-sans text-[13px] font-bold text-text-custom group-hover:text-brand transition-colors">{course.name}</div>
+                                      <div className="font-dm-mono text-[9px] text-text-muted uppercase tracking-wider mt-1">{course.stream} &bull; {course.track}</div>
+                                    </div>
+                                    <ChevronRight className="w-4 h-4 text-text-muted group-hover:text-brand group-hover:translate-x-0.5 transition-all" />
+                                  </button>
+                                ));
+                              })()}
+                            </div>
+                          ) : (
+                            /* --- WIZARD MODE --- */
+                            <div className="space-y-2">
+                              {/* Step 1: Stream Selection */}
+                              {wizardStep === 'stream' && (
+                                <div className="grid gap-3">
+                                  <button
+                                    type="button"
+                                    onClick={() => {
+                                      setSelectedStream('DSS');
+                                      setWizardStep('track');
+                                    }}
+                                    className="w-full p-5 rounded-2xl border border-border-custom bg-surface/30 hover:border-brand/40 text-left transition-all hover:bg-brand/[0.02] flex items-center gap-4 group"
+                                  >
+                                    <div className="w-10 h-10 rounded-xl bg-brand/10 border border-brand/20 flex items-center justify-center text-brand shrink-0 group-hover:scale-105 transition-all">
+                                      <Layers className="w-5 h-5" />
+                                    </div>
+                                    <div className="flex-1">
+                                      <div className="font-syne text-[14px] font-bold text-text-custom group-hover:text-brand transition-colors">Digital Systems Stream (DSS)</div>
+                                      <div className="font-dm-sans text-[11px] text-text-muted mt-1">Cloud Computing, Software & AI Engineering</div>
+                                    </div>
+                                    <ChevronRight className="w-4 h-4 text-text-muted group-hover:text-brand group-hover:translate-x-0.5 transition-all" />
+                                  </button>
+
+                                  <button
+                                    type="button"
+                                    onClick={() => {
+                                      setSelectedStream('FLS');
+                                      setWizardStep('course');
+                                    }}
+                                    className="w-full p-5 rounded-2xl border border-border-custom bg-surface/30 hover:border-sky/40 text-left transition-all hover:bg-sky/[0.02] flex items-center gap-4 group"
+                                  >
+                                    <div className="w-10 h-10 rounded-xl bg-sky/10 border border-sky/20 flex items-center justify-center text-sky shrink-0 group-hover:scale-105 transition-all">
+                                      <BookOpen className="w-5 h-5" />
+                                    </div>
+                                    <div className="flex-1">
+                                      <div className="font-syne text-[14px] font-bold text-text-custom group-hover:text-sky transition-colors">Financial Literacy & FinTech (FLS)</div>
+                                      <div className="font-dm-sans text-[11px] text-text-muted mt-1">Personal Finance, Bookkeeping & Payments</div>
+                                    </div>
+                                    <ChevronRight className="w-4 h-4 text-text-muted group-hover:text-sky group-hover:translate-x-0.5 transition-all" />
+                                  </button>
+                                </div>
+                              )}
+
+                              {/* Step 2: Track Selection (Only for DSS) */}
+                              {wizardStep === 'track' && selectedStream === 'DSS' && (
+                                <div className="space-y-3">
+                                  <button
+                                    type="button"
+                                    onClick={() => setWizardStep('stream')}
+                                    className="flex items-center gap-1.5 text-[11px] font-dm-mono text-text-muted hover:text-brand uppercase tracking-wider mb-2.5 transition-colors"
+                                  >
+                                    &larr; Back to Streams
+                                  </button>
+                                  <div className="grid gap-2">
+                                    {[
+                                      'Cloud Computing',
+                                      'AI & Machine Learning',
+                                      'Cybersecurity',
+                                      'Data & Analytics',
+                                      'Digital Transformation',
+                                      'Software & DevOps',
+                                      'Digital Business'
+                                    ].map(track => (
+                                      <button
+                                        key={track}
+                                        type="button"
+                                        onClick={() => {
+                                          setSelectedTrack(track);
+                                          setWizardStep('course');
+                                        }}
+                                        className="w-full p-3.5 rounded-xl border border-border-custom bg-surface/30 hover:border-brand/40 text-left transition-all hover:bg-brand/[0.01] flex items-center justify-between group"
+                                      >
+                                        <span className="font-dm-sans text-[13px] font-medium text-text-custom group-hover:text-brand transition-colors">{track}</span>
+                                        <ChevronRight className="w-3.5 h-3.5 text-text-muted group-hover:text-brand group-hover:translate-x-0.5 transition-all" />
+                                      </button>
+                                    ))}
+                                  </div>
+                                </div>
+                              )}
+
+                              {/* Step 3: Course Selection */}
+                              {wizardStep === 'course' && (
+                                <div className="space-y-3">
+                                  <button
+                                    type="button"
+                                    onClick={() => {
+                                      if (selectedStream === 'DSS') {
+                                        setWizardStep('track');
+                                      } else {
+                                        setWizardStep('stream');
+                                      }
+                                    }}
+                                    className="flex items-center gap-1.5 text-[11px] font-dm-mono text-text-muted hover:text-brand uppercase tracking-wider mb-2.5 transition-colors"
+                                  >
+                                    &larr; Back to {selectedStream === 'DSS' ? 'Tracks' : 'Streams'}
+                                  </button>
+                                  <div className="font-dm-mono text-[9px] text-text-muted uppercase tracking-widest mb-1.5 px-1">
+                                    {selectedStream === 'DSS' ? `DSS > ${selectedTrack}` : 'FLS Stream'}
+                                  </div>
+                                  <div className="grid gap-2">
+                                    {(selectedStream === 'DSS' 
+                                      ? TRACK_PROGRAMMES[selectedTrack] 
+                                      : TRACK_PROGRAMMES['Financial Literacy & FinTech']
+                                    )?.map(course => (
+                                      <button
+                                        key={course}
+                                        type="button"
+                                        onClick={() => {
+                                          setForm({
+                                            ...form, 
+                                            level: course,
+                                            study_intake: course.includes('Enterprise') ? 'Enterprise/Rolling' : form.study_intake
+                                          });
+                                          setShowCourseSelector(false);
+                                        }}
+                                        className={`p-4 rounded-xl border text-left transition-all group flex items-center justify-between ${
+                                          form.level === course 
+                                            ? 'bg-brand/5 border-brand ring-1 ring-brand/30' 
+                                            : 'bg-surface/30 border-border-custom hover:border-brand/40'
+                                        }`}
+                                      >
+                                        <span className="font-dm-sans text-[13px] font-medium text-text-custom group-hover:text-brand transition-colors">{course}</span>
+                                        <div className={`w-3.5 h-3.5 rounded-full border border-border-custom flex items-center justify-center group-hover:border-brand/40 ${form.level === course ? 'bg-brand border-transparent' : ''}`}>
+                                          {form.level === course && <span className="w-1.5 h-1.5 rounded-full bg-[#080b12]" />}
+                                        </div>
+                                      </button>
+                                    ))}
+                                  </div>
+                                </div>
+                              )}
+                            </div>
+                          )}
+                        </div>
+
+                        {/* Footer */}
+                        <div className="mt-6 pt-5 border-t border-border-custom flex justify-center">
+                          <div className="font-dm-mono text-[9px] text-text-muted uppercase tracking-[0.2em] opacity-40">Ginashe Academy Registry</div>
                         </div>
                       </div>
                     </div>
