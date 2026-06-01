@@ -319,14 +319,12 @@ export default function SharedAdmissionForm({ onOpenModal, onSuccess, initialPro
       // Generate institutional ID
       const studentNumber = await getNextStudentNumber();
 
-      // Parallel file uploads for institutional record-keeping
-      const [idUrl, matricUrl, residenceUrl, motivationUrl, cvUrl] = await Promise.all([
-        idFile ? uploadFile(idFile, 'documents', 'id_docs') : Promise.resolve(''),
-        matricFile ? uploadFile(matricFile, 'documents', 'matric_docs') : Promise.resolve(''),
-        residenceFile ? uploadFile(residenceFile, 'documents', 'residence_docs') : Promise.resolve(''),
-        motivationFile ? uploadFile(motivationFile, 'documents', 'motivation_docs') : Promise.resolve(''),
-        cvFile ? uploadFile(cvFile, 'documents', 'cvs') : Promise.resolve('')
-      ]);
+      // Sequential file uploads to prevent connection choking on slow networks
+      const idUrl = idFile ? await uploadFile(idFile, 'documents', 'id_docs') : '';
+      const matricUrl = matricFile ? await uploadFile(matricFile, 'documents', 'matric_docs') : '';
+      const residenceUrl = residenceFile ? await uploadFile(residenceFile, 'documents', 'residence_docs') : '';
+      const motivationUrl = motivationFile ? await uploadFile(motivationFile, 'documents', 'motivation_docs') : '';
+      const cvUrl = cvFile ? await uploadFile(cvFile, 'documents', 'cvs') : '';
 
       const { error } = await withTimeout(
         supabase
