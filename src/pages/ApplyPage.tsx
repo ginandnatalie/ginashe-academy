@@ -21,7 +21,7 @@ export default function ApplyPage() {
             The Journey to <span className="text-brand">Mastery</span> Starts Here.
           </h1>
           <p className="text-text-soft text-[14px] md:text-[16px] max-w-xl mx-auto leading-relaxed">
-            Complete your admission requirements to join Africa's premier institutional academy for cloud and AI engineering.
+            Complete your admission requirements to join Africa's premier institutional academy, now enrolling for our Digital Systems (DSS) and Financial Literacy (FLS) streams.
           </p>
         </div>
 

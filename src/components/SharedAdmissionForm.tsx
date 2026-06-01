@@ -130,8 +130,8 @@ export default function SharedAdmissionForm({ onOpenModal, onSuccess, initialPro
     dob: '', idNumber: '', gender: '', nationality: 'South African',
     country: 'South Africa', address_line1: '', city: '', province: '', postal_code: '',
     payment_mode: initialPaymentMode || '',
-    study_year: currentYear.toString(),
-    study_intake: getInitialIntake(currentYear.toString())
+    study_year: '2026',
+    study_intake: 'September'
   });
   
   // File States
@@ -1076,19 +1076,10 @@ export default function SharedAdmissionForm({ onOpenModal, onSuccess, initialPro
                 <select 
                   className={SELECT_CLASS} 
                   value={form.study_year} 
-                  onChange={e => {
-                    const newYear = e.target.value;
-                    setForm({
-                      ...form, 
-                      study_year: newYear,
-                      study_intake: getInitialIntake(newYear)
-                    });
-                  }} 
+                  onChange={e => setForm({...form, study_year: e.target.value})} 
                   required
                 >
-                  <option value={currentYear.toString()}>{currentYear} Academic Year</option>
-                  <option value={(currentYear + 1).toString()}>{currentYear + 1} Academic Year</option>
-                  <option value={(currentYear + 2).toString()}>{currentYear + 2} Academic Year</option>
+                  <option value="2026">2026 Academic Year</option>
                 </select>
               </div>
               <div>
@@ -1099,19 +1090,7 @@ export default function SharedAdmissionForm({ onOpenModal, onSuccess, initialPro
                   onChange={e => setForm({...form, study_intake: e.target.value})} 
                   required
                 >
-                  {INTAKE_SCHEDULE.map(window => {
-                    const isPast = isIntakePast(form.study_year, window.name);
-                    const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-                    const startDate = new Date(parseInt(form.study_year), window.monthIdx, window.day);
-                    const deadlineDate = new Date(startDate);
-                    deadlineDate.setDate(startDate.getDate() - window.closingDaysBefore);
-
-                    return (
-                      <option key={window.name} value={window.name} disabled={isPast}>
-                        {window.name} Intake {isPast ? '(Closed)' : `— Starts ${monthNames[window.monthIdx]} ${window.day} (Deadline: ${monthNames[deadlineDate.getMonth()]} ${deadlineDate.getDate()})`}
-                      </option>
-                    );
-                  })}
+                  <option value="September">September 2026</option>
                   {selectionType === 'program' && (
                     <option value="Enterprise/Rolling">Enterprise (Rolling Enrolment)</option>
                   )}
