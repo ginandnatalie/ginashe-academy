@@ -192,7 +192,7 @@ function AppContent() {
         }} 
       />
 
-      {loading ? (
+      {loading && isPortal ? (
         <div className="min-h-screen bg-bg flex flex-col items-center justify-center transition-colors duration-300">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-brand mb-4"></div>
           <p className="text-brand font-dm-mono text-[10px] tracking-widest uppercase animate-pulse">Initializing Academy...</p>
