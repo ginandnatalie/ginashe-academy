@@ -25,6 +25,11 @@ export default function VerifyPage() {
   
   // State
   const [step, setStep] = useState<VerifyStep>('otp');
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [step]);
+
   const [email, setEmail] = useState(searchParams.get('email') || '');
   const [otp, setOtp] = useState(['', '', '', '', '', '']);
   const [password, setPassword] = useState('');

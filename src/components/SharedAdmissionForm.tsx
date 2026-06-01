@@ -75,9 +75,28 @@ interface SharedAdmissionFormProps {
 
 export default function SharedAdmissionForm({ onOpenModal, onSuccess, initialProgram = '', initialPaymentMode = '', isModal = false }: SharedAdmissionFormProps) {
   const navigate = useNavigate();
-  // ─── STEP STATE ──────────────────
   const [step, setStep] = useState<'check' | 'form' | 'existing' | 'success'>('check');
   const [hasAccount, setHasAccount] = useState<string>('');
+  const formRef = useRef<HTMLDivElement>(null);
+  
+  React.useEffect(() => {
+    // Scroll the window to top (for the full-page apply view)
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // Scroll any scrollable parent container (like the modal overlay or container)
+    if (formRef.current) {
+      let parent = formRef.current.parentElement;
+      while (parent) {
+        const overflowY = window.getComputedStyle(parent).overflowY;
+        if (overflowY === 'auto' || overflowY === 'scroll') {
+          parent.scrollTo({ top: 0, behavior: 'smooth' });
+          break;
+        }
+        parent = parent.parentElement;
+      }
+    }
+  }, [step]);
+
   const [studentNumberInput, setStudentNumberInput] = useState('');
   const [checkingAccount, setCheckingAccount] = useState(false);
   const [duplicateMessage, setDuplicateMessage] = useState('');
@@ -404,7 +423,7 @@ export default function SharedAdmissionForm({ onOpenModal, onSuccess, initialPro
   const todayStr = new Date().toISOString().split('T')[0];
 
   return (
-    <div className={`form-container ${isModal ? 'max-w-none' : ''}`}>
+    <div ref={formRef} className={`form-container ${isModal ? 'max-w-none' : ''}`}>
       {/* ─── STEP: CHECK ─── */}
       {step === 'check' && (
         <div className="space-y-5">
