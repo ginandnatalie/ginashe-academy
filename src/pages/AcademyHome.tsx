@@ -30,6 +30,39 @@ export default function AcademyHome({ onOpenModal, editMode }: AcademyHomeProps)
     localStorage.setItem('gda_sauma_dismissed_2026', 'true');
     setShowPromo(false);
   };
+
+  const getPromoWording = () => {
+    const today = new Date();
+    const SAST_offset = 2 * 60; // GMT+2 in minutes
+    const local_offset = today.getTimezoneOffset();
+    const sastTime = new Date(today.getTime() + (SAST_offset + local_offset) * 60 * 1000);
+    
+    const year = sastTime.getFullYear();
+    const month = sastTime.getMonth() + 1;
+    const date = sastTime.getDate();
+    
+    if (year === 2026 && month === 6 && date === 2) {
+      return {
+        intro: "An exclusive live interview with our Managing Director, George Kapendeka.",
+        dateLabel: "Today, June 2nd, 2026",
+        buttonLabel: "Tune In Live Now"
+      };
+    } else if (year > 2026 || (year === 2026 && (month > 6 || (month === 6 && date > 2)))) {
+      return {
+        intro: "Listen to the playback of the exclusive live interview with our Managing Director, George Kapendeka.",
+        dateLabel: "Aired June 2nd, 2026",
+        buttonLabel: "Listen to Playback"
+      };
+    }
+    
+    return {
+      intro: "Tune in tomorrow to an exclusive live interview with our Managing Director, George Kapendeka.",
+      dateLabel: "Tomorrow, June 2nd, 2026",
+      buttonLabel: "Tune In Live"
+    };
+  };
+
+  const promoWording = getPromoWording();
   const voices = [
     { name: 'George K', role: 'Managing Director, Ginashe Group', quote: "At Ginashe, we aren't just teaching skills; we're architecting the future of African sovereignty across every sector that matters.", image: '/images/faculty/george.jpg' },
     { name: 'Talent K', role: 'Lead Faculty', quote: 'Our curriculum is live fire. We prepare candidates to handle production-scale challenges from Day 1, bridging the gap between theory and mastery.' },
@@ -158,7 +191,7 @@ export default function AcademyHome({ onOpenModal, editMode }: AcademyHomeProps)
               {/* Close Button */}
               <button
                 onClick={handleDismissPromo}
-                className="absolute top-6 right-6 text-text-muted hover:text-brand transition-colors p-2 rounded-full hover:bg-white/5 z-20"
+                className="absolute top-6 right-6 text-slate-400 hover:text-brand transition-colors p-2 rounded-full hover:bg-white/5 z-20"
                 aria-label="Close Promo"
               >
                 <X size={20} />
@@ -175,26 +208,25 @@ export default function AcademyHome({ onOpenModal, editMode }: AcademyHomeProps)
                     Live Radio Broadcast
                   </div>
                   
-                  <h3 className="font-syne font-black text-2xl sm:text-4xl text-text-custom leading-tight tracking-tight mb-5">
+                  <h3 className="font-syne font-black text-2xl sm:text-4xl text-white leading-tight tracking-tight mb-5">
                     George Kapendeka <br />
                     <span className="text-brand italic font-light font-dm-sans">Live on SAUMA HD Radio</span>
                   </h3>
                   
-                  <p className="text-text-soft text-[13px] sm:text-[14px] leading-relaxed mb-6">
-                    Tune in tomorrow to an exclusive live interview with our Managing Director, <strong>George Kapendeka</strong>. 
-                    He will discuss Ginashe Academy's 2026 academic cohorts, digital economy readiness, and our practitioner-led skills development pipelines designed to shape Africa's future economy.
+                  <p className="text-slate-300 text-[13px] sm:text-[14px] leading-relaxed mb-6">
+                    {promoWording.intro} He will discuss Ginashe Academy's 2026 academic cohorts, digital economy readiness, and our practitioner-led skills development pipelines designed to shape Africa's future economy.
                   </p>
 
                   <div className="space-y-3 mb-8">
-                    <div className="flex items-center gap-3 text-text-soft text-xs sm:text-sm">
+                    <div className="flex items-center gap-3 text-slate-300 text-xs sm:text-sm">
                       <Calendar size={16} className="text-brand shrink-0" />
-                      <span>Tomorrow, June 2nd, 2026</span>
+                      <span>{promoWording.dateLabel}</span>
                     </div>
-                    <div className="flex items-center gap-3 text-text-soft text-xs sm:text-sm">
+                    <div className="flex items-center gap-3 text-slate-300 text-xs sm:text-sm">
                       <Clock size={16} className="text-brand shrink-0" />
                       <span>11:00 AM SAST (GMT+2)</span>
                     </div>
-                    <div className="flex items-center gap-3 text-text-soft text-xs sm:text-sm">
+                    <div className="flex items-center gap-3 text-slate-300 text-xs sm:text-sm">
                       <Volume2 size={16} className="text-brand shrink-0" />
                       <span>Broadcasting globally online</span>
                     </div>
@@ -208,12 +240,12 @@ export default function AcademyHome({ onOpenModal, editMode }: AcademyHomeProps)
                       className="btn btn-brand justify-center text-center no-underline"
                       onClick={handleDismissPromo}
                     >
-                      Tune In Live
+                      {promoWording.buttonLabel}
                       <ArrowRight size={14} />
                     </a>
                     <button
                       onClick={handleDismissPromo}
-                      className="btn btn-outline justify-center text-center"
+                      className="btn border border-white/10 text-white hover:bg-white/5 hover:border-brand/40 justify-center text-center transition-all"
                     >
                       Remind Me Later
                     </button>
@@ -235,9 +267,9 @@ export default function AcademyHome({ onOpenModal, editMode }: AcademyHomeProps)
                   </div>
 
                   <div className="relative z-10 text-center mt-6">
-                    <div className="font-dm-mono text-[9px] text-text-dim uppercase tracking-[0.3em] mb-1">Broadcaster</div>
-                    <div className="font-syne font-extrabold text-sm text-text-custom tracking-wider">SAUMA HD RADIO</div>
-                    <p className="text-[10px] text-text-soft/60 mt-1">HD Streaming Portal</p>
+                    <div className="font-dm-mono text-[9px] text-slate-500 uppercase tracking-[0.3em] mb-1">Broadcaster</div>
+                    <div className="font-syne font-extrabold text-sm text-white tracking-wider">SAUMA HD RADIO</div>
+                    <p className="text-[10px] text-slate-400/60 mt-1">HD Streaming Portal</p>
                   </div>
 
                   {/* Audio visualization simulation animation */}
