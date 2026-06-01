@@ -21,15 +21,33 @@ export const supabase = createClient(supabaseUrl || '', supabaseAnonKey || '', {
 
 export const uploadFile = async (file: File, bucket: string = 'documents', folder: string = 'cvs') => {
   console.log('Starting file upload...', { bucket, folder, fileName: file.name });
-  const fileExt = file.name.split('.').pop();
+  
+  // Extract extension defensively
+  const lastDotIndex = file.name.lastIndexOf('.');
+  let fileExt = '';
+  if (lastDotIndex !== -1) {
+    fileExt = file.name.substring(lastDotIndex + 1).toLowerCase();
+  }
+  
+  // Fallback to pdf if no extension or if extension is invalid/too long
+  if (!fileExt || fileExt.length > 5) {
+    fileExt = 'pdf';
+  }
+
   const fileName = `${Math.random()}.${fileExt}`;
   const filePath = `${folder}/${fileName}`;
 
   try {
-    // Upload the file directly
-    const { error: uploadError } = await supabase.storage
+    // Wrap upload in a promise timeout (30 seconds)
+    const uploadPromise = supabase.storage
       .from(bucket)
       .upload(filePath, file);
+
+    const timeoutPromise = new Promise<never>((_, reject) =>
+      setTimeout(() => reject(new Error(`Upload timed out for ${file.name} after 30 seconds`)), 30000)
+    );
+
+    const { error: uploadError } = await Promise.race([uploadPromise, timeoutPromise]) as any;
 
     if (uploadError) {
       console.error('Upload error:', uploadError);
@@ -48,3 +66,4 @@ export const uploadFile = async (file: File, bucket: string = 'documents', folde
     throw err;
   }
 };
+

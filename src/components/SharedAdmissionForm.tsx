@@ -364,32 +364,31 @@ export default function SharedAdmissionForm({ onOpenModal, onSuccess, initialPro
 
       if (error) throw error;
 
-      // Process emails via backend
-      try {
-        await fetch('https://ffgypwmrmdosaihgpkuw.supabase.co/functions/v1/process-application', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            email: form.email,
-            name: `${form.first} ${form.last}`,
-            program: selectionType === 'level' ? form.level : form.prog,
-            details: form
-          })
-        });
-      } catch (processErr) {
+      // Process emails via backend (non-blocking)
+      fetch('https://ffgypwmrmdosaihgpkuw.supabase.co/functions/v1/process-application', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: form.email,
+          name: `${form.first} ${form.last}`,
+          program: selectionType === 'level' ? form.level : form.prog,
+          details: form
+        })
+      }).catch(processErr => {
         console.error('Email process error:', processErr);
-      }
+      });
       
       // Set to success step instead of immediate redirect
       setStep('success');
     } catch (error: any) {
-      if (error.message?.includes('idx_applications_email_active') || error.message?.includes('duplicate key')) {
+      const errorMsg = error?.message || (typeof error === 'string' ? error : '') || 'The application registry encountered an issue. Please try again.';
+      if (errorMsg.includes('idx_applications_email_active') || errorMsg.includes('duplicate key')) {
          setDuplicateMessage(`Existing Application Found: An active application with the email ${form.email} already exists. Please use the Student Portal to check your status.`);
          setStep('existing');
          return;
       }
       toast.error('Admission Portal Error', {
-        description: error.message || 'The application registry encountered an issue. Please try again.'
+        description: errorMsg
       });
     } finally {
       setIsSubmitting(false);
