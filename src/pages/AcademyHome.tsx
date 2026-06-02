@@ -186,20 +186,20 @@ export default function AcademyHome({ onOpenModal, editMode }: AcademyHomeProps)
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 30 }}
               transition={{ type: 'spring', damping: 25, stiffness: 220 }}
-              className="relative w-full max-w-4xl bg-gradient-to-br from-navy via-[#121620] to-[#0A0B0E] border border-brand/30 rounded-[2.5rem] shadow-[0_0_50px_rgba(0,242,255,0.15)] overflow-hidden z-10"
+              className="relative w-full max-w-4xl bg-gradient-to-br from-navy via-[#121620] to-[#0A0B0E] border border-brand/30 rounded-3xl md:rounded-[2.5rem] shadow-[0_0_50px_rgba(0,242,255,0.15)] overflow-hidden z-10 max-h-[calc(100vh-2rem)] md:max-h-[85vh] flex flex-col"
             >
               {/* Close Button */}
               <button
                 onClick={handleDismissPromo}
-                className="absolute top-6 right-6 text-slate-400 hover:text-brand transition-colors p-2 rounded-full hover:bg-white/5 z-20"
+                className="absolute top-4 right-4 sm:top-6 sm:right-6 text-slate-400 hover:text-brand transition-colors p-2 rounded-full hover:bg-white/5 z-20"
                 aria-label="Close Promo"
               >
                 <X size={20} />
               </button>
 
-              <div className="grid grid-cols-1 md:grid-cols-[1.2fr_0.8fr]">
+              <div className="grid grid-cols-1 md:grid-cols-[1.2fr_0.8fr] overflow-y-auto flex-1">
                 {/* Left Side (Content) */}
-                <div className="p-8 sm:p-12 flex flex-col justify-center">
+                <div className="p-6 sm:p-12 flex flex-col justify-center">
                   <div className="flex items-center gap-2 font-dm-mono text-[10px] tracking-[0.25em] uppercase text-brand mb-4">
                     <span className="relative flex h-2 w-2">
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald opacity-75"></span>
@@ -253,7 +253,7 @@ export default function AcademyHome({ onOpenModal, editMode }: AcademyHomeProps)
                 </div>
 
                 {/* Right Side (Visual Card) */}
-                <div className="relative bg-[#07080a] border-t md:border-t-0 md:border-l border-brand/10 p-8 sm:p-12 flex flex-col items-center justify-center overflow-hidden group">
+                <div className="relative bg-[#07080a] border-t md:border-t-0 md:border-l border-brand/10 p-8 sm:p-12 flex flex-col items-center justify-center overflow-hidden group hidden md:flex">
                   {/* Neon Grid Backdrop */}
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,242,255,0.06),transparent_70%)] z-0" />
                   
