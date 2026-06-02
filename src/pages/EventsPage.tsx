@@ -55,6 +55,30 @@ export default function EventsPage() {
   const [registrationSuccess, setRegistrationSuccess] = useState(false);
   const [formLoading, setFormLoading] = useState(false);
 
+  const isPastEvent = (eventDateStr: string, eventTimeStr?: string) => {
+    try {
+      const today = new Date();
+      const SAST_offset = 2 * 60; // GMT+2 in minutes
+      const local_offset = today.getTimezoneOffset();
+      const sastTime = new Date(today.getTime() + (SAST_offset + local_offset) * 60 * 1000);
+
+      const [year, month, day] = eventDateStr.split('-').map(Number);
+      const eventDate = new Date(year, month - 1, day);
+      
+      if (eventTimeStr) {
+        const [hours, minutes] = eventTimeStr.split(':').map(Number);
+        eventDate.setHours(hours || 0, minutes || 0, 0, 0);
+      } else {
+        eventDate.setHours(23, 59, 59, 999);
+      }
+
+      return sastTime > eventDate;
+    } catch (e) {
+      console.warn('Error parsing date:', e);
+      return false;
+    }
+  };
+
   useEffect(() => {
     fetchEvents();
   }, []);
@@ -209,6 +233,11 @@ export default function EventsPage() {
                   <span className="px-3 py-1 bg-brand/10 text-brand border border-brand/20 rounded-full font-dm-mono text-[9px] tracking-widest uppercase">
                     {event.type}
                   </span>
+                  {isPastEvent(event.event_date, event.event_time) && (
+                    <span className="px-3 py-1 bg-red-500/10 text-red-400 border border-red-500/20 rounded-full font-dm-mono text-[9px] tracking-widest uppercase font-bold">
+                      Past Event
+                    </span>
+                  )}
                   <div className="flex items-center gap-2 text-text-dim text-[11px] font-dm-mono uppercase tracking-wider">
                     <Clock size={14} className="text-brand" />
                     {event.event_time} CAT
@@ -242,7 +271,25 @@ export default function EventsPage() {
                       event.location
                     )}
                   </div>
-                  {event.location.includes('https://') ? (
+                  {isPastEvent(event.event_date, event.event_time) ? (
+                    event.type === 'Radio Interview' ? (
+                      <a
+                        href={event.location.match(/https?:\/\/[^\s)]+/)?.[0] || 'https://saumahdradio0.webradiosite.com/'}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn border border-white/10 text-text-muted hover:bg-white/5 hover:border-brand/40 px-8 py-4 ml-auto flex items-center gap-2 group/btn no-underline"
+                      >
+                        Listen to Playback <ArrowRight size={16} className="transition-transform group-hover/btn:translate-x-1" />
+                      </a>
+                    ) : (
+                      <button
+                        disabled
+                        className="border border-border-custom text-text-dim cursor-not-allowed px-8 py-4 ml-auto flex items-center gap-2 rounded-xl font-syne font-bold text-xs uppercase tracking-widest bg-white/5"
+                      >
+                        Concluded
+                      </button>
+                    )
+                  ) : event.location.includes('https://') ? (
                     <a
                       href={event.location.match(/https?:\/\/[^\s)]+/)?.[0] || 'https://saumahdradio0.webradiosite.com/'}
                       target="_blank"
