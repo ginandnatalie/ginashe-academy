@@ -479,101 +479,103 @@ export function Programs({ onOpenModal, editMode, isHomePage, initialFilterLevel
               </Link>
             </div>
             {/* Track Master Modal: Simple, Clean Centered Design */}
-            <AnimatePresence>
-              {selectedTrackId && createPortal(
-                <div 
-                  className="fixed inset-0 z-[3000] flex items-center justify-center p-4 md:p-6 overflow-hidden"
-                  onClick={() => setSelectedTrackId(null)}
-                >
-                  <motion.div 
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    className="absolute inset-0 bg-bg/90 backdrop-blur-md"
-                  />
-                  
-                  <motion.div 
-                    initial={{ scale: 0.95, opacity: 0, y: 15 }}
-                    animate={{ scale: 1, opacity: 1, y: 0 }}
-                    exit={{ scale: 0.95, opacity: 0, y: 15 }}
-                    onClick={(e) => e.stopPropagation()}
-                    className="relative w-full max-w-2xl bg-card border border-border-custom rounded-3xl shadow-[0_30px_90px_rgba(0,0,0,0.6)] overflow-hidden flex flex-col p-6 md:p-8"
+            {typeof document !== 'undefined' && createPortal(
+              <AnimatePresence>
+                {selectedTrackId && (
+                  <div 
+                    className="fixed inset-0 z-[3000] flex items-center justify-center p-4 md:p-6 overflow-hidden"
+                    onClick={() => setSelectedTrackId(null)}
                   >
-                    {/* Close Button */}
-                    <button 
-                      onClick={() => setSelectedTrackId(null)}
-                      className="absolute top-6 right-6 w-8 h-8 rounded-full border border-border-custom flex items-center justify-center text-text-muted hover:text-brand hover:border-brand/40 transition-all text-xs"
+                    <motion.div 
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      className="absolute inset-0 bg-bg/90 backdrop-blur-md"
+                    />
+                    
+                    <motion.div 
+                      initial={{ scale: 0.95, opacity: 0, y: 15 }}
+                      animate={{ scale: 1, opacity: 1, y: 0 }}
+                      exit={{ scale: 0.95, opacity: 0, y: 15 }}
+                      onClick={(e) => e.stopPropagation()}
+                      className="relative w-full max-w-2xl bg-card border border-border-custom rounded-3xl shadow-[0_30px_90px_rgba(0,0,0,0.6)] overflow-hidden flex flex-col p-6 md:p-8"
                     >
-                      ✕
-                    </button>
-
-                    {/* Header */}
-                    <div className="flex items-center gap-4 mb-6 pr-8">
-                      <div className="w-12 h-12 rounded-xl bg-brand/10 border border-brand/20 flex items-center justify-center text-2xl shadow-md">
-                        {TRACKS[selectedTrackId].icon}
-                      </div>
-                      <div>
-                        <span className="font-dm-mono text-[9px] text-brand uppercase tracking-widest block mb-0.5">Career Track</span>
-                        <h2 className="font-syne font-bold text-2xl text-text-custom leading-tight">
-                          {TRACKS[selectedTrackId].title}
-                        </h2>
-                      </div>
-                    </div>
-
-                    {/* Description */}
-                    <div className="mb-6">
-                      <p className="text-[14px] text-text-soft font-outfit leading-relaxed">
-                        {TRACKS[selectedTrackId].description || TRACKS[selectedTrackId].mission}
-                      </p>
-                    </div>
-
-                    {/* Simplified Timeline */}
-                    <div className="space-y-4 mb-8">
-                      <div className="font-dm-mono text-[9px] text-text-dim uppercase tracking-[0.2em] mb-2 border-b border-border-custom pb-2">
-                        Progression Pathway
-                      </div>
-                      <div className="relative pl-6 space-y-4">
-                        {/* Timeline line */}
-                        <div className="absolute left-[7px] top-2 bottom-2 w-px bg-border-custom" />
-                        
-                        {TRACKS[selectedTrackId].roadmap.map((step, sIdx) => (
-                          <div key={step.level} className="relative flex gap-3.5 items-start">
-                            {/* Dot indicator */}
-                            <div className="absolute -left-[23px] w-3.5 h-3.5 rounded-full border border-border-custom bg-card flex items-center justify-center text-[8px] font-bold text-text-dim mt-1">
-                              {sIdx + 1}
-                            </div>
-                            <div>
-                              <h4 className="font-syne font-semibold text-[13px] text-text-custom leading-none flex items-center gap-2">
-                                {step.title}
-                                <span className="text-[9px] font-dm-mono text-text-muted">({step.level})</span>
-                              </h4>
-                              <p className="text-[11px] text-text-muted mt-1 leading-normal">{step.description}</p>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Action Buttons */}
-                    <div className="flex gap-4">
-                      <button 
-                        onClick={() => (setSelectedTrackId(null), navigate(`/tracks/${selectedTrackId}`))}
-                        className="flex-grow bg-brand text-navy font-syne font-bold text-xs uppercase tracking-widest py-4.5 rounded-xl hover:bg-white transition-all flex items-center justify-center gap-2"
-                      >
-                        Explore Track <ArrowRight size={14} />
-                      </button>
+                      {/* Close Button */}
                       <button 
                         onClick={() => setSelectedTrackId(null)}
-                        className="px-6 py-4.5 rounded-xl border border-border-custom font-syne font-bold text-xs uppercase tracking-widest text-text-soft hover:bg-glass-bg transition-all"
+                        className="absolute top-6 right-6 w-8 h-8 rounded-full border border-border-custom flex items-center justify-center text-text-muted hover:text-brand hover:border-brand/40 transition-all text-xs"
                       >
-                        Close
+                        ✕
                       </button>
-                    </div>
-                  </motion.div>
-                </div>,
-                document.body
-              )}
-            </AnimatePresence>
+
+                      {/* Header */}
+                      <div className="flex items-center gap-4 mb-6 pr-8">
+                        <div className="w-12 h-12 rounded-xl bg-brand/10 border border-brand/20 flex items-center justify-center text-2xl shadow-md">
+                          {TRACKS[selectedTrackId].icon}
+                        </div>
+                        <div>
+                          <span className="font-dm-mono text-[9px] text-brand uppercase tracking-widest block mb-0.5">Career Track</span>
+                          <h2 className="font-syne font-bold text-2xl text-text-custom leading-tight">
+                            {TRACKS[selectedTrackId].title}
+                          </h2>
+                        </div>
+                      </div>
+
+                      {/* Description */}
+                      <div className="mb-6">
+                        <p className="text-[14px] text-text-soft font-outfit leading-relaxed">
+                          {TRACKS[selectedTrackId].description || TRACKS[selectedTrackId].mission}
+                        </p>
+                      </div>
+
+                      {/* Simplified Timeline */}
+                      <div className="space-y-4 mb-8">
+                        <div className="font-dm-mono text-[9px] text-text-dim uppercase tracking-[0.2em] mb-2 border-b border-border-custom pb-2">
+                          Progression Pathway
+                        </div>
+                        <div className="relative pl-6 space-y-4">
+                          {/* Timeline line */}
+                          <div className="absolute left-[7px] top-2 bottom-2 w-px bg-border-custom" />
+                          
+                          {TRACKS[selectedTrackId].roadmap.map((step, sIdx) => (
+                            <div key={step.level} className="relative flex gap-3.5 items-start">
+                              {/* Dot indicator */}
+                              <div className="absolute -left-[23px] w-3.5 h-3.5 rounded-full border border-border-custom bg-card flex items-center justify-center text-[8px] font-bold text-text-dim mt-1">
+                                {sIdx + 1}
+                              </div>
+                              <div>
+                                <h4 className="font-syne font-semibold text-[13px] text-text-custom leading-none flex items-center gap-2">
+                                  {step.title}
+                                  <span className="text-[9px] font-dm-mono text-text-muted">({step.level})</span>
+                                </h4>
+                                <p className="text-[11px] text-text-muted mt-1 leading-normal">{step.description}</p>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Action Buttons */}
+                      <div className="flex gap-4">
+                        <button 
+                          onClick={() => (setSelectedTrackId(null), navigate(`/tracks/${selectedTrackId}`))}
+                          className="flex-grow bg-brand text-navy font-syne font-bold text-xs uppercase tracking-widest py-4.5 rounded-xl hover:bg-white transition-all flex items-center justify-center gap-2"
+                        >
+                          Explore Track <ArrowRight size={14} />
+                        </button>
+                        <button 
+                          onClick={() => setSelectedTrackId(null)}
+                          className="px-6 py-4.5 rounded-xl border border-border-custom font-syne font-bold text-xs uppercase tracking-widest text-text-soft hover:bg-glass-bg transition-all"
+                        >
+                          Close
+                        </button>
+                      </div>
+                    </motion.div>
+                  </div>
+                )}
+              </AnimatePresence>,
+              document.body
+            )}
           </div>
         </div>
 
