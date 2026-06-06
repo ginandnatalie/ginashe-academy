@@ -117,7 +117,7 @@ CREATE SEQUENCE IF NOT EXISTS public.student_number_seq START WITH 1001 INCREMEN
 CREATE OR REPLACE FUNCTION public.generate_student_number()
 RETURNS TEXT AS $$
 BEGIN
-    RETURN 'Ginashe Academy-' || EXTRACT(YEAR FROM NOW())::TEXT || '-' || LPAD(nextval('public.student_number_seq')::TEXT, 4, '0');
+    RETURN nextval('public.student_number_seq')::TEXT;
 END;
 $$ LANGUAGE plpgsql;
 

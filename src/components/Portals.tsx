@@ -513,7 +513,7 @@ export function AdminDashboard() {
                 { label: 'Staff Management', icon: '👥', action: () => { setActiveTab('staff'); setShowCommandPalette(false); } },
                 { label: 'Site Settings', icon: '⚙️', action: () => { setActiveTab('settings'); setShowCommandPalette(false); } },
                 { label: 'Communication Logs', icon: '📧', action: () => { setActiveTab('communications'); setShowCommandPalette(false); } },
-                { label: 'Export All Applications (CSV)', icon: '📤', action: () => { exportToCSV(applications, 'gda-applications'); setShowCommandPalette(false); } },
+                { label: 'Export All Applications (CSV)', icon: '📤', action: () => { exportToCSV(applications, 'ginashe-applications'); setShowCommandPalette(false); } },
               ].map((item, i) => (
                 <button
                   key={i}
@@ -1835,7 +1835,7 @@ function StaffManagement() {
       <div className="flex justify-between items-center">
         <h2 className="font-syne font-bold text-xl">Staff & Roles</h2>
         <div className="flex gap-2">
-          <button onClick={() => exportToCSV(staff, 'gda-staff')} className="btn btn-outline btn-sm">📤 Export</button>
+          <button onClick={() => exportToCSV(staff, 'ginashe-staff')} className="btn btn-outline btn-sm">📤 Export</button>
           <button onClick={() => setIsAdding(!isAdding)} className="btn btn-brand btn-sm">{isAdding ? 'Cancel' : '+ Add Staff'}</button>
         </div>
       </div>
@@ -4353,7 +4353,7 @@ export function StudentPortal({ onStartCourse }: { onStartCourse: (courseId: str
                   </p>
                 </div>
                 <div className="space-y-4">
-                  <button onClick={() => exportToJSON([profile || {}], 'gda-archive')} className="w-full btn btn-outline border-border2 hover:border-brand/50 py-4 flex items-center gap-3 justify-center">
+                  <button onClick={() => exportToJSON([profile || {}], 'ginashe-archive')} className="w-full btn btn-outline border-border2 hover:border-brand/50 py-4 flex items-center gap-3 justify-center">
                     <Globe className="w-4 h-4" /> Download Records Archive
                   </button>
                 </div>
@@ -4548,7 +4548,7 @@ function StudentProgressTracker() {
     <div className="space-y-4">
       <div className="flex justify-between items-center">
         <h2 className="font-syne font-bold text-xl">Student Progress</h2>
-        <button onClick={() => exportToCSV(students, 'gda-student-progress')} className="btn btn-outline btn-sm">📤 Export CSV</button>
+        <button onClick={() => exportToCSV(students, 'ginashe-student-progress')} className="btn btn-outline btn-sm">📤 Export CSV</button>
       </div>
       <div className="bg-card border border-border-custom rounded-xl overflow-hidden">
         <table className="w-full text-left border-collapse">

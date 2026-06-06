@@ -338,6 +338,6 @@ CREATE POLICY "Users can manage own quiz attempts" ON public.quiz_attempts FOR A
 CREATE OR REPLACE FUNCTION public.generate_student_number()
 RETURNS TEXT AS $$
 BEGIN
-    RETURN 'Ginashe Academy-' || EXTRACT(YEAR FROM NOW())::TEXT || '-' || LPAD(nextval('public.student_number_seq')::TEXT, 4, '0');
+    RETURN nextval('public.student_number_seq')::TEXT;
 END;
 $$ LANGUAGE plpgsql;
