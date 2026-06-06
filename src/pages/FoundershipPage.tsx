@@ -27,7 +27,7 @@ export default function FoundershipPage({ onOpenModal }: { onOpenModal: (id: str
               <div className="section-label">Empowerment Framework</div>
               <h2 className="section-title text-text-custom mb-6 animate-fadeUp">The Foundership <br /><span className="text-brand">Pivot Protocol.</span></h2>
               <p className="section-sub !max-w-none mb-10 animate-fadeUp delay-100">
-                Traditional education prepares you for a cubicle. GDA prepares you for the boardroom and the cloud. Our Foundership track is engineered for those who refuse to wait for permission to build.
+                Traditional education prepares you for a cubicle. Ginashe Academy prepares you for the boardroom and the cloud. Our Foundership track is engineered for those who refuse to wait for permission to build.
               </p>
               
               <div className="space-y-4 mt-8">
@@ -127,7 +127,7 @@ export default function FoundershipPage({ onOpenModal }: { onOpenModal: (id: str
               { 
                 icon: <Layout className="w-5 h-5" />, 
                 title: 'Portfolio Architecture', 
-                desc: 'Build a production-grade portfolio that speaks louder than any CV. Verified by GDA practitioners.' 
+                desc: 'Build a production-grade portfolio that speaks louder than any CV. Verified by Ginashe Academy practitioners.' 
               },
               { 
                 icon: <MessageSquare className="w-5 h-5" />, 

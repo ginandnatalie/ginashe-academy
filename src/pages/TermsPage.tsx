@@ -8,7 +8,7 @@ export default function TermsPage() {
     {
       title: "1. Institutional Governance",
       icon: <Scale className="w-6 h-6 text-brand" />,
-      content: "Ginashe Digital Academy (GDA) is a premier digital institution dedicated to technical excellence. By enrolling, students agree to adhere to our high-performance culture and institutional standards. GDA reserves the right to modify curriculum pathways to ensure alignment with global tech industry shifts."
+      content: "Ginashe Academy (Ginashe Academy) is a premier digital institution dedicated to technical excellence. By enrolling, students agree to adhere to our high-performance culture and institutional standards. Ginashe Academy reserves the right to modify curriculum pathways to ensure alignment with global tech industry shifts."
     },
     {
       title: "2. Enrolment & Eligibility",
@@ -18,17 +18,17 @@ export default function TermsPage() {
     {
       title: "3. Academic Integrity",
       icon: <Shield className="w-6 h-6 text-sky" />,
-      content: "GDA maintains a zero-tolerance policy for plagiarism and academic dishonesty. Our practitioner-led model requires original synthesis of technical concepts. Violation of these standards leads to institutional disciplinary action."
+      content: "Ginashe Academy maintains a zero-tolerance policy for plagiarism and academic dishonesty. Our practitioner-led model requires original synthesis of technical concepts. Violation of these standards leads to institutional disciplinary action."
     },
     {
       title: "4. Financial Obligations",
       icon: <CreditCard className="w-6 h-6 text-violet" />,
-      content: "Tuition fees are due as per the agreed instalment plan. Access to the GDA Student Portal and proprietary course materials is contingent upon maintaining a good financial standing with the Academy."
+      content: "Tuition fees are due as per the agreed instalment plan. Access to the Ginashe Academy Student Portal and proprietary course materials is contingent upon maintaining a good financial standing with the Academy."
     },
     {
       title: "5. Intellectual Property",
       icon: <BookOpen className="w-6 h-6 text-brand" />,
-      content: "All course materials, frameworks, and methodologies provided by GDA are the exclusive intellectual property of the Academy. Students are granted a non-transferable licence for personal educational use only."
+      content: "All course materials, frameworks, and methodologies provided by Ginashe Academy are the exclusive intellectual property of the Academy. Students are granted a non-transferable licence for personal educational use only."
     },
     {
       title: "6. Certification Criteria",
@@ -46,7 +46,7 @@ export default function TermsPage() {
       <PageHero
         label="Institutional Governance"
         title={<>Terms of<br /><span className="text-brand">Enrolment</span>.</>}
-        subtitle="The formal framework governing your residency and academic journey at Ginashe Digital Academy."
+        subtitle="The formal framework governing your residency and academic journey at Ginashe Academy."
         image="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=2070"
         imageAlt="Formal institutional documentation"
       />
@@ -56,7 +56,7 @@ export default function TermsPage() {
           <div className="bg-card border border-border-custom rounded-3xl p-8 md:p-12 relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brand/50 to-transparent" />
             <p className="text-text-soft leading-relaxed italic border-l-2 border-brand/30 pl-6 text-lg">
-              "Excellence is not an act, but a habit. Our terms ensure that every resident of GDA is held to the highest standard of technical and professional conduct."
+              "Excellence is not an act, but a habit. Our terms ensure that every resident of Ginashe Academy is held to the highest standard of technical and professional conduct."
             </p>
           </div>
 

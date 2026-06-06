@@ -57,7 +57,7 @@ export const TRACKS: Record<string, TrackData> = {
         title: 'Multi-Cloud Enterprise',
         description: 'Strategic governance and financial engineering for global scale.',
         modules: ['Cloud Governance Frameworks', 'FinOps Mastery', 'Enterprise Landing Zones'],
-        vendor_alignment: ['GDA Institutional Fellow']
+        vendor_alignment: ['Ginashe Academy Institutional Fellow']
       }
     ]
   },
@@ -77,7 +77,7 @@ export const TRACKS: Record<string, TrackData> = {
         title: 'AI Fundamentals',
         description: 'Understanding how intelligence is modeled and governed.',
         modules: ['Predictive Logic', 'Prompt Engineering', 'AI Ethics & Risk'],
-        vendor_alignment: ['GDA AI Literacy Cert']
+        vendor_alignment: ['Ginashe Academy AI Literacy Cert']
       },
       {
         level: 'Associate',
@@ -98,7 +98,7 @@ export const TRACKS: Record<string, TrackData> = {
         title: 'AI Strategy & Enterprise',
         description: 'Governing institutional AI adoption and strategic ROI.',
         modules: ['AI Governance Frameworks', 'ROI Strategy for AI', 'Responsible AI Leadership'],
-        vendor_alignment: ['GDA Leadership Fellow']
+        vendor_alignment: ['Ginashe Academy Leadership Fellow']
       }
     ]
   },
@@ -159,7 +159,7 @@ export const TRACKS: Record<string, TrackData> = {
         title: 'Data Literacy',
         description: 'Foundations of quantitative analysis and visualization.',
         modules: ['Analytical Thinking', 'Visual Representation', 'Basic SQL Logic'],
-        vendor_alignment: ['GDA Data Literate']
+        vendor_alignment: ['Ginashe Academy Data Literate']
       },
       {
         level: 'Associate',
@@ -241,14 +241,14 @@ export const TRACKS: Record<string, TrackData> = {
         title: 'Code Launchpad',
         description: 'Building the bedrock of computer science and web literacy.',
         modules: ['HTML/CSS Foundations', 'Python Logic', 'Version Control (Git)'],
-        vendor_alignment: ['GDA Developer Core']
+        vendor_alignment: ['Ginashe Academy Developer Core']
       },
       {
         level: 'Associate',
         title: 'Full-Stack Development',
         description: 'Building production-grade applications across the stack.',
         modules: ['React & UI Architecture', 'Node.js & Backend Logic', 'Relational Databases'],
-        vendor_alignment: ['GDA Associate Developer']
+        vendor_alignment: ['Ginashe Academy Associate Developer']
       },
       {
         level: 'Professional',
@@ -282,7 +282,7 @@ export const TRACKS: Record<string, TrackData> = {
         title: 'Digital Entrepreneurship 101',
         description: 'The laws of the digital business world.',
         modules: ['Digital Business Models', 'Online Presence Systems', 'Search Governance (SEO)'],
-        vendor_alignment: ['GDA Venture Fundamentals']
+        vendor_alignment: ['Ginashe Academy Venture Fundamentals']
       },
       {
         level: 'Associate',
@@ -296,7 +296,7 @@ export const TRACKS: Record<string, TrackData> = {
         title: 'Digital Business Strategy',
         description: 'Product leadership and strategic monetization.',
         modules: ['Technical Product Mgmt', 'Growth Hacking Ops', 'Monetisation Design'],
-        vendor_alignment: ['GDA Product Masterclass']
+        vendor_alignment: ['Ginashe Academy Product Masterclass']
       },
       {
         level: 'Enterprise',

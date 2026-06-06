@@ -13,12 +13,12 @@ export default function RefundsPage() {
     {
       title: "2. Withdrawal Protocol",
       icon: <AlertCircle className="w-6 h-6 text-coral" />,
-      content: "Official withdrawal requests must be submitted through the GDA Student Portal. Refunds are calculated based on the date of the formal request and the extent of curriculum engagement recorded on the LMS."
+      content: "Official withdrawal requests must be submitted through the Ginashe Academy Student Portal. Refunds are calculated based on the date of the formal request and the extent of curriculum engagement recorded on the LMS."
     },
     {
       title: "3. Pro-Rata Modular Credits",
       icon: <RefreshCcw className="w-6 h-6 text-sky" />,
-      content: "For withdrawals after the cooling-off period, GDA operates on a modular credit basis. Fees for completed or 'in-progress' modules are non-refundable. Remaining tuition may be credited toward future residency or partially refunded at the discretion of the Financial Directorate."
+      content: "For withdrawals after the cooling-off period, Ginashe Academy operates on a modular credit basis. Fees for completed or 'in-progress' modules are non-refundable. Remaining tuition may be credited toward future residency or partially refunded at the discretion of the Financial Directorate."
     },
     {
       title: "4. Technical Engagement Rule",

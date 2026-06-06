@@ -172,7 +172,7 @@ export function Ecosystem({ onOpenModal, editMode }: { onOpenModal: (id: string)
 
           <div className="bg-card border border-border-custom rounded-3xl p-6 sm:p-9.5 animate-fadeUp">
             <div className="font-syne font-bold text-[18px] mb-2.5">Institutional Outreach</div>
-            <div className="text-[13px] text-text-soft leading-[1.65] mb-6.5">Ginashe Digital Academy is open to collaboration with technology vendors, research bodies, and academic institutions to further the development of sovereign technical talent in Africa.</div>
+            <div className="text-[13px] text-text-soft leading-[1.65] mb-6.5">Ginashe Academy is open to collaboration with technology vendors, research bodies, and academic institutions to further the development of sovereign technical talent in Africa.</div>
             <ul className="list-none flex flex-col gap-3.25">
               {[
                 'Access job-ready cloud and AI talent trained on high-fidelity industry standards',

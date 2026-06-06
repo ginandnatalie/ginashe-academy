@@ -8,7 +8,7 @@ export default function PrivacyPage() {
     {
       title: "The Ginashe Data Bridge",
       icon: <Database className="w-6 h-6 text-brand" />,
-      content: "All student data is synchronised via the GDA Data Bridge, a secure, real-time pipeline between our admissions platform and the Student Portal. This ensures 100% field parity and data integrity across your institutional residency."
+      content: "All student data is synchronised via the Ginashe Academy Data Bridge, a secure, real-time pipeline between our admissions platform and the Student Portal. This ensures 100% field parity and data integrity across your institutional residency."
     },
     {
       title: "Encryption & Sovereignty",
@@ -23,17 +23,17 @@ export default function PrivacyPage() {
     {
       title: "Third-Party Disclosure",
       icon: <Share2 className="w-6 h-6 text-violet" />,
-      content: "GDA never sells student data. We only disclose records to accredited hiring partners and employer sponsors when explicit consent is provided for career placement or tuition sponsorship."
+      content: "Ginashe Academy never sells student data. We only disclose records to accredited hiring partners and employer sponsors when explicit consent is provided for career placement or tuition sponsorship."
     },
     {
       title: "Institutional Audit Rights",
       icon: <ShieldCheck className="w-6 h-6 text-brand" />,
-      content: "Students have the right to request a data audit to review the records held by the Academy. Requests must be submitted via the GDA Support Centre for verification by the Data Compliance Officer."
+      content: "Students have the right to request a data audit to review the records held by the Academy. Requests must be submitted via the Ginashe Academy Support Centre for verification by the Data Compliance Officer."
     },
     {
       title: "Consent & Communication",
       icon: <UserCheck className="w-6 h-6 text-coral" />,
-      content: "By applying to GDA, you consent to receive institutional notifications, academic briefings, and event invitations. You can manage your communication preferences within the Student Portal settings."
+      content: "By applying to Ginashe Academy, you consent to receive institutional notifications, academic briefings, and event invitations. You can manage your communication preferences within the Student Portal settings."
     }
   ];
 
@@ -62,7 +62,7 @@ export default function PrivacyPage() {
               <div>
                 <h2 className="font-syne font-bold text-2xl text-text-custom mb-3">Institutional Commitment</h2>
                 <p className="text-text-soft leading-relaxed">
-                  "At Ginashe Digital Academy, data privacy is not just a legal requirement—it is a technical mandate. We believe that protecting your digital identity is foundational to your success as a future master of technology."
+                  "At Ginashe Academy, data privacy is not just a legal requirement—it is a technical mandate. We believe that protecting your digital identity is foundational to your success as a future master of technology."
                 </p>
               </div>
             </div>

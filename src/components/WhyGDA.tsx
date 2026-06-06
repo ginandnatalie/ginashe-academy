@@ -6,7 +6,7 @@ export function WhyGDA({ editMode }: { editMode?: boolean }) {
       <div className="section-inner">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-10 lg:gap-16 mb-16 items-start">
           <div>
-            <div className="section-label">Why GDA Academy</div>
+            <div className="section-label">Why Ginashe Academy</div>
             <h2 className="section-title animate-fadeUp">Elite rigour.<br /><em className="italic font-light font-dm-sans text-brand">African</em> by design.</h2>
             <p className="section-sub animate-fadeUp delay-100">
               We deliver uncompromised technical instruction built by practitioners. Our curriculum is mapped to global adoption curves and real employer demand, prioritizing execution over academic theory.
@@ -42,7 +42,7 @@ export function WhyGDA({ editMode }: { editMode?: boolean }) {
             <div>
               <div className="flex items-center gap-3 font-dm-mono text-[9px] tracking-[0.2em] uppercase text-text-dim mb-4.5 before:content-[''] before:w-5 before:h-px before:bg-text-dim">Institutional Outcomes</div>
               <h3 className="font-syne font-bold text-[20px] mb-3">Engineered for the industry</h3>
-              <p className="text-[13px] text-text-soft leading-[1.7]">GDA focuses on building job-ready technical resilience. From Day 1, we focus on portfolio development, mock technical interviews, and systems design walkthroughs to ensure every member can execute at a production-grade level.</p>
+              <p className="text-[13px] text-text-soft leading-[1.7]">Ginashe Academy focuses on building job-ready technical resilience. From Day 1, we focus on portfolio development, mock technical interviews, and systems design walkthroughs to ensure every member can execute at a production-grade level.</p>
               
               <div className="mt-6 flex flex-col gap-0">
                 {[
@@ -108,7 +108,7 @@ export function WhyGDA({ editMode }: { editMode?: boolean }) {
           <div className="bg-card p-6 sm:p-10.5 px-6 sm:px-9.5 relative overflow-hidden transition-colors hover:bg-card2 animate-fadeUp">
             <div className="flex items-center gap-3 font-dm-mono text-[9px] tracking-[0.2em] uppercase text-text-dim mb-4.5 before:content-[''] before:w-5 before:h-px before:bg-text-dim">Standards Alignment</div>
             <h3 className="font-syne font-bold text-[20px] mb-3">High-fidelity engineering standards</h3>
-            <p className="text-[13px] text-text-soft leading-[1.7]">GDA curriculum is independently designed to align with global industry standards. We prioritize mastery of vendor frameworks (AWS, Azure, GCP) to ensure our members can solve the problems enterprises actually face.</p>
+            <p className="text-[13px] text-text-soft leading-[1.7]">Ginashe Academy curriculum is independently designed to align with global industry standards. We prioritize mastery of vendor frameworks (AWS, Azure, GCP) to ensure our members can solve the problems enterprises actually face.</p>
             <div className="flex flex-wrap gap-2 mt-5">
               <span className="chip chip-brand">Practitioner Led</span>
               <span className="chip chip-sky">Industry Aligned</span>
@@ -125,7 +125,7 @@ export function WhyGDA({ editMode }: { editMode?: boolean }) {
             <div className="mt-5 p-4 bg-surface border border-border-custom rounded-sm font-dm-mono text-[11px] text-emerald leading-[1.8]">
               $ aws ec2 describe-instances --region af-south-1<br />
               <span className="text-text-dim">→ Provisioning 3 instances... <span className="text-brand">✓ ready</span></span><br />
-              $ kubectl get pods -n gda-labs<br />
+              $ kubectl get pods -n ga-labs<br />
               <span className="text-text-dim">→ 12/12 pods running <span className="text-emerald">✓ healthy</span></span>
             </div>
           </div>
@@ -168,7 +168,7 @@ export function Alumni({ editMode }: { editMode?: boolean }) {
         <div className="bg-[linear-gradient(135deg,var(--cyan-dim)_0%,transparent_60%)] border border-brand/15 rounded-3xl p-6 sm:p-14 grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-14 items-center mb-12 animate-fadeUp">
           <div>
             <div className="font-syne italic font-normal text-[clamp(18px,2.2vw,26px)] leading-[1.4] text-text-custom tracking-[-0.01em] before:content-['\22'] before:text-brand before:text-[60px] before:leading-[0.5] before:block before:mb-3 before:not-italic">
-              "GDA gave me the technical sovereignty to build my own venture. I'm not just navigating the industry; I'm disrupting it from the ground up with production-grade authority."
+              "Ginashe Academy gave me the technical sovereignty to build my own venture. I'm not just navigating the industry; I'm disrupting it from the ground up with production-grade authority."
             </div>
             <div className="mt-5 flex items-center gap-3">
               <div className="w-11 h-11 rounded-full bg-[linear-gradient(135deg,var(--color-brand),#008b8b)] flex items-center justify-center font-syne font-extrabold text-[14px] text-[#080b12]">KM</div>

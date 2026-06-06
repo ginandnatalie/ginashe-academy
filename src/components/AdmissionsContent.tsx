@@ -47,7 +47,7 @@ export function Requirements({ onOpenModal }: { onOpenModal: (id: string, metada
               {[
                 { t: 'Application Portal', d: 'Submit online' },
                 { t: 'Required Documents', d: 'Checklist PDF' },
-                { t: 'Interview Tips', d: 'GDA Prep Guide' }
+                { t: 'Interview Tips', d: 'Ginashe Academy Prep Guide' }
               ].map((res, i) => (
                 <li key={i} className="group cursor-pointer" onClick={() => handleLinkClick(res.t)}>
                   <div className="flex items-center justify-between">

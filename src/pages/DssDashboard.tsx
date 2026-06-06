@@ -11,7 +11,7 @@ interface DssDashboardProps {
   editMode?: boolean;
 }
 
-// ─── WHY GDA — Social Proof Section ─────────
+// ─── WHY Ginashe Academy — Social Proof Section ─────────
 function WhySection() {
   const reasons = [
     { icon: '🎯', title: 'Industry-Designed Curriculum', desc: 'Every module is co-built with hiring managers from leading tech firms — so you learn what the global market actually needs.' },

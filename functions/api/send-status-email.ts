@@ -15,8 +15,8 @@ export async function onRequestPost(context) {
       : `Update regarding your application for ${program}`;
 
     const message = status === 'approved'
-      ? `Hi ${name},\n\nWe are excited to inform you that your application for the ${program} at Ginashe Digital Academy has been APPROVED! \n\nPlease log in to your student portal to see the next steps.\n\nBest regards,\nGDA Admissions Team`
-      : `Hi ${name},\n\nThank you for your interest in Ginashe Digital Academy. After careful review, we regret to inform you that we are unable to move forward with your application for ${program} at this time.\n\nWe wish you the best in your future endeavours.\n\nBest regards,\nGDA Admissions Team`;
+      ? `Hi ${name},\n\nWe are excited to inform you that your application for the ${program} at Ginashe Academy has been APPROVED! \n\nPlease log in to your student portal to see the next steps.\n\nBest regards,\nGDA Admissions Team`
+      : `Hi ${name},\n\nThank you for your interest in Ginashe Academy. After careful review, we regret to inform you that we are unable to move forward with your application for ${program} at this time.\n\nWe wish you the best in your future endeavours.\n\nBest regards,\nGDA Admissions Team`;
 
     const fromEmail = env.RESEND_FROM_EMAIL || "Ginashe Academy <noreply@updates.ginashe.academy>";
 
@@ -54,7 +54,7 @@ export async function onRequestPost(context) {
             
             <div style="text-align: center; padding-top: 24px; border-top: 1px solid #1e2330;">
               <p style="font-size: 12px; color: #6b7280; margin-bottom: 8px;">
-                Ginashe Digital Academy &copy; 2026. All rights reserved.
+                Ginashe Academy &copy; 2026. All rights reserved.
               </p>
               <p style="font-size: 11px; color: #4b5563;">
                 Sandton Campus, Johannesburg, South Africa

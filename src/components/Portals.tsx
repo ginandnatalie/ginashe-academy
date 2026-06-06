@@ -867,7 +867,7 @@ export function AdminDashboard() {
                           <div className="space-y-6">
                             {[
                               { key: 'global_discussions_enabled', label: 'Peer-to-Peer Discussions', desc: 'Activates student forums and social hubs.' },
-                              { key: 'global_ai_tutor_enabled', label: 'Intelligent AI Tutor', desc: 'Allows students to query curriculum via GDA_Brain.' },
+                              { key: 'global_ai_tutor_enabled', label: 'Intelligent AI Tutor', desc: 'Allows students to query curriculum via GA_Brain.' },
                               { key: 'campus_overlap_allowed', label: 'Cross-Campus Enrolment', desc: 'Allows students to hold active seats in multiple branches.' },
                               { key: 'transcripts_enabled', label: 'Institutional Transcripts (Beta)', desc: 'Must be manually activated for SuperAdmin verification.' },
                             ].map(opt => (
@@ -1332,7 +1332,7 @@ function InstitutionalUserRegistry() {
         const { error: alumniErr } = await supabase.from('alumni_records').insert({
           user_id: governanceUser.id,
           graduation_year: new Date().getFullYear(),
-          program: alumniAcademicRecord?.program || 'Verified GDA Programme',
+          program: alumniAcademicRecord?.program || 'Verified Ginashe Academy Programme',
           achievements: 'Institutional Graduation via SuperAdmin Override',
           governance_reference: finalEvidenceUrl
         });
@@ -2525,7 +2525,7 @@ function AcademicCalendarView({ schedule, enrollments }: { schedule: any[], enro
               <p className="text-xs text-text-muted leading-relaxed mb-6 line-clamp-3">{ev.description || 'Institutional mandate details available upon request.'}</p>
 
               <div className="pt-6 border-t border-border-custom flex items-center justify-between">
-                <span className="text-[9px] font-dm-mono uppercase tracking-[0.2em] text-text-dim">{ev.location || 'GDA_GLOBAL_NODE'}</span>
+                <span className="text-[9px] font-dm-mono uppercase tracking-[0.2em] text-text-dim">{ev.location || 'GA_GLOBAL_NODE'}</span>
                 <button className="text-brand hover:underline text-[9px] font-black uppercase tracking-widest">Details →</button>
               </div>
             </div>
@@ -3328,7 +3328,7 @@ function MyFinance() {
                 <tr key={inv.id} className="hover:bg-brand/5 transition-colors group">
                   <td className="p-4 text-[11px] font-dm-mono text-text-soft">{inv.invoice_number}</td>
                   <td className="p-4 text-[11px] font-dm-mono text-text-dim">{new Date(inv.created_at).toLocaleDateString('en-GB')}</td>
-                  <td className="p-4 text-[11px] font-bold text-text-soft uppercase tracking-tighter">GDA Program Fees</td>
+                  <td className="p-4 text-[11px] font-bold text-text-soft uppercase tracking-tighter">Ginashe Academy Program Fees</td>
                   <td className="p-4 font-syne font-black text-sm">R {inv.amount.toLocaleString()}</td>
                   <td className="p-4">
                     <span className={`px-2 py-0.5 rounded-lg text-[9px] uppercase font-dm-mono border tracking-widest ${inv.status === 'paid' ? 'bg-emerald/10 text-emerald border-emerald/20' : 'bg-brand/10 text-brand border-brand/20'}`}>
@@ -3701,7 +3701,7 @@ export function StudentPortal({ onStartCourse }: { onStartCourse: (courseId: str
               {activeSection.charAt(0).toUpperCase() + activeSection.slice(1)}
             </h1>
             <p className="text-text-muted font-dm-mono text-[10px] uppercase tracking-[0.2em]">
-              Ginashe Digital Academy &bull; Secure Student Environment
+              Ginashe Academy &bull; Secure Student Environment
             </p>
           </div>
           {proctoringAlert && (
@@ -4347,7 +4347,7 @@ export function StudentPortal({ onStartCourse }: { onStartCourse: (courseId: str
 
               <div className="bg-navy border border-border-custom rounded-3xl p-8 flex flex-col justify-between">
                 <div>
-                  <h3 className="font-syne font-bold font-xl mb-4">GDA Data Privacy</h3>
+                  <h3 className="font-syne font-bold font-xl mb-4">Ginashe Academy Data Privacy</h3>
                   <p className="text-sm text-text-soft leading-relaxed mb-6">
                     You have full sovereignty over your educational data. Download your complete record in standard JSON format for transferability.
                   </p>
@@ -4385,7 +4385,7 @@ export function StudentPortal({ onStartCourse }: { onStartCourse: (courseId: str
 
               <div className="text-brand text-6xl mb-10 opacity-30 select-none">🎓</div>
               <h1 className="font-syne font-extrabold text-4xl md:text-5xl mb-6 uppercase tracking-tighter">Certificate of Excellence</h1>
-              <p className="text-gray-400 font-dm-mono text-[12px] uppercase tracking-[0.4em] mb-14">Presented by Ginashe Digital Academy</p>
+              <p className="text-gray-400 font-dm-mono text-[12px] uppercase tracking-[0.4em] mb-14">Presented by Ginashe Academy</p>
 
               <div className="relative mb-6">
                 <div className="h-px bg-black/10 absolute top-1/2 left-0 right-0" />
@@ -4400,7 +4400,7 @@ export function StudentPortal({ onStartCourse }: { onStartCourse: (courseId: str
               <div className="flex justify-between items-end pt-12 border-t border-black/5">
                 <div className="text-left">
                   <div className="font-dm-mono text-[9px] uppercase text-gray-400 mb-2">Digital Stamp</div>
-                  <div className="text-xs font-mono select-all">GDA-AUTH-{showCertificate.course.id.slice(0, 8).toUpperCase()}</div>
+                  <div className="text-xs font-mono select-all">GA-AUTH-{showCertificate.course.id.slice(0, 8).toUpperCase()}</div>
                 </div>
                 <div className="text-center px-8 border-x border-black/5">
                   <div className="font-dm-sans text-[11px] mb-2 italic">Ginashe Digital Board of Instructors</div>
@@ -4646,7 +4646,7 @@ function GraduationPipeline({ pendingApprovals, onApprove }: { pendingApprovals:
   async function handleGraduate(student: any) {
     if (!confirm(`Confirm graduation for ${student.profiles?.first_name} ${student.profiles?.last_name}?`)) return;
 
-    const credentialId = `GDA-${Date.now()}-${Math.random().toString(36).substring(2, 8).toUpperCase()}`;
+    const credentialId = `GA-${Date.now()}-${Math.random().toString(36).substring(2, 8).toUpperCase()}`;
 
     const { error } = await supabase.from('alumni_records').insert({
       user_id: student.user_id,
@@ -4949,7 +4949,7 @@ function AlumniHub({ profile }: { profile: any }) {
                     <div className="absolute inset-0 bg-brand/20 blur-[60px] rounded-full animate-pulse" />
                     <img
                       src="/gda_institutional_seal_cyan.png"
-                      alt="GDA Institutional Seal"
+                      alt="Ginashe Academy Institutional Seal"
                       className={`w-64 h-64 object-contain relative z-10 ${record.is_approved ? 'grayscale-0' : 'grayscale transition-all duration-1000'}`}
                     />
                     {record.is_approved && (
@@ -5070,7 +5070,7 @@ export function StaffActivationView() {
   if (success) return (
     <div className="min-h-screen bg-bg flex flex-col items-center justify-center p-6 text-center animate-fade">
       <div className="w-20 h-20 bg-emerald/10 text-emerald rounded-3xl flex items-center justify-center text-3xl mb-8">✨</div>
-      <h2 className="font-syne font-extrabold text-3xl mb-4">Welcome to GDA</h2>
+      <h2 className="font-syne font-extrabold text-3xl mb-4">Welcome to Ginashe Academy</h2>
       <p className="text-text-soft text-sm max-w-md mb-8">Your institutional identity is active. You can now access your staff hub.</p>
       <button onClick={() => window.location.href = '/portal'} className="btn btn-brand px-12 py-4 shadow-xl">Enter Portal</button>
     </div>
@@ -5131,7 +5131,7 @@ export function StaffActivationView() {
                 <span className="text-xs font-black uppercase tracking-wider text-text-soft">{profileData?.role} ACCESS ENABLED</span>
               </div>
               <p className="text-[10px] text-text-dim leading-relaxed font-bold">
-                BY ACTIVATING THIS ACCOUNT, YOU AGREE TO THE GDA INSTITUTIONAL GOVERNANCE POLICY AND DATA INTEGRITY STANDARDS.
+                BY ACTIVATING THIS ACCOUNT, YOU AGREE TO THE Ginashe Academy INSTITUTIONAL GOVERNANCE POLICY AND DATA INTEGRITY STANDARDS.
               </p>
             </div>
             <button

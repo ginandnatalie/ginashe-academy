@@ -1,5 +1,5 @@
 -- ============================================
--- MIGRATION: GDA Powerhouse Schema Expansion
+-- MIGRATION: Ginashe Academy Powerhouse Schema Expansion
 -- Run this in your Supabase SQL Editor to add
 -- the new columns without affecting existing data.
 -- ============================================
@@ -117,7 +117,7 @@ CREATE SEQUENCE IF NOT EXISTS public.student_number_seq START WITH 1001 INCREMEN
 CREATE OR REPLACE FUNCTION public.generate_student_number()
 RETURNS TEXT AS $$
 BEGIN
-    RETURN 'GDA-' || EXTRACT(YEAR FROM NOW())::TEXT || '-' || LPAD(nextval('public.student_number_seq')::TEXT, 4, '0');
+    RETURN 'Ginashe Academy-' || EXTRACT(YEAR FROM NOW())::TEXT || '-' || LPAD(nextval('public.student_number_seq')::TEXT, 4, '0');
 END;
 $$ LANGUAGE plpgsql;
 
@@ -140,5 +140,5 @@ CREATE POLICY "Admins can update applications" ON public.applications FOR UPDATE
 DROP POLICY IF EXISTS "Users can insert own profile" ON public.profiles;
 CREATE POLICY "Users can insert own profile" ON public.profiles FOR INSERT WITH CHECK (auth.uid() = id);
 
--- Done! Your database is now ready for the GDA Powerhouse.
-SELECT 'Migration complete! GDA Powerhouse schema applied.' AS status;
+-- Done! Your database is now ready for the Ginashe Academy Powerhouse.
+SELECT 'Migration complete! Ginashe Academy Powerhouse schema applied.' AS status;

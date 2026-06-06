@@ -24,7 +24,7 @@ const MOCK_POSTS = [
     image_url: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=1200',
     published_at: '2026-05-24T09:00:00Z',
     slug: 'dss-fls-enrolling-2026',
-    author: 'GDA Admissions Office'
+    author: 'Ginashe Academy Admissions Office'
   },
   {
     id: '5',
@@ -64,7 +64,7 @@ const MOCK_POSTS = [
     image_url: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=1200',
     published_at: '2026-04-01T10:00:00Z',
     slug: 'ginashe-academy-upskill-african-continent',
-    author: 'GDA Leadership Team'
+    author: 'Ginashe Academy Leadership Team'
   },
   {
     id: '2',
@@ -179,7 +179,7 @@ export default function NewsDetailPage() {
                 <User size={20} />
               </div>
               <div>
-                <div className="text-[12px] font-bold text-text-custom">{post.author?.first_name ? `${post.author.first_name} ${post.author.last_name}` : post.author || 'GDA Insights Team'}</div>
+                <div className="text-[12px] font-bold text-text-custom">{post.author?.first_name ? `${post.author.first_name} ${post.author.last_name}` : post.author || 'Ginashe Academy Insights Team'}</div>
                 <div className="text-[10px] text-text-dim font-dm-mono uppercase tracking-widest">Lead Strategist</div>
               </div>
             </div>

@@ -108,7 +108,7 @@ export default function NewsPage() {
               News & Insights
             </div>
             <h1 className="font-syne font-extrabold text-4xl md:text-6xl leading-tight">
-              The GDA <span className="text-brand">Intelligence</span> Report
+              The Ginashe Academy <span className="text-brand">Intelligence</span> Report
             </h1>
             <p className="text-text-muted text-lg leading-relaxed max-w-2xl">
               Stay ahead of the curve with our latest updates on technology, career growth, and industry transformation across Africa.
@@ -123,7 +123,7 @@ export default function NewsPage() {
           >
             <div className="font-syne font-bold text-[11px] uppercase tracking-widest text-brand mb-4 flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-brand"></span>
-              GDA Media Desk
+              Ginashe Academy Media Desk
             </div>
             <ul className="space-y-4">
               {[

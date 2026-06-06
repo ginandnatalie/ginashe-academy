@@ -1,4 +1,4 @@
--- Supabase Schema for Ginashe Digital Academy
+-- Supabase Schema for Ginashe Academy
 -- ============================================
 -- FULL TERTIARY EDUCATION SYSTEM SCHEMA v2.0
 
@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS public.profiles (
     id_number TEXT,               -- SA ID or Passport number
     gender TEXT,                   -- Male, Female, Non-binary, Prefer not to say
     nationality TEXT DEFAULT 'South Africa',
-    student_number TEXT UNIQUE,    -- GDA-2026-XXXX format
+    student_number TEXT UNIQUE,    -- 202600000 format
     role TEXT DEFAULT 'student',
     avatar_url TEXT,
     bio TEXT,
@@ -74,7 +74,7 @@ CREATE TABLE IF NOT EXISTS public.applications (
     cv_url TEXT,
     message TEXT,
     -- CRM / Admin fields
-    student_number TEXT,                    -- Assigned on approval: GDA-YYYY-XXXX
+    student_number TEXT,                    -- Assigned on approval: 202600000 format
     status TEXT DEFAULT 'pending',          -- pending, under_review, approved, rejected, waitlisted, enrolled
     admin_notes TEXT,                       -- Internal notes by admin
     reviewed_by TEXT,                       -- Email of admin who reviewed
@@ -338,6 +338,6 @@ CREATE POLICY "Users can manage own quiz attempts" ON public.quiz_attempts FOR A
 CREATE OR REPLACE FUNCTION public.generate_student_number()
 RETURNS TEXT AS $$
 BEGIN
-    RETURN 'GDA-' || EXTRACT(YEAR FROM NOW())::TEXT || '-' || LPAD(nextval('public.student_number_seq')::TEXT, 4, '0');
+    RETURN 'Ginashe Academy-' || EXTRACT(YEAR FROM NOW())::TEXT || '-' || LPAD(nextval('public.student_number_seq')::TEXT, 4, '0');
 END;
 $$ LANGUAGE plpgsql;

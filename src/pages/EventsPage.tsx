@@ -9,7 +9,7 @@ const MOCK_EVENTS = [
   {
     id: 'radio-1',
     title: 'Exclusive Live Interview: SAUMA HD Radio',
-    description: 'Tune in to an exclusive live interview with SAUMA HD Radio starting from 11:00 AM SAST. Our Managing Director, George Kapendeka, will discuss our 2026 academic cohorts, digital economy readiness, and practitioner-led skills development pipelines. Do not miss this opportunity to learn how GDA is shaping Africa\'s digital future!',
+    description: 'Tune in to an exclusive live interview with SAUMA HD Radio starting from 11:00 AM SAST. Our Managing Director, George Kapendeka, will discuss our 2026 academic cohorts, digital economy readiness, and practitioner-led skills development pipelines. Do not miss this opportunity to learn how Ginashe Academy is shaping Africa\'s digital future!',
     event_date: '2026-06-02',
     event_time: '11:00',
     type: 'Radio Interview',
@@ -18,7 +18,7 @@ const MOCK_EVENTS = [
   },
   {
     id: '1',
-    title: 'GDA Virtual Open Day: April Intake',
+    title: 'Ginashe Academy Virtual Open Day: April Intake',
     description: 'Join our academic team for a comprehensive walkthrough of our 2026 curriculums, campus facilities, and scholarship opportunities.',
     event_date: '2026-04-15',
     event_time: '18:00',
@@ -156,7 +156,7 @@ export default function EventsPage() {
               Connect. <span className="text-brand">Learn.</span> Transform.
             </h1>
             <p className="text-text-muted text-lg leading-relaxed max-w-2xl">
-              Join our expert-led sessions to discover how GDA can accelerate your career in the cloud and AI era.
+              Join our expert-led sessions to discover how Ginashe Academy can accelerate your career in the cloud and AI era.
             </p>
           </motion.div>
 
@@ -173,7 +173,7 @@ export default function EventsPage() {
             <ul className="space-y-4">
               {[
                 { t: '2026 Academic Calendar', d: 'Key dates' },
-                { t: 'Virtual Campus Tour', d: 'Explore GDA' },
+                { t: 'Virtual Campus Tour', d: 'Explore Ginashe Academy' },
                 { t: 'Event Sponsorship', d: 'Partner with us' }
               ].map((res, i) => (
                 <li key={i} className="group cursor-pointer">
@@ -410,7 +410,7 @@ export default function EventsPage() {
                     </button>
 
                     <p className="text-[10px] text-text-dim text-center mt-6">
-                      By registering, you agree to receive event reminders and communications from Ginashe Digital Academy.
+                      By registering, you agree to receive event reminders and communications from Ginashe Academy.
                     </p>
                   </form>
                 </>

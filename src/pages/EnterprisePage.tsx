@@ -56,7 +56,7 @@ export default function EnterprisePage({ onOpenModal, editMode }: EnterprisePage
           <div className="text-center max-w-3xl mx-auto mb-20">
             <h2 className="font-syne font-bold text-3xl md:text-5xl text-text-custom mb-6">Built for the Global Enterprise</h2>
             <p className="text-text-soft text-lg leading-relaxed">
-              Whether you are migrating to the cloud, building a new AI division, or upskilling your entire engineering department, Ginashe Digital Academy delivers the technical rigour required for true transformation.
+              Whether you are migrating to the cloud, building a new AI division, or upskilling your entire engineering department, Ginashe Academy delivers the technical rigour required for true transformation.
             </p>
           </div>
 

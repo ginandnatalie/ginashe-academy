@@ -127,7 +127,7 @@ export function GovernanceMotivationModal({
                 <textarea 
                   required
                   className="w-full h-32 bg-surface/50 border border-border-custom rounded-xl p-4 text-[13px] text-text-custom outline-none focus:border-brand/40 transition-all resize-none placeholder:text-text-dim"
-                  placeholder="Explain why this override is necessary according to GDA policy..."
+                  placeholder="Explain why this override is necessary according to Ginashe Academy policy..."
                   value={motivation}
                   onChange={(e) => setMotivation(e.target.value)}
                 />

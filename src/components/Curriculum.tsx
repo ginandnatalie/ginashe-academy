@@ -19,14 +19,14 @@ export function Curriculum({ editMode }: { editMode?: boolean }) {
       { label: 'Phase 3 — Capstone & Placement (Weeks 15–24)', modules: [
         { id: 'cloud-7', week: 'Wk 15–18', title: 'CI/CD, Observability & DevSecOps', desc: 'Automate your delivery pipeline end-to-end. GitHub Actions, ArgoCD, CloudWatch, Datadog, and integrating Snyk security scanning into every stage.', topics: ['GitHub Actions', 'ArgoCD / GitOps', 'CloudWatch', 'Datadog', 'Snyk'], outcome: 'Build a full CI/CD pipeline with automated security gates, blue/green deployment, and observability dashboards.' },
         { id: 'cloud-8', week: 'Wk 19–22', title: 'Industry Capstone Project', desc: 'A real client brief from one of our employer partners. Design, build, and present a full cloud architecture addressing an actual business problem — evaluated by industry professionals.', topics: ['Solution Design', 'Cost Estimation', 'Client Presentation', 'GitHub Portfolio'], outcome: 'A portfolio-ready, industry-reviewed cloud architecture project on your GitHub — linked on your CV.' },
-        { id: 'cloud-9', week: 'Wk 23–24', title: 'Certification Bootcamp & Placement Prep', desc: 'Intensive prep for AWS SAA-C03 and AZ-104. Practice exams, timed drills, weak-area targeting. Parallel: CV, LinkedIn, mock technical interviews with senior engineers.', topics: ['AWS SAA-C03 Prep', 'AZ-104 Prep', 'Mock Interviews', 'CV Workshop'], outcome: 'Sit your AWS and Azure certification exams — GDA covers the exam voucher cost.' }
+        { id: 'cloud-9', week: 'Wk 23–24', title: 'Certification Bootcamp & Placement Prep', desc: 'Intensive prep for AWS SAA-C03 and AZ-104. Practice exams, timed drills, weak-area targeting. Parallel: CV, LinkedIn, mock technical interviews with senior engineers.', topics: ['AWS SAA-C03 Prep', 'AZ-104 Prep', 'Mock Interviews', 'CV Workshop'], outcome: 'Sit your AWS and Azure certification exams — Ginashe Academy covers the exam voucher cost.' }
       ]}
-    ], footerCerts: ['AWS SAA-C03', 'AZ-104', 'GCP ACE', 'CKA', 'GDA Residency Diploma'] },
+    ], footerCerts: ['AWS SAA-C03', 'AZ-104', 'GCP ACE', 'CKA', 'Ginashe Academy Residency Diploma'] },
     { id: 'ai', name: 'AI & ML Engineering', icon: '🤖', dur: '4 months · 16 weeks', tag: 'Professional · AI & Machine Learning Engineering', desc: '16 weeks from Python to deploying production LLM-powered applications. Classical ML, deep learning, NLP, and LLMOps — with a final AI product capstone.', meta: [{ l: 'Duration', v: '16 weeks' }, { l: 'Labs', v: '32 live' }, { l: 'Stack', v: 'PyTorch · SageMaker' }], phases: [
       { label: 'Phase 1 — ML Foundations (Weeks 1–6)', modules: [
         { id: 'ai-1', week: 'Wk 1–2', title: 'Python for Data Science & ML Engineering', desc: 'Python from the ML engineer\'s perspective — vectorised operations, data structures, EDA with Pandas and Matplotlib on real South African financial datasets.', topics: ['Python OOP', 'NumPy', 'Pandas', 'Matplotlib', 'Jupyter', 'Git for DS'], outcome: 'Build a complete EDA pipeline on a real SA financial dataset and publish it to GitHub.' }
       ]}
-    ], footerCerts: ['TensorFlow Developer', 'Azure AI Engineer', 'AWS ML Specialty', 'GDA AI Engineer Diploma'] }
+    ], footerCerts: ['TensorFlow Developer', 'Azure AI Engineer', 'AWS ML Specialty', 'Ginashe Academy AI Engineer Diploma'] }
   ];
 
   const current = progs.find(p => p.id === activeProg)!;

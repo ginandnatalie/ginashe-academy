@@ -74,7 +74,7 @@ export async function onRequestPost(context) {
         email: email.trim().toLowerCase(),
         password: password,
         email_confirm: true,
-        user_metadata: { full_name: "GDA Student" }
+        user_metadata: { full_name: "Ginashe Academy Student" }
       });
       if (createError) throw createError;
       userId = newUser.user.id;
@@ -142,14 +142,14 @@ export async function onRequestPost(context) {
       const welcomeHtml = `
         <div style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; padding: 40px 20px; background-color: #080b12; color: #f0f0f0; border-radius: 16px;">
           <div style="text-align: center; margin-bottom: 32px;">
-            <img src="https://academy.ginashe.co.za/logo.png" alt="Ginashe Digital Academy" style="width: 180px; height: auto;" />
+            <img src="https://academy.ginashe.co.za/logo.png" alt="Ginashe Academy" style="width: 180px; height: auto;" />
           </div>
           
           <div style="background-color: #11141d; border: 1px solid #1e2330; border-radius: 12px; padding: 32px; margin-bottom: 24px;">
             <h2 style="color: #D4AF37; font-size: 24px; font-weight: 800; margin-top: 0; margin-bottom: 16px;">Welcome to the Academy</h2>
             <p style="font-size: 16px; margin-bottom: 24px;">Hi ${fullApp?.first_name || 'Student'},</p>
             <p style="line-height: 1.7; font-size: 15px; color: #d1d5db; margin-bottom: 24px;">
-              Your account is now active and your profile has been successfully initialized! We are thrilled to welcome you to **Ginashe Digital Academy**, Africa's premier hub for digital innovation.
+              Your account is now active and your profile has been successfully initialized! We are thrilled to welcome you to **Ginashe Academy**, Africa's premier hub for digital innovation.
             </p>
 
             <div style="background-color: #1a1a1c; border-left: 4px solid #D4AF37; padding: 20px; margin-bottom: 32px;">
@@ -178,7 +178,7 @@ export async function onRequestPost(context) {
           </div>
           
           <div style="text-align: center; font-size: 12px; color: #6b7280; padding-top: 24px; border-top: 1px solid #1e2330;">
-              Ginashe Digital Academy &copy; 2026. Excellence through Innovation.
+              Ginashe Academy &copy; 2026. Excellence through Innovation.
           </div>
         </div>
       `;
@@ -193,7 +193,7 @@ export async function onRequestPost(context) {
           from: fromEmail,
           to: [email],
           reply_to: "academy@ginashe.co.za",
-          subject: "Welcome to Ginashe Digital Academy - Your Digital Journey Starts Now",
+          subject: "Welcome to Ginashe Academy - Your Digital Journey Starts Now",
           html: welcomeHtml,
         }),
       });

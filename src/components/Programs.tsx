@@ -214,7 +214,7 @@ const defaultCourses: Course[] = [
   {
     id: '5', cat: 'executive', title: 'Digital Leadership & Strategy', accent: 'var(--coral)', num: '05', icon: 'BarChart',
     description: 'Lead the digital transformation. Strategy, ROI frameworks, and ethical governance for senior professionals and executives.',
-    duration: '8 Weeks', meta: 'Executive Track', mode: 'In-person / Weekend', certs: 'GDA Executive Cert', price: 'Enquire', price_sub: '/ Executive', status: 'coming_soon',
+    duration: '8 Weeks', meta: 'Executive Track', mode: 'In-person / Weekend', certs: 'Ginashe Academy Executive Cert', price: 'Enquire', price_sub: '/ Executive', status: 'coming_soon',
     level: 'Executive', track: 'Digital Business'
   },
   {
@@ -334,7 +334,7 @@ export function Programs({ onOpenModal, editMode, isHomePage, initialFilterLevel
               title: p.title,
               description: p.short_description || p.description,
               duration: p.weeks ? `${p.weeks} Weeks` : p.duration,
-              meta: p.credential || 'GDA Certification',
+              meta: p.credential || 'Ginashe Academy Certification',
               mode: p.delivery_mode || 'Blended',
               certs: p.accreditation_meta || 'Institutional',
               price: p.price_label || 'Enquire',

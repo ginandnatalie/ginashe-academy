@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'motion/react';
 
 export default function WhatsAppOrb() {
   const whatsappNumber = "27688526155";
-  const message = encodeURIComponent("Hello Ginashe Digital Academy, I'd like to enquire about your programmes.");
+  const message = encodeURIComponent("Hello Ginashe Academy, I'd like to enquire about your programmes.");
   
   return (
     <motion.a 

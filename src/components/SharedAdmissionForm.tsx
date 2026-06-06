@@ -60,7 +60,7 @@ const ALL_COURSES = [
 
 const PORTAL_URL = 'https://student.ginashe.academy/';
 
-// ─── STYLES (Based on GDA Design System) ────────────────────────
+// ─── STYLES (Based on Ginashe Academy Design System) ────────────────────────
 const INPUT_CLASS = "w-full bg-surface border border-border-custom rounded-sm p-2.75 px-3.5 font-dm-sans text-[13px] text-text-custom outline-none focus:border-brand/40 focus:shadow-[0_0_0_3px_rgba(0,242,255,0.07)] transition-all";
 const SELECT_CLASS = `${INPUT_CLASS} appearance-none bg-[url('data:image/svg+xml,%3Csvg_xmlns=%22http://www.w3.org/2000/svg%22_width=%2212%22_height=%2212%22_viewBox=%220_0_12_12%22%3E%3Cpath_fill=%22%235a607c%22_d=%22M6_8L1_3h10z%22/%3E%3C/svg%3E')] bg-no-repeat bg-[position:right_12px_center] pr-9`;
 const LABEL_CLASS = "block font-dm-mono text-[9px] tracking-[0.15em] uppercase text-text-muted mb-1.75";
@@ -505,7 +505,7 @@ export default function SharedAdmissionForm({ onOpenModal, onSuccess, initialPro
           <div className="bg-surface/50 border border-border-custom rounded-2xl p-5 text-left space-y-3 max-w-[360px] mx-auto">
             <div className="flex items-start gap-3">
               <div className="w-5 h-5 rounded-full bg-brand/10 flex items-center justify-center text-[10px] mt-0.5">1</div>
-              <p className="text-[11px] text-text-muted">Open your inbox and find the email from <span className="text-text-custom">Ginashe Digital Academy</span>.</p>
+              <p className="text-[11px] text-text-muted">Open your inbox and find the email from <span className="text-text-custom">Ginashe Academy</span>.</p>
             </div>
             <div className="flex items-start gap-3">
               <div className="w-5 h-5 rounded-full bg-brand/10 flex items-center justify-center text-[10px] mt-0.5">2</div>

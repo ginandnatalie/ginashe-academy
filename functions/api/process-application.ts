@@ -76,19 +76,19 @@ export async function onRequestPost(context) {
     // 2. Prepare ACTIVATION Email (Email #1)
     const subject = isIndividual 
       ? `ACTION REQUIRED: Activate Your Academy Account`
-      : `Enquiry Received: ${type === 'organisation' ? 'Organisation' : 'Partnership'} - Ginashe Digital Academy`;
+      : `Enquiry Received: ${type === 'organisation' ? 'Organisation' : 'Partnership'} - Ginashe Academy`;
 
     const messageHtml = isIndividual ? `
       <div style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; padding: 40px 20px; background-color: #080b12; color: #f0f0f0; border-radius: 16px;">
         <div style="text-align: center; margin-bottom: 32px;">
-          <img src="https://academy.ginashe.co.za/logo.png" alt="Ginashe Digital Academy" style="width: 180px; height: auto;" />
+          <img src="https://academy.ginashe.co.za/logo.png" alt="Ginashe Academy" style="width: 180px; height: auto;" />
         </div>
         
         <div style="background-color: #11141d; border: 1px solid #1e2330; border-radius: 12px; padding: 32px; margin-bottom: 24px;">
           <h2 style="color: #D4AF37; font-size: 24px; font-weight: 800; margin-top: 0; margin-bottom: 16px; text-align: center;">Activate Your Account</h2>
           <p style="font-size: 16px; margin-bottom: 24px;">Hi ${name},</p>
           <p style="line-height: 1.7; font-size: 15px; color: #d1d5db; margin-bottom: 24px;">
-            Thank you for applying to **Ginashe Digital Academy**. To begin your admission process and access your portal, please verify your account using the code below.
+            Thank you for applying to **Ginashe Academy**. To begin your admission process and access your portal, please verify your account using the code below.
           </p>
 
           ${invitationLink ? `
@@ -115,25 +115,25 @@ export async function onRequestPost(context) {
           
           <p style="margin-top: 32px; font-weight: 600; color: #f0f0f0; text-align: center;">
             Excellence through innovation,<br>
-            <span style="color: #D4AF37;">GDA Admissions Team</span>
+            <span style="color: #D4AF37;">Ginashe Academy Admissions Team</span>
           </p>
         </div>
         
         <div style="text-align: center; padding-top: 24px; border-top: 1px solid #1e2330; font-size: 12px; color: #6b7280;">
-            Ginashe Digital Academy &copy; 2026. All rights reserved.
+            Ginashe Academy &copy; 2026. All rights reserved.
         </div>
       </div>
     ` : `
       <div style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; padding: 40px 20px; background-color: #080b12; color: #f0f0f0; border-radius: 16px;">
         <div style="text-align: center; margin-bottom: 32px;">
-          <img src="https://academy.ginashe.co.za/logo.png" alt="Ginashe Digital Academy" style="width: 180px; height: auto;" />
+          <img src="https://academy.ginashe.co.za/logo.png" alt="Ginashe Academy" style="width: 180px; height: auto;" />
         </div>
         
         <div style="background-color: #11141d; border: 1px solid #1e2330; border-radius: 12px; padding: 32px; margin-bottom: 24px;">
           <h2 style="color: #D4AF37; font-size: 24px; font-weight: 800; margin-top: 0; margin-bottom: 16px; text-align: center;">Enquiry Received</h2>
           <p style="font-size: 16px; margin-bottom: 24px;">Hi ${name},</p>
           <p style="line-height: 1.7; font-size: 15px; color: #d1d5db; margin-bottom: 24px;">
-            Thank you for your interest in partnering with Ginashe Digital Academy. We have received your <strong>${type}</strong> enquiry.
+            Thank you for your interest in partnering with Ginashe Academy. We have received your <strong>${type}</strong> enquiry.
           </p>
           
           <p style="line-height: 1.7; font-size: 15px; color: #d1d5db;">
@@ -142,13 +142,13 @@ export async function onRequestPost(context) {
           
           <p style="margin-top: 32px; font-weight: 600; color: #f0f0f0;">
             Best regards,<br>
-            <span style="color: #D4AF37;">GDA Partnerships Team</span>
+            <span style="color: #D4AF37;">Ginashe Academy Partnerships Team</span>
           </p>
         </div>
         
         <div style="text-align: center; padding-top: 24px; border-top: 1px solid #1e2330;">
           <p style="font-size: 12px; color: #6b7280; margin-bottom: 8px;">
-            Ginashe Digital Academy &copy; 2026. All rights reserved.
+            Ginashe Academy &copy; 2026. All rights reserved.
           </p>
         </div>
       </div>
@@ -189,7 +189,7 @@ export async function onRequestPost(context) {
         html: `
           <div style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; padding: 40px 20px; background-color: #080b12; color: #f0f0f0; border-radius: 16px;">
             <div style="text-align: center; margin-bottom: 32px;">
-              <img src="https://academy.ginashe.co.za/logo.png" alt="Ginashe Digital Academy" style="width: 150px; height: auto;" />
+              <img src="https://academy.ginashe.co.za/logo.png" alt="Ginashe Academy" style="width: 150px; height: auto;" />
             </div>
             
             <div style="background-color: #11141d; border: 1px solid #1e2330; border-radius: 12px; padding: 32px; margin-bottom: 24px;">

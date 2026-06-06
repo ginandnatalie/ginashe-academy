@@ -466,7 +466,7 @@ export function Modals({ activeModal, onClose, onSwitchModal, onLoginSuccess, me
               <div>
                 <div className="w-12 h-12 rounded-md bg-brand-dim border border-brand/20 flex items-center justify-center text-[22px] mb-3.5">⚙️</div>
                 <div className="font-syne font-extrabold text-[20px]">Admin & Faculty Portal</div>
-                <div className="text-[12px] text-text-muted mt-1">Authorised Ginashe Digital Academy staff only</div>
+                <div className="text-[12px] text-text-muted mt-1">Authorised Ginashe Academy staff only</div>
               </div>
               <button 
                 className="w-8 h-8 rounded-full border flex items-center justify-center text-[14px] text-text-muted cursor-pointer transition-all hover:text-text-custom" 
@@ -907,7 +907,7 @@ export function Modals({ activeModal, onClose, onSwitchModal, onLoginSuccess, me
               <div>
                 <div className="w-12 h-12 rounded-md bg-emerald-dim border border-emerald/20 flex items-center justify-center text-[22px] mb-3.5"><GraduationCap className="w-6 h-6 text-emerald" /></div>
                 <div className="font-syne font-extrabold text-[20px]">Scholarship Application</div>
-                <div className="text-[12px] text-text-muted mt-1">Apply for the GDA Excellence Scholarship</div>
+                <div className="text-[12px] text-text-muted mt-1">Apply for the Ginashe Academy Excellence Scholarship</div>
               </div>
               <button className="w-8 h-8 rounded-full border border-border-custom flex items-center justify-center text-text-muted hover:text-text-custom transition-all" onClick={onClose}>✕</button>
             </div>
@@ -1156,7 +1156,7 @@ export function Modals({ activeModal, onClose, onSwitchModal, onLoginSuccess, me
               <div>
                 <div className="w-12 h-12 rounded-md bg-brand-dim border border-brand/20 flex items-center justify-center text-[22px] mb-3.5"><Target className="w-6 h-6 text-brand" /></div>
                 <div className="font-syne font-extrabold text-[20px]">Interview Protocol</div>
-                <div className="text-[12px] text-text-muted mt-1">Succeeding in the GDA Admission Process</div>
+                <div className="text-[12px] text-text-muted mt-1">Succeeding in the Ginashe Academy Admission Process</div>
               </div>
               <button className="w-8 h-8 rounded-full border border-border-custom flex items-center justify-center text-text-muted hover:text-text-custom transition-all" onClick={onClose}>✕</button>
             </div>
@@ -1169,7 +1169,7 @@ export function Modals({ activeModal, onClose, onSwitchModal, onLoginSuccess, me
                   </div>
                   <div className="p-5 rounded-2xl bg-white/3 border border-border-custom">
                     <h4 className="font-syne font-bold text-[14px] text-brand mb-2">Cultural Alignment</h4>
-                    <p className="text-[11px] text-text-soft leading-relaxed">GDA is for disruptors. Be ready to discuss how you plan to use tech to solve specific African challenges.</p>
+                    <p className="text-[11px] text-text-soft leading-relaxed">Ginashe Academy is for disruptors. Be ready to discuss how you plan to use tech to solve specific African challenges.</p>
                   </div>
                 </div>
                 <div className="space-y-3">
@@ -1270,18 +1270,18 @@ export function Modals({ activeModal, onClose, onSwitchModal, onLoginSuccess, me
               <div>
                 <div className="w-12 h-12 rounded-md bg-emerald-dim border border-emerald/20 flex items-center justify-center text-[22px] mb-3.5"><GraduationCap className="w-6 h-6 text-emerald" /></div>
                 <div className="font-syne font-extrabold text-[20px]">Bursary Application Guide</div>
-                <div className="text-[12px] text-text-muted mt-1">GDA Excellence Scholarship Protocol</div>
+                <div className="text-[12px] text-text-muted mt-1">Ginashe Academy Excellence Scholarship Protocol</div>
               </div>
               <button className="w-8 h-8 rounded-full border border-border-custom flex items-center justify-center text-text-muted hover:text-text-custom transition-all" onClick={onClose}>✕</button>
             </div>
             <div className="p-6 md:p-8">
               <div className="space-y-6">
-                <p className="text-[13px] text-text-soft leading-relaxed">The GDA Excellence Scholarship is designed for individuals who demonstrate exceptional potential but require financial support. Follow these steps to apply:</p>
+                <p className="text-[13px] text-text-soft leading-relaxed">The Ginashe Academy Excellence Scholarship is designed for individuals who demonstrate exceptional potential but require financial support. Follow these steps to apply:</p>
                 <div className="space-y-4">
                   {[
-                    { s: '01', t: 'Formal Admission', d: 'Apply and receive a provisional acceptance letter for any GDA track.' },
+                    { s: '01', t: 'Formal Admission', d: 'Apply and receive a provisional acceptance letter for any Ginashe Academy track.' },
                     { s: '02', t: 'Financial Disclosure', d: 'Submit proof of income or a declaration of financial need.' },
-                    { s: '03', t: 'Technical Assessment', d: 'Achieve a "High Distinction" (85%+) in the GDA baseline assessment.' },
+                    { s: '03', t: 'Technical Assessment', d: 'Achieve a "High Distinction" (85%+) in the Ginashe Academy baseline assessment.' },
                     { s: '04', t: 'Motivation Video', d: 'Submit a 90-second video explaining how you will disrupt your industry.' }
                   ].map((step, i) => (
                     <div key={i} className="flex gap-4 p-4 rounded-xl bg-white/3 border border-border-custom hover:bg-glass-bg transition-colors">
@@ -1362,7 +1362,7 @@ export function Modals({ activeModal, onClose, onSwitchModal, onLoginSuccess, me
               <div className="space-y-8">
                 <div>
                   <h4 className="font-syne font-bold text-[14px] text-brand mb-3 uppercase tracking-wider">Academic Integrity</h4>
-                  <p className="text-[12px] text-text-soft leading-relaxed">Ginashe Digital Academy maintains a zero-tolerance policy for plagiarism and AI-assisted dishonesty in core assessments. All code must be original or appropriately attributed to its source.</p>
+                  <p className="text-[12px] text-text-soft leading-relaxed">Ginashe Academy maintains a zero-tolerance policy for plagiarism and AI-assisted dishonesty in core assessments. All code must be original or appropriately attributed to its source.</p>
                 </div>
                 <div>
                   <h4 className="font-syne font-bold text-[14px] text-brand mb-3 uppercase tracking-wider">Code of Conduct</h4>
@@ -1370,7 +1370,7 @@ export function Modals({ activeModal, onClose, onSwitchModal, onLoginSuccess, me
                     {[
                       { t: 'Professionalism', d: 'Engage with faculty and peers with institutional respect.' },
                       { t: 'Technical Curiosity', d: 'Exhaust all documentation before requesting faculty intervention.' },
-                      { t: 'Community Growth', d: 'Contribute to the GDA talent ecosystem through knowledge sharing.' }
+                      { t: 'Community Growth', d: 'Contribute to the Ginashe Academy talent ecosystem through knowledge sharing.' }
                     ].map((item, i) => (
                       <li key={i} className="flex items-start gap-3">
                         <span className="text-brand mt-1 text-[8px]">▹</span>
@@ -1509,7 +1509,7 @@ export function Modals({ activeModal, onClose, onSwitchModal, onLoginSuccess, me
               <div>
                 <div className="w-12 h-12 rounded-md bg-brand-dim border border-brand/20 flex items-center justify-center text-[22px] mb-3.5">💡</div>
                 <h2 className="font-syne font-black text-2xl tracking-tighter text-text-custom uppercase">Interview Tips</h2>
-                <p className="text-[11px] text-text-dim font-dm-mono uppercase tracking-widest mt-1">GDA Technical Preparation Guide</p>
+                <p className="text-[11px] text-text-dim font-dm-mono uppercase tracking-widest mt-1">Ginashe Academy Technical Preparation Guide</p>
               </div>
               <button onClick={onClose} className="text-text-dim hover:text-text-custom transition-colors p-2 -mr-2">✕</button>
             </div>

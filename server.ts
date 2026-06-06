@@ -154,7 +154,7 @@ async function startServer() {
       // Send to academy
       if (resend) {
         await resend.emails.send({
-          from: 'Ginashe Digital Academy <onboarding@resend.dev>',
+          from: 'Ginashe Academy <onboarding@resend.dev>',
           to: ['academy@ginashe.co.za'],
           subject: `[Contact] ${subject} — ${name}`,
           html: `
@@ -164,21 +164,21 @@ async function startServer() {
             <p><strong>Message:</strong></p>
             <p>${message.replace(/\n/g, '<br>')}</p>
             <hr>
-            <p style="color:#888;font-size:12px;">Sent from the GDA website contact form</p>
+            <p style="color:#888;font-size:12px;">Sent from the Ginashe Academy website contact form</p>
           `,
         });
 
         // Auto-reply to sender
         await resend.emails.send({
-          from: 'Ginashe Digital Academy <onboarding@resend.dev>',
+          from: 'Ginashe Academy <onboarding@resend.dev>',
           to: [email],
-          subject: `Thank you for contacting Ginashe Digital Academy`,
+          subject: `Thank you for contacting Ginashe Academy`,
           html: `
             <h2>Thank you, ${name}!</h2>
             <p>We've received your message regarding <strong>"${subject}"</strong> and will respond within 2 business days.</p>
             <p>In the meantime, feel free to explore our <a href="https://academy.ginashe.co.za/admissions">programmes and admissions</a>.</p>
             <br>
-            <p>Warm regards,<br>The Admissions Team<br>Ginashe Digital Academy</p>
+            <p>Warm regards,<br>The Admissions Team<br>Ginashe Academy</p>
           `,
         });
       }
@@ -254,8 +254,8 @@ async function startServer() {
         : `Update regarding your application for ${program}`;
 
       const message = status === 'approved'
-        ? `Hi ${name},\n\nWe are excited to inform you that your application for the ${program} at Ginashe Digital Academy has been APPROVED! \n\nPlease log in to your student portal to see the next steps.\n\nBest regards,\nGDA Admissions Team`
-        : `Hi ${name},\n\nThank you for your interest in Ginashe Digital Academy. After careful review, we regret to inform you that we are unable to move forward with your application for ${program} at this time.\n\nWe wish you the best in your future endeavours.\n\nBest regards,\nGDA Admissions Team`;
+        ? `Hi ${name},\n\nWe are excited to inform you that your application for the ${program} at Ginashe Academy has been APPROVED! \n\nPlease log in to your student portal to see the next steps.\n\nBest regards,\nGDA Admissions Team`
+        : `Hi ${name},\n\nThank you for your interest in Ginashe Academy. After careful review, we regret to inform you that we are unable to move forward with your application for ${program} at this time.\n\nWe wish you the best in your future endeavours.\n\nBest regards,\nGDA Admissions Team`;
 
       if (!resend) {
         console.warn("[Resend] API key missing. Email skipped.");
@@ -290,7 +290,7 @@ async function startServer() {
             
             <div style="text-align: center; padding-top: 24px; border-top: 1px solid #1e2330;">
               <p style="font-size: 12px; color: #6b7280; margin-bottom: 8px;">
-                Ginashe Digital Academy &copy; 2026. All rights reserved.
+                Ginashe Academy &copy; 2026. All rights reserved.
               </p>
               <p style="font-size: 11px; color: #4b5563;">
                 Sandton Campus, Johannesburg, South Africa
@@ -384,7 +384,7 @@ async function startServer() {
       // 2. Prepare ACTIVATION Email (Email #1)
       const subject = isIndividual 
         ? `ACTION REQUIRED: Activate Your Academy Account`
-        : `Enquiry Received: ${type === 'organisation' ? 'Organisation' : 'Partnership'} - Ginashe Digital Academy`;
+        : `Enquiry Received: ${type === 'organisation' ? 'Organisation' : 'Partnership'} - Ginashe Academy`;
 
       const messageHtml = isIndividual ? `
         <div style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; padding: 40px 20px; background-color: #080b12; color: #f0f0f0; border-radius: 16px;">
@@ -398,7 +398,7 @@ async function startServer() {
             <h2 style="color: #D4AF37; font-size: 24px; font-weight: 800; margin-top: 0; margin-bottom: 16px; text-align: center;">Activate Your Account</h2>
             <p style="font-size: 16px; margin-bottom: 24px;">Hi ${name},</p>
             <p style="line-height: 1.7; font-size: 15px; color: #d1d5db; margin-bottom: 24px;">
-              Thank you for applying to **Ginashe Digital Academy**. To begin your admission process and access your portal, please verify your account using the code below.
+              Thank you for applying to **Ginashe Academy**. To begin your admission process and access your portal, please verify your account using the code below.
             </p>
 
             ${manualOtp ? `
@@ -425,12 +425,12 @@ async function startServer() {
             
             <p style="margin-top: 32px; font-weight: 600; color: #f0f0f0; text-align: center;">
               Excellence through innovation,<br>
-              <span style="color: #D4AF37;">GDA Admissions Team</span>
+              <span style="color: #D4AF37;">Ginashe Academy Admissions Team</span>
             </p>
           </div>
           
           <div style="text-align: center; padding-top: 24px; border-top: 1px solid #1e2330; font-size: 12px; color: #6b7280;">
-              Ginashe Digital Academy &copy; 2026. All rights reserved.
+              Ginashe Academy &copy; 2026. All rights reserved.
           </div>
         </div>
       ` : `
@@ -445,7 +445,7 @@ async function startServer() {
             <h2 style="color: #D4AF37; font-size: 24px; font-weight: 800; margin-top: 0; margin-bottom: 16px; text-align: center;">Enquiry Received</h2>
             <p style="font-size: 16px; margin-bottom: 24px;">Hi ${name},</p>
             <p style="line-height: 1.7; font-size: 15px; color: #d1d5db; margin-bottom: 24px;">
-              Thank you for your interest in partnering with Ginashe Digital Academy. We have received your <strong>${type}</strong> enquiry.
+              Thank you for your interest in partnering with Ginashe Academy. We have received your <strong>${type}</strong> enquiry.
             </p>
             
             <p style="line-height: 1.7; font-size: 15px; color: #d1d5db;">
@@ -454,13 +454,13 @@ async function startServer() {
             
             <p style="margin-top: 32px; font-weight: 600; color: #f0f0f0;">
               Best regards,<br>
-              <span style="color: #D4AF37;">GDA Partnerships Team</span>
+              <span style="color: #D4AF37;">Ginashe Academy Partnerships Team</span>
             </p>
           </div>
           
           <div style="text-align: center; padding-top: 24px; border-top: 1px solid #1e2330;">
             <p style="font-size: 12px; color: #6b7280; margin-bottom: 8px;">
-              Ginashe Digital Academy &copy; 2026. All rights reserved.
+              Ginashe Academy &copy; 2026. All rights reserved.
             </p>
           </div>
         </div>
@@ -563,7 +563,7 @@ async function startServer() {
         await resend.emails.send({
           from: process.env.RESEND_FROM_EMAIL || "Ginashe Academy <noreply@updates.ginashe.academy>",
           to: [email],
-          subject: "Welcome to Ginashe Digital Academy",
+          subject: "Welcome to Ginashe Academy",
           html: `<div style="font-family: sans-serif; padding: 40px; background: #080b12; color: #f0f0f0;">
             <h2 style="color: #D4AF37;">Account Activated</h2>
             <p>Hi ${app.first_name}, your account is now ready. You can log in to your student portal using your email and the password you just set.</p>

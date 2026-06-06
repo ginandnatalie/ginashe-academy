@@ -37,11 +37,11 @@ export const ENTERPRISE_SOLUTIONS = [
 ];
 
 export const INSTITUTIONAL_CODES: Record<string, string> = {
-  'GDA-EXEC-2026': 'Executive Digital Literacy',
-  'GDA-TRANSFORM-26': 'Workforce Digital Transformation',
-  'GDA-HARDEN-TECH': 'Specialist Team Hardening',
-  'GDA-STRAT-ADVISOR': 'CDO Strategy Advisory',
-  'GDA-BRIDGE-CUSTOM': 'Custom Skill-Bridge',
+  'GA-EXEC-2026': 'Executive Digital Literacy',
+  'GA-TRANSFORM-26': 'Workforce Digital Transformation',
+  'GA-HARDEN-TECH': 'Specialist Team Hardening',
+  'GA-STRAT-ADVISOR': 'CDO Strategy Advisory',
+  'GA-BRIDGE-CUSTOM': 'Custom Skill-Bridge',
   'ENTERPRISE-DEMO': 'Executive Digital Literacy' // For testing
 };
 
@@ -169,21 +169,21 @@ export const ACADEMIC_TRACKS: TrackConfig[] = [
   { 
     name: 'Cloud Architecture Residency', 
     durationWeeks: 24, 
-    campus: 'GDA Hub', 
+    campus: 'Ginashe Academy Hub', 
     mode: 'Hybrid',
     baseCohort: 7
   },
   { 
     name: 'AI & Machine Learning', 
     durationWeeks: 16, 
-    campus: 'GDA Virtual', 
+    campus: 'Ginashe Academy Virtual', 
     mode: 'Online',
     baseCohort: 3
   },
   { 
     name: 'Data Engineering', 
     durationWeeks: 12, 
-    campus: 'GDA Hub', 
+    campus: 'Ginashe Academy Hub', 
     mode: 'Hybrid',
     baseCohort: 5
   }

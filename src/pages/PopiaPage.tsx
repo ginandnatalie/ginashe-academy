@@ -8,12 +8,12 @@ export default function PopiaPage() {
     {
       title: "1. Data Sovereignty & Stewardship",
       icon: <Database className="w-6 h-6 text-brand" />,
-      content: "Ginashe Digital Academy (GDA) acts as the 'Responsible Party' for your personal information. We maintain total sovereignty over student data via high-security Supabase infrastructure, ensuring it is never used for unauthorised purposes."
+      content: "Ginashe Academy (Ginashe Academy) acts as the 'Responsible Party' for your personal information. We maintain total sovereignty over student data via high-security Supabase infrastructure, ensuring it is never used for unauthorised purposes."
     },
     {
       title: "2. The 8 Core Principles",
       icon: <FileCheck className="w-6 h-6 text-emerald" />,
-      content: "GDA strictly adheres to the 8 core principles of the POPI Act: Accountability, Processing Limitation, Purpose Specification, Further Processing Limitation, Information Quality, Openness, Security Safeguards, and Data Subject Participation."
+      content: "Ginashe Academy strictly adheres to the 8 core principles of the POPI Act: Accountability, Processing Limitation, Purpose Specification, Further Processing Limitation, Information Quality, Openness, Security Safeguards, and Data Subject Participation."
     },
     {
       title: "3. Direct Consent Protocol",
@@ -23,17 +23,17 @@ export default function PopiaPage() {
     {
       title: "4. Security Mandate",
       icon: <Lock className="w-6 h-6 text-violet" />,
-      content: "GDA implements rigorous technical and organisational measures to prevent loss, damage, or unauthorised access to personal information. Our 'Cyber-Sovereignty' framework includes encryption, MFA, and restricted access protocols."
+      content: "Ginashe Academy implements rigorous technical and organisational measures to prevent loss, damage, or unauthorised access to personal information. Our 'Cyber-Sovereignty' framework includes encryption, MFA, and restricted access protocols."
     },
     {
       title: "5. Student Rights (Data Subjects)",
       icon: <Eye className="w-6 h-6 text-brand" />,
-      content: "Students have the right to access, rectify, or request the deletion of their personal information held by GDA. Any such request will be processed by the GDA Information Officer within 30 days of verification."
+      content: "Students have the right to access, rectify, or request the deletion of their personal information held by Ginashe Academy. Any such request will be processed by the Ginashe Academy Information Officer within 30 days of verification."
     },
     {
       title: "6. Violation Protocol",
       icon: <AlertTriangle className="w-6 h-6 text-coral" />,
-      content: "In the event of a security breach involving personal information, GDA will notify affected students as soon as reasonably possible, following the mandatory disclosure guidelines set by the Regulator."
+      content: "In the event of a security breach involving personal information, Ginashe Academy will notify affected students as soon as reasonably possible, following the mandatory disclosure guidelines set by the Regulator."
     }
   ];
 
@@ -46,7 +46,7 @@ export default function PopiaPage() {
       <PageHero
         label="Compliance Architecture"
         title={<>POPI Act<br /><span className="text-brand">Sovereignty Notice</span>.</>}
-        subtitle="The formal legal structure protecting your personal information and technical residency within the GDA ecosystem."
+        subtitle="The formal legal structure protecting your personal information and technical residency within the Ginashe Academy ecosystem."
         image="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=1470"
         imageAlt="Advanced digital compliance and security architecture"
       />
@@ -56,7 +56,7 @@ export default function PopiaPage() {
           <div className="bg-card border border-border-custom rounded-3xl p-8 md:p-12 relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brand/50 to-transparent" />
             <p className="text-text-soft leading-relaxed italic border-l-2 border-brand/30 pl-6 text-lg">
-              "We believe technical excellence cannot exist without data sovereignty. Our POPIA protocols ensure that every GDA student is protected by the highest standards of privacy governance."
+              "We believe technical excellence cannot exist without data sovereignty. Our POPIA protocols ensure that every Ginashe Academy student is protected by the highest standards of privacy governance."
             </p>
           </div>
 

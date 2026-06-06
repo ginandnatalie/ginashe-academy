@@ -146,7 +146,7 @@ export function Faculty({ editMode }: { editMode?: boolean }) {
       init: 'TK', 
       color: 'linear-gradient(135deg,#4fc3f7,#0288d1)', 
       banner: 'linear-gradient(90deg, #4fc3f7, #0288d1)', 
-      spec: 'Multi-cloud architect with 12+ years experience. Specializes in mission-critical infrastructure for the African digital economy. Lead of GDA\'s flagship Residency programs.', 
+      spec: 'Multi-cloud architect with 12+ years experience. Specializes in mission-critical infrastructure for the African digital economy. Lead of Ginashe Academy\'s flagship Residency programs.', 
       certs: [{ l: 'AWS SAA', t: 'brand' }, { l: 'AZ-104', t: 'sky' }, { l: 'GCP Pro', t: 'em' }], 
       experience: '12+ Yrs', 
       projects: '50+ Enterprise', 
@@ -180,7 +180,7 @@ export function Faculty({ editMode }: { editMode?: boolean }) {
       init: 'TM', 
       color: 'linear-gradient(135deg,#a78bfa,#7c3aed)', 
       banner: 'linear-gradient(90deg, #a78bfa, #7c3aed)', 
-      spec: 'DevOps and automation lead with a focus on cost-optimization and resilient CI/CD pipelines. Practitioner-led instructor driving the GDA Associate and Developer tracks.', 
+      spec: 'DevOps and automation lead with a focus on cost-optimization and resilient CI/CD pipelines. Practitioner-led instructor driving the Ginashe Academy Associate and Developer tracks.', 
       certs: [{ l: 'CKA', t: 'vio' }, { l: 'Terraform', t: 'sky' }, { l: 'AWS Dev', t: 'brand' }], 
       experience: '8+ Yrs', 
       projects: '25+ DevOps', 
@@ -195,7 +195,7 @@ export function Faculty({ editMode }: { editMode?: boolean }) {
           <div className="max-w-[540px]">
             <div className="section-label">Faculty & Instructors</div>
             <h2 className="section-title animate-fadeUp">Taught by practitioners,<br />not professors.</h2>
-            <p className="section-sub animate-fadeUp delay-100">Every GDA instructor is an active industry professional with hands-on cloud, AI, or engineering experience — bringing real problems into the classroom.</p>
+            <p className="section-sub animate-fadeUp delay-100">Every Ginashe Academy instructor is an active industry professional with hands-on cloud, AI, or engineering experience — bringing real problems into the classroom.</p>
           </div>
           <div className="bg-card border border-border-custom rounded-2xl p-6 animate-fadeUp delay-200">
             <div className="font-syne font-bold text-[11px] uppercase tracking-widest text-sky mb-4 flex items-center gap-2">

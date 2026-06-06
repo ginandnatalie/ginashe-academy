@@ -105,7 +105,7 @@ serve(async (req) => {
       body: JSON.stringify({
         from: RESEND_FROM_EMAIL,
         to: ['skills@ginashe.academy'],
-        subject: `[GDA Platform] New ${type} Request from ${name}`,
+        subject: `[Ginashe Academy Platform] New ${type} Request from ${name}`,
         html: htmlContent,
         reply_to: cleanEmail
       })

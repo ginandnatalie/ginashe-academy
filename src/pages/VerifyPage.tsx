@@ -210,7 +210,7 @@ export default function VerifyPage() {
               {step === 'email' && "Enter the email you used for your application to receive a verification code."}
               {step === 'otp' && <>Check <span className="text-brand font-medium">{email}</span> for your 6-digit activation code.</>}
               {step === 'password' && "Code accepted for verification. Now choose a strong password to complete your setup."}
-              {step === 'success' && "Your Ginashe Digital Academy account is now active and ready for use."}
+              {step === 'success' && "Your Ginashe Academy account is now active and ready for use."}
             </p>
           </div>
 

@@ -9,7 +9,7 @@ TRUNCATE public.programs;
 INSERT INTO public.programs (track, level, cat, title, description, duration, meta, mode, certs, price, price_sub, icon, accent, num, nqf_level)
 VALUES
 -- Track 1: Cloud Computing
-('Cloud Computing', 'Foundation', 'foundation', 'Cloud Launchpad', 'AWS/Azure/GCP fundamentals, Linux CLI, IP networking, cloud security intro. SETA-aligned unit standards.', '12 weeks', 'Start your cloud journey', 'Online/Blended', 'GDA Foundation Cert', 'R4,500', 'Once-off', 'Cloud', '#1B4F8A', '01', 'L3-L4'),
+('Cloud Computing', 'Foundation', 'foundation', 'Cloud Launchpad', 'AWS/Azure/GCP fundamentals, Linux CLI, IP networking, cloud security intro. SETA-aligned unit standards.', '12 weeks', 'Start your cloud journey', 'Online/Blended', 'Ginashe Academy Foundation Cert', 'R4,500', 'Once-off', 'Cloud', '#1B4F8A', '01', 'L3-L4'),
 ('Cloud Computing', 'Associate', 'associate', 'Cloud Practitioner Pro', 'Identity management, virtual machines, blob/S3 storage. Prep for AWS Cloud Practitioner & AZ-900.', '12 weeks', 'Master the core services', 'Online/Blended', 'Exam Readiness', 'R6,500', 'Once-off', 'Layers', '#1B4F8A', '02', 'L5'),
 ('Cloud Computing', 'Professional', 'professional', 'Cloud Architect', 'Well-Architected Framework, multi-AZ design, disaster recovery, cloud cost governance.', '16 weeks', 'Design resilient systems', 'Online/Blended', 'Architect Certificate', 'R12,000', 'Once-off', 'Shield', '#1B4F8A', '03', 'L6'),
 ('Cloud Computing', 'Enterprise', 'enterprise', 'Multi-Cloud Enterprise', 'Enterprise cloud strategy, landing zone deployment, multi-cloud governance, FinOps practices.', '20 weeks', 'Strategic multi-cloud leadership', 'Corporate', 'Enterprise Diploma', 'R25,000', 'Once-off', 'Globe', '#1B4F8A', '04', 'L7-L8'),
