@@ -1,16 +1,12 @@
 import { createClient } from '@supabase/supabase-js';
 
-const supabaseUrl = (import.meta as any).env.VITE_SUPABASE_URL;
-const supabaseAnonKey = (import.meta as any).env.VITE_SUPABASE_ANON_KEY;
+const DEFAULT_SUPABASE_URL = 'https://ffgypwmrmdosaihgpkuw.supabase.co';
+const DEFAULT_SUPABASE_ANON_KEY = 'sb_publishable_NEMim0nMQmB0LBP3nhPamA_sd2y0Nco';
 
-if (!supabaseUrl || !supabaseAnonKey) {
-  console.error('Supabase URL or Anon Key is missing. Please check your environment variables.');
-  if (typeof window !== 'undefined') {
-    alert('Configuration Error: Supabase URL or Anon Key is missing. Please check your environment variables.');
-  }
-}
+const supabaseUrl = (import.meta as any).env?.VITE_SUPABASE_URL || DEFAULT_SUPABASE_URL;
+const supabaseAnonKey = (import.meta as any).env?.VITE_SUPABASE_ANON_KEY || DEFAULT_SUPABASE_ANON_KEY;
 
-export const supabase = createClient(supabaseUrl || '', supabaseAnonKey || '', {
+export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
   auth: {
     storage: typeof window !== 'undefined' ? window.sessionStorage : undefined,
     autoRefreshToken: true,
@@ -19,7 +15,7 @@ export const supabase = createClient(supabaseUrl || '', supabaseAnonKey || '', {
   }
 });
 
-export const withTimeout = async <T>(promise: Promise<T> | any, timeoutMs: number = 15000, errorMsg: string = 'Request timed out'): Promise<T> => {
+export const withTimeout = async <T = any>(promise: Promise<T> | any, timeoutMs: number = 15000, errorMsg: string = 'Request timed out'): Promise<T> => {
   let timeoutId: any;
   const timeoutPromise = new Promise<never>((_, reject) => {
     timeoutId = setTimeout(() => {

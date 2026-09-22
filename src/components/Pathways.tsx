@@ -96,9 +96,9 @@ export function Pathways({ editMode }: { editMode?: boolean }) {
                     <div className="pt-2.5">
                       <div className="font-syne font-semibold text-[14px]">{step.title}</div>
                       <div className="text-[12px] text-text-muted mt-0.75">{step.detail}</div>
-                      {step.certs && (
+                      {(step as any).certs && (
                         <div className="flex gap-1.25 mt-2">
-                          {step.certs.map((cert, ci) => (
+                          {(step as any).certs.map((cert: any, ci: number) => (
                             <span key={ci} className={`chip ${cert.type ? `chip-${cert.type}` : ''}`}>{cert.label}</span>
                           ))}
                         </div>

@@ -54,8 +54,7 @@ export function GovernanceMotivationModal({
 
       // 1. Upload File if present
       if (file) {
-        const path = `governance-evidence/${Date.now()}_${file.name}`;
-        evidenceUrl = await uploadFile('governance-evidence', path, file);
+        evidenceUrl = await uploadFile(file, 'governance-evidence', 'evidence');
       }
 
       // 2. Log to governance_audit_logs

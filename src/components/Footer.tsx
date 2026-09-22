@@ -108,7 +108,7 @@ export function Footer({ onOpenModal, editMode }: { onOpenModal: (id: string) =>
       const timeoutId = setTimeout(() => controller.abort(), 5000);
 
       try {
-        const { error } = await supabase.from('applications').select('id').limit(1).abortSignal(controller.signal);
+        const { error } = await supabase.from('site_settings').select('id').limit(1).abortSignal(controller.signal);
         clearTimeout(timeoutId);
         if (error) {
           if (error.code === 'PGRST116' || error.message?.includes('0 rows')) {

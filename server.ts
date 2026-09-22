@@ -1,16 +1,12 @@
 import express from "express";
 import cors from "cors";
 import path from "path";
-import { fileURLToPath } from "url";
 import { createServer as createViteServer } from "vite";
 import { Resend } from "resend";
 import dotenv from "dotenv";
 import { createClient } from "@supabase/supabase-js";
 
 dotenv.config();
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
 
@@ -21,9 +17,8 @@ const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 async function pingSupabase() {
   try {
-    // Perform a lightweight query to simulate activity
-    // We use a common table like 'applications' or just query the schema
-    const { data, error } = await supabase.from('applications').select('id').limit(1);
+    // Perform a lightweight query on the public site_settings table to maintain connection
+    const { data, error } = await supabase.from('site_settings').select('id').limit(1);
     
     if (error && error.code !== 'PGRST116') { // Ignore "no rows found" errors
       throw error;
@@ -31,7 +26,7 @@ async function pingSupabase() {
     
     console.log(`[Supabase Heartbeat] Activity ping successful at ${new Date().toISOString()}`);
   } catch (err: any) {
-    console.error(`[Supabase Heartbeat] Activity ping failed:`, err.message);
+    console.warn(`[Supabase Heartbeat] Activity ping failed:`, err.message);
   }
 }
 
@@ -41,6 +36,11 @@ async function startServer() {
 
   app.use(cors());
   app.use(express.json());
+
+  // Health check
+  app.get("/api/health", (req, res) => {
+    res.json({ status: "ok" });
+  });
 
   // Start the heartbeat: Ping every 24 hours
   const TWENTY_FOUR_HOURS = 1000 * 60 * 60 * 24;
@@ -532,7 +532,7 @@ async function startServer() {
 
       // 2. Auth Update
       const { data: usersData } = await admin.auth.admin.listUsers();
-      const targetUser = usersData.users.find(u => u.email?.toLowerCase() === email.trim().toLowerCase());
+      const targetUser = usersData?.users?.find((u: any) => u.email?.toLowerCase() === email.trim().toLowerCase());
       let userId = targetUser?.id;
 
       if (!targetUser) {
