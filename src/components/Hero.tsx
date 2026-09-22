@@ -19,6 +19,54 @@ export default function Hero({ onOpenModal, editMode }: HeroProps) {
     intakeStatus: 'OPEN'
   });
 
+  const [matcherGoal, setMatcherGoal] = useState<string>('switch');
+  const [selectedStreamId, setSelectedStreamId] = useState<string>('digital-systems');
+
+  const streamDetails: Record<string, { flagship: string; nqf: string; duration: string; seta: string; outcome: string }> = {
+    'digital-systems': {
+      flagship: 'Cloud Launchpad & DevOps Architecture',
+      nqf: 'NQF L4–L5',
+      duration: '12–16 wks',
+      seta: 'MICT SETA',
+      outcome: 'AWS Cloud Support & DevOps Engineer with Live-Fire labs.'
+    },
+    'health-sciences': {
+      flagship: 'Community Health & Clinical Support',
+      nqf: 'NQF L4',
+      duration: '16–32 wks',
+      seta: 'HWSETA',
+      outcome: 'Registered CHW & Clinic Administrator deployed in regional care.'
+    },
+    'energy-infrastructure': {
+      flagship: 'Solar PV & Off-Grid Storage Systems',
+      nqf: 'NQF L4–L5',
+      duration: '12–16 wks',
+      seta: 'EWSETA',
+      outcome: 'Certified Solar PV & Battery Storage Technician for SA grid.'
+    },
+    'financial-literacy': {
+      flagship: 'FinTech Engineering & Digital Banking',
+      nqf: 'NQF L4–L5',
+      duration: '10–14 wks',
+      seta: 'INSETA',
+      outcome: 'Digital Payments Specialist & FSCA Compliance Practitioner.'
+    },
+    'agriculture-food': {
+      flagship: 'Agritech & Precision Food Systems',
+      nqf: 'NQF L4–L5',
+      duration: '12–16 wks',
+      seta: 'AgriSETA',
+      outcome: 'Commercial Farm Digital Operator & Hydroponic Systems Lead.'
+    },
+    'applied-trades': {
+      flagship: 'Electrical Installation & Trades Mastery',
+      nqf: 'NQF L3–L5',
+      duration: '16–24 wks',
+      seta: 'MERSETA',
+      outcome: 'Licensed Trade Artisan & Contracting Enterprise Operator.'
+    },
+  };
+
   useEffect(() => {
     async function fetchSettings() {
       try {
@@ -182,23 +230,134 @@ export default function Hero({ onOpenModal, editMode }: HeroProps) {
           </div>
         </div>
 
-        <div className="hidden lg:flex flex-col items-center justify-center relative animate-fadeUp delay-200 min-h-[320px]">
-          <div className="absolute top-0 right-0 bg-emerald-dim/40 dark:bg-emerald-dim border border-emerald/30 rounded-lg px-5 py-4 animate-float1 shadow-xl shadow-emerald/10 backdrop-blur-md">
-            <div className="font-dm-mono text-[9px] tracking-[0.1em] uppercase text-emerald-dark dark:text-emerald">Multidisciplinary</div>
-            <div className="font-syne font-extrabold text-[18px] text-text-custom leading-[1.1]">10 Streams</div>
-            <div className="font-dm-mono text-[8px] text-text-muted mt-0.5">Targeting Africa's Skills Gaps</div>
-          </div>
+        <div className="lg:flex flex-col items-center justify-center relative animate-fadeUp delay-200">
+          {/* World-Class Admissions & Stream Matcher Console */}
+          <div className="w-full max-w-[500px] bg-surface/90 border border-brand/25 rounded-2xl p-6 sm:p-7 shadow-[0_25px_60px_rgba(0,0,0,0.5)] backdrop-blur-xl relative overflow-hidden group">
+            {/* Ambient edge light */}
+            <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-brand to-transparent opacity-80" />
+            <div className="absolute -top-24 -right-24 w-48 h-48 bg-brand/10 rounded-full blur-3xl pointer-events-none" />
 
-          <div className="absolute bottom-8 left-0 bg-sky-dim/40 dark:bg-sky-dim border border-sky/30 rounded-lg px-5 py-4 animate-float2 shadow-xl shadow-sky/10 backdrop-blur-md">
-            <div className="font-dm-mono text-[9px] tracking-[0.1em] uppercase text-sky-dark dark:text-sky">Technical Rigour</div>
-            <div className="font-syne font-extrabold text-[18px] text-text-custom leading-[1.1]">Practitioner Led</div>
-            <div className="font-dm-mono text-[8px] text-text-muted mt-0.5">Taught by Active Experts</div>
-          </div>
+            {/* Header */}
+            <div className="flex items-center justify-between gap-3 pb-5 mb-5 border-b border-border-custom">
+              <div>
+                <span className="font-dm-mono text-[9px] tracking-[0.2em] uppercase text-brand font-semibold block">
+                  ADMISSIONS CONSOLE · 2026
+                </span>
+                <span className="font-syne font-bold text-[16px] text-text-custom mt-0.5 block">
+                  Fast-Track Eligibility & Matcher
+                </span>
+              </div>
+              <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-brand/10 border border-brand/30 text-brand font-dm-mono text-[9px] font-bold">
+                <span className="w-2 h-2 rounded-full bg-brand animate-ping" />
+                Active Cohort
+              </div>
+            </div>
 
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-brand-dim/40 dark:bg-brand-dim border border-brand/30 rounded-lg px-5 py-4 animate-float1 shadow-xl shadow-brand/10 backdrop-blur-md" style={{ animationDelay: '0.5s' }}>
-            <div className="font-dm-mono text-[9px] tracking-[0.1em] uppercase text-brand-dark dark:text-brand">Curriculum Depth</div>
-            <div className="font-syne font-extrabold text-[18px] text-text-custom leading-[1.1]">80+ Courses</div>
-            <div className="font-dm-mono text-[8px] text-text-muted mt-0.5">From Foundation to Mastery</div>
+            {/* Interactive Stream Matcher Widget */}
+            <div className="space-y-4">
+              <div>
+                <label className="block font-dm-mono text-[10px] uppercase tracking-wider text-text-muted mb-2">
+                  1. Select Your Objective:
+                </label>
+                <div className="grid grid-cols-3 gap-1.5">
+                  {[
+                    { id: 'switch', label: 'Career Switch' },
+                    { id: 'upskill', label: 'Upskill & Cert' },
+                    { id: 'bbee', label: 'B-BBEE / Team' }
+                  ].map(tab => (
+                    <button
+                      key={tab.id}
+                      type="button"
+                      onClick={() => setMatcherGoal(tab.id)}
+                      className={`py-2 px-2 rounded-lg font-dm-mono text-[10px] tracking-tight border transition-all text-center ${
+                        matcherGoal === tab.id
+                          ? 'bg-brand text-navy font-bold border-brand shadow-[0_0_15px_rgba(0,242,255,0.25)]'
+                          : 'bg-card/60 text-text-soft border-border-custom hover:border-brand/40'
+                      }`}
+                    >
+                      {tab.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <label className="block font-dm-mono text-[10px] uppercase tracking-wider text-text-muted mb-2">
+                  2. Focus Faculty Stream:
+                </label>
+                <select
+                  value={selectedStreamId}
+                  onChange={(e) => setSelectedStreamId(e.target.value)}
+                  className="w-full bg-card border border-border-custom focus:border-brand rounded-xl px-3.5 py-2.5 text-[12px] font-syne font-semibold text-text-custom outline-none transition-colors"
+                >
+                  <option value="digital-systems">Digital Systems & Cloud (AWS/AI/DevOps)</option>
+                  <option value="health-sciences">Health Sciences (Community Care & Nursing)</option>
+                  <option value="energy-infrastructure">Energy & Infrastructure (Solar PV & Wind)</option>
+                  <option value="financial-literacy">Financial Literacy & FinTech (Banking APIs)</option>
+                  <option value="agriculture-food">Agriculture & Food Security (Precision Agri)</option>
+                  <option value="applied-trades">Applied Trades & Engineering (Electrician/Plumbing)</option>
+                </select>
+              </div>
+
+              {/* Match Result Preview */}
+              <div className="bg-card/80 border border-border-custom rounded-xl p-4">
+                <div className="flex items-start justify-between gap-2">
+                  <div>
+                    <span className="inline-block px-2 py-0.5 rounded text-[9px] font-dm-mono uppercase tracking-wider bg-brand/10 text-brand border border-brand/20 mb-1.5">
+                      {streamDetails[selectedStreamId]?.seta} Aligned · {streamDetails[selectedStreamId]?.nqf || 'NQF L4–L5'}
+                    </span>
+                    <h4 className="font-syne font-bold text-[14px] text-text-custom leading-snug">
+                      {streamDetails[selectedStreamId]?.flagship || 'Practitioner Diploma'}
+                    </h4>
+                  </div>
+                  <div className="text-right shrink-0">
+                    <span className="font-dm-mono text-[10px] text-brand font-bold block">
+                      {streamDetails[selectedStreamId]?.duration || '12–16 wks'}
+                    </span>
+                    <span className="font-dm-mono text-[8px] text-text-muted uppercase">
+                      Hybrid / Live-Fire
+                    </span>
+                  </div>
+                </div>
+
+                <p className="font-outfit text-[11px] text-text-muted mt-2 leading-relaxed">
+                  {streamDetails[selectedStreamId]?.outcome || 'Industry capstone with guaranteed interview pipeline.'}
+                </p>
+
+                <div className="mt-3.5 pt-3 border-t border-border-custom/60 flex items-center justify-between text-[10px] font-dm-mono text-text-soft">
+                  <span>Next Cohort: <strong className="text-text-custom">14 April 2026</strong></span>
+                  <span className="text-emerald-400 flex items-center gap-1 font-bold">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> 18 Seats Left
+                  </span>
+                </div>
+              </div>
+
+              {/* Action Buttons */}
+              <div className="grid grid-cols-2 gap-2 pt-1">
+                <button
+                  onClick={() => onOpenModal('apply_direct')}
+                  className="py-3 px-4 rounded-xl bg-brand text-navy font-syne font-black text-[11px] uppercase tracking-wider hover:bg-white transition-all shadow-[0_0_20px_rgba(0,242,255,0.2)] text-center flex items-center justify-center gap-1.5"
+                >
+                  Apply Direct
+                  <svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+                </button>
+                <Link
+                  to={`/streams/${selectedStreamId}`}
+                  className="py-3 px-4 rounded-xl bg-card border border-border-custom hover:border-brand text-text-custom font-syne font-bold text-[11px] uppercase tracking-wider text-center transition-all flex items-center justify-center"
+                >
+                  View Syllabus
+                </Link>
+              </div>
+
+              <div className="text-center pt-1">
+                <button
+                  onClick={() => onOpenModal('corporate_sponsor')}
+                  className="font-dm-mono text-[9px] uppercase tracking-widest text-text-muted hover:text-brand transition-colors inline-flex items-center gap-1"
+                >
+                  Need corporate B-BBEE group funding? <span className="underline text-brand">Corporate Enquiries</span>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 {
   "name": "Ginashe Digital Academy",
-  "description": "Africa's premier institution for Cloud Computing, Artificial Intelligence, and Digital Transformation. MICT SETA accredited training in Johannesburg, South Africa.",
+  "description": "Africa's premier institution for Cloud Computing, Artificial Intelligence, and Digital Transformation. SETA-aligned practitioner training in Johannesburg, South Africa.",
   "requestFramePermissions": [],
   "majorCapabilities": [
     "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"

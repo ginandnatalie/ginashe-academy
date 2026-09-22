@@ -63,7 +63,7 @@ export default function StreamFaculty({ editMode }: { editMode?: boolean }) {
             
             <h3 className="font-syne font-bold text-xl text-text-custom mb-3 relative z-10">Faculty Reveal Coming Soon</h3>
             <p className="text-sm text-text-muted font-outfit leading-relaxed mb-6 relative z-10">
-              We only hire active practitioner-leaders. The accredited instructors, advisors, and mentors for {stream.abbr} will be announced ahead of the cohort launch.
+              We only hire active practitioner-leaders. The qualified instructors, advisors, and mentors for {stream.abbr} will be announced ahead of the cohort launch.
             </p>
             <Link to={`/streams/${stream.id}`} className="btn btn-outline btn-sm relative z-10 w-full no-underline justify-center inline-flex items-center">
               Return to Dashboard

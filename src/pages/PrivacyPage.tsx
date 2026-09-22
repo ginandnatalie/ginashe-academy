@@ -23,7 +23,7 @@ export default function PrivacyPage() {
     {
       title: "Third-Party Disclosure",
       icon: <Share2 className="w-6 h-6 text-violet" />,
-      content: "Ginashe Academy never sells student data. We only disclose records to accredited hiring partners and employer sponsors when explicit consent is provided for career placement or tuition sponsorship."
+      content: "Ginashe Academy never sells student data. We only disclose records to vetted hiring partners and employer sponsors when explicit consent is provided for career placement or tuition sponsorship."
     },
     {
       title: "Institutional Audit Rights",
