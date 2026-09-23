@@ -12,6 +12,7 @@ import { ArrowRight } from 'lucide-react';
 import { Toaster, toast } from 'sonner';
 import ErrorBoundary from './components/ErrorBoundary';
 import { HelmetProvider } from 'react-helmet-async';
+import MaintenancePage from './components/MaintenancePage';
 
 function ExternalRedirect({ url }: { url: string }) {
   useEffect(() => {
@@ -178,6 +179,14 @@ function AppContent() {
   
   // Detect school context for StreamNavbar (includes /tracks as DSS-specific)
   const isStreamContext = /^\/streams\/[a-z0-9-]+/.test(pathname) || /^\/tracks(\/|$)/.test(pathname);
+
+  // Active Maintenance Mode: Show only 1 simple updates page until further notice
+  const isMaintenanceMode = true;
+  const isBypass = typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('bypass') === 'true';
+
+  if (isMaintenanceMode && !isBypass) {
+    return <MaintenancePage />;
+  }
 
   return (
     <div className="min-h-screen bg-bg text-text-custom selection:bg-brand/30 selection:text-brand transition-colors duration-300 flex flex-col">
