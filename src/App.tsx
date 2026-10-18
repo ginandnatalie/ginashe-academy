@@ -184,6 +184,12 @@ function AppContent() {
   const isMaintenanceMode = true;
   const isBypass = typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('bypass') === 'true';
 
+  useEffect(() => {
+    if (isMaintenanceMode && !isBypass && pathname !== '/') {
+      navigate('/', { replace: true });
+    }
+  }, [pathname, isMaintenanceMode, isBypass, navigate]);
+
   if (isMaintenanceMode && !isBypass) {
     return <MaintenancePage />;
   }
@@ -278,6 +284,7 @@ function AppContent() {
                 element={<ExternalRedirect url="https://student.ginashe.academy/" />} 
               />
               <Route path="/activate" element={<ExternalRedirect url="https://staff.ginashe.academy" />} />
+              <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </main>
           </ErrorBoundary>
